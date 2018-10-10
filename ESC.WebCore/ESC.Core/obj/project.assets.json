@@ -987,11 +987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\demo\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj",
+      "projectUniqueName": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj",
       "projectName": "ESC.Core",
-      "projectPath": "E:\\demo\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj",
+      "projectPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj",
       "packagesPath": "C:\\Users\\lvsc\\.nuget\\packages\\",
-      "outputPath": "E:\\demo\\ESC.WebCore\\ESC.Core\\obj\\",
+      "outputPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

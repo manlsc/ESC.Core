@@ -1840,11 +1840,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\demo\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj",
+      "projectUniqueName": "E:\\demo\\ESC.Core\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj",
       "projectName": "Dapper.Extensions",
-      "projectPath": "E:\\demo\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj",
+      "projectPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj",
       "packagesPath": "C:\\Users\\lvsc\\.nuget\\packages\\",
-      "outputPath": "E:\\demo\\ESC.WebCore\\Dapper.Extensions\\obj\\",
+      "outputPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\Dapper.Extensions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

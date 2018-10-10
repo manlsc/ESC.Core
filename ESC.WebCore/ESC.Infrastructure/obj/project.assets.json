@@ -2396,11 +2396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\demo\\ESC.WebCore\\ESC.Infrastructure\\ESC.Infrastructure.csproj",
+      "projectUniqueName": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Infrastructure\\ESC.Infrastructure.csproj",
       "projectName": "ESC.Infrastructure",
-      "projectPath": "E:\\demo\\ESC.WebCore\\ESC.Infrastructure\\ESC.Infrastructure.csproj",
+      "projectPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Infrastructure\\ESC.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\lvsc\\.nuget\\packages\\",
-      "outputPath": "E:\\demo\\ESC.WebCore\\ESC.Infrastructure\\obj\\",
+      "outputPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2419,11 +2419,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\demo\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj": {
-              "projectPath": "E:\\demo\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj"
+            "E:\\demo\\ESC.Core\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj": {
+              "projectPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\Dapper.Extensions\\Dapper.Extensions.csproj"
             },
-            "E:\\demo\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj": {
-              "projectPath": "E:\\demo\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj"
+            "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj": {
+              "projectPath": "E:\\demo\\ESC.Core\\ESC.WebCore\\ESC.Core\\ESC.Core.csproj"
             }
           }
         }
