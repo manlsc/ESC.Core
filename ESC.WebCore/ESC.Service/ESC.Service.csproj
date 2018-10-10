@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Workflow\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper.Extensions\Dapper.Extensions.csproj" />
+    <ProjectReference Include="..\ESC.Core\ESC.Core.csproj" />
+    <ProjectReference Include="..\ESC.Infrastructure\ESC.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

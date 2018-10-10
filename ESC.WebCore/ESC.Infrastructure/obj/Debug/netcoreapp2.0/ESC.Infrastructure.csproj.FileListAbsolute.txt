@@ -1,0 +1,14 @@
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\ESC.Infrastructure.deps.json
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\ESC.Infrastructure.dll
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\ESC.Infrastructure.pdb
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\Dapper.Extensions.dll
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\ESC.Core.dll
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\Dapper.Extensions.pdb
+E:\demo\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.0\ESC.Core.pdb
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.csprojAssemblyReference.cache
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.csproj.CoreCompileInputs.cache
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.AssemblyInfoInputs.cache
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.AssemblyInfo.cs
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.csproj.CopyComplete
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.dll
+E:\demo\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.0\ESC.Infrastructure.pdb

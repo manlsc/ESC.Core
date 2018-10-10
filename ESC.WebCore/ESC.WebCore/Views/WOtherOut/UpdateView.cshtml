@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "UpdateView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="headerForm" class="fa-border">
+</div>
+<div id="bodyGrid">
+</div>
+@if (ViewBag.StockStatus == "true")
+{
+    <div style="text-align:center;" class="SearchBtns fa-border">
+        <button id="btnSure" type="button" class="btn btn-primary">确定</button>
+        <button id="btnCancel" type="button" class="btn btn-default">取消</button>
+    </div>
+}
+    <script type="text/javascript">
+    var common = new CommonBUI({ controller: "WOtherOut", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
+    var fcommon = new CommonBUI({ controller: "WOtherOut", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
+    var bGrid = null, bForm = null;
+    var id=@ViewBag.ID;
+
+    //初始化表单
+    function initForm(iData) {
+        bForm = new BuiForm({ common: common, colCount: 4, data: {}, type: "add" });
+
+        //外键选择
+        bForm.fSearch = function (opts) {
+            if (BUI.isNullOrEmpty(opts.text) || opts.evttype == "click") {
+                searchBp(bForm, opts);
+            } else {
+                //查询业务伙伴
+                fcommon.get("BBusinessPartner", "GetCodeName", "words=" + CommonBUI.UrlEncode(opts.text), function (rdata) {
+                    if (rdata.result.length == 1) {
+                        var data = rdata.result[0];
+                        bForm.setReturnValue(opts, data);
+                    } else {
+                        searchBp(bForm, opts);
+                    }
+                });
+            }
+        };
+
+        bForm.render(fcommon.GridForm);
+
+        searchParent();
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        var editable=@ViewBag.StockStatus;
+        bGrid = new BUIGrid({
+            render: fcommon.DataGrid,
+            common: fcommon,
+            pager: true,
+            editable: editable
+        });
+
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            searchDetail(pageIndex,pageSize);
+        }
+
+        //外键选择
+        bGrid.fSearch = function (opts) {
+            searchStock(bGrid, opts);
+        };
+        bGrid.init();
+
+        searchDetail(1,20);
+    }
+
+    //初始化列显示隐藏
+    function initColumns(iData) {
+        for (var i = 0; i < iData.Columns.length; i++) {
+            switch (iData.Columns[i].dataIndex) {
+                case "CreateDate":
+                case "CreateBy":
+                case "UpdateDate":
+                case "UpdateBy":
+                    iData.Columns[i].visible = false;
+                    break;
+            }
+        }
+    }
+
+    //选择业务伙伴
+    function searchBp(frm, opts) {
+        var dialog = new BUI.Overlay.Dialog({
+            title: "选择业务伙伴",
+            width: 800,
+            height: 600,
+            mask: true,
+            closeAction: "destroy",
+            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../BBusinessPartner/SearchBusinessPartnerView" style="width:100%;height:100%;"></iframe>',
+            success: function () {
+                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                if (data) {
+                    frm.setReturnValue(opts, data);
+                    dialog.close();
+                } else {
+                    CommonBUI.alert("提示", "请选择业务伙伴.");
+                }
+            }
+        });
+        dialog.show();
+    }
+
+    //选择存储单元
+    function searchStock(bGrid, opts) {
+        var dialog = new BUI.Overlay.Dialog({
+            title: "选择库存",
+            width: 800,
+            height: 600,
+            mask: true,
+            closeAction: "destroy",
+            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../WStock/SearchStockView" style="width:100%;height:100%;"></iframe>',
+            success: function () {
+                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                if (data) {
+                    bGrid.setReturnValue(opts, data);
+                    dialog.close();
+                } else {
+                    CommonBUI.alert("提示", "请选择库存.");
+                }
+            }
+        });
+        dialog.show();
+    }
+
+
+    //查询主表
+    function searchParent(){
+        common.SearchSingle(id,function(result){
+            bForm.setData(result);
+        });
+    }
+
+    //查询明细
+    function searchDetail(pageIndex, pageSize){
+        common.SelectDetail("WOtherhOutLine",id, pageIndex, pageSize, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            initForm(iData);
+        });
+
+        //外键初始化
+        fcommon.ForeignInit("WOtherOutLine", function (fData) {
+            fcommon.initData = fData;
+            initColumns(fData);
+            initGrid(fData);
+        });
+
+        $("#btnSure").click(function () {
+            var data = bForm.getData();
+            if (data) {
+                var lines = bGrid.getDirtyData();
+                if (lines) {
+                        data.Lines = lines;
+                        common.Update(data, function () {
+                            window.location.href = "../WOtherOut/Index";
+                        });
+                }
+            }
+        });
+
+        $("#btnCancel").click(function () {
+            window.location.href = "../WOtherOut/Index";
+        });
+    });
+
+    </script>
+
+

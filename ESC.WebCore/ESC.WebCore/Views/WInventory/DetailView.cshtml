@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "DetailView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="headerForm" class="fa-border">
+</div>
+<div id="bodyGrid">
+</div>
+<div style="text-align:center;" class="SearchBtns fa-border">
+    <button id="btnCancel" type="button" class="btn btn-default">取消</button>
+</div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "WInventory", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
+    var fcommon = new CommonBUI({ controller: "WInventory", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
+    var bGrid = null, bForm = null;
+    var id=@ViewBag.ID;
+
+    //初始化表单
+    function initForm(iData) {
+        bForm = new BuiForm({ common: common, colCount: 4, data: {}, type: "detail" });       
+        bForm.render(fcommon.GridForm);
+        searchParent();
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: fcommon.DataGrid,
+            common: fcommon,
+            pager: false,
+            editable: false
+        });
+
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            searchDetail(pageIndex,pageSize);
+        }
+        
+        bGrid.init();
+
+        searchDetail(1,20);
+    }
+
+    //查询主表
+    function searchParent(){
+        common.SearchSingle(id,function(result){
+            bForm.setData(result);
+        });
+    }
+
+    //查询明细
+    function searchDetail(pageIndex, pageSize){
+        common.SelectDetail("WOtherhOutLine",id, pageIndex, pageSize, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            initForm(iData);
+        });
+
+        //外键初始化
+        fcommon.ForeignInit("WInventoryLine", function (fData) {
+            fcommon.initData = fData;
+            initGrid(fData);
+        });
+       
+        $("#btnCancel").click(function () {
+            window.location.href = "../WInventory/Index";
+        });
+    });
+
+</script>

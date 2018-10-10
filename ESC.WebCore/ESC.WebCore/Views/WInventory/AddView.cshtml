@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "AddView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="InventoryForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>仓库编码：</label>
+            <span>
+                <input type="text" class="form-control" name="WarehouseCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>货位编码：</label>
+            <span>
+                <input type="text" class="form-control" name="PositionCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>物料编码：</label>
+            <span>
+                <input type="text" class="form-control" name="MaterialCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>批次：</label>
+            <span>
+                <input type="text" class="form-control" name="Batch" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="InventoryBtns" class="SearchBtns">
+                <button id="btnSearch" class="btn btn-default" style="padding-right: 5px;" data-click="add"><i class="fa fa-search"></i>查询</button>
+                <button id="btnSure" class="btn btn-default" style="padding-right: 5px;" data-click="add"><i class="fa fa-check">保存</i></button>
+                <input type="hidden" id="HidGetInventoryCode" value="@ViewBag.InventoryCode" />
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="InventoryGrid">
+</div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "WInventory", SearchForm: "#InventoryForm", DataGrid: "#InventoryGrid" });
+    var fcommon = new CommonBUI({ controller: "WStock" });
+    var bGrid = null;
+
+    //查询
+    common.search = function () {
+        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+        fcommon.Select(whereItems, 0, 0, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    //保存
+    common.save = function () {
+        var lines = bGrid.getDirtyData();
+        var data = [], code = '';
+        for (var i = 0; i < lines.length; i++) {
+            if (!BUI.isNullOrEmpty(lines[i].InventoryCount)) {
+                data.push(lines[i]);
+            }
+        }
+        code = $("#HidGetInventoryCode").val();
+        var addItems = "add=" + JSON.stringify(data) + "&code=" + code;
+        if (data) {
+            if (data.length > 0) {
+                common.post(common.controller, "Add", addItems, function () {
+                    CommonBUI.alert("提示", "保存成功");
+                });
+            } else {
+                CommonBUI.alert("提示", "盘点明细不能为空");
+            }
+        }
+    }
+
+    //初始化列显示隐藏
+    function initUserColumns(iData) {
+        for (var i = 0; i < iData.Columns.length; i++) {
+            switch (iData.Columns[i].dataIndex) {
+                case "InventoryDiff":
+                    iData.Columns[i].renderer = function (value, row, index) {
+                        if (BUI.isNullOrEmpty(row.InventoryCount)) {
+                            return "";
+                        } else {
+                            return parseFloat(row.InventoryCount)-parseFloat(row.StockCount);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: common.DataGrid,
+            common: common,
+            editable: true
+        });
+
+        //分页查询
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            fcommon.Select(whereItems, pageIndex, pageSize, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+        bGrid.onInit = function (opt) {
+            opt.tbar = undefined;
+
+        }
+        bGrid.init();
+        common.search();
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.ForeignInit("WInventoryLine", function (iData) {
+            common.initData = iData;
+
+            initUserColumns(iData);
+            //初始化grid
+            initGrid(iData);
+        });
+
+        $("#btnSearch").click(function () {
+            common.search();
+        });
+
+        $("#btnSure").click(function () {
+            common.save();
+        });
+    });
+
+</script>

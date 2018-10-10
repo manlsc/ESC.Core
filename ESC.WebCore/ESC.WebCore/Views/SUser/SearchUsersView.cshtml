@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "SearchUsersView";
+    Layout = "~/Views/Shared/_LayoutSingle.cshtml";
+}
+
+<div id="UserForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>编码：</label>
+            <span>
+                <input type="text" class="form-control" name="UserCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>名称：</label>
+            <span>
+                <input type="text" class="form-control" name="UserName" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="UserBtns" class="SearchBtns">
+                <button id="btnSearch" class="btn btn-default" style="padding-right:5px;"><i class="fa fa-search"></i>查询</button>
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="UserGrid">
+</div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "SUser", SearchForm: "#UserForm", DataGrid: "#UserGrid" });
+    var bGrid = null;
+
+    //查询
+    common.search = function () {
+        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+        common.Select(whereItems, 0, 0, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: common.DataGrid,
+            common: common,
+            checkbox: true
+        });
+        //分页查询
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            common.Select(whereItems, pageIndex, pageSize, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+        bGrid.init();
+        common.search();
+    }
+
+    //获取返回值
+    function getData() {
+        return bGrid.getSelected();
+    }
+
+    //初始化列显示隐藏
+    function initColumns(iData) {
+        for (var i = 0; i < iData.Columns.length; i++) {
+            switch (iData.Columns[i].dataIndex) {
+                case "CreateDate":
+                case "CreateBy":
+                case "UpdateDate":
+                case "UpdateBy":
+                    iData.Columns[i].visible = false;
+                    break;
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            //初始化grid
+            initColumns(iData);
+            initGrid(iData);
+        });
+
+        //查询
+        $("#btnSearch").click(function () {
+            common.search();
+        });
+
+        //绑定回车查询
+        $("#UserForm").find("input:text").keyup(function (e) {
+            if (e.which == BUI.KeyCode.ENTER) {
+                common.search();
+            }
+        });
+    });
+
+</script>
+

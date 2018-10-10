@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  ESC.Infrastructure.ComboxData
+
+<div id="OtherInForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>入库单号：</label>
+            <span>
+                <input type="text" class="form-control" name="OtherInCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>状态：</label>
+            <span>
+                <select class="form-control" name="StockStatus">
+                    <option selected="selected" value="">全部</option>
+                    @for (int i = 0; i < Model.items.Count; i++)
+                    {
+                        <option value="@Model.items[i].value">@Model.items[i].text</option>
+                    }
+                </select>
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>入库类型：</label>
+            <span>
+                <select class="form-control" name="StockInType">
+                    <option selected="selected" value="">全部</option>
+                    <option value="3">其他入库</option>
+                    <option value="4">盘盈入库</option>
+                </select>
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>创建时间：</label>
+            <span>
+                <input class="form-control calendar" type="text" name="CreateDate_begin" />
+            </span>
+            <span>-</span>
+            <span>
+                <input class="form-control calendar" type="text" name="CreateDate_end" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="OtherInBtns" class="SearchBtns">
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="OtherInGrid">
+</div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "WOtherIn", SearchForm: "#OtherInForm", DataGrid: "#OtherInGrid" });
+    var bGrid = null;
+
+    //查询
+    common.search = function () {
+        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+        common.Select(whereItems, 0, 0, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    //删除
+    common.remove = function () {
+        var deleteRow = bGrid.getSelected();
+        if (deleteRow) {
+            common.Delete(deleteRow, function () {
+                common.search();
+            });
+        }
+    }
+
+    //添加
+    common.add = function () {
+        window.location.href = "../WOtherIn/AddView";
+    }
+
+    //编辑
+    common.edit = function () {
+        var deleteRow = bGrid.getSelected();
+        if (deleteRow) {
+            window.location.href = "../WOtherIn/UpdateView?ID=" + deleteRow.ID + "&StockStatus=" + deleteRow.StockStatus;
+        }
+    }
+
+    //审核
+    common.approve = function () {
+        var editRow = bGrid.getSelected();
+        if (editRow == null) {
+            CommonBUI.alert("提示", "请选择审核的记录.", "warning");
+            return false;
+        }
+        var data = "app=" + CommonBUI.UrlEncode(JSON.stringify(editRow));
+        common.post(common.controller, "Approve", data, function (rdata) {
+            if (rdata.status == 0) {
+                CommonBUI.alert("提示", "审核成功.", "success");
+                common.search();
+            } else {
+                CommonBUI.alert("提示", rdata.message);
+            }
+        });
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: common.DataGrid,
+            common: common
+        });
+
+        //分页查询
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            common.Select(whereItems, pageIndex, pageSize, function (result) {
+                bGrid.setResult(result);
+            });
+        };
+
+        //初始化
+        bGrid.onInit = function (dftGrid) {
+            for (var i = 0; i < dftGrid.columns.length; i++) {
+                var col = dftGrid.columns[i];
+                if (col.dataIndex == "OtherInCode") {
+                    col.renderer = function (value, record, index) {
+                        return '<a href="../WOtherIn/UpdateView?ID=' + record.ID + "&StockStatus=" + record.StockStatus + '">' + value + '<a>';
+                    }
+                }
+            }
+        }
+        bGrid.init();
+        common.search();
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            //按钮初始化
+            common.InitCommonds(common, $("#OtherInBtns"), iData.Commands);
+            //初始化grid
+            initGrid(iData);
+        });
+
+        var datepicker = new BUI.Calendar.DatePicker({
+            trigger: '.calendar',
+            autoRender: true
+        });
+
+        //绑定回车查询
+        $(common.SearchForm).find("input:text").keyup(function (e) {
+            if (e.which == BUI.KeyCode.ENTER) {
+                common.search();
+            }
+        });
+    });
+
+</script>

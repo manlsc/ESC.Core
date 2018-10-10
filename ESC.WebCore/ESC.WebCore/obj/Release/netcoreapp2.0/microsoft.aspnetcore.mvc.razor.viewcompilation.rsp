@@ -1,0 +1,12 @@
+E:\demo\ESC.WebCore\ESC.WebCore
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=ESC.WebCore
+--content-root=E:\demo\ESC.WebCore\ESC.WebCore
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Home\About.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Home\Contact.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Home\Index.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Shared\Error.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Shared\_Layout.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\_ViewImports.cshtml
+--file=E:\demo\ESC.WebCore\ESC.WebCore\Views\_ViewStart.cshtml

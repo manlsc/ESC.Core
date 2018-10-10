@@ -1,0 +1,24 @@
+﻿<jscompress public="http://www.jscompress.cn/" command="import-combineset">
+<combinefile path="bui.js">
+    <auto value="0" />
+    <sourcefile path=".\01common.js" />
+    <sourcefile path=".\02cookie.js" />
+    <sourcefile path=".\03data.js" />
+    <sourcefile path=".\04mask.js" />
+    <sourcefile path=".\05list.js" />
+    <sourcefile path=".\06toolbar.js" />
+    <sourcefile path=".\07overlay.js" />
+    <sourcefile path=".\08menu.js" />
+    <sourcefile path=".\09picker.js" />
+    <sourcefile path=".\10select.js" />
+    <sourcefile path=".\11calendar.js" />
+    <sourcefile path=".\12layout.js" />
+    <sourcefile path=".\13tooltip.js" />
+    <sourcefile path=".\14tree.js" />
+    <sourcefile path=".\15tab.js" />
+    <sourcefile path=".\16slider.js" />
+    <sourcefile path=".\17form.js" />
+    <sourcefile path=".\19grid.js" />
+    <sourcefile path=".\20exts.js" />
+</combinefile>
+</jscompress>

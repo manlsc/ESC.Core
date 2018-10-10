@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="RoleForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>名称：</label>
+            <span>
+                <input type="text" class="form-control" name="RoleName" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="RoleBtns" class="SearchBtns">
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="RoleGrid">
+</div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "SRole", SearchForm: "#RoleForm", DataGrid: "#RoleGrid" });
+    var bGrid = null;
+
+    //查询
+    common.search = function () {
+        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+        common.Select(whereItems, 0, 0, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    //删除
+    common.remove = function () {
+        var deleteRow = bGrid.getSelected();
+        common.Delete(deleteRow, function () {
+            common.search();
+        });
+    }
+
+    //添加
+    common.add = function () {
+        var form = new BuiForm({ common: common, data: {}, type: "add" });
+
+        form.save = function (data) {
+            common.Insert(data, function () {
+                common.search();
+                form.close();
+            });
+        }
+
+        form.fSearch = function (opts) {
+            var s = opts;
+        }
+
+        form.show(800, 200);
+    }
+
+    //编辑
+    common.edit = function () {
+        var editRow = bGrid.getSelected();
+        if (editRow == null) {
+            CommonBUI.alert("提示", "请选择编辑的记录.", "warning");
+            return false;
+        }
+        var form = new BuiForm({ data: editRow, common: common, type: "edit" });
+
+        form.save = function (data) {
+            common.Update(data, function () {
+                common.search();
+                form.close();
+            });
+        }
+        form.show(800, 200);
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: common.DataGrid,
+            common: common
+        });
+
+        //分页查询
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            common.Select(whereItems, pageIndex, pageSize, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+
+        bGrid.init();
+        common.search();
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            //按钮初始化
+            common.InitCommonds(common, $("#" + "RoleBtns"), iData.Commands);
+            //初始化grid
+            initGrid(iData);
+        });
+
+        //绑定回车查询
+        $(common.SearchForm).find("input:text").keyup(function (e) {
+            if (e.which == BUI.KeyCode.ENTER) {
+                common.search();
+            }
+        });
+    });
+
+</script>

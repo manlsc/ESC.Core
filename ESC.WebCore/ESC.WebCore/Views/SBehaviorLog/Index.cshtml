@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="BehaviorLogForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>操作人：</label>
+            <span>
+                <input type="text" class="form-control" name="UserName" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>请求地址：</label>
+            <span>
+                <input type="text" class="form-control" name="ReqUrl" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>请求方法：</label>
+            <span>
+                <select class="form-control" name="HttpMethod">
+                    <option selected="selected" value="">全部</option>
+                    <option value="POST">POST</option>
+                    <option value="GET">GET</option>
+                </select>
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>创建时间：</label>
+            <span>
+                <input class="form-control calendar" type="text" name="ReqDate_begin" />
+            </span>
+            <span>-</span>
+            <span>
+                <input class="form-control calendar" type="text" name="ReqDate_end" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="BehaviorLogBtns" class="SearchBtns">
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="BehaviorLogGrid">
+</div>
+
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "SBehaviorLog", SearchForm: "#BehaviorLogForm", DataGrid: "#BehaviorLogGrid" });
+    var bGrid = null;
+
+    //查询
+    common.search = function () {
+        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+        common.Select(whereItems, 0, 0, function (result) {
+            bGrid.setResult(result);
+        });
+    }
+
+    //初始化grid
+    function initGrid(iData) {
+        bGrid = new BUIGrid({
+            render: common.DataGrid,
+            common: common
+        });
+
+        //分页查询
+        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            common.Select(whereItems, pageIndex, pageSize, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+
+        bGrid.onInit = function (opts) {
+            //参数长度太大,折行,所以最多显示90个字符
+            for (var i = 0; i < opts.columns.length; i++) {
+                if (opts.columns[i].dataIndex == "ReqParams") {
+                    opts.columns[i].renderer = function (value) {
+                        value = value || "";
+                        if (value.toString().length > 90) {
+                            return value.toString().substring(0, 90) + "...";
+                        }
+                        return value;
+                    }
+                    break;
+                }
+            }
+        }
+
+        bGrid.init();
+        common.search();
+    }
+
+    $(document).ready(function () {
+        //初始化
+        common.Init(function (iData) {
+            //按钮初始化
+            common.InitCommonds(common, $("#BehaviorLogBtns"), iData.Commands);
+            //初始化grid
+            initGrid(iData);
+        });
+
+        var datepicker = new BUI.Calendar.DatePicker({
+            trigger: '.calendar',
+            autoRender: true
+        });
+
+        //绑定回车查询
+        $(common.SearchForm).find("input:text").keyup(function (e) {
+            if (e.which == BUI.KeyCode.ENTER) {
+                common.search();
+            }
+        });
+    });
+
+</script>
+

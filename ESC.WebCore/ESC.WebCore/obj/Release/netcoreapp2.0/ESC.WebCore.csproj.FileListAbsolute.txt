@@ -1,0 +1,14 @@
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\ESC.WebCore.deps.json
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\ESC.WebCore.runtimeconfig.json
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\ESC.WebCore.runtimeconfig.dev.json
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\ESC.WebCore.dll
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\ESC.WebCore.pdb
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\Dapper.Extensions.dll
+E:\demo\ESC.WebCore\ESC.WebCore\bin\Release\netcoreapp2.0\Dapper.Extensions.pdb
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.csprojAssemblyReference.cache
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.csproj.CoreCompileInputs.cache
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.AssemblyInfoInputs.cache
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.AssemblyInfo.cs
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.csproj.CopyComplete
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.dll
+E:\demo\ESC.WebCore\ESC.WebCore\obj\Release\netcoreapp2.0\ESC.WebCore.pdb

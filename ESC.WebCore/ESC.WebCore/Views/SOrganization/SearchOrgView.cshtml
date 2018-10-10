@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "SearchOrgView";
+    Layout = "~/Views/Shared/_LayoutSingle.cshtml";
+}
+<div id="OrgTree"></div>
+<script type="text/javascript">
+    var common = new CommonBUI({ controller: "SOrganization", TreeList: "#OrgTree" });
+
+        var store = new BUI.Data.TreeStore();
+        //由于这个树，不显示根节点，所以可以不指定根节点
+        var tree = new BUI.Tree.TreeList({
+            render: common.TreeList,
+            store: store
+        });
+        tree.render();
+
+        $(document).ready(function () {
+            common.get(common.controller, "GetTree", "", function (data) {
+                store.setResult(data);
+            });          
+        });
+            
+        //获取返回值
+        function getData() {
+            return tree.getSelected();
+        }
+</script>

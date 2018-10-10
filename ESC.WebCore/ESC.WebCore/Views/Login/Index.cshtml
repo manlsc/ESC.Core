@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>登陆</title>
+    <script src="~/lib/plugins/jquery.js"></script>
+    <link href="~/lib/login/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login">
+        <div class="message">仓储系统-管理登录</div>
+        <div id="darkbannerwrap"></div>
+        <form method="post">
+            <input name="action" value="login" type="hidden">
+            <input name="username" id="UserName" placeholder="用户名" value="admin" required="true" type="text">
+            <hr class="hr15">
+            <input name="password" id="Password" placeholder="密码" value="admin" =required="true" type="password">
+            <hr class="hr15">
+            <input value="登录" onclick="userLogin();" style="width:100%;" type="button">
+            <hr class="hr20">
+        </form>
+        <div>
+            <p style="color:#ff0000;" id="msg"></p>
+        </div>
+    </div>
+    <div class="copyright">仓储系统 by<a href="javascript:void(0);">ESC</a></div>
+    <script type="text/javascript">
+        $("#Password").bind({
+            keydown: function (event) {
+                if (event.which == 13 || event.keyCode == 13) {
+                    userLogin();
+                }
+            }
+        });
+
+        function userLogin() {
+            var uName = $("#UserName").val();
+            var uPassword = $("#Password").val();
+            if ($.trim(uName) == "") {
+                $("#msg").html("请输入用户名！");
+                return false;
+            }
+            if ($.trim(uPassword) == "") {
+                $("#msg").html("请输入密码！");
+                return false;
+            }
+            var data = "UserName=" + uName + "&Password=" + uPassword;
+            $.ajax({
+                cache: false,
+                url: "/Login/Login",
+                data: data,
+                type: "POST",
+                datatype: "text",
+                success: function (result) {
+                    if (result.substring(0, 4) == "true") {
+                        window.location = "/Home/Index"
+                    } else {
+                        $("#msg").html(result);
+                    }
+                },
+                error: function (err) {
+                    $("#msg").html("登录失败！");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
