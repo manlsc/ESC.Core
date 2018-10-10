@@ -13,7 +13,7 @@ using Dapper.Extensions;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 资源
+    /// 资源 +
     /// </summary>
     public class SResourceRepository : BaseRepository<SResource>
     {
@@ -45,9 +45,9 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public string GetSearchSql()
         {
-            string searchSql = @"SELECT  RS.* ,
+            string searchSql = @"SELECT RS.* ,
                                         P.ResourceDesc ParentName
-                                FROM    SResource RS WITH ( NOLOCK )
+                                 FROM   SResource RS WITH ( NOLOCK )
                                         LEFT JOIN SResource P WITH ( NOLOCK ) ON RS.ParentID = P.ID";
             return searchSql;
         }

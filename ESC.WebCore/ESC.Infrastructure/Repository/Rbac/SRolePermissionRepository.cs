@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 角色权限 +
+    /// </summary>
     public class SRolePermissionRepository : BaseRepository<SRolePermission>
     {
         #region 构造

@@ -11,7 +11,7 @@ using Dapper.Extensions;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 角色
+    /// 角色 +
     /// </summary>
     public class SRoleRepository : BaseRepository<SRole>
     {

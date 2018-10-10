@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 列权限 +
+    /// </summary>
    public class SCPermissionRepository : BaseRepository<SCPermission>
     {
         #region 构造

@@ -8,6 +8,9 @@ using ESC.Infrastructure.Repository;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 组织机构 +
+    /// </summary>
     public class SOrganizationRepository : BaseRepository<SOrganization>
     {
         #region 构造
@@ -38,7 +41,7 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public string GetSearchSql()
         {
-            string searchSql = @"SELECT  O.* ,
+            string searchSql = @"SELECT O.* ,
                                         U.UserName ,
                                         P.OrgName ParentName,
                                         CE.EnumDesc AS InUseName

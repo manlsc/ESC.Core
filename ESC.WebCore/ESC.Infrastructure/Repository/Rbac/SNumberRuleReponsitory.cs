@@ -8,6 +8,9 @@ using System.Text;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 单号规则 +
+    /// </summary>
     public class SNumberRuleRepository : BaseRepository<SNumberRule>
     {
         #region 构造
@@ -60,7 +63,7 @@ namespace ESC.Infrastructure.Repository
         public int AddSNumberRule(SNumberRule num)
         {
             //添加序列
-            string sql = "CREATE SEQUENCE [dbo].[Sequence-" + num.BusinessType + "] ";
+            string sql = "CREATE SEQUENCE [Sequence-" + num.BusinessType + "] ";
             sql += " AS [bigint]";
             sql += " START WITH " + num.StartSeq;
             sql += " INCREMENT BY 1";
@@ -85,9 +88,9 @@ namespace ESC.Infrastructure.Repository
             SNumberRule oldNum = SingleOrDefault(num.ID);
 
             //删除序列
-            string delSeq = "DROP SEQUENCE [dbo].[Sequence-" + oldNum.BusinessType + "] ";
+            string delSeq = "DROP SEQUENCE [Sequence-" + oldNum.BusinessType + "] ";
             //添加序列
-            string sql = "CREATE SEQUENCE [dbo].[Sequence-" + num.BusinessType + "] ";
+            string sql = "CREATE SEQUENCE [Sequence-" + num.BusinessType + "] ";
             sql += " AS [bigint]";
             sql += " START WITH " + num.StartSeq;
             sql += " INCREMENT BY 1";
@@ -108,7 +111,7 @@ namespace ESC.Infrastructure.Repository
         public bool DeleteSNumberRule(SNumberRule num)
         {
             //删除序列
-            string delSeq = "DROP SEQUENCE [dbo].[Sequence-" + num.BusinessType + "] ";
+            string delSeq = "DROP SEQUENCE [Sequence-" + num.BusinessType + "] ";
             Execute(delSeq);
             return Delete(num);
         }
@@ -123,7 +126,7 @@ namespace ESC.Infrastructure.Repository
             //获取单号
             string sql = "SELECT * FROM SNumberRule WITH(NOLOCK) WHERE BusinessType='" + businessType + "'";
             SNumberRule bill = FirstOrDefault(sql);
-            string sqlSeq = "SELECT NEXT VALUE FOR [dbo].[Sequence-" + businessType + "]";
+            string sqlSeq = "SELECT NEXT VALUE FOR [Sequence-" + businessType + "]";
             string seq = ExecuteScalar<string>(sqlSeq);
             StringBuilder sb = new StringBuilder();
             sb.Append(bill.Prefix);

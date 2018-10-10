@@ -50,13 +50,13 @@ namespace ESC.Infrastructure.Repository
             }
             else
             {
-                strSql = "SELECT DISTINCT RS.* FROM SUser U WITH(NOLOCK) ";
-                strSql += " INNER JOIN SUserRole UR WITH(NOLOCK) ON U.ID=UR.UserID";
-                strSql += " INNER JOIN SRole R WITH(NOLOCK) ON UR.RoleID=R.ID";
-                strSql += " INNER JOIN SRolePermission RP WITH(NOLOCK) ON R.ID=RP.RoleID";
-                strSql += " INNER JOIN SResource RS WITH(NOLOCK) ON RP.ResourceID=RS.ID";
-                strSql += " WHERE U.ID=" + userId + " ORDER BY RS.OrderIndex ASC";
-            }
+                strSql = @"  SELECT DISTINCT RS.* FROM SUser U WITH(NOLOCK) 
+                             INNER JOIN SUserRole UR WITH(NOLOCK) ON U.ID=UR.UserID
+                             INNER JOIN SRole R WITH(NOLOCK) ON UR.RoleID=R.ID
+                             INNER JOIN SRolePermission RP WITH(NOLOCK) ON R.ID=RP.RoleID
+                             INNER JOIN SResource RS WITH(NOLOCK) ON RP.ResourceID=RS.ID
+                             WHERE U.ID=" + userId + " ORDER BY RS.OrderIndex ASC";
+                        }
             return dbContext.Connection.Query<SResource>(strSql).ToList();
         }
 
@@ -67,9 +67,9 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public List<SResource> GetRPermissionByRole(int roleId)
         {
-            string strSql = "SELECT RS.* FROM SResource RS WITH(NOLOCK)";
-            strSql += " LEFT JOIN SRolePermission RP WITH(NOLOCK) ON RP.ResourceID=RS.ID";
-            strSql += " WHERE RP.RoleID=" + roleId + " ORDER BY RS.OrderIndex ASC";
+            string strSql = @"SELECT RS.* FROM SResource RS WITH(NOLOCK)
+                             LEFT JOIN SRolePermission RP WITH(NOLOCK) ON RP.ResourceID=RS.ID
+                             WHERE RP.RoleID=" + roleId + " ORDER BY RS.OrderIndex ASC";
             return dbContext.Connection.Query<SResource>(strSql).ToList();
         }
 
@@ -242,7 +242,7 @@ namespace ESC.Infrastructure.Repository
         /// <summary>
         /// 初始化角色菜单
         /// </summary>
-        /// <param name="?"></param>
+        /// <param name="roleId"></param>
         /// <returns></returns>
         public int InitMenu(int roleId)
         {

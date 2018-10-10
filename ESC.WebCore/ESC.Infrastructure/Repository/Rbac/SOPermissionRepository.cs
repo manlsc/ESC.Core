@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 操作权限 +
+    /// </summary>
     public class SOPermissionRepository:BaseRepository<SOPermission>
     {
         #region 构造

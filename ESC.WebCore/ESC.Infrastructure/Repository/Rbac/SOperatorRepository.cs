@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 操作 +
+    /// </summary>
    public class SOperatorRepository:BaseRepository<SOperator>
     {
         #region 构造
