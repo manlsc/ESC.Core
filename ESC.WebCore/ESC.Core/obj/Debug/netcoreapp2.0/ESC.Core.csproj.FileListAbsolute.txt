@@ -6,3 +6,12 @@ E:\demo\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.AssemblyInfoInputs
 E:\demo\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.AssemblyInfo.cs
 E:\demo\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.dll
 E:\demo\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.0\ESC.Core.deps.json
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.0\ESC.Core.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.0\ESC.Core.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.csprojAssemblyReference.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.csproj.CoreCompileInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.AssemblyInfoInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.AssemblyInfo.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.0\ESC.Core.pdb

@@ -254,7 +254,7 @@
     CommonBUI.prototype.InitCommonds = function (common, btnContainer, commands) {
         for (var i = 0; i < commands.length; i++) {
             var opt = commands[i];
-            var btn = $('<button id="' + common.controller + opt.onClick + '" data-click="' + opt.onClick + '" class="btn btn-default" style="padding-right:5px;"><i class="' + opt.iconClass + '"></i>' + opt.CommandName + '</button>');
+            var btn = $('<button id="' + common.controller + opt.OnClick + '" data-click="' + opt.OnClick + '" class="btn btn-default" style="padding-right:5px;"><i class="' + opt.IconClass + '"></i>' + opt.CommandName + '</button>');
             btn.appendTo(btnContainer).click(function () {
                 var onclick = $(this).attr("data-click");
                 common[onclick] && common[onclick].call(common);

@@ -1,0 +1,9 @@
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\bin\Debug\netcoreapp2.2\Dapper.Extensions.deps.json
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\bin\Debug\netcoreapp2.2\Dapper.Extensions.dll
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\bin\Debug\netcoreapp2.2\Dapper.Extensions.pdb
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.csprojAssemblyReference.cache
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.csproj.CoreCompileInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.AssemblyInfoInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.AssemblyInfo.cs
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.dll
+E:\demo\ESC.Core\ESC.WebCore\Dapper.Extensions\obj\Debug\netcoreapp2.2\Dapper.Extensions.pdb

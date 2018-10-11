@@ -134,8 +134,8 @@ namespace ESC.Service
         /// <summary>
         /// 删除用户和角色关系
         /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="ID"></param>
+        /// <param name="userID"></param>
+        /// <param name="roleId"></param>
         /// <returns></returns>
         public int RemoveUserRoleRelation(int userID, int roleId)
         {
@@ -145,7 +145,7 @@ namespace ESC.Service
         /// <summary>
         /// 根据角色ID获取角色用户关系
         /// </summary>
-        /// <param name="ID"></param>
+        /// <param name="roleId"></param>
         /// <returns></returns>
         public List<SUserRole> GetUserRoleByRole(int roleId)
         {

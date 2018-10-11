@@ -1,0 +1,14 @@
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\ESC.Infrastructure.deps.json
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\ESC.Infrastructure.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\ESC.Infrastructure.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\Dapper.Extensions.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\ESC.Core.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\Dapper.Extensions.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\bin\Debug\netcoreapp2.2\ESC.Core.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.csprojAssemblyReference.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.csproj.CoreCompileInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.AssemblyInfoInputs.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.AssemblyInfo.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.csproj.CopyComplete
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.dll
+E:\demo\ESC.Core\ESC.WebCore\ESC.Infrastructure\obj\Debug\netcoreapp2.2\ESC.Infrastructure.pdb

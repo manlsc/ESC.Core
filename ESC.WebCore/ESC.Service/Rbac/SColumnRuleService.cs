@@ -10,6 +10,9 @@ using System.Text;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 列操作
+    /// </summary>
     public class SColumnService
     {
 

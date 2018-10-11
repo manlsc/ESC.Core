@@ -20,147 +20,145 @@
     <script type="text/javascript" src="~/lib/BuiGrid.js"></script>
 </head>
 <body>
-    <body>
-        <div id="bui-layout" class="bui-view-port bui-border-layout">
-            <div class="bui-layout-border">
-                <div class="bui-border-top">
-                    <div id="bui-layout-north" style="height:50px;" class="bui-border-north bui-layout-item-border">
-                        <div id="mainNav" class="main-header">
-                            <a href="#" class="logo">
-                                <b>ESC</b>wms
-                            </a>
-                            <div class="header-nav">
-                                <div href="#" id="btnUserName" class="header-center">
-                                    @*@CurrentUser.Remark*@
-                                </div>
-                                <a href="#" id="btnExit" class="header-right">
-                                    &nbsp; <i class="fa fa-sign-out"></i>退出 &nbsp;
-                                </a>
-                                <a href="#" id="btnUpdPwd" class="header-right">
-                                    &nbsp;<i class="fa fa-expeditedssl"></i> 修改密码   &nbsp;
-                                </a>
+    <div id="bui-layout" class="bui-view-port bui-border-layout">
+        <div class="bui-layout-border">
+            <div class="bui-border-top">
+                <div id="bui-layout-north" style="height:50px;" class="bui-border-north bui-layout-item-border">
+                    <div id="mainNav" class="main-header">
+                        <a href="#" class="logo">
+                            <b>ESC</b>wms
+                        </a>
+                        <div class="header-nav">
+                            <div href="#" id="btnUserName" class="header-center">
+                                @*@CurrentUser.Remark*@
                             </div>
-
+                            <a href="#" id="btnExit" class="header-right">
+                                &nbsp; <i class="fa fa-sign-out"></i>退出 &nbsp;
+                            </a>
+                            <a href="#" id="btnUpdPwd" class="header-right">
+                                &nbsp;<i class="fa fa-expeditedssl"></i> 修改密码   &nbsp;
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="bui-border-middle" style="min-height:500px;">
-                    <div id="bui-layout-west" style="width:230px;" class="bui-border-west bui-layout-item-border">
-                        <ul class="bui-side-menu sidebar-menu" id="mainMenu">
-                            @await Component.InvokeAsync("SideMenu", new { userId = 1, superUser = 1 , url =Context.Request.Path.Value })
-                        </ul>
-                    </div>
-                    <div id="bui-layout-center" style="overflow-y:auto;" class="bui-border-center bui-layout-item-border">
-                        @RenderBody()
+
                     </div>
                 </div>
             </div>
+            <div class="bui-border-middle" style="min-height:500px;">
+                <div id="bui-layout-west" style="width:230px;" class="bui-border-west bui-layout-item-border">
+                    <ul class="bui-side-menu sidebar-menu" id="mainMenu">
+                        @await Component.InvokeAsync("SideMenu", new { userId = 1, superUser = 1, url = Context.Request.Path.Value })
+                    </ul>
+                </div>
+                <div id="bui-layout-center" style="overflow-y:auto;" class="bui-border-center bui-layout-item-border">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
-        <form id="frmUserUpdate" class="hidden">
-            <table style="border-collapse:separate;" width="100%">
-                <tr><td style="padding:5px;">旧密码：</td><td style="padding:5px;"><input id="usOldPwd" type="password" required="" style="width:200px;" class="form-control" /></td></tr>
-                <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmOldErrMsg" style="color:red;"></div></td></tr>
-                <tr><td style="padding:5px;">新密码：</td><td style="padding:5px;"><input id="usNewPwd" type="password" required="" style="width:200px;" class="form-control" /></td></tr>
-                <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmNewErrMsg" style="color:red;"></div></td></tr>
-                <tr><td style="padding:5px;">确认密码：</td><td style="padding:5px;"><input id="usNewSecPwd" required="" style="width:200px;" type="password" class="form-control" /></td></tr>
-                <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmSecErrMsg" style="color:red;"></div></td></tr>
-            </table>
-        </form>
-        <script type="text/javascript">
-            //布局
-            var layoutControl = new BUI.Layout.BuiLayout({
-                srcNode: "#bui-layout",
-                children: [{
-                    xclass: 'controller',
-                    srcNode: "#bui-layout-north",
-                    region: 'north',
-                    height: 50
-                }, {
-                    srcNode: "#bui-layout-west",
-                    xclass: 'controller',
-                    region: 'west',
-                    width: 230
-                }, {
-                    srcNode: "#bui-layout-center",
-                    xclass: 'controller',
-                    region: 'center'
-                }]
-            });
-            layoutControl.render();
+    </div>
+    <form id="frmUserUpdate" class="hidden">
+        <table style="border-collapse:separate;" width="100%">
+            <tr><td style="padding:5px;">旧密码：</td><td style="padding:5px;"><input id="usOldPwd" type="password" required="" style="width:200px;" class="form-control" /></td></tr>
+            <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmOldErrMsg" style="color:red;"></div></td></tr>
+            <tr><td style="padding:5px;">新密码：</td><td style="padding:5px;"><input id="usNewPwd" type="password" required="" style="width:200px;" class="form-control" /></td></tr>
+            <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmNewErrMsg" style="color:red;"></div></td></tr>
+            <tr><td style="padding:5px;">确认密码：</td><td style="padding:5px;"><input id="usNewSecPwd" required="" style="width:200px;" type="password" class="form-control" /></td></tr>
+            <tr><td colspan="2" style="vertical-align:central;text-align:center;"><div id="frmSecErrMsg" style="color:red;"></div></td></tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+        //布局
+        var layoutControl = new BUI.Layout.BuiLayout({
+            srcNode: "#bui-layout",
+            children: [{
+                xclass: 'controller',
+                srcNode: "#bui-layout-north",
+                region: 'north',
+                height: 50
+            }, {
+                srcNode: "#bui-layout-west",
+                xclass: 'controller',
+                region: 'west',
+                width: 230
+            }, {
+                srcNode: "#bui-layout-center",
+                xclass: 'controller',
+                region: 'center'
+            }]
+        });
+        layoutControl.render();
 
-            //左侧菜单
-            var leftMenu = new BUI.Menu.SideMenu({
-                render: "#mainMenu"
-            });
-            layoutControl.on("resize", function () {
-                leftMenu.syncFit();
-            });
+        //左侧菜单
+        var leftMenu = new BUI.Menu.SideMenu({
+            render: "#mainMenu"
+        });
+        layoutControl.on("resize", function () {
             leftMenu.syncFit();
+        });
+        leftMenu.syncFit();
 
-            //退出
-            $("#btnExit").click(function () {
-                var comm = new CommonBUI();
-                comm.get("Home", "Logout", {}, function (rdata) {
-                    window.location.href = "/Login/Index";
-                });
+        //退出
+        $("#btnExit").click(function () {
+            var comm = new CommonBUI();
+            comm.get("Home", "Logout", {}, function (rdata) {
+                window.location.href = "/Login/Index";
             });
+        });
 
-            //修改密码
-            var dialog = new BUI.Overlay.Dialog({
-                title: "修改密码",
-                width: 400,
-                height: 200,
-                contentId: "frmUserUpdate",
-                listeners: {
-                    show: function () {
-                        var oldPwd = $("#usOldPwd").val("");
-                        var newPwd = $("#usNewPwd").val("");
-                        var newSecPwd = $("#usNewSecPwd").val("");
-                        $("#frmOldErrMsg").html("");
-                        $("#frmNewErrMsg").html("");
-                        $("#frmSecErrMsg").html("");
-                    }
-                },
-                success: function () {
-                    var oldPwd = $("#usOldPwd").val();
-                    var newPwd = $("#usNewPwd").val();
-                    var newSecPwd = $("#usNewSecPwd").val();
-                    if (BUI.isNullOrEmpty(oldPwd)) {
-                        $("#frmOldErrMsg").html("请输入旧密码");
-                        return false;
-                    } else {
-                        $("#frmOldErrMsg").html("");
-                    }
-
-                    if (BUI.isNullOrEmpty(newPwd)) {
-                        $("#frmNewErrMsg").html("请输入新密码");
-                        return false;
-                    } else {
-                        $("#frmNewErrMsg").html("");
-                    }
-                    if (newPwd != newSecPwd) {
-                        $("#frmSecErrMsg").html("确认密码和新密码不一致");
-                        return false;
-                    } else {
-                        $("#frmSecErrMsg").html("");
-                    }
-
-                    var comm = new CommonBUI();
-                    comm.post("Home", "UpdatePassword", { newPwd: newPwd, oldPwd: oldPwd }, function (rdata) {
-                        if (rdata == "ok") {
-                            CommonBUI.alert("提示", "更新成功");
-                            dialog.close();
-                        } else {
-                            CommonBUI.alert("提示", rdata, "error");
-                        }
-                    });
+        //修改密码
+        var dialog = new BUI.Overlay.Dialog({
+            title: "修改密码",
+            width: 400,
+            height: 200,
+            contentId: "frmUserUpdate",
+            listeners: {
+                show: function () {
+                    var oldPwd = $("#usOldPwd").val("");
+                    var newPwd = $("#usNewPwd").val("");
+                    var newSecPwd = $("#usNewSecPwd").val("");
+                    $("#frmOldErrMsg").html("");
+                    $("#frmNewErrMsg").html("");
+                    $("#frmSecErrMsg").html("");
                 }
-            });
-            $("#btnUpdPwd").click(function () {
-                dialog.show();
-            });
-        </script>
-    </body>
+            },
+            success: function () {
+                var oldPwd = $("#usOldPwd").val();
+                var newPwd = $("#usNewPwd").val();
+                var newSecPwd = $("#usNewSecPwd").val();
+                if (BUI.isNullOrEmpty(oldPwd)) {
+                    $("#frmOldErrMsg").html("请输入旧密码");
+                    return false;
+                } else {
+                    $("#frmOldErrMsg").html("");
+                }
+
+                if (BUI.isNullOrEmpty(newPwd)) {
+                    $("#frmNewErrMsg").html("请输入新密码");
+                    return false;
+                } else {
+                    $("#frmNewErrMsg").html("");
+                }
+                if (newPwd != newSecPwd) {
+                    $("#frmSecErrMsg").html("确认密码和新密码不一致");
+                    return false;
+                } else {
+                    $("#frmSecErrMsg").html("");
+                }
+
+                var comm = new CommonBUI();
+                comm.post("Home", "UpdatePassword", { newPwd: newPwd, oldPwd: oldPwd }, function (rdata) {
+                    if (rdata == "ok") {
+                        CommonBUI.alert("提示", "更新成功");
+                        dialog.close();
+                    } else {
+                        CommonBUI.alert("提示", rdata, "error");
+                    }
+                });
+            }
+        });
+        $("#btnUpdPwd").click(function () {
+            dialog.show();
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
