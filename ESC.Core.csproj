@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36B39179-5EB0-4E03-A27A-B159D010EF69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESC.Core</RootNamespace>
+    <AssemblyName>ESC.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpZipLib_0860\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\Npoi.2.2.00\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\Npoi.2.2.00\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\Npoi.2.2.00\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extension\CollectionExtension.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Helper\CheckHelper.cs" />
+    <Compile Include="Helper\ConvertHelper.cs" />
+    <Compile Include="Helper\CookieHelper.cs" />
+    <Compile Include="Helper\CultureHelper.cs" />
+    <Compile Include="Helper\DisposableResource.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\NlogHelper.cs" />
+    <Compile Include="Helper\RegexHelper.cs" />
+    <Compile Include="Helper\SecurityHelper.cs" />
+    <Compile Include="Helper\ZipHelper.cs" />
+    <Compile Include="Infrastructure\BaskgroundTask\IBackgroundTask.cs" />
+    <Compile Include="Infrastructure\Bootstrapper\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\Bootstrapper\IBootstrapperTask.cs" />
+    <Compile Include="Infrastructure\Cache\Cache.cs" />
+    <Compile Include="Infrastructure\Cache\DicCache.cs" />
+    <Compile Include="Infrastructure\Cache\ICache.cs" />
+    <Compile Include="Infrastructure\Cache\RedisCache.cs" />
+    <Compile Include="Infrastructure\Configuration\ConfigurationManagerWrapper.cs" />
+    <Compile Include="Infrastructure\Configuration\IConfigurationManager.cs" />
+    <Compile Include="Infrastructure\Exception\CoreException.cs" />
+    <Compile Include="Infrastructure\IoC\DependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IoC\IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IoC\IDependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IoC\IoC.cs" />
+    <Compile Include="Infrastructure\Language\BaseResourceProvider.cs" />
+    <Compile Include="Infrastructure\Language\IResourceProvider.cs" />
+    <Compile Include="Infrastructure\Language\ResourceEntry.cs" />
+    <Compile Include="Infrastructure\Logging\ILog.cs" />
+    <Compile Include="Infrastructure\Logging\Log.cs" />
+    <Compile Include="Infrastructure\Net\HttpWebGetRequest.cs" />
+    <Compile Include="Infrastructure\Net\SmtpMailClient.cs" />
+    <Compile Include="Infrastructure\Office\IExcelMapanger.cs" />
+    <Compile Include="Infrastructure\Office\IPdfManager.cs" />
+    <Compile Include="Infrastructure\Office\IWordManager.cs" />
+    <Compile Include="Infrastructure\Office\NopiExcelManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

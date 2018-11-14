@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map name="NETCore" document_type="Blumind" editor_version="1.3.16.0">
+  <!--Create by Blumind, you can download it free from http://www.blumind.org/download-->
+  <info />
+  <layout>MIND_MAP</layout>
+  <attributes>
+    <item name="editor_show_sidebar">False</item>
+  </attributes>
+  <style>
+    <back_color>White</back_color>
+    <fore_color>Black</fore_color>
+    <line_color>LightSlateGray</line_color>
+    <border_color>SlateGray</border_color>
+    <node_back_color>LightGray</node_back_color>
+    <node_fore_color>Black</node_fore_color>
+    <select_color>RoyalBlue</select_color>
+    <hover_color>MediumSlateBlue</hover_color>
+    <link_line_color>Green</link_line_color>
+  </style>
+  <nodes>
+    <node text="Asp.net Core">
+      <style>
+        <back_color>Silver</back_color>
+        <fore_color>Black</fore_color>
+        <border_color>Black</border_color>
+        <padding>12</padding>
+      </style>
+      <nodes>
+        <node text="整体运行流程" />
+        <node text="WebHost">
+          <nodes>
+            <node text="CreateDefaultBuilder">
+              <widgets>
+                <widget type="NOTES" align="Right" hyperlink="">
+                  <description>1、注册 Kestrel 中间件，指定 WebHost 要使用的 Server（HTTP服务器）。
+2、设置 Content 根目录，将当前项目的根目录作为 ContentRoot 的目录。
+3、读取 appsettinggs.json 配置文件，开发环境下的 UserSecrets 以及环境变量和命令行参数。
+4、读取配置文件中的 Logging 节点，对日志系统进行配置。
+5、添加 IISIntegration 中间件。
+6、设置开发环境下， ServiceProvider 的 ValidateScopes 为 true，避免直接在 Configure 方法中获取 Scope 实例。</description>
+                </widget>
+              </widgets>
+              <nodes>
+                <node text="WebHostBuilder">
+                  <nodes>
+                    <node text="_hostingEnvironment">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>默认发布环境(通过设置环境变量配置) 
+HostingEnvironment</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="_configureServicesDelegates">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description> List&lt;Action&lt;WebHostBuilderContext, IServiceCollection&gt;&gt;服务配置集合</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="_configureAppConfigurationBuilderDelegates">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>List&lt;Action&lt;WebHostBuilderContext, IConfigurationBuilder&gt;&gt;配置集合</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="_config">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>IConfiguration 配置集合</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="WebHostBuilderContext">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>主机相关信息上下文
+包含Configuration配置信息</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                  </nodes>
+                </node>
+                <node text="UseKestrel">
+                  <nodes>
+                    <node text="services.AddSingleton&lt;ITransportFactory, LibuvTransportFactory&gt;();">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>添加到_configureServicesDelegates</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="services.AddTransient&lt;IConfigureOptions&lt;KestrelServerOptions&gt;, KestrelServerOptionsSetup&gt;();">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>添加到_configureServicesDelegates</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="services.AddSingleton&lt;IServer, KestrelServer&gt;();">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>添加到_configureServicesDelegates</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                  </nodes>
+                </node>
+                <node text="UseContentRoot">
+                  <widgets>
+                    <widget type="NOTES" align="Right" hyperlink="">
+                      <description>#配置应用程序的根目录
+hostBuilder.UseSetting(WebHostDefaults.ContentRootKey, contentRoot);</description>
+                    </widget>
+                  </widgets>
+                  <nodes>
+                    <node text="hostBuilder.UseSetting(WebHostDefaults.ContentRootKey, contentRoot)">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>添加到_config
+</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                  </nodes>
+                </node>
+                <node text="ConfigureAppConfiguration">
+                  <widgets>
+                    <widget type="NOTES" align="Right" hyperlink="">
+                      <description>添加到_configureAppConfigurationBuilderDelegates</description>
+                    </widget>
+                  </widgets>
+                  <nodes>
+                    <node text="config.AddJsonFile(&quot;appsettings.json&quot;, true, true)">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>读取配置</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="ConfigureLogging">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>指定日志</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="UseIISIntegration" />
+                    <node text="UseDefaultServiceProvider" />
+                  </nodes>
+                </node>
+                <node text="ConfigureLogging" />
+                <node text="UseIISIntegration" />
+                <node text="UseDefaultServiceProvider">
+                  <nodes>
+                    <node text="services.Replace(ServiceDescriptor.Singleton((IServiceProviderFactory&lt;IServiceCollection&gt;)new DefaultServiceProviderFactory(serviceProviderOptions)));">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>将默认服务添加到_configureServicesDelegates</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+            <node text="UseStartup&lt;Startup&gt;">
+              <nodes>
+                <node text="ConfigureServices" />
+                <node text="Configure" />
+              </nodes>
+            </node>
+            <node text="Build">
+              <nodes>
+                <node text="BuildCommonServices">
+                  <widgets>
+                    <widget type="NOTES" align="Right" hyperlink="">
+                      <description>1、读取配置信息
+_options = new WebHostOptions(_config);
+2、初始化主机环境
+_hostingEnvironment.Initialize(applicationName, contentRootPath, _options);
+3、执行_configureAppConfigurationBuilderDelegates委托
+4、注入各种服务
+serviceCollection.AddSingleton(_hostingEnvironment);
+serviceCollection.AddSingleton(_context);
+serviceCollection.AddTransient&lt;IApplicationBuilderFactory, ApplicationBuilderFactory&gt;();
+serviceCollection.AddTransient&lt;IHttpContextFactory, HttpContextFactory&gt;();
+serviceCollection.AddScoped&lt;IMiddlewareFactory, MiddlewareFactory&gt;();
+OptionsServiceCollectionExtensions.AddOptions((IServiceCollection)serviceCollection);
+serviceCollection.AddLogging();
+serviceCollection.AddTransient&lt;IStartupFilter, AutoRequestServicesStartupFilter&gt;();
+serviceCollection.AddTransient&lt;IServiceProviderFactory&lt;IServiceCollection&gt;, DefaultServiceProviderFactory&gt;();
+serviceCollection.AddSingleton&lt;ObjectPoolProvider, DefaultObjectPoolProvider&gt;();
+5、执行 _configureServicesDelegates委托</description>
+                    </widget>
+                  </widgets>
+                  <nodes>
+                    <node text="_hostingEnvironment.Initialize(applicationName, contentRootPath, _options);">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>初始化主机环境：应用程序名称、root路径等</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="configureAppConfigurationBuilderDelegate(_context, val);">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>执行前期配置到_configureAppConfigurationBuilderDelegates的配置信息</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="ServiceCollection serviceCollection = new ServiceCollection();">
+                      <nodes>
+                        <node text="serviceCollection.AddSingleton(_hostingEnvironment);" />
+                        <node text="serviceCollection.AddSingleton(_context);" />
+                        <node text="serviceCollection.AddTransient&lt;IApplicationBuilderFactory, ApplicationBuilderFactory&gt;();" />
+                        <node text="serviceCollection.AddTransient&lt;IHttpContextFactory, HttpContextFactory&gt;();" />
+                        <node text="serviceCollection.AddScoped&lt;IMiddlewareFactory, MiddlewareFactory&gt;();" />
+                        <node text="serviceCollection.AddLogging();" />
+                        <node text="serviceCollection.AddTransient&lt;IStartupFilter, AutoRequestServicesStartupFilter&gt;();" />
+                        <node text="serviceCollection.AddTransient&lt;IServiceProviderFactory&lt;IServiceCollection&gt;, DefaultServiceProviderFactory&gt;();" />
+                        <node text="serviceCollection.AddSingleton&lt;ObjectPoolProvider, DefaultObjectPoolProvider&gt;();" />
+                      </nodes>
+                    </node>
+                    <node text="configureServicesDelegate(_context, serviceCollection);">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>将前期配置到_configureServicesDelegates的服务添加到serviceCollection</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                  </nodes>
+                </node>
+                <node text="AddApplicationServices">
+                  <nodes>
+                    <node text="services.Replace(ServiceDescriptor.Singleton(typeof(DiagnosticListener), service));" />
+                    <node text="services.Replace(ServiceDescriptor.Singleton(typeof(DiagnosticSource), service));" />
+                  </nodes>
+                </node>
+                <node text="new WebHost(serviceCollection2, hostingServiceProvider, _options, _config, hostingStartupErrors)">
+                  <widgets>
+                    <widget type="NOTES" align="Right" hyperlink="">
+                      <description>通过前面Builder配置的服务信息和主机信息等信息，构建WebHost服务器信息</description>
+                    </widget>
+                  </widgets>
+                  <nodes>
+                    <node text="BuildApplication">
+                      <nodes>
+                        <node text="EnsureApplicationServices" />
+                        <node text="EnsureServer" />
+                        <node text="startup.Configure">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>执行UseStartup&lt;Startup&gt;的Configure方法</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+            <node text="Run">
+              <nodes>
+                <node text=" RunAsync">
+                  <nodes>
+                    <node text="StartAsync">
+                      <nodes>
+                        <node text="BuildApplication">
+                          <nodes>
+                            <node text="EnsureApplicationServices">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>调用 Startup 中的 ConfigureServices 方法
+_startup = _hostingServiceProvider.GetRequiredService&lt;IStartup&gt;();
+_applicationServices = _startup.ConfigureServices(_applicationServiceCollection);</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                            <node text="EnsureServer">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>初始化 Http Server，开始UseKestrel注册的服务
+Server = _applicationServices.GetRequiredService&lt;IServer&gt;();
+
+配置Server的初始化主要是配置要监听的地址
+	IServerAddressesFeature serverAddressesFeature = Server.Features?.Get&lt;IServerAddressesFeature&gt;();</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                            <node text="CreateBuilder">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>1、创建 IApplicationBuilder
+IApplicationBuilder applicationBuilder = _applicationServices.GetRequiredService&lt;IApplicationBuilderFactory&gt;().CreateBuilder(Server.Features);
+			applicationBuilder.ApplicationServices = _applicationServices;
+2、配置 IApplicationBuilder
+foreach (IStartupFilter item in service.Reverse())
+{
+       action = item.Configure(action);   //UseStartup&lt;Startup&gt;()中配置的方法
+}
+action(applicationBuilder);
+3、applicationBuilder.build()</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                          </nodes>
+                        </node>
+                        <node text="Server.StartAsync">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>启动服务监听
+在启动服务之前需要初始化：主机服务配置
+_applicationLifetime = (_applicationServices.GetRequiredService&lt;IApplicationLifetime&gt;() as ApplicationLifetime);
+DiagnosticListener requiredService = _applicationServices.GetRequiredService&lt;DiagnosticListener&gt;();
+IHttpContextFactory requiredService2 = _applicationServices.GetRequiredService&lt;IHttpContextFactory&gt;();
+HostingApplication application = new HostingApplication(_application, _logger, requiredService, requiredService2);</description>
+                            </widget>
+                          </widgets>
+                          <nodes>
+                            <node text="_applicationLifetime = (_applicationServices.GetRequiredService&lt;IApplicationLifetime&gt;() as ApplicationLifetime);" />
+                            <node text="_hostedServiceExecutor = _applicationServices.GetRequiredService&lt;HostedServiceExecutor&gt;();" />
+                            <node text="HostingApplication application = new HostingApplication(_application, _logger, requiredService, requiredService2);" />
+                            <node text="Server.StartAsync(application, cancellationToken).ConfigureAwait(false);" />
+                          </nodes>
+                        </node>
+                        <node text="_hostedServiceExecutor.StartAsync">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description> HostedService 启动</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+                <node text="WaitForTokenShutdownAsync" />
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+</map>
