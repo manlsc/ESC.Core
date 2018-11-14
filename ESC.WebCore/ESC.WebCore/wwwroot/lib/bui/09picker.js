@@ -197,7 +197,7 @@
     {
         ATTRS: {
             defaultChildClass: {
-                value: 'simple-list'
+                value: 'list-group'
             },
             list: {
                 getter: function () {

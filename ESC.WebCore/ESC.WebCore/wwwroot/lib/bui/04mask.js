@@ -3,7 +3,6 @@
     "use strict";
     var Mask = BUI.Mask = {},
     CLS_MASK = "bui-mask",
-    CLS_MASK_MSG = "bui-mask-msg",
     CLS_MASK_LOADING = "bui-mask-loading";
     BUI.mix(Mask, {
         /**
@@ -18,22 +17,27 @@
             left = null;
             if (!maskDiv.length) {
                 maskDiv = $('<div class="' + CLS_MASK + '"></div>').appendTo(maskedEl);
-                maskedEl.addClass("bui-masked");
                 if (element == "body") {
                     maskDiv.css("position", "fixed");
                 }
-                tpl = '<div class="' + CLS_MASK_MSG + ' ' + CLS_MASK_LOADING + '"><div></div></div>';
-                msgDiv = $(tpl).appendTo(maskedEl);
-                try {
-                    top = (maskDiv.height() - msgDiv.height()) / 2;
-                    left = (maskDiv.width() - msgDiv.width()) / 2;
-                    msgDiv.css({
-                        left: left,
-                        top: top
-                    });
-                } catch (ex) {
-                    BUI.log("mask error occurred");
-                }
+                tpl = '<div class="' + CLS_MASK_LOADING + '">\
+                            <div class="sk-three-bounce">\
+                                <div class="sk-child sk-bounce1"></div>\
+                                <div class="sk-child sk-bounce2"></div>\
+                                <div class="sk-child sk-bounce3"></div>\
+                            </div>\
+                        </div> ';
+                msgDiv = $(tpl).appendTo(maskDiv);
+            }
+            try {
+                top = (maskDiv.height() - msgDiv.height()) / 2;
+                left = (maskDiv.width() - msgDiv.width()) / 2;
+                msgDiv.css({
+                    left: left,
+                    top: top
+                });
+            } catch (ex) {
+                BUI.log("mask error occurred");
             }
             return maskDiv;
         },
@@ -42,15 +46,10 @@
         */
         unmaskElement: function (element) {
             var maskedEl = $(element),
-            msgEl = maskedEl.children("." + CLS_MASK_MSG),
-            maskDiv = maskedEl.children("." + CLS_MASK);
-            if (msgEl) {
-                msgEl.remove();
-            }
+            maskDiv = maskedEl.children("." + CLS_MASK);          
             if (maskDiv) {
                 maskDiv.remove();
             }
-            maskedEl.removeClass("bui-masked");
         }
     });
 })(window.BUI, jQuery);

@@ -13944,7 +13944,6 @@
                     value: {
                         error: false,
                         valid: false,
-                        click: false,
                         change: true,
                         validchange: true
                     }
@@ -15610,17 +15609,13 @@
                         clearTimeout(handler);
                         handler = setTimeout(function () {
                             _self._autoFit(grid);
-                        }, 400);
+                        }, 200);
                         _self.set("handler", handler);
                     }
                     autoFit();
                 });
-
             //立即执行一次
-            handler = setTimeout(function () {
-                _self._autoFit(grid);
-                clearTimeout(handler);
-            }, 400);        
+            _self._autoFit(grid);
         },
         _getInnerWidth: function (width) {
             width = width || this.get("width");

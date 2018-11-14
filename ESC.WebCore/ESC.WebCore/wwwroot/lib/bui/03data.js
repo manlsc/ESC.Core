@@ -201,7 +201,7 @@
 		 * 是否ajax
 		 */
         isAjax: {
-            value: false
+            value: true
         },
         /**
 		 * 匹配的字段名
@@ -253,9 +253,12 @@
             if (_self.get("isAjax")) {
                 _self.onAjax(params, callback);
             } else {
+                //根据参数查询结果集
                 var data = _self._getMatches(params),
-					rows = [];
+                    rows = [];
+                //根据排序字段对结果集进行排序
                 _self.sortData(sortField, sortDirection, data);
+                //触发onload事件
                 _self.onLoad(data, params);
 
                 if (callback) {
@@ -273,6 +276,11 @@
             }
         },
         onAjax: function (params, callback) { },
+        /**
+         * 触发onload事件
+         * @param data 结果集
+         * @param params 参数
+         */ 
         onLoad: function (data, params) {
             var _self = this,
 				root = _self.get("root"),
@@ -286,6 +294,9 @@
                 params: params
             });
         },
+        /**
+         * 获取扩展参数
+         */ 
         getAppendParams: function () {
             var _self = this,
 				pageSize = _self.get("pageSize"),

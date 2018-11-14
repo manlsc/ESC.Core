@@ -1,47 +1,3 @@
-/************* Common ******************/
-.bui-inline-block {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-
-.bui-relative {
-    position: relative;
-}
-
-.bui-absolute {
-    position: absolute;
-}
-
-.bui-clear {
-    *zoom: 1;
-}
-
-    .bui-clear:before,
-    .bui-clear:after {
-        content: " ";
-        display: table;
-    }
-
-    .bui-clear:after {
-        clear: both;
-    }
-
-.bui-hidden {
-    display: none;
-}
-
-body {
-    scrollbar-arrow-color: #000000;
-    scrollbar-base-color: #dddddd;
-    scrollbar-face-color: #dddddd;
-    scrollbar-shadow-color: #dddddd;
-    scrollbar-highlight-color: #dddddd;
-    scrollbar-3dlight-color: #dddddd;
-    scrollbar-darkshadow-color: #dddddd;
-    scrollbar-track-color: #eeeeee;
-}
-
 /************* Main Header ******************/
 .main-header {
     height: 50px;
@@ -219,292 +175,119 @@ body {
 
 /************* Mask ******************/
 .bui-mask {
-    height: 100%;
-    left: 0;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     z-index: 1040;
-    background-color: rgba(8, 8, 8, 1);
+    background-color: rgba(8, 8, 8, 0.4);
 }
 
-.bui-mask-msg {
-    left: 0;
-    padding: 30px;
+.bui-mask-loading {
     position: absolute;
-    top: 0;
     z-index: 1050;
+    height: 40px;
+    width: 80px;
 }
 
-.bui-mask-loading div {
-    height: 100px;
-    width: 100px;
-    padding: 10px 10px 10px 20px;
-    background-image: url("../img/load-16-16.gif");
+/*
+* 引用 http://tobiasahlin.com/spinkit/
+*/
+.sk-three-bounce {
+    margin: 10px auto;
+    width: 80px;
+    text-align: center;
 }
 
-/********************** List **********************/
-.bui-select-list {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0px;
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    background-clip: padding-box;
-}
-
-    .bui-select-list ul,
-    .bui-simple-list ul {
-        margin: 0;
-        padding-left: 0;
-        list-style: none;
-    }
-
-    .bui-select-list .bui-list-item {
-        display: block;
-        padding: 3px 20px;
-        color: #333333;
-        white-space: nowrap;
-    }
-
-    .bui-select-list .bui-list-item-hover {
-        text-decoration: none;
-        color: #262626;
-        background-color: #f5f5f5;
-    }
-
-    .bui-select-list .bui-list-item-selected {
-        color: #fff;
-        text-decoration: none;
-        outline: 0;
-        background-color: #6cb5f4;
-    }
-
-    .bui-select-list .bui-list-item-disabled {
-        color: #777;
-        cursor: not-allowed;
-    }
-
-/********************** Listbox **********************/
-.bui-checkbox {
-    background: url("../img/check_icon-100-100.gif") no-repeat 0px 0px transparent;
-}
-
-.bui-radio {
-    background: url("../img/radio_icon-64-40.gif") no-repeat 0 0 transparent;
-}
-
-.bui-checkbox,
-.bui-radio {
-    width: 13px;
+.sk-three-bounce .sk-child {
+    width: 20px;
     height: 20px;
-    *height: 17px;
-    vertical-align: top;
-    *vertical-align: baseline;
-    margin-right: 5px;
+    background-color: #6610f2;
+    border-radius: 100%;
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
+    -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+    animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
 }
 
-    .bui-checkbox:hover,
-    .bui-radio:hover,
-    .bui-list-item-hover .bui-checkbox,
-    .bui-list-item-hover .bui-radio {
-        background-position: -16px 0px;
+.sk-three-bounce .sk-bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.sk-three-bounce .sk-bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-three-bounce {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
     }
 
-.bui-list-item-selected .bui-checkbox,
-.bui-list-item-selected .bui-radio {
-    background-position: 0 -20px;
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
 
-.bui-list-item-disabled .bui-checkbox,
-.bui-list-item-disabled .bui-radio {
-    background-position: -48px 0px;
+@keyframes sk-three-bounce {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
 
-.bui-simple-list-disabled .bui-checkbox,
-.bui-list-item-selected.bui-list-item-disabled .bui-checkbox,
-.bui-simple-list-disabled .bui-radio,
-.bui-list-item-selected.bui-list-item-disabled .bui-radio {
-    background-position: -48px -20px;
-}
-
-/********************** Toolbar **********************/
-.bui-toolbar,
+/********************** Pagiantion **********************/
 .bui-pagingbar {
     margin: 0;
     padding-left: 0;
     list-style: none;
 }
 
-    .bui-pagingbar > li {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-        .bui-pagingbar > li > a {
-            padding: 6px 12px;
-            line-height: 1.42857143;
-            text-decoration: none;
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            cursor: default;
-        }
-
-        .bui-pagingbar > li > input {
-            width: 50px;
-        }
-
-        .bui-pagingbar > li > a[disabled] {
-            color: #777777;
-            background-color: #ffffff;
-            border-color: #dddddd;
-            cursor: not-allowed;
-        }
-
-    .bui-pagingbar .bar-item-totalCount {
-        float: right;
-        margin-top: 5px;
-    }
-
-/********************** Dialog **********************/
-.bui-dialog {
-    background-color: #fff;
-    border: 1px solid #999;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-    background-clip: padding-box;
-    outline: 0;
-    position: absolute;
-    min-width: 250px;
-    z-index: 1070;
+.bui-pagingbar > li {
+display: inline-block;
+margin-right: 10px;
 }
 
-    .bui-dialog .bui-stdmod-header {
-        padding: 10px;
-        font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #333333;
-        border-bottom: 1px solid #e5e5e5;
-        cursor: move;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+.bui-pagingbar > li > a {
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    cursor: default;
+}
 
-    .bui-dialog .bui-stdmod-body {
-        padding: 10px;
-    }
+.bui-pagingbar > li > input {
+    width: 50px;
+    display: inline-block;
+}
 
-    .bui-dialog .bui-stdmod-footer {
-        padding: 10px;
-        text-align: right;
-        border-top: 1px solid #e5e5e5;
-        *zoom: 1;
-    }
+.bui-pagingbar > li > a[disabled] {
+    color: #777777;
+    background-color: #ffffff;
+    border-color: #dddddd;
+    cursor: not-allowed;
+}
 
-        .bui-dialog .bui-stdmod-footer:before,
-        .bui-dialog .bui-stdmod-footer:after {
-            content: " ";
-            display: table;
-        }
+.bui-pagingbar .bar-item-totalCount {
+float: right;
+margin-top: 5px;
+}
 
-        .bui-dialog .bui-stdmod-footer:after {
-            clear: both;
-        }
-
-        .bui-dialog .bui-stdmod-footer:before,
-        .bui-dialog .bui-stdmod-footer:after {
-            content: " ";
-            display: table;
-        }
-
-        .bui-dialog .bui-stdmod-footer:after {
-            clear: both;
-        }
-
-        .bui-dialog .bui-stdmod-footer .btn + .btn {
-            margin-left: 5px;
-            margin-bottom: 0;
-        }
-
-        .bui-dialog .bui-stdmod-footer .btn-group .btn + .btn {
-            margin-left: -1px;
-        }
-
-        .bui-dialog .bui-stdmod-footer .btn-block + .btn-block {
-            margin-left: 0;
-        }
-
-    .bui-dialog a.bui-ext-close {
-        display: block;
-        width: 22px;
-        height: 22px;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        outline: none;
-        overflow: hidden;
-        cursor: pointer;
-        text-decoration: none;
-        z-index: 1;
-    }
-
-    .bui-dialog .bui-ext-close-x {
-        display: block;
-        font-size: 22px;
-        line-height: 1;
-        color: #262626;
-        cursor: pointer;
-        border: none;
-    }
-
-        .bui-dialog .bui-ext-close-x:hover {
-            background-color: #fff;
-            color: #ccc;
-            border: none;
-        }
-
+/********************** Message **********************/
 .bui-messager {
     float: left;
     width: 24px;
     height: 24px;
     margin: -5px 5px 5px 0;
 }
-
-/********************** Select **********************/
-.bui-list-picker {
-    position: absolute;
-}
-
-.bui-select {
-    display: inline-block;
-}
-
-    .bui-select .bui-select-input {
-        width: 150px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-/********************** SearchBox **********************/
-.bui-search {
-    display: inline-block;
-}
-
-    .bui-search .bui-search-input {
-        width: 150px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
 
 /********************** Calendar **********************/
 .bui-datepicker {
@@ -523,7 +306,7 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     color: #333333;
     background-color: #ffffff;
-    font-size: 13px;
+    font-size: 14px;
     border: 1px solid #ccc;
     position: relative;
 }
@@ -553,11 +336,12 @@ body {
         top: -6px;
     }
 
-    .bui-calendar .bui-calendar-header {
-        padding: 0 4px;
-        position: relative;
-        *zoom: 1;
-    }
+/*   header   */
+.bui-calendar .bui-calendar-header {
+    padding: 0 4px;
+    position: relative;
+    *zoom: 1;
+}
 
         .bui-calendar .bui-calendar-header:before,
         .bui-calendar .bui-calendar-header:after {
@@ -568,16 +352,7 @@ body {
         .bui-calendar .bui-calendar-header:after {
             clear: both;
         }
-
-        .bui-calendar .bui-calendar-header:before,
-        .bui-calendar .bui-calendar-header:after {
-            content: " ";
-            display: table;
-        }
-
-        .bui-calendar .bui-calendar-header:after {
-            clear: both;
-        }
+      
 
         .bui-calendar .bui-calendar-header .bui-datepicker-prev,
         .bui-calendar .bui-calendar-header .bui-datepicker-next {
@@ -616,6 +391,7 @@ body {
             right: 4px;
         }
 
+    /*   panel   */
     .bui-calendar .bui-calendar-panel {
         padding: 0 4px;
     }
@@ -681,89 +457,27 @@ body {
                 background-color: #6cb5f4;
             }
 
+   /*     footer    */
     .bui-calendar .bui-calendar-footer {
         margin-top: 2px;
-        padding: 6px 4px 5px;
+        padding: 6px 4px 1px;
         border-top: 1px solid #ccc;
         text-align: center;
     }
 
-        .bui-calendar .bui-calendar-footer .bui-bar-item-button {
-            margin-right: 5px;
-        }
-
-        .bui-calendar .bui-calendar-footer input.bui-datepicker-time {
-            padding: 4px 0px;
-            width: 18px;
-            height: 30px;
-            cursor: pointer;
-        }
-
-        .bui-calendar .bui-calendar-footer .bui-datepicker-second {
-            margin-right: 5px;
-        }
-
-    .bui-calendar .bui-monthpicker {
-        position: absolute;
-        width: 100%;
-        top: 0px;
-        left: 0px;
-        background-color: #ffffff;
-        border: none;
-    }
-
-.bui-timepicker .bui-simple-list {
-    padding: 0px 2px;
-    width: 228px;
-    color: #333333;
+.bui-calendar-footer .bui-nav-item {
+    margin-right: 5px;
+}
+       
+/* month year */
+.bui-calendar .bui-monthpicker {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
     background-color: #ffffff;
-    font-size: 13px;
-    border: 1px solid #ccc;
-    position: relative;
-    box-sizing:content-box;
+    border: none;
 }
-
-.bui-timepicker ul {
-    *zoom: 1;
-}
-
-    .bui-timepicker ul:before,
-    .bui-timepicker ul:after {
-        content: " ";
-        display: table;
-    }
-
-    .bui-timepicker ul:after {
-        clear: both;
-    }
-
-    .bui-timepicker ul:before,
-    .bui-timepicker ul:after {
-        content: " ";
-        display: table;
-    }
-
-    .bui-timepicker ul:after {
-        clear: both;
-    }
-
-.bui-timepicker li {
-    float: left;
-    width: 32px;
-}
-
-    .bui-timepicker li a {
-        display: block;
-        padding: 3px 0;
-        text-align: center;
-        color: #333333;
-    }
-
-        .bui-timepicker li a:hover,
-        .bui-timepicker li a:focus {
-            background-color: #eeeeee;
-            text-decoration: none;
-        }
 
 .bui-monthpicker {
     position: absolute;
@@ -774,36 +488,37 @@ body {
     border: 1px solid #ccc;
 }
 
-    .bui-monthpicker .bui-calendar-month-panel ul,
-    .bui-monthpicker .bui-calendar-year-panel ul {
+    .bui-monthpicker .bui-calendar-month-panel,
+    .bui-monthpicker .bui-calendar-year-panel ul{
         *zoom: 1;
         margin: 0;
         padding-left: 0;
         list-style: none;
+        margin-bottom:0px;
     }
 
-        .bui-monthpicker .bui-calendar-month-panel ul:before,
+        .bui-monthpicker .bui-calendar-month-panel:before,
         .bui-monthpicker .bui-calendar-year-panel ul:before,
-        .bui-monthpicker .bui-calendar-month-panel ul:after,
+        .bui-monthpicker .bui-calendar-month-panel:after,
         .bui-monthpicker .bui-calendar-year-panel ul:after {
             content: " ";
             display: table;
         }
 
-        .bui-monthpicker .bui-calendar-month-panel ul:after,
+        .bui-monthpicker .bui-calendar-month-panel:after,
         .bui-monthpicker .bui-calendar-year-panel ul:after {
             clear: both;
         }
 
-        .bui-monthpicker .bui-calendar-month-panel ul:before,
+        .bui-monthpicker .bui-calendar-month-panel:before,
         .bui-monthpicker .bui-calendar-year-panel ul:before,
-        .bui-monthpicker .bui-calendar-month-panel ul:after,
+        .bui-monthpicker .bui-calendar-month-panel:after,
         .bui-monthpicker .bui-calendar-year-panel ul:after {
             content: " ";
             display: table;
         }
 
-        .bui-monthpicker .bui-calendar-month-panel ul:after,
+        .bui-monthpicker .bui-calendar-month-panel:after,
         .bui-monthpicker .bui-calendar-year-panel ul:after {
             clear: both;
         }
@@ -814,6 +529,7 @@ body {
         margin: 4px 0 0 6px;
         width: 44px;
         height: 32px;
+        list-style: none;
     }
 
         .bui-monthpicker .bui-calendar-month-panel li a,
@@ -831,29 +547,29 @@ body {
                 text-decoration: none;
             }
 
-    .bui-monthpicker .bui-calendar-month-panel .bui-monthpicker-item-selected a,
-    .bui-monthpicker .bui-calendar-year-panel .bui-monthpicker-item-selected a {
-        color: #ffffff;
-        background-color: #6cb5f4;
-        text-decoration: none;
-    }
-
-        .bui-monthpicker .bui-calendar-month-panel .bui-monthpicker-item-selected a:hover,
-        .bui-monthpicker .bui-calendar-year-panel .bui-monthpicker-item-selected a:hover {
+        .bui-monthpicker .bui-calendar-month-panel .active a,
+        .bui-monthpicker .bui-calendar-year-panel .active a {
+            color: #ffffff;
             background-color: #6cb5f4;
+            text-decoration: none;
         }
+
+            .bui-monthpicker .bui-calendar-month-panel .active a:hover,
+            .bui-monthpicker .bui-calendar-year-panel .active a:hover {
+                background-color: #6cb5f4;
+            }
 
     .bui-monthpicker .bui-calendar-month-panel {
         float: left;
-        padding: 0 0 4px 0px;
+        padding: 0 0 1px 0px;
         width: 114px;
         border-right: 1px solid #ccc;
     }
 
-    .bui-monthpicker .bui-calendar-year-panel {
-        margin-left: 118px;
-        *margin-left: 117px;
-    }
+.bui-monthpicker .bui-calendar-year-panel {
+    margin-left: 118px;
+    *margin-left: 117px;
+}
 
         .bui-monthpicker .bui-calendar-year-panel .bui-monthpicker-yearnav {
             padding: 4px 0 0px 0;
@@ -879,12 +595,12 @@ body {
         }
 
     .bui-monthpicker .bui-monthpicker-footer {
-        padding: 6px 0 4px;
+        padding: 1px 0 4px;
         border-top: 1px solid #ccc;
         text-align: center;
     }
 
-        .bui-monthpicker .bui-monthpicker-footer .bui-bar-item-button {
+        .bui-monthpicker .bui-monthpicker-footer .bui-nav-tab-item {
             margin-right: 5px;
         }
 
@@ -982,7 +698,7 @@ body {
     }
 
     .bui-border-layout .bui-border-center {
-     overflow:hidden;
+        overflow: hidden;
     }
 
     .bui-border-layout .bui-layout-item-border {
@@ -1021,7 +737,6 @@ body {
 
 /********************** Tree **********************/
 .bui-tree-list {
-    /*border: 1px solid #c3c3d6;*/
     overflow: auto;
     background-color: #ffffff;
 }
@@ -1056,7 +771,6 @@ body {
 .bui-tree-list .bui-tree-icon {
     display: inline-block;
     *display: inline;
-    /* IE7 inline-block hack */
     *zoom: 1;
     vertical-align: top;
     height: 20px;
@@ -1186,141 +900,6 @@ body {
     background: url("../img/load-16-16.gif") no-repeat 0 0 transparent;
 }
 
-/********************** Tabs  layui复制过来 **********************/
-.bui-tab {
-    margin: 0;
-    padding:0;
-    text-align: left !important;
-}
-
-    .bui-tab[overflow] > .bui-tab-title {
-        overflow: hidden;
-    }
-
-.bui-tab-title {
-    position: relative;
-    left: 0;
-    height: 40px;
-    white-space: nowrap;
-    font-size: 0;
-    border-bottom: 1px solid #e2e2e2;
-    transition: all .2s;
-    -webkit-transition: all .2s;
-    padding-left: 0;
-    list-style: none;
-}
-
-    .bui-tab-title li {
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
-        vertical-align: middle;
-        font-size: 14px;
-        transition: all .2s;
-        -webkit-transition: all .2s;
-    }
-
-    .bui-tab-title li {
-        position: relative;
-        line-height: 40px;
-        min-width: 65px;
-        padding: 0 5px;
-        text-align: center;
-        cursor: pointer;
-    }
-
-        .bui-tab-title li a {
-            display: block;
-        }
-
-    .bui-tab-title .bui-tab-panel-item-selected,
-    .bui-tab-title .bui-tab-nav-item-selected {
-        color: #000;
-    }
-
-        .bui-tab-title .bui-tab-panel-item-selected:after,
-        .bui-tab-title .bui-tab-nav-item-selected:after {
-            position: absolute;
-            left: 0;
-            top: 0;
-            content: '';
-            width: 100%;
-            height: 41px;
-            border: 1px solid #e2e2e2;
-            border-bottom-color: #fff;
-            border-radius: 2px 2px 0 0;
-            -webkit-box-sizing: border-box !important;
-            -moz-box-sizing: border-box !important;
-            box-sizing: border-box !important;
-            pointer-events: none;
-        }
-
-.bui-tab-bar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    width: 30px;
-    height: 39px;
-    line-height: 39px;
-    border: 1px solid #e2e2e2;
-    border-radius: 2px;
-    text-align: center;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-    .bui-tab-bar .iconfont {
-        position: relative;
-        display: inline-block;
-        top: 3px;
-        transition: all .3s;
-        -webkit-transition: all .3s;
-    }
-
-.bui-tab-more {
-    padding-right: 30px;
-    height: auto;
-    white-space: normal;
-}
-
-    .bui-tab-more li.bui-tab-panel-item-selected:after,
-    .bui-tab-more li.bui-tab-nav-item-selected:after {
-        border-bottom-color: #e2e2e2;
-        border-radius: 2px;
-    }
-
-    .bui-tab-more .bui-tab-bar .iconfont {
-        top: -2px;
-        top: 3px;
-    }
-
-:root .bui-tab-more .bui-tab-bar .iconfont {
-    top: -2px;
-}
-
-.bui-tab-content {
-    padding: 0px;
-    margin: 0px;
-}
-
-.tab-content {
-    height: 100%;
-}
-
-/* Tab关闭 */
-.bui-tab-title li .bui-tab-close {
-    position: relative;
-    margin-left: 3px;
-    top: 0px;
-    color: #c2c2c2;
-}
-
-    .bui-tab-title li .bui-tab-close:hover {
-        border-radius: 2px;
-        background-color: #FF5722;
-        color: #fff;
-    }
 
 /********************** Table **********************/
 .bui-grid-table .sort-asc .bui-grid-sort-icon,
@@ -1702,11 +1281,6 @@ td.bui-grid-rownumber {
     position: absolute;
 }
 
-.bui-form-field-select,
-.bui-form-field-search {
-    height: 30px;
-}
-
 /********************************* SearchFrom ***********************************/
 .bui-search-ul {
     margin-top: 5px;
@@ -1724,7 +1298,7 @@ td.bui-grid-rownumber {
 }
 
 
-.bui-inner-grid{
-      padding:10px;
-      max-height:300px;
-    }
+.bui-inner-grid {
+    padding: 10px;
+    max-height: 300px;
+}

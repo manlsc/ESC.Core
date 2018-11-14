@@ -19,7 +19,7 @@
 		 * @memberOf BUI
 		 * @type {Number}
 		 */
-        version: "3.3.0",
+        version: "3.3.1",
         /**
 		 * 是否为函数
 		 * @param  {*} fn 对象
@@ -1437,7 +1437,7 @@
         /**
 		 * 内部函数集合
 		 */
-        _functions: null,
+        _functions: [],
         /**
 		 * 初始化
 		 */
@@ -1511,10 +1511,10 @@
 	 * @param {Object} config 配置项键值对
 	 */
     var Observable = function (config) {
-        this._events = [];
-        this._eventMap = {};
-        this._bubblesEvents = [];
-        this._bubbleTarget = null;
+        this._events = [];  
+        this._eventMap = {}; 
+        this._bubblesEvents = []; 
+        this._bubbleTarget = null;  
         this._initEvents(config);
     };
     BUI.augment(Observable, {
@@ -1532,7 +1532,10 @@
                 eventMap = _self._eventMap;
             return eventMap[eventType];
         },
-        //初始化事件列表
+        /**
+         * 初始化事件列表
+         * @param config 事件配置
+         */ 
         _initEvents: function (config) {
             var _self = this,
                 listeners = null;
@@ -1741,8 +1744,8 @@
 
     /**
 	 * 触发事件
-	 * @param {Object} self
-	 * @param {Object} when
+	 * @param {Object} self  作用域
+	 * @param {Object} when 
 	 * @param {Object} name
 	 * @param {Object} prevVal
 	 * @param {Object} newVal
@@ -2805,6 +2808,9 @@
                 t = getWrapBehavior(self, "handleDblClick") && el.off("dblclick", t);
             }
         },
+        /**
+         * 设置元素获取焦点
+         */ 
         _uiSetFocused: function (v) {
             var self = this,
                 el = self.get("el"),
@@ -3229,37 +3235,53 @@
         }
     }, {
             ATTRS: {
+                //控件的Html 内容
                 content: {},
+                //默认的子控件配置项,
                 defaultChildCfg: {},
+                //控件根节点使用的标签
                 elTagName: {
                     value: "div"
                 },
+                //子元素的默认 xclass
                 defaultChildClass: {},
                 xtype: {},
+                //标示控件的唯一编号，默认会自动生成
                 id: {},
+                //控件宽度
                 width: {},
+                //控件高度
                 height: {},
+                //控件根节点应用的样式
                 elCls: {},
+                //控件根节点应用的css属性
                 elStyle: {},
+                //控件根节点应用的属性，以键值对形式:
                 elAttrs: {},
+                //将控件插入到指定元素前
                 elBefore: {},
+                //只读属性，根节点DOM
                 el: {
                     setter: function (v) {
                         return $(v);
                     }
                 },
+                //控件的模版
                 tpl: {
                     sync: false
                 },
+                //content 设置的内容节点,默认根节点 @default el
                 contentEl: {
                     valueFn: function () {
                         return this.get("el");
                     }
                 },
+                //控件的渲染函数
                 tplRender: {
                     value: null
                 },
                 childContainer: {},
+                //控件支持的事件
                 events: {
                     value: {
                         click: true,
@@ -3274,13 +3296,17 @@
                         hide: false
                     }
                 },
+                //指定控件的容器
                 render: {},
+                //状态相关的样式,默认情况下会使用 前缀名 + xclass + '-' + 状态名
                 statusCls: {
                     value: {}
                 },
+                //控件的可视方式,使用 css - 'display' 或者 - 'visibility'
                 visibleMode: {
                     value: "display"
                 },
+                //控件是否可见 
                 visible: {
                     value: true
                 },
@@ -3290,18 +3316,18 @@
                 focusable: {
                     value: false
                 },
-                activeable: {
-                    value: true
-                },
                 focused: {},
                 active: {},
                 highlighted: {},
+                //缓存隐藏时的位置，对应visibleMode = 'visiblity' 的场景
                 cachePosition: {},
+                //子控件集合
                 children: {
                     sync: false,
                     shared: false,
                     value: []
                 },
+                //控件的CSS前缀
                 prefixCls: {
                     value: BUI.prefix
                 },
@@ -3310,6 +3336,7 @@
                         this.addTarget(p);
                     }
                 },
+                //禁用控件
                 disabled: {
                     value: false
                 }

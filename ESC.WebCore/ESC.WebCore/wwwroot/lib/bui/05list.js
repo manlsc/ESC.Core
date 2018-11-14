@@ -3,7 +3,7 @@
     "use strict";
     BUI.List = {};
     var Component = BUI.Component,
-		FIELD_PREFIX = "data-";
+        FIELD_PREFIX = "data-";
 
     /**
 	 * 清空选择
@@ -25,9 +25,9 @@
 	 */
     function beforeAddChild(self, child) {
         var c = child.isController ? child.getAttrVals() : child,
-			defaultTpl = self.get("childTpl"),
-			defaultStatusCls = self.get("childStatusCls"),
-			defaultTplRender = self.get("childTplRender");
+            defaultTpl = self.get("childTpl"),
+            defaultStatusCls = self.get("childStatusCls"),
+            defaultTplRender = self.get("childTplRender");
         if (defaultTpl && !c.tpl) {
             setChildAttr(child, "tpl", defaultTpl);
         }
@@ -37,11 +37,11 @@
         if (defaultStatusCls) {
             var statusCls = c.statusCls || child.isController ? child.get("statusCls") : {};
             BUI.each(defaultStatusCls,
-				function (v, k) {
-				    if (v && !statusCls[k]) {
-				        statusCls[k] = v;
-				    }
-				});
+                function (v, k) {
+                    if (v && !statusCls[k]) {
+                        statusCls[k] = v;
+                    }
+                });
             setChildAttr(child, "statusCls", statusCls);
         }
     }
@@ -67,62 +67,63 @@
         initializer: function () {
             var _self = this;
             _self.on("beforeRenderUI",
-				function () {
-				    _self._beforeRenderUI();
-				});
+                function () {
+                    _self._beforeRenderUI();
+                });
         },
         _beforeRenderUI: function () {
             var _self = this,
-				children = _self.get("children");
+                children = _self.get("children");
             BUI.each(children,
-				function (child) {
-				    beforeAddChild(_self, child);
-				});
+                function (child) {
+                    beforeAddChild(_self, child);
+                });
         },
         /**
 		 * 绑定事件
 		 */
         bindUI: function () {
             var _self = this,
-				selectedEvent = _self.get("selectedEvent");
+                selectedEvent = _self.get("selectedEvent");
             _self.on(selectedEvent,
-				function (e) {
-				    var child = e.target;
-				    if (child.get("selectable")) {
-				        if (!child.get("selected")) {
-				            _self.setSelected(child);
-				        } else if (_self.get("multipleSelect")) {
-				            _self.clearSelected(child);
-				        }
-				    }
-				});
+                function (e) {
+                    var child = e.target;
+                    if (child.get("disabled")) {
+                        return;
+                    }
+                    if (!child.get("selected")) {
+                        _self.setSelected(child);
+                    } else if (_self.get("multipleSelect")) {
+                        _self.clearSelected(child);
+                    }
+                });
             _self.on("click",
-				function (e) {
-				    if (e.target !== _self) {
-				        _self.fire("childclick", {
-				            child: e.target,
-				            domTarget: e.domTarget,
-				            domEvent: e
-				        });
-				    }
-				});
+                function (e) {
+                    if (e.target !== _self) {
+                        _self.fire("childclick", {
+                            child: e.target,
+                            domTarget: e.domTarget,
+                            domEvent: e
+                        });
+                    }
+                });
             _self.on("beforeAddChild",
-				function (ev) {
-				    beforeAddChild(_self, ev.child);
-				});
+                function (ev) {
+                    beforeAddChild(_self, ev.child);
+                });
             _self.on("beforeRemoveChild",
-				function (ev) {
-				    var child = ev.child,
-						selected = child.get("selected");
-				    if (selected) {
-				        if (_self.get("multipleSelect")) {
-				            _self.clearSelected(child);
-				        } else {
-				            _self.setSelected(null);
-				        }
-				    }
-				    child.set("selected", false);
-				});
+                function (ev) {
+                    var child = ev.child,
+                        selected = child.get("selected");
+                    if (selected) {
+                        if (_self.get("multipleSelect")) {
+                            _self.clearSelected(child);
+                        } else {
+                            _self.setSelected(null);
+                        }
+                    }
+                    child.set("selected", false);
+                });
         },
         /**
 		 * 添加控件的子控件集合
@@ -131,24 +132,24 @@
         addChildren: function (children) {
             var _self = this;
             BUI.each(children,
-				function (child) {
-				    _self.addChild(child);
-				});
+                function (child) {
+                    _self.addChild(child);
+                });
         },
         /**
 		 * 删除控件的子控件集合
 		 * @param {Object} children
 		 */
-         removeChildren: function (children) {
+        removeChildren: function (children) {
             var _self = this;
             BUI.each(children,
-				function (child) {
-				    var idField = _self.get("idField");
-				    if (!(child instanceof BUI.Component.Controller)) {
-				        child = _self.findChildByField(idField, child[idField]);
-				    }
-				    _self.removeChild(child, true);
-				});
+                function (child) {
+                    var idField = _self.get("idField");
+                    if (!(child instanceof BUI.Component.Controller)) {
+                        child = _self.findChildByField(idField, child[idField]);
+                    }
+                    _self.removeChild(child, true);
+                });
         },
         /**
 		 *删除指定索引的子控件 
@@ -201,14 +202,14 @@
 		 */
         getSelection: function () {
             var _self = this,
-				children = _self.getChildren(),
-				rst = [];
+                children = _self.getChildren(),
+                rst = [];
             BUI.each(children,
-				function (child) {
-				    if (_self.isChildSelected(child)) {
-				        rst.push(child);
-				    }
-				});
+                function (child) {
+                    if (_self.isChildSelected(child)) {
+                        rst.push(child);
+                    }
+                });
             return rst;
         },
         /**
@@ -222,20 +223,20 @@
 		 */
         getSelectionValues: function () {
             var _self = this,
-				field = _self.get("idField"),
-				children = _self.getSelection();
+                field = _self.get("idField"),
+                children = _self.getSelection();
             return $.map(children,
-				function (child) {
-				    return _self.getValueByField(child, field);
-				});
+                function (child) {
+                    return _self.getValueByField(child, field);
+                });
         },
         /**
 		 * 获取选中的第一项的值
 		 */
         getSelectedValue: function () {
             var _self = this,
-				field = _self.get("idField"),
-				child = _self.getSelected();
+                field = _self.get("idField"),
+                child = _self.getSelected();
             return _self.getValueByField(child, field);
         },
         /**
@@ -243,18 +244,18 @@
 		 */
         getSelectionText: function () {
             var _self = this,
-				itechildrenms = _self.getSelection();
+                itechildrenms = _self.getSelection();
             return $.map(children,
-				function (child) {
-				    return _self.getChildText(child);
-				});
+                function (child) {
+                    return _self.getChildText(child);
+                });
         },
         /**
 		 * 获取选中的第一项的文本
 		 */
         getSelectedText: function () {
             var _self = this,
-				child = _self.getSelected();
+                child = _self.getSelected();
             return _self.getChildText(child);
         },
         /**
@@ -277,11 +278,11 @@
 		 */
         clearSelection: function () {
             var _self = this,
-				selection = _self.getSelection();
+                selection = _self.getSelection();
             BUI.each(selection,
-				function (child) {
-				    _self.clearSelected(child);
-				});
+                function (child) {
+                    _self.clearSelected(child);
+                });
         },
         /**
 		 * 取消选中
@@ -305,9 +306,9 @@
             var _self = this;
             children = BUI.isArray(children) ? children : [children];
             BUI.each(children,
-				function (child) {
-				    _self.setSelected(child);
-				});
+                function (child) {
+                    _self.setSelected(child);
+                });
         },
         /**
 		 * 选择特定子控件
@@ -315,7 +316,7 @@
 		 */
         setSelected: function (child) {
             var _self = this,
-				multipleSelect = _self.get("multipleSelect");
+                multipleSelect = _self.get("multipleSelect");
             if (!_self.isChildselectable(child)) {
                 return;
             }
@@ -329,7 +330,7 @@
         },
         setChildSelected: function (child, selected) {
             var _self = this,
-				isSelected;
+                isSelected;
             if (child) {
                 isSelected = _self.isChildSelected(child);
                 if (isSelected == selected) {
@@ -349,7 +350,7 @@
                 field = this.get("idField");
             }
             var _self = this,
-				child = _self.findChildByField(field, value);
+                child = _self.findChildByField(field, value);
             _self.setSelected(child);
         },
         setSelectionByField: function (field, values) {
@@ -359,9 +360,9 @@
             }
             var _self = this;
             BUI.each(values,
-				function (value) {
-				    _self.setSelectedByField(field, value);
-				});
+                function (value) {
+                    _self.setSelectedByField(field, value);
+                });
         },
         /**
 		 * 设置选中状态
@@ -370,7 +371,7 @@
 		 */
         setChildSelectedStatus: function (child, selected) {
             var _self = this,
-				chd = null;
+                chd = null;
             if (child) {
                 child.set("selected", selected);
                 chd = child.get("el");
@@ -382,7 +383,7 @@
 		 */
         setAllSelection: function () {
             var _self = this,
-				children = _self.getChildren();
+                children = _self.getChildren();
             _self.setSelection(children);
         },
         /**
@@ -391,8 +392,8 @@
 		 */
         updateChild: function (child) {
             var _self = this,
-				idField = _self.get("idField"),
-				chd = _self.findChildByField(idField, child[idField]);
+                idField = _self.get("idField"),
+                chd = _self.findChildByField(idField, child[idField]);
             if (chd) {
                 chd.setTplContent();
             }
@@ -424,19 +425,19 @@
         findChildByField: function (field, value, root) {
             root = root || this;
             var _self = this,
-				children = root.get("children"),
-				result = null;
+                children = root.get("children"),
+                result = null;
             BUI.each(children,
-				function (child) {
-				    if (child.get(field) == value) {
-				        result = child;
-				    } else if (child.get("children").length) {
-				        result = _self.findChildByField(field, value, child);
-				    }
-				    if (result) {
-				        return false;
-				    }
-				});
+                function (child) {
+                    if (child.get(field) == value) {
+                        result = child;
+                    } else if (child.get("children").length) {
+                        result = _self.findChildByField(field, value, child);
+                    }
+                    if (result) {
+                        return false;
+                    }
+                });
             return result;
         },
         afterSelected: function (child, selected, element) {
@@ -466,60 +467,68 @@
             }
         }
     }, {
-        ATTRS: {
-            /**
-			 * 主键字段
-			 */
-            idField: {
-                value: "id"
-            },
-            /**
-			 * 子控件模版
-			 */
-            childTpl: {},
-            /**
-			 * 子控件渲染方法
-			 */
-            childTplRender: {},
-            childStatusCls: {
-                value: {}
-            },
-            /**
-			 * 是否多选
-			 */
-            multipleSelect: {
-                value: false
-            },
-            /**
-			 * 选择事件
-			 */
-            selectedEvent: {
-                value: "click"
-            },
-            events: {
-                value: {
-                    childclick: true,
-                    selectedchange: false,
-                    beforeselectedchange: false,
-                    childselected: false,
-                    childunselected: false
+            ATTRS: {
+                /**
+                 * 主键字段
+                 */
+                idField: {
+                    value: "id"
+                },
+                /**
+                 * 子控件模版
+                 */
+                childTpl: {},
+                /**
+                 * 子控件渲染方法
+                 */
+                childTplRender: {},
+                childStatusCls: {},
+                /**
+                 * 是否多选
+                 */
+                multipleSelect: {
+                    value: false
+                },
+                /**
+                 * 选择事件
+                 */
+                selectedEvent: {
+                    value: "click"
+                },
+                events: {
+                    value: {
+                        childclick: true,
+                        selectedchange: false,
+                        beforeselectedchange: false,
+                        childselected: false,
+                        childunselected: false
+                    }
                 }
             }
-        }
-    }, {
-        xclass: "childlist"
-    });
+        }, {
+            xclass: "childlist"
+        });
     BUI.List.ChildList = childList;
 })(window.BUI, jQuery);
-//BUI.List.ListItem +
+//BUI.List.NavItem +
 (function (BUI, $) {
     "use strict";
     var Component = BUI.Component;
-    var child = Component.Controller.extend({
+    var NavItem = Component.Controller.extend({
         _uiSetSelected: function (v) {
             var _self = this,
-				cls = _self.getStatusCls("selected"),
-				el = _self.get("el");
+                cls = _self.getStatusCls("selected"),
+                el = _self.get("el");
+            if (v) {
+                el.addClass(cls);
+            } else {
+                el.removeClass(cls);
+            }
+        },
+        _uiSetDisabled: function (v) {
+            var _self = this,
+                cls = _self.getStatusCls("disabled"),
+                el = _self.get("el");
             if (v) {
                 el.addClass(cls);
             } else {
@@ -527,32 +536,40 @@
             }
         }
     }, {
-        ATTRS: {
-            selectable: {
-                value: true
-            },
-            selected: {
-                sync: false,
-                value: false
-            },
-            elTagName: {
-                value: "li"
-            },
-            tpl: {
-                value: "<span>{text}</span>"
+            ATTRS: {
+                disabled: {
+                    value: false
+                },
+                statusCls: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                selected: {
+                    value: false
+                },
+                elTagName: {
+                    value: "li"
+                },
+                tpl: {
+                    value: '<a href="###">{text}</a>'
+                },
+                elCls: {
+                    value: "nav-item"
+                }
             }
-        }
-    }, {
-        xclass: "list-item"
-    });
-    BUI.List.ListChild = child;
+        }, {
+            xclass: "nav-item"
+        });
+    BUI.List.NavItem = NavItem;
 })(window.BUI, jQuery);
-//BUI.List.List +
+//BUI.List.Nav +
 (function (BUI, $) {
     "use strict";
     var Component = BUI.Component,
-		ChildList = BUI.List.ChildList;
-    var list = ChildList.extend({}, {
+        ChildList = BUI.List.ChildList;
+    var Nav = ChildList.extend({}, {
         ATTRS: {
             elTagName: {
                 value: "ul"
@@ -561,116 +578,281 @@
                 value: "id"
             },
             defaultChildClass: {
-                value: "list-item"
+                value: "nav-item"
+            },
+            elCls: {
+                value: "nav"
             }
         }
     }, {
-        xclass: "list"
-    });
-    BUI.List.List = list;
+            xclass: "list"
+        });
+    BUI.List.Nav = Nav;
 })(window.BUI, jQuery);
+//BUI.List.NavTabItem
+(function (BUI, $) {
+    "use strict";
+    var Component = BUI.Component,
+        Close = Component.UIBase.Close,
+        CLS_TITLE = "nav-item";
+    var item = Component.Controller.extend({
+        renderUI: function () {
+            this._resetPanelVisible();
+        },
+        bindUI: function () {
+            var _self = this,
+                el = _self.get("el"),
+                eventName = _self._getVisibleEvent();
+            _self.on(eventName,
+                function (ev) {
+                    _self._setPanelVisible(ev.newVal);
+                });
+        },
+        _uiSetTitle: function (v) {
+            var _self = this,
+                el = _self.get("el"),
+                titleEl = el.find("." + CLS_TITLE);
+            titleEl.text(v);
+        },
+        _resetPanelVisible: function () {
+            var _self = this,
+                status = _self.get("panelVisibleStatus"),
+                visible = _self.get(status);
+            _self._setPanelVisible(visible);
+        },
+        _getVisibleEvent: function () {
+            var _self = this,
+                status = _self.get("panelVisibleStatus");
+            return "after" + BUI.ucfirst(status) + "Change";
+        },
+        _setPanelVisible: function (visible) {
+            var _self = this,
+                panel = _self.get("panel"),
+                method = visible ? "show" : "hide";
+            $(panel)[method]();
+        },
+        _uiSetSelected: function (v) {
+            var _self = this,
+                cls = _self.getStatusCls("selected"),
+                el = _self.get("el");
+            if (v) {
+                el.addClass(cls);
+            } else {
+                el.removeClass(cls);
+            }
+        },
+        _setPanelContent: function (panel, content) {
+            $(panel).html(content);
+        },
+        _uiSetPanelContent: function (v) {
+            var _self = this,
+                panel = _self.get("panel");
+            _self._setPanelContent(panel, v);
+        },
+        _uiSetPanel: function (v) {
+            var _self = this,
+                content = _self.get("panelContent");
+            if (content) {
+                _self._setPanelContent(v, content);
+            }
+            _self._resetPanelVisible();
+        }
+    },
+        {
+            ATTRS: {
+                selected: {
+                    sync: true,
+                    value: false
+                },
+                title: {
+                    sync: false
+                },
+                statusCls: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                elCls: {
+                    value: CLS_TITLE
+                },
+                elTagName: {
+                    value: "li"
+                },
+                tpl: {
+                    value: '<a href="###">{title}</a>'
+                },
+                panel: {},
+                panelContent: {},
+                panelVisibleStatus: {
+                    value: "selected"
+                }
+            }
+        },
+        {
+            xclass: "nav-tab-item"
+        });
+    BUI.List.NavTabItem = item;
+})(window.BUI, jQuery);
+//BUI.List.NavTab
+(function (BUI, $) {
+    "use strict";
+    BUI.Tab = {};
+    var List = BUI.List,
+        Component = BUI.Component;
+    var NavTab = List.ChildList.extend({
+        renderUI: function () {
+            var _self = this,
+                children = _self.get("children"),
+                panelContainer = _self._initPanelContainer(),
+                panels = panelContainer.children();
+            BUI.each(children,
+                function (item, index) {
+                    var panel = panels[index];
+                    _self._initPanelItem(item, panel);
+                });
+        },
+        _initPanelContainer: function () {
+            var _self = this,
+                panelContainer = _self.get("panelContainer");
+            if (panelContainer && BUI.isString(panelContainer)) {
+                if (panelContainer.indexOf("#") == 0) {
+                    panelContainer = $(panelContainer);
+                } else {
+                    panelContainer = _self.get("el").find(panelContainer);
+                }
+                _self.setInternal("panelContainer", panelContainer);
+            }
+            return panelContainer;
+        },
+        _initPanelItem: function (item, panel) {
+            var _self = this;
+            if (item.set) {
+                if (!item.get("panel")) {
+                    panel = panel || _self._getPanel(item.getAttrVals());
+                    item.set("panel", panel);
+                }
+            } else {
+                if (!item.panel) {
+                    panel = panel || _self._getPanel(item);
+                    item.panel = panel;
+                }
+            }
+        },
+        _getPanel: function (item) {
+            var _self = this,
+                panelContainer = _self.get("panelContainer"),
+                panelTpl = BUI.substitute(_self.get("panelTpl"), item);
+            return $(panelTpl).appendTo(panelContainer);
+        }
+    },
+        {
+            ATTRS: {
+                elTagName: {
+                    value: "div"
+                },
+                childContainer: {
+                    value: ".nav"
+                },
+                tpl: {
+                    value: '<ul class="nav nav-tabs"></ul><div class="tab-content"></div>'
+                },
+                panelTpl: {
+                    value: '<div class="tab-pane"></div>'
+                },
+                panelContainer: {
+                    value: ".tab-content"
+                },
+                defaultChildClass: {
+                    value: "nav-tab-item"
+                }
+            }
+        },
+        {
+            xclass: "nav-tab"
+        });
+    BUI.List.NavTab = NavTab;
+})(window.BUI, jQuery);
+
 //BUI.List.DomList
 (function (BUI, $) {
     "use strict";
     var Component = BUI.Component,
-		FIELD_PREFIX = "data-";
+        FIELD_PREFIX = "data-";
 
     function getItemStatusCls(name, self) {
         var _self = self,
-			itemCls = _self.get("itemCls"),
-			itemStatusCls = _self.get("itemStatusCls");
+            itemCls = _self.get("itemCls"),
+            itemStatusCls = _self.get("itemStatusCls");
         if (itemStatusCls && itemStatusCls[name]) {
             return itemStatusCls[name];
         }
         return itemCls + "-" + name;
     }
 
-    function parseItem(elem, self) {
-        var attrs = elem.attributes,
-			itemStatusFields = self.get("itemStatusFields"),
-			item = {};
-        BUI.each(attrs,
-			function (attr) {
-			    var name = attr.nodeName;
-			    if (name.indexOf(FIELD_PREFIX) !== -1) {
-			        name = name.replace(FIELD_PREFIX, "");
-			        item[name] = attr.nodeValue;
-			    }
-			});
-        item.text = $(elem).text();
-        BUI.each(itemStatusFields,
-			function (v, k) {
-			    var cls = getItemStatusCls(k, self);
-			    if ($(elem).hasClass(cls)) {
-			        item[v] = true;
-			    }
-			});
-        return item;
-    }
-
     var domList = Component.Controller.extend({
         bindUI: function () {
             var _self = this,
-				selectedEvent = _self.get("selectedEvent"),
-				itemCls = _self.get("itemCls"),
-				itemContainer = _self.getItemContainer();
+                selectedEvent = _self.get("selectedEvent"),
+                itemCls = _self.get("itemCls"),
+                itemContainer = _self.getItemContainer();
             itemContainer.delegate("." + itemCls, "click",
-				function (ev) {
-				    if (_self.get("disabled")) {
-				        return;
-				    }
-				    var itemEl = $(ev.currentTarget),
-						item = _self.getItemByElement(itemEl);
-				    if (_self.isItemDisabled(item, itemEl)) {
-				        return;
-				    }
-				    var rst = _self.fire("itemclick", {
-				        item: item,
-				        element: itemEl[0],
-				        domTarget: ev.target,
-				        domEvent: ev
-				    });
-				    if (rst !== false && selectedEvent == "click" && _self.isItemSelectable(item)) {
-				        setItemSelectedStatus(item, itemEl);
-				    }
-				});
+                function (ev) {
+                    if (_self.get("disabled")) {
+                        return;
+                    }
+                    var itemEl = $(ev.currentTarget),
+                        item = _self.getItemByElement(itemEl);
+                    if (_self.isItemDisabled(item, itemEl)) {
+                        return;
+                    }
+                    var rst = _self.fire("itemclick", {
+                        item: item,
+                        element: itemEl[0],
+                        domTarget: ev.target,
+                        domEvent: ev
+                    });
+                    if (rst !== false && selectedEvent == "click" && _self.isItemSelectable(item)) {
+                        setItemSelectedStatus(item, itemEl);
+                    }
+                });
             if (selectedEvent !== "click") {
                 itemContainer.delegate("." + itemCls, selectedEvent,
-					function (ev) {
-					    if (_self.get("disabled")) {
-					        return;
-					    }
-					    var itemEl = $(ev.currentTarget),
-							item = _self.getItemByElement(itemEl);
-					    if (_self.isItemDisabled(item, itemEl)) {
-					        return;
-					    }
-					    if (_self.isItemSelectable(item)) {
-					        setItemSelectedStatus(item, itemEl);
-					    }
-					    return false;
-					});
+                    function (ev) {
+                        if (_self.get("disabled")) {
+                            return;
+                        }
+                        var itemEl = $(ev.currentTarget),
+                            item = _self.getItemByElement(itemEl);
+                        if (_self.isItemDisabled(item, itemEl)) {
+                            return;
+                        }
+                        if (_self.isItemSelectable(item)) {
+                            setItemSelectedStatus(item, itemEl);
+                        }
+                        return false;
+                    });
             }
             itemContainer.delegate("." + itemCls, "dblclick",
-				function (ev) {
-				    if (_self.get("disabled")) {
-				        return;
-				    }
-				    var itemEl = $(ev.currentTarget),
-						item = _self.getItemByElement(itemEl);
-				    if (_self.isItemDisabled(item, itemEl)) {
-				        return;
-				    }
-				    _self.fire("itemdblclick", {
-				        item: item,
-				        element: itemEl[0],
-				        domTarget: ev.target
-				    });
-				});
+                function (ev) {
+                    if (_self.get("disabled")) {
+                        return;
+                    }
+                    var itemEl = $(ev.currentTarget),
+                        item = _self.getItemByElement(itemEl);
+                    if (_self.isItemDisabled(item, itemEl)) {
+                        return;
+                    }
+                    _self.fire("itemdblclick", {
+                        item: item,
+                        element: itemEl[0],
+                        domTarget: ev.target
+                    });
+                });
 
             function setItemSelectedStatus(item, itemEl) {
                 var multipleSelect = _self.get("multipleSelect"),
-					isSelected;
+                    isSelected;
                 isSelected = _self.isItemSelected(item, itemEl);
                 if (!isSelected) {
                     if (!multipleSelect) {
@@ -684,11 +866,11 @@
                 }
             }
             _self.on("itemrendered itemupdated",
-				function (ev) {
-				    var item = ev.item,
-						element = ev.element;
-				    _self._syncItemStatus(item, element);
-				});
+                function (ev) {
+                    var item = ev.item,
+                        element = ev.element;
+                    _self._syncItemStatus(item, element);
+                });
         },
         _uiSetItems: function (items) {
             var _self = this;
@@ -699,17 +881,17 @@
         },
         _syncItemStatus: function (item, element) {
             var _self = this,
-				itemStatusFields = _self.get("itemStatusFields");
+                itemStatusFields = _self.get("itemStatusFields");
             BUI.each(itemStatusFields,
-				function (v, k) {
-				    if (item[v] != null) {
-				        var cls = _self.getItemStatusCls(k),
-							method = item[v] ? "addClass" : "removeClass";
-				        if (element) {
-				            $(element)[method](cls);
-				        }
-				    }
-				});
+                function (v, k) {
+                    if (item[v] != null) {
+                        var cls = _self.getItemStatusCls(k),
+                            method = item[v] ? "addClass" : "removeClass";
+                        if (element) {
+                            $(element)[method](cls);
+                        }
+                    }
+                });
         },
         /**
 		 * 设置列表记录
@@ -723,9 +905,9 @@
             _self.clearControl();
             _self.fire("beforeitemsshow");
             BUI.each(items,
-				function (item, index) {
-				    _self.addItemToView(item, index);
-				});
+                function (item, index) {
+                    _self.addItemToView(item, index);
+                });
             _self.fire("itemsshow");
         },
         /**
@@ -735,9 +917,9 @@
         addItems: function (items) {
             var _self = this;
             BUI.each(items,
-				function (item) {
-				    _self.addItem(item);
-				});
+                function (item) {
+                    _self.addItem(item);
+                });
         },
         /**
 		 * 添加单个列表
@@ -753,7 +935,7 @@
 		 */
         addItemAt: function (item, index) {
             var _self = this,
-				items = _self.get("items");
+                items = _self.get("items");
             if (index === undefined) {
                 index = items.length;
             }
@@ -768,11 +950,11 @@
 		 */
         addItemToView: function (item, index) {
             var _self = this,
-				listEl = _self.getItemContainer(),
-				itemCls = _self.get("itemCls"),
-				dataField = _self.get("dataField"),
-				tpl = _self.getItemTpl(item, index),
-				elem = $(tpl);
+                listEl = _self.getItemContainer(),
+                itemCls = _self.get("itemCls"),
+                dataField = _self.get("dataField"),
+                tpl = _self.getItemTpl(item, index),
+                elem = $(tpl);
             if (index !== undefined) {
                 var target = listEl.find("." + itemCls)[index];
                 if (target) {
@@ -799,9 +981,9 @@
         removeItems: function (items) {
             var _self = this;
             BUI.each(items,
-				function (item) {
-				    _self.removeItem(item);
-				});
+                function (item) {
+                    _self.removeItem(item);
+                });
         },
         /**
 		 * 删除列表
@@ -809,9 +991,9 @@
 		 */
         removeItem: function (item) {
             var _self = this,
-				items = _self.get("items"),
-				element = _self.findElement(item),
-				index;
+                items = _self.get("items"),
+                element = _self.findElement(item),
+                index;
             index = BUI.Array.indexOf(item, items);
             if (index !== -1) {
                 items.splice(index, 1);
@@ -858,30 +1040,30 @@
 		 */
         getStatusValue: function (item, status) {
             var _self = this,
-				itemStatusFields = _self.get("itemStatusFields"),
-				field = itemStatusFields[status];
+                itemStatusFields = _self.get("itemStatusFields"),
+                field = itemStatusFields[status];
             return item[field];
         },
         /**
-     * 更改状态值对应的字段
-     * @protected
-     * @param  {String} status 状态名
-     * @return {String} 状态对应的字段
-     */
+         * 更改状态值对应的字段
+         * @protected
+         * @param  {String} status 状态名
+         * @return {String} 状态对应的字段
+         */
         getStatusField: function (status) {
             var _self = this,
-				itemStatusFields = _self.get("itemStatusFields");
+                itemStatusFields = _self.get("itemStatusFields");
             return itemStatusFields[status];
         },
         /**
-     * 获取DOM结构中的数据
-     * @protected
-     * @param {HTMLElement} element DOM 结构
-     * @return {Object} 该项对应的值
-     */
+         * 获取DOM结构中的数据
+         * @protected
+         * @param {HTMLElement} element DOM 结构
+         * @return {Object} 该项对应的值
+         */
         getItemByElement: function (element) {
             var _self = this,
-				dataField = _self.get("dataField");
+                dataField = _self.get("dataField");
             return $(element).data(dataField);
         },
         /**
@@ -889,7 +1071,7 @@
 		 */
         getSelected: function () {
             var _self = this,
-				element = _self.getFirstElementByStatus("selected");
+                element = _self.getFirstElementByStatus("selected");
             return _self.getItemByElement(element) || null;
         },
         /**
@@ -898,12 +1080,12 @@
 		 */
         getItemsByStatus: function (status) {
             var _self = this,
-				elements = _self.getElementsByStatus(status),
-				rst = [];
+                elements = _self.getElementsByStatus(status),
+                rst = [];
             BUI.each(elements,
-				function (element) {
-				    rst.push(_self.getItemByElement(element));
-				});
+                function (element) {
+                    rst.push(_self.getItemByElement(element));
+                });
             return rst;
         },
         /**
@@ -912,7 +1094,7 @@
 		 */
         getItemText: function (item) {
             var _self = this,
-				textGetter = _self.get("textGetter");
+                textGetter = _self.get("textGetter");
             if (!item) {
                 return "";
             }
@@ -954,12 +1136,12 @@
 		 */
         getSelection: function () {
             var _self = this,
-				elements = _self.getSelectedElements(),
-				rst = [];
+                elements = _self.getSelectedElements(),
+                rst = [];
             BUI.each(elements,
-				function (elem) {
-				    rst.push(_self.getItemByElement(elem));
-				});
+                function (elem) {
+                    rst.push(_self.getItemByElement(elem));
+                });
             return rst;
         },
         /**
@@ -967,8 +1149,8 @@
 		 */
         getSelectedValue: function () {
             var _self = this,
-				field = _self.get("idField"),
-				item = _self.getSelected();
+                field = _self.get("idField"),
+                item = _self.getSelected();
             return _self.getValueByField(item, field);
         },
         /**
@@ -976,30 +1158,30 @@
 		 */
         getSelectionValues: function () {
             var _self = this,
-				field = _self.get("idField"),
-				items = _self.getSelection();
+                field = _self.get("idField"),
+                items = _self.getSelection();
             return $.map(items,
-				function (item) {
-				    return _self.getValueByField(item, field);
-				});
+                function (item) {
+                    return _self.getValueByField(item, field);
+                });
         },
         /**
 		 * 获取选中项文本
 		 */
         getSelectionText: function () {
             var _self = this,
-				items = _self.getSelection();
+                items = _self.getSelection();
             return $.map(items,
-				function (item) {
-				    return _self.getItemText(item);
-				});
+                function (item) {
+                    return _self.getItemText(item);
+                });
         },
         /**
 		 * 获取选中项文本
 		 */
         getSelectedText: function () {
             var _self = this,
-				item = _self.getSelected();
+                item = _self.getSelected();
             return _self.getItemText(item);
         },
         /**
@@ -1010,15 +1192,15 @@
 		 */
         clearItemStatus: function (item, status, element) {
             var _self = this,
-				itemStatusFields = _self.get("itemStatusFields");
+                itemStatusFields = _self.get("itemStatusFields");
             element = element || _self.findElement(item);
             if (status) {
                 _self.setItemStatus(item, status, false, element);
             } else {
                 BUI.each(itemStatusFields,
-					function (v, k) {
-					    _self.setItemStatus(item, k, false, element);
-					});
+                    function (v, k) {
+                        _self.setItemStatus(item, k, false, element);
+                    });
                 if (!itemStatusFields["selected"]) {
                     _self.setItemSelected(item, false);
                 }
@@ -1030,11 +1212,11 @@
 		 */
         clearSelection: function () {
             var _self = this,
-				selection = _self.getSelection();
+                selection = _self.getSelection();
             BUI.each(selection,
-				function (item) {
-				    _self.clearSelected(item);
-				});
+                function (item) {
+                    _self.clearSelected(item);
+                });
         },
         /**
 		 * 清空特定项选择
@@ -1049,7 +1231,7 @@
         },
         clearItems: function () {
             var _self = this,
-				items = _self.getItems();
+                items = _self.getItems();
             items.splice(0);
             _self.clearControl();
         },
@@ -1059,15 +1241,15 @@
         clearControl: function () {
             this.fire("beforeitemsclear");
             var _self = this,
-				listEl = _self.getItemContainer(),
-				itemCls = _self.get("itemCls");
+                listEl = _self.getItemContainer(),
+                itemCls = _self.get("itemCls");
             listEl.find("." + itemCls).remove();
             this.fire("itemsclear");
         },
         setStatusValue: function (item, status, value) {
             var _self = this,
-				itemStatusFields = _self.get("itemStatusFields"),
-				field = itemStatusFields[status];
+                itemStatusFields = _self.get("itemStatusFields"),
+                field = itemStatusFields[status];
             if (field) {
                 item[field] = value;
             }
@@ -1077,7 +1259,7 @@
          */
         setAllSelection: function () {
             var _self = this,
-				items = _self.getItems();
+                items = _self.getItems();
             _self.setSelection(items);
         },
         /**
@@ -1096,7 +1278,7 @@
          */
         setItemSelected: function (item, selected) {
             var _self = this,
-				isSelected;
+                isSelected;
             if (item) {
                 isSelected = _self.isItemSelected(item);
                 if (isSelected == selected) {
@@ -1121,7 +1303,7 @@
                 field = this.get("idField");
             }
             var _self = this,
-				item = _self.findItemByField(field, value);
+                item = _self.findItemByField(field, value);
             _self.setSelected(item);
         },
         /**
@@ -1136,9 +1318,9 @@
             }
             var _self = this;
             BUI.each(values,
-				function (value) {
-				    _self.setSelectedByField(field, value);
-				});
+                function (value) {
+                    _self.setSelectedByField(field, value);
+                });
         },
         /**
 		 * 选中项目
@@ -1148,9 +1330,9 @@
             var _self = this;
             items = BUI.isArray(items) ? items : [items];
             BUI.each(items,
-				function (item) {
-				    _self.setSelected(item);
-				});
+                function (item) {
+                    _self.setSelected(item);
+                });
         },
         /**
 		 * 选中项目
@@ -1158,7 +1340,7 @@
 		 */
         setSelected: function (item) {
             var _self = this,
-				multipleSelect = _self.get("multipleSelect");
+                multipleSelect = _self.get("multipleSelect");
             if (!_self.isItemSelectable(item)) {
                 return;
             }
@@ -1218,10 +1400,10 @@
 		 */
         updateItem: function (item) {
             var _self = this,
-				items = _self.getItems(),
-				index = BUI.Array.indexOf(item, items),
-				element = null,
-				tpl;
+                items = _self.getItems(),
+                index = BUI.Array.indexOf(item, items),
+                element = null,
+                tpl;
             if (index >= 0) {
                 element = _self.findElement(item);
                 tpl = _self.getItemTpl(item, index);
@@ -1246,7 +1428,7 @@
                 return false;
             }
             var _self = this,
-				elem = elem || _self.findElement(item);
+                elem = elem || _self.findElement(item);
             var cls = _self.getItemStatusCls(status);
             return $(elem).hasClass(cls);
 
@@ -1257,18 +1439,18 @@
 		 */
         findElement: function (item) {
             var _self = this,
-				elements = _self.getAllElements(),
-				result = null;
+                elements = _self.getAllElements(),
+                result = null;
             if (BUI.isString(item)) {
                 item = _self.getItem(item);
             }
             BUI.each(elements,
-				function (element) {
-				    if (_self.getItemByElement(element) == item) {
-				        result = element;
-				        return false;
-				    }
-				});
+                function (element) {
+                    if (_self.getItemByElement(element) == item) {
+                        result = element;
+                        return false;
+                    }
+                });
             return result;
         },
         /**
@@ -1278,15 +1460,15 @@
 		 */
         findItemByField: function (field, value) {
             var _self = this,
-				items = _self.get("items"),
-				result = null;
+                items = _self.get("items"),
+                result = null;
             BUI.each(items,
-				function (item) {
-				    if (item[field] != null && item[field] == value) {
-				        result = item;
-				        return false;
-				    }
-				});
+                function (item) {
+                    if (item[field] != null && item[field] == value) {
+                        result = item;
+                        return false;
+                    }
+                });
             return result;
         },
         /**
@@ -1296,7 +1478,7 @@
          */
         isItemSelected: function (item, element) {
             var _self = this,
-				cls = _self.getItemStatusCls("selected");
+                cls = _self.getItemStatusCls("selected");
             element = element || _self.findElement(item);
             return element && $(element).hasClass(cls);
         },
@@ -1342,8 +1524,8 @@
 		 */
         getItemTpl: function (item, index) {
             var _self = this,
-				render = _self.get("itemTplRender"),
-				itemTpl = _self.get("itemTpl");
+                render = _self.get("itemTplRender"),
+                itemTpl = _self.get("itemTpl");
             if (render) {
                 return render(item, index);
             }
@@ -1354,8 +1536,8 @@
 		 */
         getAllElements: function () {
             var _self = this,
-				itemCls = _self.get("itemCls"),
-				el = _self.get("el");
+                itemCls = _self.get("itemCls"),
+                el = _self.get("el");
             return el.find("." + itemCls);
         },
         /**
@@ -1364,8 +1546,8 @@
 		 */
         getFirstElementByStatus: function (name) {
             var _self = this,
-				cls = _self.getItemStatusCls(name),
-				el = _self.get("el");
+                cls = _self.getItemStatusCls(name),
+                el = _self.get("el");
             return el.find("." + cls)[0];
         },
         /**
@@ -1374,8 +1556,8 @@
 		 */
         getElementsByStatus: function (status) {
             var _self = this,
-				cls = _self.getItemStatusCls(status),
-				el = _self.get("el");
+                cls = _self.getItemStatusCls(status),
+                el = _self.get("el");
             return el.find("." + cls);
         },
         /**
@@ -1383,8 +1565,8 @@
 		 */
         getSelectedElements: function () {
             var _self = this,
-				cls = _self.getItemStatusCls("selected"),
-				el = _self.get("el");
+                cls = _self.getItemStatusCls("selected"),
+                el = _self.get("el");
             return el.find("." + cls);
         },
         /**
@@ -1395,8 +1577,8 @@
 		 */
         setItemStatusCls: function (name, elem, value) {
             var _self = this,
-				cls = _self.getItemStatusCls(name),
-				method = value ? "addClass" : "removeClass";
+                cls = _self.getItemStatusCls(name),
+                method = value ? "addClass" : "removeClass";
             if (elem) {
                 $(elem)[method](cls);
             }
@@ -1428,191 +1610,343 @@
             }
         }
     }, {
-        ATTRS: {
-            items: {
-                shared: false
-            },
-            /**
-			 * 主键字段
-			 */
-            idField: {
-                value: "value"
-            },
-            /**
-			 * 列表项的默认模板。
-			 */
-            itemTpl: {},
-            /**
-             * 列表项渲染函数
-             */
-            itemTplRender: {},
-            itemStatusCls: {
-                value: {}
-            },
-            multipleSelect: {},
-            selectedEvent: {
-                value: "click"
-            },
-            dataField: {
-                value: "data-item"
-            },
-            /**
-			 *  选项所在容器，如果未设定，使用 el
-			 */
-            itemContainer: {},
-            /**
-			 * 选项状态对应的选项值
-			 * 
-			 *   - 此字段用于将选项记录的值跟显示的DOM状态相对应
-			 *   - 例如：下面记录中 <code> checked : true </code>，可以使得此记录对应的DOM上应用对应的状态(默认为 'list-item-checked')
-			 *     <pre><code>{id : '1',text : 1,checked : true}</code></pre>
-			 *   - 当更改DOM的状态时，记录中对应的字段属性也会跟着变化
-			 * <pre><code>
-			 *   var list = new List.SimpleList({
-			 *   render : '#t1',
-			 *   idField : 'id', //自定义样式名称
-			 *   itemStatusFields : {
-			 *     checked : 'checked',
-			 *     disabled : 'disabled'
-			 *   },
-			 *   items : [{id : '1',text : '1',checked : true},{id : '2',text : '2',disabled : true}]
-			 * });
-			 * list.render(); //列表渲染后，会自动带有checked,和disabled对应的样式
-			 *
-			 * var item = list.getItem('1');
-			 * list.hasStatus(item,'checked'); //true
-			 *
-			 * list.setItemStatus(item,'checked',false);
-			 * list.hasStatus(item,'checked');  //false
-			 * item.checked;                    //false
-			 * 
-			 * </code></pre>
-			 * ** 注意 **
-			 * 此字段跟 {@link #itemStatusCls} 一起使用效果更好，可以自定义对应状态的样式
-			 * @cfg {Object} itemStatusFields
-			 */
-            itemStatusFields: {
-                value: {}
-            },
-            /**
-			 * 项的样式，用来获取子项
-			 */
-            itemCls: {},
-            /**
-			 * 是否允许取消选中，在多选情况下默认允许取消，单选情况下不允许取消,注意此属性只有单选情况下生效
-			 */
-            cancelSelected: {
-                value: false
-            },
-            /**
-			 * 获取项的文本，默认获取显示的文本
-			 */
-            textGetter: {},
-            events: {
-                value: {
-                    itemrendered: true,
-                    itemremoved: true,
-                    itemupdated: true,
-                    itemclick: false,
-                    itemsshow: false,
-                    beforeitemsshow: false,
-                    itemsclear: false,
-                    itemdblclick: false,
-                    beforeitemsclear: false,
-                    selectedchange: false,
-                    beforeselectedchange: false,
-                    itemselected: false,
-                    itemunselected: false
+            ATTRS: {
+                items: {
+                    shared: false
+                },
+                /**
+                 * 主键字段
+                 */
+                idField: {
+                    value: "value"
+                },
+                /**
+                 * 列表项的默认模板。
+                 */
+                itemTpl: {},
+                /**
+                 * 列表项渲染函数
+                 */
+                itemTplRender: {},
+                itemStatusCls: {
+                    value: {}
+                },
+                multipleSelect: {},
+                selectedEvent: {
+                    value: "click"
+                },
+                dataField: {
+                    value: "data-item"
+                },
+                /**
+                 *  选项所在容器，如果未设定，使用 el
+                 */
+                itemContainer: {},
+                /**
+                 * 选项状态对应的选项值
+                 * 
+                 *   - 此字段用于将选项记录的值跟显示的DOM状态相对应
+                 *   - 例如：下面记录中 <code> checked : true </code>，可以使得此记录对应的DOM上应用对应的状态(默认为 'list-item-checked')
+                 *     <pre><code>{id : '1',text : 1,checked : true}</code></pre>
+                 *   - 当更改DOM的状态时，记录中对应的字段属性也会跟着变化
+                 * <pre><code>
+                 *   var list = new List.SimpleList({
+                 *   render : '#t1',
+                 *   idField : 'id', //自定义样式名称
+                 *   itemStatusFields : {
+                 *     checked : 'checked',
+                 *     disabled : 'disabled'
+                 *   },
+                 *   items : [{id : '1',text : '1',checked : true},{id : '2',text : '2',disabled : true}]
+                 * });
+                 * list.render(); //列表渲染后，会自动带有checked,和disabled对应的样式
+                 *
+                 * var item = list.getItem('1');
+                 * list.hasStatus(item,'checked'); //true
+                 *
+                 * list.setItemStatus(item,'checked',false);
+                 * list.hasStatus(item,'checked');  //false
+                 * item.checked;                    //false
+                 * 
+                 * </code></pre>
+                 * ** 注意 **
+                 * 此字段跟 {@link #itemStatusCls} 一起使用效果更好，可以自定义对应状态的样式
+                 * @cfg {Object} itemStatusFields
+                 */
+                itemStatusFields: {
+                    value: {}
+                },
+                /**
+                 * 项的样式，用来获取子项
+                 */
+                itemCls: {},
+                /**
+                 * 是否允许取消选中，在多选情况下默认允许取消，单选情况下不允许取消,注意此属性只有单选情况下生效
+                 */
+                cancelSelected: {
+                    value: false
+                },
+                /**
+                 * 获取项的文本，默认获取显示的文本
+                 */
+                textGetter: {},
+                events: {
+                    value: {
+                        itemrendered: true,
+                        itemremoved: true,
+                        itemupdated: true,
+                        itemclick: false,
+                        itemsshow: false,
+                        beforeitemsshow: false,
+                        itemsclear: false,
+                        itemdblclick: false,
+                        beforeitemsclear: false,
+                        selectedchange: false,
+                        beforeselectedchange: false,
+                        itemselected: false,
+                        itemunselected: false
+                    }
                 }
             }
-        }
-    }, {
-        xclass: "domlist"
-    });
+        }, {
+            xclass: "domlist"
+        });
     BUI.List.DomList = domList;
 })(window.BUI, jQuery);
-//BUI.List.SimpleList +
+//BUI.List.ButtonGroup +
 (function (BUI, $) {
     "use strict";
     var UIBase = BUI.Component.UIBase,
-		DomList = BUI.List.DomList,
-		CLS_ITEM = BUI.prefix + "list-item";
-    var simpleList = DomList.extend({
-        bindUI: function () {
-            var _self = this,
-				itemCls = _self.get("itemCls"),
-				itemContainer = _self.getItemContainer();
-            itemContainer.delegate("." + itemCls, "mouseover",
-				function (ev) {
-				    if (_self.get("disabled")) {
-				        return;
-				    }
-				    var element = ev.currentTarget,
-						item = _self.getItemByElement(element);
-				    if (_self.isItemDisabled(ev.item, ev.currentTarget)) {
-				        return;
-				    }
-				    _self.setItemStatus(item, "hover", true, element);
+        DomList = BUI.List.DomList,
+        CLS_ITEM = "btn";
+    var ButtonGroup = DomList.extend({},
+        {
+            ATTRS: {
+                focusable: {
+                    value: false
+                },
+                elCls: {
+                    value: "btn-group"
+                },
+                items: {
 
-				}).delegate("." + itemCls, "mouseout",
-				function (ev) {
-				    if (_self.get("disabled")) {
-				        return;
-				    }
-				    var element = $(ev.currentTarget);
-				    _self.setItemStatusCls("hover", element, false);
-				});
-        }
-    }, {
-        ATTRS: {
-            focusable: {
-                value: false
-            },
-            items: {
-                value: []
-            },
-            itemCls: {
-                value: CLS_ITEM
-            },
-            idField: {
-                value: "value"
-            },
-            listSelector: {
-                value: "ul"
-            },
-            itemTpl: {
-                value: '<li class="' + CLS_ITEM + '">{text}</li>'
-            },
-            tpl: {
-                value: '<ul></ul>'
-            },
-            itemContainer: {
-                valueFn: function () {
-                    return this.get("el").find(this.get("listSelector"));
+                },
+                itemCls: {
+                    value: CLS_ITEM
+                },
+                idField: {
+                    value: "value"
+                },
+                itemTpl: {
+                    value: '<button type="button" class="' + CLS_ITEM + ' btn-default">{text}</button>'
+                },
+                itemStatusCls: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                itemContainer: {
+                    valueFn: function () {
+                        return this.get("el");
+                    }
                 }
             }
-        }
-    }, {
-        xclass: "simple-list",
-        prority: 0
-    });
-    BUI.List.SimpleList = simpleList;
+        }, {
+            xclass: "button-group",
+            prority: 0
+        });
+    BUI.List.ButtonGroup = ButtonGroup;
 })(window.BUI, jQuery);
-//BUI.List.Listbox +
+//BUI.List.ListGroup +
 (function (BUI, $) {
     "use strict";
-    var SimpleList = BUI.List.SimpleList;
-    var listbox = SimpleList.extend({}, {
-        ATTRS: {
-            itemTpl: {
-                value: '<li><span class="bui-checkbox"></span>{text}</li>'
-            },
-            multipleSelect: {
-                value: true
+    var UIBase = BUI.Component.UIBase,
+        DomList = BUI.List.DomList,
+        CLS_ITEM = "list-group-item";
+    var ListGroup = DomList.extend({},
+        {
+            ATTRS: {
+                focusable: {
+                    value: false
+                },
+                elCls: {
+                    value: "list-group"
+                },
+                items: {
+
+                },
+                elTagName: {
+                    value: "ul"
+                },
+                itemCls: {
+                    value: CLS_ITEM
+                },
+                idField: {
+                    value: "value"
+                },
+                itemTpl: {
+                    value: '<li class="' + CLS_ITEM + '">{text}</li>'
+                },
+                itemStatusCls: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                itemStatusFields: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                itemContainer: {
+                    valueFn: function () {
+                        return this.get("el");
+                    }
+                }
+            }
+        }, {
+            xclass: "list-group",
+            prority: 0
+        });
+    BUI.List.ListGroup = ListGroup;
+})(window.BUI, jQuery);
+//BUI.List.DropdownMenu +
+(function (BUI, $) {
+    "use strict";
+    var UIBase = BUI.Component.UIBase,
+        DomList = BUI.List.DomList,
+        CLS_ITEM = "dropdown-item";
+    var DropdownMenu = DomList.extend({  /**
+         * 设置元素显示隐藏
+         */
+        _uiSetVisible: function (isVisible) {
+            var self = this,
+                el = self.get("el");
+            if (isVisible) {
+                el.addClass("show");
+            } else {
+                el.removeClass("show");
             }
         }
-    }, {
-        xclass: "listbox"
-    });
-    BUI.List.Listbox = listbox;
+    },
+        {
+            ATTRS: {
+                focusable: {
+                    value: false
+                },
+                elCls: {
+                    value: "dropdown-menu"
+                },
+                items: {
+
+                },
+                visible: {
+                    sync: false,
+                    value: false
+                },
+                itemCls: {
+                    value: CLS_ITEM
+                },
+                idField: {
+                    value: "value"
+                },
+                itemTpl: {
+                    value: '<li class="' + CLS_ITEM + '"><a href="###">{text}</a></li>'
+                },
+                elTagName: {
+                    value: "ul"
+                },
+                itemStatusCls: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                itemStatusFields: {
+                    value: {
+                        selected: 'active',
+                        disabled: 'disabled'
+                    }
+                },
+                itemContainer: {
+                    valueFn: function () {
+                        return this.get("el");
+                    }
+                }
+            }
+        }, {
+            xclass: "dropdown-menu",
+            prority: 0
+        });
+    BUI.List.DropdownMenu = DropdownMenu;
 })(window.BUI, jQuery);
+
+////BUI.List.SimpleList +
+//(function (BUI, $) {
+//    "use strict";
+//    var UIBase = BUI.Component.UIBase,
+//        DomList = BUI.List.DomList,
+//        CLS_ITEM = BUI.prefix + "list-item";
+//    var simpleList = DomList.extend({
+//        bindUI: function () {
+//            var _self = this,
+//                itemCls = _self.get("itemCls"),
+//                itemContainer = _self.getItemContainer();
+//            itemContainer.delegate("." + itemCls, "mouseover",
+//                function (ev) {
+//                    if (_self.get("disabled")) {
+//                        return;
+//                    }
+//                    var element = ev.currentTarget,
+//                        item = _self.getItemByElement(element);
+//                    if (_self.isItemDisabled(ev.item, ev.currentTarget)) {
+//                        return;
+//                    }
+//                    _self.setItemStatus(item, "hover", true, element);
+
+//                }).delegate("." + itemCls, "mouseout",
+//                    function (ev) {
+//                        if (_self.get("disabled")) {
+//                            return;
+//                        }
+//                        var element = $(ev.currentTarget);
+//                        _self.setItemStatusCls("hover", element, false);
+//                    });
+//        }
+//    }, {
+//            ATTRS: {
+//                focusable: {
+//                    value: false
+//                },
+//                items: {
+
+//                },
+//                itemCls: {
+//                    value: CLS_ITEM
+//                },
+//                idField: {
+//                    value: "value"
+//                },
+//                listSelector: {
+//                    value: "ul"
+//                },
+//                itemTpl: {
+//                    value: '<li class="' + CLS_ITEM + '">{text}</li>'
+//                },
+//                tpl: {
+//                    value: '<ul></ul>'
+//                },
+//                itemContainer: {
+//                    valueFn: function () {
+//                        return this.get("el").find(this.get("listSelector"));
+//                    }
+//                }
+//            }
+//        }, {
+//            xclass: "simple-list",
+//            prority: 0
+//        });
+//    BUI.List.SimpleList = simpleList;
+//})(window.BUI, jQuery);
