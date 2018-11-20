@@ -24,7 +24,7 @@ namespace ESC.WebCore.ViewComponents
         /// <param name="superUser"></param>
         /// <param name="url"></param>
         /// <returns></returns>
-        public async Task<IViewComponentResult> InvokeAsync(int userId, int superUser, string url)
+        public IViewComponentResult Invoke(int userId, int superUser, string url)
         {
             StringBuilder sb = new StringBuilder();
 

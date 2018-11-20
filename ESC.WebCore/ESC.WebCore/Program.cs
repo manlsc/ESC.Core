@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using NLog.Web;
 
 namespace ESC.WebCore
 {
@@ -16,7 +17,23 @@ namespace ESC.WebCore
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //读取配置
+            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+            try
+            {
+                BuildWebHost(args).Run();
+            }
+            catch (Exception exception)
+            {
+                //NLog: catch setup errors
+                logger.Error(exception, "异常导致系统崩溃");
+                throw;
+            }
+            finally
+            {
+                // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
+                NLog.LogManager.Shutdown();
+            }
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
@@ -32,7 +49,13 @@ namespace ESC.WebCore
             //        new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
             //    options.Listen(IPAddress.Loopback, 5000);
             //})
-                .UseStartup<Startup>()
-                .Build();
+            .ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();  //清空默认日志提供器
+                logging.SetMinimumLevel(LogLevel.Information);  //设置日志最小级别
+            }) 
+            .UseStartup<Startup>()
+            .UseNLog()  //启用NLOG
+            .Build();
     }
 }

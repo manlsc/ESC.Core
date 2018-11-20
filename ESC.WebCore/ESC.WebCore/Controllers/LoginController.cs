@@ -7,21 +7,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace ESC.Web.Controllers
 {
     public class LoginController : Controller
     {
-
         protected SUserService uService = new SUserService();
 
         // GET: Login
         public ActionResult Index()
         {
-            //NLoging.GetInstance().Error("123");
             return View();
         }
-       
+
         /// <summary>
         /// 登陆
         /// </summary>
@@ -38,8 +37,11 @@ namespace ESC.Web.Controllers
             {
                 if (user.Pwd.Equals(pwd.Trim()))
                 {
-                    //客户端保存用户编码
-                    //CookieHelper.AddOrUpdateCookie(this.HttpContext, "USRID", user.UserCode, 1);
+                    //客户端保存用户编码 微软自带的认证太复杂，本质就是cookie进行加密和解密
+                    HttpContext.Response.Cookies.Append(CookieConst.ESC_USR_UID, user.UserCode, new CookieOptions()
+                    {
+                        Expires = DateTimeOffset.Now.AddDays(7)
+                    });
                     cr.Content = "true" + user.UserName;
                 }
                 else

@@ -636,7 +636,9 @@
                 cellsTpl = [];
             $.each(columns,
                 function (index, column) {
-                    cellsTpl.push(_self._getHeaderCellTpl(column));
+                    if (column.get("visible")) {
+                        cellsTpl.push(_self._getHeaderCellTpl(column));
+                    }
                 });
             if (_self.get("useEmptyCell")) {
                 cellsTpl.push(_self._getEmptyCellTpl());
@@ -675,8 +677,10 @@
                 rowEl;
             BUI.each(columns,
                 function (column) {
-                    var dataIndex = column.get("dataIndex");
-                    cellsTpl.push(_self._getCellTpl(column, dataIndex, record, index));
+                    if (column.get("visible")) {
+                        var dataIndex = column.get("dataIndex");
+                        cellsTpl.push(_self._getCellTpl(column, dataIndex, record, index));
+                    }
                 });
             if (_self.get("useEmptyCell")) {
                 cellsTpl.push(_self._getEmptyCellTpl());

@@ -8,6 +8,12 @@ namespace ESC.Core
     public interface ILog
     {
         /// <summary>
+        /// 跟踪
+        /// </summary>
+        /// <param name="message"></param>
+        void Trace(string message);
+
+        /// <summary>
         /// 信息
         /// </summary>
         /// <param name="message"></param>

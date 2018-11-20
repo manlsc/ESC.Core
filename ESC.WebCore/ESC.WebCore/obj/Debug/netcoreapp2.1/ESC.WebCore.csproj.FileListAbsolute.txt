@@ -1,3 +1,4 @@
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\bin\Debug\netcoreapp2.1\nlog.config
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\bin\Debug\netcoreapp2.1\ESC.WebCore.deps.json
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\bin\Debug\netcoreapp2.1\ESC.WebCore.runtimeconfig.json
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\bin\Debug\netcoreapp2.1\ESC.WebCore.runtimeconfig.dev.json

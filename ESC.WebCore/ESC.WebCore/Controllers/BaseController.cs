@@ -34,7 +34,6 @@ namespace ESC.Web.Controllers
         {
             base.OnActionExecuting(context);
             CurrentUser = new SUserService().GetUserByCode("admin").FirstOrDefault();
-            CurrentUser.Remark = string.Format("欢迎：{0} {1}", CurrentUser.UserName, DateTime.Now.ToString("yyyy年HH月dd日"));
             ViewBag.CurrentUser = CurrentUser;
 
             //记录行为日志  增删改

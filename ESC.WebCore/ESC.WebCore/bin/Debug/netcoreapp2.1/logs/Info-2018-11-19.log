@@ -1,0 +1,2332 @@
+2018-11-19 11:39:07.7511 - INFO: User profile is available. Using 'C:\Users\lvsc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+
+2018-11-19 11:39:09.1019 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/   
+
+2018-11-19 11:39:09.4217 - INFO: Route matched with {action = "Index", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) 
+
+2018-11-19 11:39:09.5964 - INFO: Executing action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:39:09.5964 - INFO: Executed action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7122ms. 
+
+2018-11-19 11:39:09.6240 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:39:09.7478 - INFO: Executed ViewResult - view Index executed in 141.1871ms. 
+
+2018-11-19 11:39:09.7478 - INFO: Executed action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) in 326.6787ms 
+
+2018-11-19 11:39:09.7478 - INFO: Request finished in 654.8781ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:39:10.1197 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/login.css   
+
+2018-11-19 11:39:10.1197 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 11:39:10.1354 - INFO: Sending file. Request path: '/lib/login/login.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\login.css' 
+
+2018-11-19 11:39:10.1372 - INFO: Request finished in 17.5648ms 200 text/css 
+
+2018-11-19 11:39:10.1595 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 11:39:10.1595 - INFO: Request finished in 40.0252ms 200 application/javascript 
+
+2018-11-19 11:39:10.2601 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/web_login_bg.jpg   
+
+2018-11-19 11:39:10.2620 - INFO: Sending file. Request path: '/lib/login/web_login_bg.jpg'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\web_login_bg.jpg' 
+
+2018-11-19 11:39:10.2620 - INFO: Request finished in 2.0096ms 200 image/jpeg 
+
+2018-11-19 11:39:10.3366 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/favicon.ico   
+
+2018-11-19 11:39:10.3447 - INFO: Sending file. Request path: '/favicon.ico'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\favicon.ico' 
+
+2018-11-19 11:39:10.3447 - INFO: Request finished in 8.604ms 200 image/x-icon 
+
+2018-11-19 11:39:11.1490 - INFO: Request starting HTTP/1.1 POST http://localhost:25226/Login/Login application/x-www-form-urlencoded; charset=UTF-8 29 
+
+2018-11-19 11:39:11.1540 - INFO: Route matched with {action = "Login", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) 
+
+2018-11-19 11:39:11.1736 - INFO: Executing action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:39:11.5463 - INFO: Executed action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 372.6469ms. 
+
+2018-11-19 11:39:11.5463 - INFO: Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+
+2018-11-19 11:39:11.5463 - INFO: Executed action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) in 393.5931ms 
+
+2018-11-19 11:39:11.5463 - INFO: Request finished in 398.9552ms 200 text/plain; charset=utf-8 
+
+2018-11-19 11:39:11.5619 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 11:39:11.5619 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 11:39:11.6943 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:39:11.6943 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.7556ms. 
+
+2018-11-19 11:39:11.6997 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:39:11.9568 - INFO: Executed ViewResult - view Index executed in 260.6138ms. 
+
+2018-11-19 11:39:11.9568 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 393.5844ms 
+
+2018-11-19 11:39:11.9568 - INFO: Request finished in 395.1725ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:39:11.9568 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 11:39:11.9568 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.6857ms 200 text/css 
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 3.71ms 200 text/css 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.018ms 200 text/css 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.7039ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.8429ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.227ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.2803ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.1215ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.165ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.3866ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.4929ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.3005ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 11:39:11.9646 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 11:39:11.9646 - INFO: Request finished in 1.1745ms 200 application/javascript 
+
+2018-11-19 11:39:11.9646 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.246ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.1567ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.0315ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.0911ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.8556ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.1749ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.7817ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 1.8279ms 200 application/javascript 
+
+2018-11-19 11:39:11.9806 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 11:39:11.9806 - INFO: Request finished in 2.5789ms 200 application/javascript 
+
+2018-11-19 11:39:12.0026 - INFO: Request finished in 13.0283ms 200 application/javascript 
+
+2018-11-19 11:39:12.2100 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 11:39:12.2484 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 11:39:12.2484 - INFO: Request finished in 38.7014ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 11:39:15.7656 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 11:39:15.7656 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 11:39:15.8053 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:39:15.8053 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0742ms. 
+
+2018-11-19 11:39:15.8053 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:39:15.8374 - INFO: Executed ViewResult - view Index executed in 31.9039ms. 
+
+2018-11-19 11:39:15.8374 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 70.0218ms 
+
+2018-11-19 11:39:15.8374 - INFO: Request finished in 72.1196ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:39:15.8444 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 11:39:15.8444 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 11:39:15.8444 - INFO: Request finished in 3.0372ms 200 text/css 
+
+2018-11-19 11:39:15.8599 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 11:39:15.8599 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 11:39:15.8599 - INFO: Request finished in 1.3791ms 200 text/css 
+
+2018-11-19 11:39:15.8599 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 11:39:15.8599 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 11:39:15.8599 - INFO: Request finished in 1.1551ms 200 text/css 
+
+2018-11-19 11:39:15.8741 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 11:39:15.8741 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 11:39:15.8741 - INFO: Request finished in 4.6498ms 200 application/javascript 
+
+2018-11-19 11:39:15.9318 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 11:39:15.9337 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 11:39:15.9337 - INFO: Request finished in 1.9859ms 200 application/javascript 
+
+2018-11-19 11:39:15.9494 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 11:39:15.9494 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 11:39:15.9494 - INFO: Request finished in 2.0483ms 200 application/javascript 
+
+2018-11-19 11:39:15.9693 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 11:39:15.9693 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 11:39:15.9693 - INFO: Request finished in 1.2444ms 200 application/javascript 
+
+2018-11-19 11:39:15.9693 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 11:39:15.9693 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 11:39:15.9693 - INFO: Request finished in 1.1697ms 200 application/javascript 
+
+2018-11-19 11:39:15.9905 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 11:39:15.9905 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 11:39:15.9905 - INFO: Request finished in 1.4313ms 200 application/javascript 
+
+2018-11-19 11:39:15.9990 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 11:39:15.9990 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 11:39:15.9990 - INFO: Request finished in 1.6608ms 200 application/javascript 
+
+2018-11-19 11:39:16.0132 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 11:39:16.0132 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 11:39:16.0132 - INFO: Request finished in 1.3621ms 200 application/javascript 
+
+2018-11-19 11:39:16.0132 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 11:39:16.0132 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 11:39:16.0132 - INFO: Request finished in 1.304ms 200 application/javascript 
+
+2018-11-19 11:39:16.0330 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 11:39:16.0330 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 11:39:16.0330 - INFO: Request finished in 1.6272ms 200 application/javascript 
+
+2018-11-19 11:39:16.0448 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 11:39:16.0448 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 11:39:16.0448 - INFO: Request finished in 1.8243ms 200 application/javascript 
+
+2018-11-19 11:39:16.0448 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 11:39:16.0448 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 11:39:16.0448 - INFO: Request finished in 1.4897ms 200 application/javascript 
+
+2018-11-19 11:39:16.0655 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 11:39:16.0655 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 11:39:16.0655 - INFO: Request finished in 1.4767ms 200 application/javascript 
+
+2018-11-19 11:39:16.0743 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 11:39:16.0743 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 11:39:16.0743 - INFO: Request finished in 1.7414ms 200 application/javascript 
+
+2018-11-19 11:39:16.0743 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 11:39:16.0743 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 11:39:16.0743 - INFO: Request finished in 1.4818ms 200 application/javascript 
+
+2018-11-19 11:39:16.0983 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 11:39:16.0983 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 11:39:16.0983 - INFO: Request finished in 1.6509ms 200 application/javascript 
+
+2018-11-19 11:39:16.1231 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 11:39:16.1231 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 11:39:16.1231 - INFO: Request finished in 1.3795ms 200 application/javascript 
+
+2018-11-19 11:39:16.1231 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 11:39:16.1231 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 11:39:16.1231 - INFO: Request finished in 1.3353ms 200 application/javascript 
+
+2018-11-19 11:39:16.1453 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 11:39:16.1453 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 11:39:16.1453 - INFO: Request finished in 1.0034ms 200 application/javascript 
+
+2018-11-19 11:39:16.1535 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 11:39:16.1535 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 11:39:16.1535 - INFO: Request finished in 1.0504ms 200 application/javascript 
+
+2018-11-19 11:39:16.1535 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 11:39:16.1535 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 11:39:16.1535 - INFO: Request finished in 1.1942ms 200 application/javascript 
+
+2018-11-19 11:39:16.1779 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 11:39:16.1779 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 11:39:16.1779 - INFO: Request finished in 1.487ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 11:39:27.4156 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 11:39:27.4156 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 11:39:27.4172 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 11:39:27.4172 - INFO: Request finished in 1.7287ms 200 text/css 
+
+2018-11-19 11:39:27.4172 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 11:39:27.4172 - INFO: Request finished in 7.7945ms 200 text/css 
+
+2018-11-19 11:39:27.4619 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css.map   
+
+2018-11-19 11:39:27.4656 - INFO: Request finished in 3.7285ms 404  
+
+2018-11-19 11:39:45.6695 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 11:39:45.6695 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 11:39:45.7249 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:39:45.7249 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0809ms. 
+
+2018-11-19 11:39:45.7249 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:39:47.8851 - INFO: Executed ViewResult - view Index executed in 2159.8731ms. 
+
+2018-11-19 11:39:47.8851 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 2214.8052ms 
+
+2018-11-19 11:39:47.8851 - INFO: Request finished in 2215.768ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:39:47.8935 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 11:39:47.8935 - INFO: The file /lib/bui/css/bootstrap.css was not modified 
+
+2018-11-19 11:39:47.8935 - INFO: Request finished in 6.6951ms 304 text/css 
+
+2018-11-19 11:39:47.9130 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 11:39:47.9130 - INFO: The file /lib/bui/css/bui.css was not modified 
+
+2018-11-19 11:39:47.9130 - INFO: Request finished in 0.4444ms 304 text/css 
+
+2018-11-19 11:39:47.9174 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 11:39:47.9174 - INFO: The file /lib/bui/fonts/iconfont.css was not modified 
+
+2018-11-19 11:39:47.9174 - INFO: Request finished in 0.3614ms 304 text/css 
+
+2018-11-19 11:39:47.9174 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 11:39:47.9174 - INFO: The file /lib/plugins/jquery.js was not modified 
+
+2018-11-19 11:39:47.9174 - INFO: Request finished in 0.3614ms 304 application/javascript 
+
+2018-11-19 11:39:47.9790 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 11:39:47.9790 - INFO: The file /lib/plugins/SimpleAjaxUploader.js was not modified 
+
+2018-11-19 11:39:47.9790 - INFO: Request finished in 0.3875ms 304 application/javascript 
+
+2018-11-19 11:39:47.9889 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 11:39:47.9889 - INFO: The file /lib/bui/01common.js was not modified 
+
+2018-11-19 11:39:47.9889 - INFO: Request finished in 0.3429ms 304 application/javascript 
+
+2018-11-19 11:39:48.0029 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 11:39:48.0029 - INFO: The file /lib/bui/02cookie.js was not modified 
+
+2018-11-19 11:39:48.0029 - INFO: Request finished in 0.6305ms 304 application/javascript 
+
+2018-11-19 11:39:48.0029 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 11:39:48.0029 - INFO: The file /lib/bui/03data.js was not modified 
+
+2018-11-19 11:39:48.0029 - INFO: Request finished in 0.4412ms 304 application/javascript 
+
+2018-11-19 11:39:48.0170 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 11:39:48.0170 - INFO: The file /lib/bui/04mask.js was not modified 
+
+2018-11-19 11:39:48.0170 - INFO: Request finished in 0.4183ms 304 application/javascript 
+
+2018-11-19 11:39:48.0170 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 11:39:48.0170 - INFO: The file /lib/bui/05list.js was not modified 
+
+2018-11-19 11:39:48.0170 - INFO: Request finished in 0.4329ms 304 application/javascript 
+
+2018-11-19 11:39:48.0335 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 11:39:48.0335 - INFO: The file /lib/bui/06dropdowns.js was not modified 
+
+2018-11-19 11:39:48.0335 - INFO: Request finished in 0.4239ms 304 application/javascript 
+
+2018-11-19 11:39:48.0335 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 11:39:48.0335 - INFO: The file /lib/bui/07pagination.js was not modified 
+
+2018-11-19 11:39:48.0335 - INFO: Request finished in 0.4061ms 304 application/javascript 
+
+2018-11-19 11:39:48.0490 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 11:39:48.0490 - INFO: The file /lib/bui/08overlay.js was not modified 
+
+2018-11-19 11:39:48.0490 - INFO: Request finished in 0.3713ms 304 application/javascript 
+
+2018-11-19 11:39:48.0490 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 11:39:48.0490 - INFO: The file /lib/bui/09picker.js was not modified 
+
+2018-11-19 11:39:48.0490 - INFO: Request finished in 0.3279ms 304 application/javascript 
+
+2018-11-19 11:39:48.0623 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 11:39:48.0623 - INFO: The file /lib/bui/10calendar.js was not modified 
+
+2018-11-19 11:39:48.0623 - INFO: Request finished in 0.4507ms 304 application/javascript 
+
+2018-11-19 11:39:48.0623 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 11:39:48.0623 - INFO: The file /lib/bui/11tooltip.js was not modified 
+
+2018-11-19 11:39:48.0623 - INFO: Request finished in 0.363ms 304 application/javascript 
+
+2018-11-19 11:39:48.0755 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 11:39:48.0755 - INFO: The file /lib/bui/12tree.js was not modified 
+
+2018-11-19 11:39:48.0755 - INFO: Request finished in 0.4894ms 304 application/javascript 
+
+2018-11-19 11:39:48.0755 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 11:39:48.0755 - INFO: The file /lib/bui/13form.js was not modified 
+
+2018-11-19 11:39:48.0755 - INFO: Request finished in 0.4539ms 304 application/javascript 
+
+2018-11-19 11:39:48.0911 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 11:39:48.0911 - INFO: The file /lib/bui/14grid.js was not modified 
+
+2018-11-19 11:39:48.0911 - INFO: Request finished in 0.7585ms 304 application/javascript 
+
+2018-11-19 11:39:48.1050 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 11:39:48.1050 - INFO: The file /lib/bui/16menu.js was not modified 
+
+2018-11-19 11:39:48.1050 - INFO: Request finished in 0.8687ms 304 application/javascript 
+
+2018-11-19 11:39:48.1050 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 11:39:48.1050 - INFO: The file /lib/bui/19layout.js was not modified 
+
+2018-11-19 11:39:48.1050 - INFO: Request finished in 0.5076ms 304 application/javascript 
+
+2018-11-19 11:39:48.1227 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 11:39:48.1227 - INFO: The file /lib/BuiCommon.js was not modified 
+
+2018-11-19 11:39:48.1227 - INFO: Request finished in 0.5104ms 304 application/javascript 
+
+2018-11-19 11:39:48.1227 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 11:39:48.1227 - INFO: The file /lib/BuiForm.js was not modified 
+
+2018-11-19 11:39:48.1227 - INFO: Request finished in 0.476ms 304 application/javascript 
+
+2018-11-19 11:39:48.1379 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 11:39:48.1379 - INFO: The file /lib/BuiGrid.js was not modified 
+
+2018-11-19 11:39:48.1379 - INFO: Request finished in 0.3832ms 304 application/javascript 
+
+2018-11-19 11:39:48.1538 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 11:39:48.1538 - INFO: The file /lib/bui/fonts/iconfont.eot was not modified 
+
+2018-11-19 11:39:48.1538 - INFO: Request finished in 0.4634ms 304 application/vnd.ms-fontobject 
+
+2018-11-19 11:40:02.1375 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Index   
+
+2018-11-19 11:40:02.1375 - INFO: Route matched with {action = "Index", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:02.1840 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:02.1840 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4993ms. 
+
+2018-11-19 11:40:02.1983 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:02.2414 - INFO: Executed ViewResult - view Index executed in 56.5293ms. 
+
+2018-11-19 11:40:02.2414 - INFO: Executed action ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) in 102.1759ms 
+
+2018-11-19 11:40:02.2414 - INFO: Request finished in 104.1026ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:02.5869 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Init?_=1542598802371   
+
+2018-11-19 11:40:02.5869 - INFO: Route matched with {action = "Init", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:02.6343 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:02.7727 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 138.2695ms. 
+
+2018-11-19 11:40:02.7727 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:02.7727 - INFO: Executed action ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) in 184.0173ms 
+
+2018-11-19 11:40:02.7727 - INFO: Request finished in 186.2225ms 200 application/json 
+
+2018-11-19 11:40:02.8875 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Search?page=1&rows=20&_=1542598802372   
+
+2018-11-19 11:40:02.8875 - INFO: Route matched with {action = "Search", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:02.9464 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:03.0976 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 151.1497ms. 
+
+2018-11-19 11:40:03.0976 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:03.0976 - INFO: Executed action ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) in 208.4368ms 
+
+2018-11-19 11:40:03.0976 - INFO: Request finished in 210.435ms 200 application/json 
+
+2018-11-19 11:40:06.0920 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Index   
+
+2018-11-19 11:40:06.1180 - INFO: Route matched with {action = "Index", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:06.1627 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:06.1627 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2441ms. 
+
+2018-11-19 11:40:06.1627 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:06.2045 - INFO: Executed ViewResult - view Index executed in 41.4008ms. 
+
+2018-11-19 11:40:06.2045 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) in 86.5761ms 
+
+2018-11-19 11:40:06.2045 - INFO: Request finished in 112.6739ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:06.5519 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Init?_=1542598806355   
+
+2018-11-19 11:40:06.5519 - INFO: Route matched with {action = "Init", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:06.5942 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:06.6570 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 62.7638ms. 
+
+2018-11-19 11:40:06.6570 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:06.6570 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) in 103.1284ms 
+
+2018-11-19 11:40:06.6570 - INFO: Request finished in 105.7232ms 200 application/json 
+
+2018-11-19 11:40:06.7599 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Search?page=1&rows=20&_=1542598806356   
+
+2018-11-19 11:40:06.7615 - INFO: Route matched with {action = "Search", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:06.8014 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:06.8645 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 63.0751ms. 
+
+2018-11-19 11:40:06.8645 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:06.8645 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) in 103.1975ms 
+
+2018-11-19 11:40:06.8645 - INFO: Request finished in 104.8888ms 200 application/json 
+
+2018-11-19 11:40:07.4751 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SResource/Index   
+
+2018-11-19 11:40:07.4751 - INFO: Route matched with {action = "Index", controller = "SResource"}. Executing action ESC.Web.Controllers.SResourceController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:07.5182 - INFO: Executing action method ESC.Web.Controllers.SResourceController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:07.5182 - INFO: Executed action method ESC.Web.Controllers.SResourceController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2338ms. 
+
+2018-11-19 11:40:07.5182 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:07.5790 - INFO: Executed ViewResult - view Index executed in 60.461ms. 
+
+2018-11-19 11:40:07.5790 - INFO: Executed action ESC.Web.Controllers.SResourceController.Index (ESC.WebCore) in 101.7449ms 
+
+2018-11-19 11:40:07.5790 - INFO: Request finished in 104.3227ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:07.9472 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SResource/Init?_=1542598807715   
+
+2018-11-19 11:40:07.9501 - INFO: Route matched with {action = "Init", controller = "SResource"}. Executing action ESC.Web.Controllers.SResourceController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:07.9501 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SResource/ForeignInit?table=OPerator&_=1542598807716   
+
+2018-11-19 11:40:07.9766 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SResource/GetTree?_=1542598807717   
+
+2018-11-19 11:40:07.9803 - INFO: Route matched with {action = "GetTree", controller = "SResource"}. Executing action ESC.Web.Controllers.SResourceController.GetTree (ESC.WebCore) 
+
+2018-11-19 11:40:08.0278 - INFO: Executing action method ESC.Web.Controllers.SResourceController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:08.0278 - INFO: Route matched with {action = "ForeignInit", controller = "SResource"}. Executing action ESC.Web.Controllers.SResourceController.ForeignInit (ESC.WebCore) 
+
+2018-11-19 11:40:08.0712 - INFO: Executing action method ESC.Web.Controllers.SResourceController.GetTree (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:08.1300 - INFO: Executing action method ESC.Web.Controllers.SResourceController.ForeignInit (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:08.1746 - INFO: Executed action method ESC.Web.Controllers.SResourceController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 146.8127ms. 
+
+2018-11-19 11:40:08.1746 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:08.1746 - INFO: Executed action ESC.Web.Controllers.SResourceController.Init (ESC.WebCore) in 224.8034ms 
+
+2018-11-19 11:40:08.1746 - INFO: Request finished in 227.8146ms 200 application/json 
+
+2018-11-19 11:40:08.1838 - INFO: Executed action method ESC.Web.Controllers.SResourceController.ForeignInit (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 53.7998ms. 
+
+2018-11-19 11:40:08.1838 - INFO: Executed action method ESC.Web.Controllers.SResourceController.GetTree (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 112.6774ms. 
+
+2018-11-19 11:40:08.1838 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:08.1838 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:08.1838 - INFO: Executed action ESC.Web.Controllers.SResourceController.ForeignInit (ESC.WebCore) in 156.3487ms 
+
+2018-11-19 11:40:08.1838 - INFO: Executed action ESC.Web.Controllers.SResourceController.GetTree (ESC.WebCore) in 203.8411ms 
+
+2018-11-19 11:40:08.1838 - INFO: Request finished in 233.925ms 200 application/json 
+
+2018-11-19 11:40:08.1838 - INFO: Request finished in 207.7348ms 200 application/json 
+
+2018-11-19 11:40:08.2662 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/img/tree_icon-80-100.gif   
+
+2018-11-19 11:40:08.2833 - INFO: Sending file. Request path: '/lib/bui/img/tree_icon-80-100.gif'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\img\tree_icon-80-100.gif' 
+
+2018-11-19 11:40:08.2833 - INFO: Request finished in 17.0982ms 200 image/gif 
+
+2018-11-19 11:40:09.1234 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SRolePermission/Index   
+
+2018-11-19 11:40:09.1234 - INFO: Route matched with {action = "Index", controller = "SRolePermission"}. Executing action ESC.Web.Controllers.SRolePermissionController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:09.1658 - INFO: Executing action method ESC.Web.Controllers.SRolePermissionController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:09.1658 - INFO: Executed action method ESC.Web.Controllers.SRolePermissionController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2224ms. 
+
+2018-11-19 11:40:09.1722 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:09.2086 - INFO: Executed ViewResult - view Index executed in 42.5019ms. 
+
+2018-11-19 11:40:09.2086 - INFO: Executed action ESC.Web.Controllers.SRolePermissionController.Index (ESC.WebCore) in 83.7581ms 
+
+2018-11-19 11:40:09.2086 - INFO: Request finished in 85.4016ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:09.5426 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SRolePermission/GetRoles?_=1542598809339   
+
+2018-11-19 11:40:09.5426 - INFO: Route matched with {action = "GetRoles", controller = "SRolePermission"}. Executing action ESC.Web.Controllers.SRolePermissionController.GetRoles (ESC.WebCore) 
+
+2018-11-19 11:40:09.5678 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SRolePermission/GetResourceAndOper?_=1542598809340   
+
+2018-11-19 11:40:09.5678 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SUser/Init?_=1542598809341   
+
+2018-11-19 11:40:09.5902 - INFO: Executing action method ESC.Web.Controllers.SRolePermissionController.GetRoles (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:09.5902 - INFO: Route matched with {action = "GetResourceAndOper", controller = "SRolePermission"}. Executing action ESC.Web.Controllers.SRolePermissionController.GetResourceAndOper (ESC.WebCore) 
+
+2018-11-19 11:40:09.5902 - INFO: Route matched with {action = "Init", controller = "SUser"}. Executing action ESC.Web.Controllers.SUserController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:09.6482 - INFO: Executing action method ESC.Web.Controllers.SRolePermissionController.GetResourceAndOper (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:09.7134 - INFO: Executing action method ESC.Web.Controllers.SUserController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:09.8035 - INFO: Executed action method ESC.Web.Controllers.SUserController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 90.123ms. 
+
+2018-11-19 11:40:09.8035 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:09.8035 - INFO: Executed action ESC.Web.Controllers.SUserController.Init (ESC.WebCore) in 213.2913ms 
+
+2018-11-19 11:40:09.8035 - INFO: Request finished in 236.1346ms 200 application/json 
+
+2018-11-19 11:40:09.8309 - INFO: Executed action method ESC.Web.Controllers.SRolePermissionController.GetRoles (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 240.6533ms. 
+
+2018-11-19 11:40:09.8309 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:09.8309 - INFO: Executed action ESC.Web.Controllers.SRolePermissionController.GetRoles (ESC.WebCore) in 285.8673ms 
+
+2018-11-19 11:40:09.8309 - INFO: Request finished in 288.6999ms 200 application/json 
+
+2018-11-19 11:40:09.9390 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/img/check_icon-100-100.gif   
+
+2018-11-19 11:40:09.9663 - INFO: Sending file. Request path: '/lib/bui/img/check_icon-100-100.gif'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\img\check_icon-100-100.gif' 
+
+2018-11-19 11:40:09.9663 - INFO: Request finished in 27.3844ms 200 image/gif 
+
+2018-11-19 11:40:10.4311 - INFO: Executed action method ESC.Web.Controllers.SRolePermissionController.GetResourceAndOper (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 782.8931ms. 
+
+2018-11-19 11:40:10.4311 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:10.4311 - INFO: Executed action ESC.Web.Controllers.SRolePermissionController.GetResourceAndOper (ESC.WebCore) in 840.9497ms 
+
+2018-11-19 11:40:10.4311 - INFO: Request finished in 863.7728ms 200 application/json 
+
+2018-11-19 11:40:12.4278 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Index   
+
+2018-11-19 11:40:12.4278 - INFO: Route matched with {action = "Index", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:12.4748 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:12.5073 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 32.4582ms. 
+
+2018-11-19 11:40:12.5112 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:12.5545 - INFO: Executed ViewResult - view Index executed in 47.0577ms. 
+
+2018-11-19 11:40:12.5545 - INFO: Executed action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) in 124.6415ms 
+
+2018-11-19 11:40:12.5545 - INFO: Request finished in 126.906ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:12.8829 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Init?_=1542598812692   
+
+2018-11-19 11:40:12.8873 - INFO: Route matched with {action = "Init", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:12.9333 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:13.0205 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 87.0786ms. 
+
+2018-11-19 11:40:13.0205 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:13.0205 - INFO: Executed action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) in 133.3597ms 
+
+2018-11-19 11:40:13.0205 - INFO: Request finished in 137.9144ms 200 application/json 
+
+2018-11-19 11:40:13.1467 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Search?page=1&rows=20&_=1542598812693   
+
+2018-11-19 11:40:13.1467 - INFO: Route matched with {action = "Search", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:13.2141 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:13.2792 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 65.0998ms. 
+
+2018-11-19 11:40:13.2792 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:13.2792 - INFO: Executed action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) in 129.7457ms 
+
+2018-11-19 11:40:13.2792 - INFO: Request finished in 132.6668ms 200 application/json 
+
+2018-11-19 11:40:19.2864 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Index   
+
+2018-11-19 11:40:19.2864 - INFO: Route matched with {action = "Index", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:19.3357 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:19.3619 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 26.2226ms. 
+
+2018-11-19 11:40:19.3619 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:19.3970 - INFO: Executed ViewResult - view Index executed in 34.9396ms. 
+
+2018-11-19 11:40:19.3970 - INFO: Executed action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) in 109.8069ms 
+
+2018-11-19 11:40:19.3970 - INFO: Request finished in 110.8285ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:19.4202 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 11:40:19.4202 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 11:40:19.4202 - INFO: Request finished in 2.9815ms 200 text/css 
+
+2018-11-19 11:40:19.4202 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 11:40:19.4202 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 11:40:19.4202 - INFO: Request finished in 2.6694ms 200 text/css 
+
+2018-11-19 11:40:19.4202 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 11:40:19.4202 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 11:40:19.4202 - INFO: Request finished in 1.7106ms 200 text/css 
+
+2018-11-19 11:40:19.4202 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 11:40:19.4202 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 11:40:19.4526 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 11:40:19.4526 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 11:40:19.4526 - INFO: Request finished in 1.4443ms 200 application/javascript 
+
+2018-11-19 11:40:19.4526 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 11:40:19.4655 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 11:40:19.4655 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 11:40:19.4655 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 11:40:19.4655 - INFO: Request finished in 12.2745ms 200 application/javascript 
+
+2018-11-19 11:40:19.4655 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 11:40:19.5205 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 11:40:19.5205 - INFO: Request finished in 53.7832ms 200 application/javascript 
+
+2018-11-19 11:40:19.5205 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 11:40:19.5205 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 11:40:19.5205 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 11:40:19.5205 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 11:40:19.5205 - INFO: Request finished in 90.6042ms 200 application/javascript 
+
+2018-11-19 11:40:19.5573 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 11:40:19.5656 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 11:40:19.5785 - INFO: Request finished in 122.699ms 200 application/javascript 
+
+2018-11-19 11:40:19.5905 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 11:40:19.6084 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 11:40:19.6084 - INFO: Request finished in 139.1975ms 200 application/javascript 
+
+2018-11-19 11:40:19.6084 - INFO: Request finished in 88.3717ms 200 application/javascript 
+
+2018-11-19 11:40:19.6084 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 11:40:19.6084 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 11:40:19.6084 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 11:40:19.6084 - INFO: Request finished in 187.6167ms 200 application/javascript 
+
+2018-11-19 11:40:19.6260 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 11:40:19.6260 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 11:40:19.6260 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 11:40:19.6260 - INFO: Request finished in 69.9223ms 200 application/javascript 
+
+2018-11-19 11:40:19.6260 - INFO: Request finished in 69.9661ms 200 application/javascript 
+
+2018-11-19 11:40:19.6260 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 11:40:19.6260 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 11:40:19.6260 - INFO: Request finished in 18.1748ms 200 application/javascript 
+
+2018-11-19 11:40:19.6260 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 11:40:19.6260 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 11:40:19.6372 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 11:40:19.6372 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 11:40:19.6372 - INFO: Request finished in 9.995ms 200 application/javascript 
+
+2018-11-19 11:40:19.6372 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 11:40:19.6372 - INFO: Request finished in 47.5405ms 200 application/javascript 
+
+2018-11-19 11:40:19.6372 - INFO: Request finished in 28.7035ms 200 application/javascript 
+
+2018-11-19 11:40:19.6372 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 11:40:19.6372 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 11:40:19.6372 - INFO: Request finished in 23.0024ms 200 application/javascript 
+
+2018-11-19 11:40:19.6372 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 11:40:19.6606 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 11:40:19.6606 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 11:40:19.6606 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 11:40:19.6606 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 11:40:19.6606 - INFO: Request finished in 25.8212ms 200 application/javascript 
+
+2018-11-19 11:40:19.6729 - INFO: Request finished in 35.6716ms 200 application/javascript 
+
+2018-11-19 11:40:19.6729 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 11:40:19.6729 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 11:40:19.6729 - INFO: Request finished in 34.9202ms 200 application/javascript 
+
+2018-11-19 11:40:19.6729 - INFO: Request finished in 22.5512ms 200 application/javascript 
+
+2018-11-19 11:40:19.6729 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 11:40:19.6729 - INFO: Request finished in 11.2588ms 200 application/javascript 
+
+2018-11-19 11:40:19.6729 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 11:40:19.6729 - INFO: Request finished in 13.1346ms 200 application/javascript 
+
+2018-11-19 11:40:19.8248 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Init?_=1542598819654   
+
+2018-11-19 11:40:19.8248 - INFO: Route matched with {action = "Init", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:19.8698 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:19.9346 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 64.7075ms. 
+
+2018-11-19 11:40:19.9346 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:19.9346 - INFO: Executed action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) in 109.1096ms 
+
+2018-11-19 11:40:19.9346 - INFO: Request finished in 110.1941ms 200 application/json 
+
+2018-11-19 11:40:19.9902 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Search?page=1&rows=20&_=1542598819655   
+
+2018-11-19 11:40:19.9902 - INFO: Route matched with {action = "Search", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:20.0322 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:20.0912 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 58.9661ms. 
+
+2018-11-19 11:40:20.0912 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:20.0912 - INFO: Executed action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) in 100.6518ms 
+
+2018-11-19 11:40:20.0912 - INFO: Request finished in 101.1061ms 200 application/json 
+
+2018-11-19 11:40:21.3386 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SOrganization/Index   
+
+2018-11-19 11:40:21.3396 - INFO: Route matched with {action = "Index", controller = "SOrganization"}. Executing action ESC.Web.Controllers.SOrganizationController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:21.3838 - INFO: Executing action method ESC.Web.Controllers.SOrganizationController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:21.3838 - INFO: Executed action method ESC.Web.Controllers.SOrganizationController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2358ms. 
+
+2018-11-19 11:40:21.3886 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:21.4264 - INFO: Executed ViewResult - view Index executed in 42.1925ms. 
+
+2018-11-19 11:40:21.4264 - INFO: Executed action ESC.Web.Controllers.SOrganizationController.Index (ESC.WebCore) in 86.8214ms 
+
+2018-11-19 11:40:21.4264 - INFO: Request finished in 88.0536ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:21.5227 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SOrganization/Init?_=1542598821448   
+
+2018-11-19 11:40:21.5227 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SOrganization/ForeignInit?table=SUser&_=1542598821449   
+
+2018-11-19 11:40:21.5227 - INFO: Route matched with {action = "Init", controller = "SOrganization"}. Executing action ESC.Web.Controllers.SOrganizationController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:21.5227 - INFO: Route matched with {action = "ForeignInit", controller = "SOrganization"}. Executing action ESC.Web.Controllers.SOrganizationController.ForeignInit (ESC.WebCore) 
+
+2018-11-19 11:40:21.5680 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SOrganization/GetTree?_=1542598821450   
+
+2018-11-19 11:40:21.6168 - INFO: Executing action method ESC.Web.Controllers.SOrganizationController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:21.6168 - INFO: Executing action method ESC.Web.Controllers.SOrganizationController.ForeignInit (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:21.6168 - INFO: Route matched with {action = "GetTree", controller = "SOrganization"}. Executing action ESC.Web.Controllers.SOrganizationController.GetTree (ESC.WebCore) 
+
+2018-11-19 11:40:21.6846 - INFO: Executed action method ESC.Web.Controllers.SOrganizationController.ForeignInit (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 67.5053ms. 
+
+2018-11-19 11:40:21.6846 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:21.6846 - INFO: Executed action ESC.Web.Controllers.SOrganizationController.ForeignInit (ESC.WebCore) in 160.9251ms 
+
+2018-11-19 11:40:21.6846 - INFO: Request finished in 162.0309ms 200 application/json 
+
+2018-11-19 11:40:21.7084 - INFO: Executing action method ESC.Web.Controllers.SOrganizationController.GetTree (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:21.7756 - INFO: Executed action method ESC.Web.Controllers.SOrganizationController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 158.7487ms. 
+
+2018-11-19 11:40:21.7756 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:21.7756 - INFO: Executed action ESC.Web.Controllers.SOrganizationController.Init (ESC.WebCore) in 251.8683ms 
+
+2018-11-19 11:40:21.7756 - INFO: Request finished in 253.2463ms 200 application/json 
+
+2018-11-19 11:40:21.7809 - INFO: Executed action method ESC.Web.Controllers.SOrganizationController.GetTree (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 72.4471ms. 
+
+2018-11-19 11:40:21.7809 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:21.7809 - INFO: Executed action ESC.Web.Controllers.SOrganizationController.GetTree (ESC.WebCore) in 162.6496ms 
+
+2018-11-19 11:40:21.7809 - INFO: Request finished in 213.091ms 200 application/json 
+
+2018-11-19 11:40:21.7809 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/img/tree_icon-80-100.gif   
+
+2018-11-19 11:40:21.7919 - INFO: Sending file. Request path: '/lib/bui/img/tree_icon-80-100.gif'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\img\tree_icon-80-100.gif' 
+
+2018-11-19 11:40:21.7919 - INFO: Request finished in 2.093ms 200 image/gif 
+
+2018-11-19 11:40:22.4025 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SUser/Index   
+
+2018-11-19 11:40:22.4025 - INFO: Route matched with {action = "Index", controller = "SUser"}. Executing action ESC.Web.Controllers.SUserController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:22.4469 - INFO: Executing action method ESC.Web.Controllers.SUserController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:22.4469 - INFO: Executed action method ESC.Web.Controllers.SUserController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1714ms. 
+
+2018-11-19 11:40:22.4519 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:22.4934 - INFO: Executed ViewResult - view Index executed in 46.1408ms. 
+
+2018-11-19 11:40:22.4934 - INFO: Executed action ESC.Web.Controllers.SUserController.Index (ESC.WebCore) in 89.1748ms 
+
+2018-11-19 11:40:22.4934 - INFO: Request finished in 91.1517ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:22.5340 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/img/calendar-200-300.gif   
+
+2018-11-19 11:40:22.5340 - INFO: Sending file. Request path: '/lib/bui/img/calendar-200-300.gif'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\img\calendar-200-300.gif' 
+
+2018-11-19 11:40:22.5340 - INFO: Request finished in 2.2573ms 200 image/gif 
+
+2018-11-19 11:40:22.5643 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SUser/Init?_=1542598822516   
+
+2018-11-19 11:40:22.5643 - INFO: Route matched with {action = "Init", controller = "SUser"}. Executing action ESC.Web.Controllers.SUserController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:22.6139 - INFO: Executing action method ESC.Web.Controllers.SUserController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:22.6559 - INFO: Executed action method ESC.Web.Controllers.SUserController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 41.9211ms. 
+
+2018-11-19 11:40:22.6559 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:22.6559 - INFO: Executed action ESC.Web.Controllers.SUserController.Init (ESC.WebCore) in 91.3441ms 
+
+2018-11-19 11:40:22.6559 - INFO: Request finished in 91.9628ms 200 application/json 
+
+2018-11-19 11:40:22.7038 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SUser/Search?page=1&rows=20&_=1542598822517   
+
+2018-11-19 11:40:22.7038 - INFO: Route matched with {action = "Search", controller = "SUser"}. Executing action ESC.Web.Controllers.SUserController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:22.7496 - INFO: Executing action method ESC.Web.Controllers.SUserController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:22.8232 - INFO: Executed action method ESC.Web.Controllers.SUserController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 73.5612ms. 
+
+2018-11-19 11:40:22.8232 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:22.8235 - INFO: Executed action ESC.Web.Controllers.SUserController.Search (ESC.WebCore) in 118.2885ms 
+
+2018-11-19 11:40:22.8235 - INFO: Request finished in 119.7174ms 200 application/json 
+
+2018-11-19 11:40:23.6501 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Index   
+
+2018-11-19 11:40:23.6501 - INFO: Route matched with {action = "Index", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:23.6927 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:23.7169 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 24.1951ms. 
+
+2018-11-19 11:40:23.7169 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:23.7494 - INFO: Executed ViewResult - view Index executed in 32.3346ms. 
+
+2018-11-19 11:40:23.7494 - INFO: Executed action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) in 98.9747ms 
+
+2018-11-19 11:40:23.7494 - INFO: Request finished in 99.3959ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:23.8219 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Init?_=1542598823775   
+
+2018-11-19 11:40:23.8219 - INFO: Route matched with {action = "Init", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:23.8790 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:23.9414 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 62.3537ms. 
+
+2018-11-19 11:40:23.9414 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:23.9414 - INFO: Executed action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) in 119.0431ms 
+
+2018-11-19 11:40:23.9414 - INFO: Request finished in 119.7317ms 200 application/json 
+
+2018-11-19 11:40:23.9783 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Search?page=1&rows=20&_=1542598823776   
+
+2018-11-19 11:40:23.9783 - INFO: Route matched with {action = "Search", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:24.0189 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:24.0642 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 45.2325ms. 
+
+2018-11-19 11:40:24.0642 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:24.0642 - INFO: Executed action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) in 85.7686ms 
+
+2018-11-19 11:40:24.0642 - INFO: Request finished in 86.1514ms 200 application/json 
+
+2018-11-19 11:40:24.7137 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BBusinessPartner/Index   
+
+2018-11-19 11:40:24.7153 - INFO: Route matched with {action = "Index", controller = "BBusinessPartner"}. Executing action ESC.Web.Controllers.BBusinessPartnerController.Index (ESC.WebCore) 
+
+2018-11-19 11:40:24.7561 - INFO: Executing action method ESC.Web.Controllers.BBusinessPartnerController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:24.7795 - INFO: Executed action method ESC.Web.Controllers.BBusinessPartnerController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 23.4002ms. 
+
+2018-11-19 11:40:24.7795 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 11:40:24.8267 - INFO: Executed ViewResult - view Index executed in 47.0356ms. 
+
+2018-11-19 11:40:24.8267 - INFO: Executed action ESC.Web.Controllers.BBusinessPartnerController.Index (ESC.WebCore) in 111.4954ms 
+
+2018-11-19 11:40:24.8267 - INFO: Request finished in 113.1645ms 200 text/html; charset=utf-8 
+
+2018-11-19 11:40:24.8931 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BBusinessPartner/Init?_=1542598824851   
+
+2018-11-19 11:40:24.8931 - INFO: Route matched with {action = "Init", controller = "BBusinessPartner"}. Executing action ESC.Web.Controllers.BBusinessPartnerController.Init (ESC.WebCore) 
+
+2018-11-19 11:40:24.9355 - INFO: Executing action method ESC.Web.Controllers.BBusinessPartnerController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:25.0195 - INFO: Executed action method ESC.Web.Controllers.BBusinessPartnerController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 83.9501ms. 
+
+2018-11-19 11:40:25.0195 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:25.0195 - INFO: Executed action ESC.Web.Controllers.BBusinessPartnerController.Init (ESC.WebCore) in 124.8078ms 
+
+2018-11-19 11:40:25.0195 - INFO: Request finished in 126.6231ms 200 application/json 
+
+2018-11-19 11:40:25.0665 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BBusinessPartner/Search?page=1&rows=20&_=1542598824852   
+
+2018-11-19 11:40:25.0665 - INFO: Route matched with {action = "Search", controller = "BBusinessPartner"}. Executing action ESC.Web.Controllers.BBusinessPartnerController.Search (ESC.WebCore) 
+
+2018-11-19 11:40:25.1053 - INFO: Executing action method ESC.Web.Controllers.BBusinessPartnerController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 11:40:25.1810 - INFO: Executed action method ESC.Web.Controllers.BBusinessPartnerController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 75.6839ms. 
+
+2018-11-19 11:40:25.1810 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 11:40:25.1810 - INFO: Executed action ESC.Web.Controllers.BBusinessPartnerController.Search (ESC.WebCore) in 113.543ms 
+
+2018-11-19 11:40:25.1810 - INFO: Request finished in 114.5844ms 200 application/json 
+
+2018-11-19 13:14:28.1063 - INFO: User profile is available. Using 'C:\Users\lvsc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+
+2018-11-19 13:14:29.7256 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/   
+
+2018-11-19 13:14:30.1127 - INFO: Route matched with {action = "Index", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) 
+
+2018-11-19 13:14:30.3011 - INFO: Executing action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 13:14:30.3011 - INFO: Executed action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.5455ms. 
+
+2018-11-19 13:14:30.3814 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 13:14:30.4747 - INFO: Executed ViewResult - view Index executed in 166.2419ms. 
+
+2018-11-19 13:14:30.4747 - INFO: Executed action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) in 362.435ms 
+
+2018-11-19 13:14:30.4747 - INFO: Request finished in 755.2032ms 200 text/html; charset=utf-8 
+
+2018-11-19 13:14:30.7377 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/login.css   
+
+2018-11-19 13:14:30.7377 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 13:14:30.7633 - INFO: Sending file. Request path: '/lib/login/login.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\login.css' 
+
+2018-11-19 13:14:30.7633 - INFO: Request finished in 25.9531ms 200 text/css 
+
+2018-11-19 13:14:30.8292 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 13:14:30.8292 - INFO: Request finished in 91.7123ms 200 application/javascript 
+
+2018-11-19 13:14:30.9112 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/web_login_bg.jpg   
+
+2018-11-19 13:14:30.9112 - INFO: Sending file. Request path: '/lib/login/web_login_bg.jpg'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\web_login_bg.jpg' 
+
+2018-11-19 13:14:30.9112 - INFO: Request finished in 1.357ms 200 image/jpeg 
+
+2018-11-19 13:14:30.9697 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/favicon.ico   
+
+2018-11-19 13:14:30.9948 - INFO: Sending file. Request path: '/favicon.ico'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\favicon.ico' 
+
+2018-11-19 13:14:30.9948 - INFO: Request finished in 25.7655ms 200 image/x-icon 
+
+2018-11-19 13:14:57.7468 - INFO: Request starting HTTP/1.1 POST http://localhost:25226/Login/Login application/x-www-form-urlencoded; charset=UTF-8 29 
+
+2018-11-19 13:14:57.7468 - INFO: Route matched with {action = "Login", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) 
+
+2018-11-19 13:14:57.7731 - INFO: Executing action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 13:14:58.1438 - INFO: Executed action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 370.6475ms. 
+
+2018-11-19 13:14:58.1438 - INFO: Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+
+2018-11-19 13:14:58.1438 - INFO: Executed action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) in 391.4898ms 
+
+2018-11-19 13:14:58.1438 - INFO: Request finished in 398.6293ms 200 text/plain; charset=utf-8 
+
+2018-11-19 13:14:58.1691 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 13:14:58.1691 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 13:14:58.2878 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 13:14:58.2878 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.7698ms. 
+
+2018-11-19 13:14:58.2930 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 13:14:58.5108 - INFO: Executed ViewResult - view Index executed in 220.9701ms. 
+
+2018-11-19 13:14:58.5110 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 339.7873ms 
+
+2018-11-19 13:14:58.5110 - INFO: Request finished in 342.0601ms 200 text/html; charset=utf-8 
+
+2018-11-19 13:14:58.5110 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 13:14:58.5110 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 13:14:58.5110 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 13:14:58.5110 - INFO: Request finished in 1.2077ms 200 text/css 
+
+2018-11-19 13:14:58.5110 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 13:14:58.5110 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 13:14:58.5110 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 13:14:58.5110 - INFO: Request finished in 3.548ms 200 application/javascript 
+
+2018-11-19 13:14:58.5272 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 13:14:58.5272 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 13:14:58.5272 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 13:14:58.5272 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 13:14:58.5439 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 13:14:58.5595 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 13:14:58.5595 - INFO: Request finished in 39.0846ms 200 text/css 
+
+2018-11-19 13:14:58.6046 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 13:14:58.6046 - INFO: Request finished in 75.3899ms 200 application/javascript 
+
+2018-11-19 13:14:58.6046 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 13:14:58.6245 - INFO: Request finished in 107.5934ms 200 text/css 
+
+2018-11-19 13:14:58.6245 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 13:14:58.6245 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 13:14:58.6245 - INFO: Request finished in 97.641ms 200 application/javascript 
+
+2018-11-19 13:14:58.6245 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 13:14:58.6245 - INFO: Request finished in 106.2518ms 200 application/javascript 
+
+2018-11-19 13:14:58.6245 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 13:14:58.6394 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 13:14:58.6394 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 13:14:58.6394 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 13:14:58.6394 - INFO: Request finished in 89.5051ms 200 application/javascript 
+
+2018-11-19 13:14:58.6394 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 13:14:58.6394 - INFO: Request finished in 24.6198ms 200 application/javascript 
+
+2018-11-19 13:14:58.6394 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 13:14:58.6394 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 13:14:58.6394 - INFO: Request finished in 14.008ms 200 application/javascript 
+
+2018-11-19 13:14:58.6394 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 13:14:58.6394 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 13:14:58.6546 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 13:14:58.6546 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 13:14:58.6546 - INFO: Request finished in 4.8746ms 200 application/javascript 
+
+2018-11-19 13:14:58.6683 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 13:14:58.6683 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 13:14:58.6683 - INFO: Request finished in 28.4017ms 200 application/javascript 
+
+2018-11-19 13:14:58.6683 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 13:14:58.6909 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 13:14:58.6909 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 13:14:58.6909 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 13:14:58.6909 - INFO: Request finished in 53.0362ms 200 application/javascript 
+
+2018-11-19 13:14:58.6909 - INFO: Request finished in 163.4112ms 200 application/javascript 
+
+2018-11-19 13:14:58.6909 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 13:14:58.6909 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 48.9785ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 54.9297ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 54.4197ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 12.0169ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 12.5949ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 36.7699ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 13.5ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 4.668ms 200 application/javascript 
+
+2018-11-19 13:14:58.7035 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 13:14:58.7035 - INFO: Request finished in 1.3673ms 200 application/javascript 
+
+2018-11-19 13:14:58.8514 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 13:14:58.8770 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 13:14:58.8770 - INFO: Request finished in 25.9231ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 13:15:04.3323 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 13:15:04.3323 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 13:15:04.3323 - INFO: Request finished in 2.2202ms 200 text/css 
+
+2018-11-19 13:15:04.3323 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 13:15:04.3474 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 13:15:04.3474 - INFO: Request finished in 8.815ms 200 text/css 
+
+2018-11-19 13:15:04.6859 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css.map   
+
+2018-11-19 13:15:04.6859 - INFO: Request finished in 2.6275ms 404  
+
+2018-11-19 16:46:42.1570 - INFO: User profile is available. Using 'C:\Users\lvsc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+
+2018-11-19 16:46:44.2242 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/   
+
+2018-11-19 16:46:44.4861 - INFO: Route matched with {action = "Index", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) 
+
+2018-11-19 16:46:44.6094 - INFO: Executing action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:46:44.6094 - INFO: Executed action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9935ms. 
+
+2018-11-19 16:46:44.6397 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 16:46:44.7313 - INFO: Executed ViewResult - view Index executed in 112.4866ms. 
+
+2018-11-19 16:46:44.7313 - INFO: Executed action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) in 245.6066ms 
+
+2018-11-19 16:46:44.7313 - INFO: Request finished in 515.6031ms 200 text/html; charset=utf-8 
+
+2018-11-19 16:46:45.0195 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/login.css   
+
+2018-11-19 16:46:45.0195 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 16:46:45.0372 - INFO: Sending file. Request path: '/lib/login/login.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\login.css' 
+
+2018-11-19 16:46:45.0372 - INFO: Request finished in 19.7511ms 200 text/css 
+
+2018-11-19 16:46:45.0443 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 16:46:45.0443 - INFO: Request finished in 25.0263ms 200 application/javascript 
+
+2018-11-19 16:46:45.1605 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/web_login_bg.jpg   
+
+2018-11-19 16:46:45.1605 - INFO: Sending file. Request path: '/lib/login/web_login_bg.jpg'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\web_login_bg.jpg' 
+
+2018-11-19 16:46:45.1605 - INFO: Request finished in 2.2036ms 200 image/jpeg 
+
+2018-11-19 16:46:45.1782 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/aiwrap.png   
+
+2018-11-19 16:46:45.2229 - INFO: Sending file. Request path: '/lib/login/aiwrap.png'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\aiwrap.png' 
+
+2018-11-19 16:46:45.2229 - INFO: Request finished in 44.9026ms 200 image/png 
+
+2018-11-19 16:46:45.2562 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/favicon.ico   
+
+2018-11-19 16:46:45.2562 - INFO: Sending file. Request path: '/favicon.ico'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\favicon.ico' 
+
+2018-11-19 16:46:45.2562 - INFO: Request finished in 3.4425ms 200 image/x-icon 
+
+2018-11-19 16:46:56.3221 - INFO: Request starting HTTP/1.1 POST http://localhost:25226/Login/Login application/x-www-form-urlencoded; charset=UTF-8 29 
+
+2018-11-19 16:46:56.3275 - INFO: Route matched with {action = "Login", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) 
+
+2018-11-19 16:46:56.3529 - INFO: Executing action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:46:56.6927 - INFO: Executed action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 339.6861ms. 
+
+2018-11-19 16:46:56.6927 - INFO: Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+
+2018-11-19 16:46:56.6927 - INFO: Executed action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) in 366.6937ms 
+
+2018-11-19 16:46:56.6927 - INFO: Request finished in 372.5778ms 200 text/plain; charset=utf-8 
+
+2018-11-19 16:46:56.7068 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 16:46:56.7068 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 16:46:56.8153 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:46:56.8153 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.9491ms. 
+
+2018-11-19 16:46:56.8153 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 16:46:57.0262 - INFO: Executed ViewResult - view Index executed in 207.7786ms. 
+
+2018-11-19 16:46:57.0262 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 317.3893ms 
+
+2018-11-19 16:46:57.0262 - INFO: Request finished in 319.6514ms 200 text/html; charset=utf-8 
+
+2018-11-19 16:46:57.0321 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 16:46:57.0321 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 16:46:57.0321 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 16:46:57.0321 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 16:46:57.0321 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 16:46:57.0321 - INFO: Request finished in 7.5113ms 200 text/css 
+
+2018-11-19 16:46:57.0321 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 16:46:57.0321 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 16:46:57.0321 - INFO: Request finished in 4.2496ms 200 text/css 
+
+2018-11-19 16:46:57.0321 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 16:46:57.0321 - INFO: Request finished in 9.3633ms 200 text/css 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 1.6075ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 8.5499ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 3.7278ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 2.008ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 1.517ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 10.7045ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 14.3051ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 6.8961ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 16:46:57.0445 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 2.8274ms 200 application/javascript 
+
+2018-11-19 16:46:57.0445 - INFO: Request finished in 4.4061ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 6.8104ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 2.0199ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 6.7832ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 8.5029ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 1.6134ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 1.3522ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 1.7979ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 1.7809ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 10.2573ms 200 application/javascript 
+
+2018-11-19 16:46:57.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 16:46:57.0582 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 16:46:57.0582 - INFO: Request finished in 1.7197ms 200 application/javascript 
+
+2018-11-19 16:46:57.3413 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 16:46:57.3413 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 16:46:57.3413 - INFO: Request finished in 2.4675ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 16:47:04.9663 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Index   
+
+2018-11-19 16:47:04.9663 - INFO: Route matched with {action = "Index", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) 
+
+2018-11-19 16:47:05.0263 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:47:05.0263 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3136ms. 
+
+2018-11-19 16:47:05.0318 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 16:47:05.0861 - INFO: Executed ViewResult - view Index executed in 58.8021ms. 
+
+2018-11-19 16:47:05.0861 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) in 116.6616ms 
+
+2018-11-19 16:47:05.0861 - INFO: Request finished in 120.293ms 200 text/html; charset=utf-8 
+
+2018-11-19 16:47:05.4944 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Init?_=1542617225250   
+
+2018-11-19 16:47:05.4990 - INFO: Route matched with {action = "Init", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) 
+
+2018-11-19 16:47:05.5515 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:47:05.7193 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 167.6293ms. 
+
+2018-11-19 16:47:05.7193 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 16:47:05.7193 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) in 221.0551ms 
+
+2018-11-19 16:47:05.7193 - INFO: Request finished in 226.0874ms 200 application/json 
+
+2018-11-19 16:47:05.8209 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Search?page=1&rows=20&_=1542617225251   
+
+2018-11-19 16:47:05.8209 - INFO: Route matched with {action = "Search", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) 
+
+2018-11-19 16:47:05.8784 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 16:47:06.0498 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 171.2876ms. 
+
+2018-11-19 16:47:06.0498 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 16:47:06.0498 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) in 226.5808ms 
+
+2018-11-19 16:47:06.0498 - INFO: Request finished in 229.1756ms 200 application/json 
+
+2018-11-19 18:56:19.9378 - INFO: User profile is available. Using 'C:\Users\lvsc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+
+2018-11-19 18:56:21.2753 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/   
+
+2018-11-19 18:56:21.4998 - INFO: Route matched with {action = "Index", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) 
+
+2018-11-19 18:56:21.6202 - INFO: Executing action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:21.6202 - INFO: Executed action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.0133ms. 
+
+2018-11-19 18:56:21.6522 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 18:56:21.7220 - INFO: Executed ViewResult - view Index executed in 95.3465ms. 
+
+2018-11-19 18:56:21.7220 - INFO: Executed action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) in 222.3868ms 
+
+2018-11-19 18:56:21.7220 - INFO: Request finished in 452.9333ms 200 text/html; charset=utf-8 
+
+2018-11-19 18:56:21.9462 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/login.css   
+
+2018-11-19 18:56:21.9462 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 18:56:21.9700 - INFO: Sending file. Request path: '/lib/login/login.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\login.css' 
+
+2018-11-19 18:56:21.9700 - INFO: Request finished in 24.7142ms 200 text/css 
+
+2018-11-19 18:56:21.9700 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 18:56:21.9700 - INFO: Request finished in 30.7504ms 200 application/javascript 
+
+2018-11-19 18:56:22.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/web_login_bg.jpg   
+
+2018-11-19 18:56:22.0582 - INFO: Sending file. Request path: '/lib/login/web_login_bg.jpg'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\web_login_bg.jpg' 
+
+2018-11-19 18:56:22.0582 - INFO: Request finished in 1.3104ms 200 image/jpeg 
+
+2018-11-19 18:56:22.0582 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/aiwrap.png   
+
+2018-11-19 18:56:22.0953 - INFO: Sending file. Request path: '/lib/login/aiwrap.png'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\aiwrap.png' 
+
+2018-11-19 18:56:22.0953 - INFO: Request finished in 26.1285ms 200 image/png 
+
+2018-11-19 18:56:22.1219 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/favicon.ico   
+
+2018-11-19 18:56:22.1219 - INFO: Sending file. Request path: '/favicon.ico'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\favicon.ico' 
+
+2018-11-19 18:56:22.1219 - INFO: Request finished in 0.952ms 200 image/x-icon 
+
+2018-11-19 18:56:23.4962 - INFO: Request starting HTTP/1.1 POST http://localhost:25226/Login/Login application/x-www-form-urlencoded; charset=UTF-8 29 
+
+2018-11-19 18:56:23.4962 - INFO: Route matched with {action = "Login", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) 
+
+2018-11-19 18:56:23.5187 - INFO: Executing action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:23.8734 - INFO: Executed action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 354.6846ms. 
+
+2018-11-19 18:56:23.8734 - INFO: Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+
+2018-11-19 18:56:23.8734 - INFO: Executed action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) in 375.6028ms 
+
+2018-11-19 18:56:23.8734 - INFO: Request finished in 379.4767ms 200 text/plain; charset=utf-8 
+
+2018-11-19 18:56:23.8734 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 18:56:23.8875 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 18:56:24.0226 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:24.0226 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.999ms. 
+
+2018-11-19 18:56:24.0287 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 18:56:24.1932 - INFO: Executed ViewResult - view Index executed in 168.3539ms. 
+
+2018-11-19 18:56:24.1932 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 305.7642ms 
+
+2018-11-19 18:56:24.1932 - INFO: Request finished in 308.8939ms 200 text/html; charset=utf-8 
+
+2018-11-19 18:56:24.1932 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.0915ms 200 text/css 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 6.4189ms 200 text/css 
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.6647ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.1654ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 2.4825ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.2408ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 0.9469ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.1259ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 0.9177ms 200 application/javascript 
+
+2018-11-19 18:56:24.1997 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 18:56:24.1997 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 11.2564ms 200 text/css 
+
+2018-11-19 18:56:24.1997 - INFO: Request finished in 1.0378ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.875ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.9145ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.8576ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.8509ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.9121ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.8877ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 1.707ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.8244ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.888ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 1.1034ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.8146ms 200 application/javascript 
+
+2018-11-19 18:56:24.2140 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 18:56:24.2140 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 18:56:24.2140 - INFO: Request finished in 0.7924ms 200 application/javascript 
+
+2018-11-19 18:56:24.4657 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 18:56:24.5092 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 18:56:24.5092 - INFO: Request finished in 43.8549ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 18:56:29.6649 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Index   
+
+2018-11-19 18:56:29.6678 - INFO: Route matched with {action = "Index", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) 
+
+2018-11-19 18:56:29.7142 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:29.7147 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.335ms. 
+
+2018-11-19 18:56:29.7147 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 18:56:29.7630 - INFO: Executed ViewResult - view Index executed in 48.1402ms. 
+
+2018-11-19 18:56:29.7630 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) in 95.1987ms 
+
+2018-11-19 18:56:29.7630 - INFO: Request finished in 98.4694ms 200 text/html; charset=utf-8 
+
+2018-11-19 18:56:30.0851 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Init?_=1542624989899   
+
+2018-11-19 18:56:30.0851 - INFO: Route matched with {action = "Init", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) 
+
+2018-11-19 18:56:30.1345 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:30.2736 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 139.0146ms. 
+
+2018-11-19 18:56:30.2736 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 18:56:30.2736 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) in 185.6275ms 
+
+2018-11-19 18:56:30.2736 - INFO: Request finished in 189.2376ms 200 application/json 
+
+2018-11-19 18:56:30.3533 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Search?page=1&rows=20&_=1542624989900   
+
+2018-11-19 18:56:30.3533 - INFO: Route matched with {action = "Search", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) 
+
+2018-11-19 18:56:30.3950 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:30.4997 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 104.6632ms. 
+
+2018-11-19 18:56:30.4997 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 18:56:30.4997 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) in 144.9662ms 
+
+2018-11-19 18:56:30.4997 - INFO: Request finished in 146.6508ms 200 application/json 
+
+2018-11-19 18:56:33.0469 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Index   
+
+2018-11-19 18:56:33.0469 - INFO: Route matched with {action = "Index", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) 
+
+2018-11-19 18:56:33.0869 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:33.0869 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1943ms. 
+
+2018-11-19 18:56:33.0917 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 18:56:33.1304 - INFO: Executed ViewResult - view Index executed in 42.985ms. 
+
+2018-11-19 18:56:33.1304 - INFO: Executed action ESC.Web.Controllers.SColumnController.Index (ESC.WebCore) in 81.8121ms 
+
+2018-11-19 18:56:33.1304 - INFO: Request finished in 84.0351ms 200 text/html; charset=utf-8 
+
+2018-11-19 18:56:33.4333 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Init?_=1542624993261   
+
+2018-11-19 18:56:33.4333 - INFO: Route matched with {action = "Init", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) 
+
+2018-11-19 18:56:33.4818 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:33.5412 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 59.2793ms. 
+
+2018-11-19 18:56:33.5412 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 18:56:33.5412 - INFO: Executed action ESC.Web.Controllers.SColumnController.Init (ESC.WebCore) in 101.4794ms 
+
+2018-11-19 18:56:33.5412 - INFO: Request finished in 108.5494ms 200 application/json 
+
+2018-11-19 18:56:33.6207 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SColumn/Search?page=1&rows=20&_=1542624993262   
+
+2018-11-19 18:56:33.6207 - INFO: Route matched with {action = "Search", controller = "SColumn"}. Executing action ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) 
+
+2018-11-19 18:56:33.6625 - INFO: Executing action method ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 18:56:33.7336 - INFO: Executed action method ESC.Web.Controllers.SColumnController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 71.094ms. 
+
+2018-11-19 18:56:33.7336 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 18:56:33.7336 - INFO: Executed action ESC.Web.Controllers.SColumnController.Search (ESC.WebCore) in 111.5717ms 
+
+2018-11-19 18:56:33.7336 - INFO: Request finished in 113.11ms 200 application/json 
+
+2018-11-19 19:19:22.5905 - INFO: User profile is available. Using 'C:\Users\lvsc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+
+2018-11-19 19:19:23.8585 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/   
+
+2018-11-19 19:19:24.0811 - INFO: Route matched with {action = "Index", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) 
+
+2018-11-19 19:19:24.1909 - INFO: Executing action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:19:24.1909 - INFO: Executed action method ESC.Web.Controllers.LoginController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.5384ms. 
+
+2018-11-19 19:19:24.2128 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 19:19:24.2831 - INFO: Executed ViewResult - view Index executed in 86.3596ms. 
+
+2018-11-19 19:19:24.2831 - INFO: Executed action ESC.Web.Controllers.LoginController.Index (ESC.WebCore) in 202.2312ms 
+
+2018-11-19 19:19:24.2831 - INFO: Request finished in 430.96ms 200 text/html; charset=utf-8 
+
+2018-11-19 19:19:24.4699 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/login.css   
+
+2018-11-19 19:19:24.4699 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/jquery.js   
+
+2018-11-19 19:19:24.4851 - INFO: Sending file. Request path: '/lib/login/login.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\login.css' 
+
+2018-11-19 19:19:24.4851 - INFO: Request finished in 17.2057ms 200 text/css 
+
+2018-11-19 19:19:24.5042 - INFO: Sending file. Request path: '/lib/plugins/jquery.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\jquery.js' 
+
+2018-11-19 19:19:24.5042 - INFO: Request finished in 34.4588ms 200 application/javascript 
+
+2018-11-19 19:19:24.5782 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/web_login_bg.jpg   
+
+2018-11-19 19:19:24.5782 - INFO: Sending file. Request path: '/lib/login/web_login_bg.jpg'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\web_login_bg.jpg' 
+
+2018-11-19 19:19:24.5782 - INFO: Request finished in 1.438ms 200 image/jpeg 
+
+2018-11-19 19:19:24.5895 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/login/aiwrap.png   
+
+2018-11-19 19:19:24.5895 - INFO: Sending file. Request path: '/lib/login/aiwrap.png'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\login\aiwrap.png' 
+
+2018-11-19 19:19:24.5895 - INFO: Request finished in 1.4561ms 200 image/png 
+
+2018-11-19 19:19:24.6570 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/favicon.ico   
+
+2018-11-19 19:19:24.6570 - INFO: Sending file. Request path: '/favicon.ico'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\favicon.ico' 
+
+2018-11-19 19:19:24.6570 - INFO: Request finished in 1.5751ms 200 image/x-icon 
+
+2018-11-19 19:19:25.9553 - INFO: Request starting HTTP/1.1 POST http://localhost:25226/Login/Login application/x-www-form-urlencoded; charset=UTF-8 29 
+
+2018-11-19 19:19:25.9553 - INFO: Route matched with {action = "Login", controller = "Login"}. Executing action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) 
+
+2018-11-19 19:19:25.9783 - INFO: Executing action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:19:26.2230 - INFO: Executed action method ESC.Web.Controllers.LoginController.Login (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 244.6027ms. 
+
+2018-11-19 19:19:26.2230 - INFO: Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8 
+
+2018-11-19 19:19:26.2230 - INFO: Executed action ESC.Web.Controllers.LoginController.Login (ESC.WebCore) in 264.8717ms 
+
+2018-11-19 19:19:26.2230 - INFO: Request finished in 269.2893ms 200 text/plain; charset=utf-8 
+
+2018-11-19 19:19:26.2337 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/Home/Index   
+
+2018-11-19 19:19:26.2337 - INFO: Route matched with {action = "Index", controller = "Home"}. Executing action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) 
+
+2018-11-19 19:19:26.3311 - INFO: Executing action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:19:26.3311 - INFO: Executed action method ESC.Web.Controllers.HomeController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.379ms. 
+
+2018-11-19 19:19:26.3311 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 19:19:26.4715 - INFO: Executed ViewResult - view Index executed in 137.7228ms. 
+
+2018-11-19 19:19:26.4715 - INFO: Executed action ESC.Web.Controllers.HomeController.Index (ESC.WebCore) in 235.6273ms 
+
+2018-11-19 19:19:26.4715 - INFO: Request finished in 238.0692ms 200 text/html; charset=utf-8 
+
+2018-11-19 19:19:26.4715 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bootstrap.css   
+
+2018-11-19 19:19:26.4715 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/css/bui.css   
+
+2018-11-19 19:19:26.4715 - INFO: Sending file. Request path: '/lib/bui/css/bui.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bui.css' 
+
+2018-11-19 19:19:26.4715 - INFO: Request finished in 1.9693ms 200 text/css 
+
+2018-11-19 19:19:26.4715 - INFO: Sending file. Request path: '/lib/bui/css/bootstrap.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\css\bootstrap.css' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 3.1182ms 200 text/css 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.css   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.css'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.css' 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/plugins/SimpleAjaxUploader.js   
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.4439ms 200 text/css 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/01common.js   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/plugins/SimpleAjaxUploader.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\plugins\SimpleAjaxUploader.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.4988ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/01common.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\01common.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/02cookie.js   
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.6572ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/03data.js   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/02cookie.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\02cookie.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.4372ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/03data.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\03data.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.1855ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/04mask.js   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/04mask.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\04mask.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/05list.js   
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.2823ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/05list.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\05list.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/06dropdowns.js   
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.1887ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/06dropdowns.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\06dropdowns.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.2199ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/07pagination.js   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/07pagination.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\07pagination.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.4064ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/08overlay.js   
+
+2018-11-19 19:19:26.4797 - INFO: Sending file. Request path: '/lib/bui/08overlay.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\08overlay.js' 
+
+2018-11-19 19:19:26.4797 - INFO: Request finished in 1.304ms 200 application/javascript 
+
+2018-11-19 19:19:26.4797 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/09picker.js   
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/10calendar.js   
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/09picker.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\09picker.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.8228ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/11tooltip.js   
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/10calendar.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\10calendar.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.7611ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/12tree.js   
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/11tooltip.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\11tooltip.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.5028ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/12tree.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\12tree.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/13form.js   
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.6399ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/14grid.js   
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/13form.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\13form.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/16menu.js   
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 2.4454ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/14grid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\14grid.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 2.6002ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/16menu.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\16menu.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.2796ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/19layout.js   
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/bui/19layout.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\19layout.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiCommon.js   
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.931ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Sending file. Request path: '/lib/BuiCommon.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiCommon.js' 
+
+2018-11-19 19:19:26.4961 - INFO: Request finished in 1.2262ms 200 application/javascript 
+
+2018-11-19 19:19:26.4961 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiForm.js   
+
+2018-11-19 19:19:26.5123 - INFO: Sending file. Request path: '/lib/BuiForm.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiForm.js' 
+
+2018-11-19 19:19:26.5123 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/BuiGrid.js   
+
+2018-11-19 19:19:26.5123 - INFO: Request finished in 1.1136ms 200 application/javascript 
+
+2018-11-19 19:19:26.5123 - INFO: Sending file. Request path: '/lib/BuiGrid.js'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\BuiGrid.js' 
+
+2018-11-19 19:19:26.5123 - INFO: Request finished in 3.1387ms 200 application/javascript 
+
+2018-11-19 19:19:26.7522 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/lib/bui/fonts/iconfont.eot?t=1542092016452   
+
+2018-11-19 19:19:26.7522 - INFO: Sending file. Request path: '/lib/bui/fonts/iconfont.eot'. Physical path: 'E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\wwwroot\lib\bui\fonts\iconfont.eot' 
+
+2018-11-19 19:19:26.7522 - INFO: Request finished in 2.8444ms 200 application/vnd.ms-fontobject 
+
+2018-11-19 19:20:37.1697 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Index   
+
+2018-11-19 19:20:37.2710 - INFO: Route matched with {action = "Index", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) 
+
+2018-11-19 19:20:37.3557 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:37.3873 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 31.4986ms. 
+
+2018-11-19 19:20:37.6825 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 19:20:37.7398 - INFO: Executed ViewResult - view Index executed in 352.2815ms. 
+
+2018-11-19 19:20:37.7398 - INFO: Executed action ESC.Web.Controllers.BUnitController.Index (ESC.WebCore) in 468.9787ms 
+
+2018-11-19 19:20:37.7398 - INFO: Request finished in 570.4965ms 200 text/html; charset=utf-8 
+
+2018-11-19 19:20:38.0294 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Init?_=1542626437857   
+
+2018-11-19 19:20:38.0294 - INFO: Route matched with {action = "Init", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) 
+
+2018-11-19 19:20:38.0814 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:38.2284 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 146.8222ms. 
+
+2018-11-19 19:20:38.2284 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 19:20:38.2284 - INFO: Executed action ESC.Web.Controllers.BUnitController.Init (ESC.WebCore) in 196.2215ms 
+
+2018-11-19 19:20:38.2284 - INFO: Request finished in 199.8292ms 200 application/json 
+
+2018-11-19 19:20:38.3177 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/BUnit/Search?page=1&rows=20&_=1542626437858   
+
+2018-11-19 19:20:38.3177 - INFO: Route matched with {action = "Search", controller = "BUnit"}. Executing action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) 
+
+2018-11-19 19:20:38.3602 - INFO: Executing action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:38.5203 - INFO: Executed action method ESC.Web.Controllers.BUnitController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 160.0133ms. 
+
+2018-11-19 19:20:38.5203 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 19:20:38.5203 - INFO: Executed action ESC.Web.Controllers.BUnitController.Search (ESC.WebCore) in 201.1546ms 
+
+2018-11-19 19:20:38.5203 - INFO: Request finished in 202.9731ms 200 application/json 
+
+2018-11-19 19:20:40.1668 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Index   
+
+2018-11-19 19:20:40.1692 - INFO: Route matched with {action = "Index", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) 
+
+2018-11-19 19:20:40.2102 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:40.2102 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2188ms. 
+
+2018-11-19 19:20:40.2160 - INFO: Executing ViewResult, running view Index. 
+
+2018-11-19 19:20:40.2527 - INFO: Executed ViewResult - view Index executed in 41.8089ms. 
+
+2018-11-19 19:20:40.2527 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Index (ESC.WebCore) in 83.5606ms 
+
+2018-11-19 19:20:40.2527 - INFO: Request finished in 86.2624ms 200 text/html; charset=utf-8 
+
+2018-11-19 19:20:40.5611 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Init?_=1542626440390   
+
+2018-11-19 19:20:40.5611 - INFO: Route matched with {action = "Init", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) 
+
+2018-11-19 19:20:40.6065 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:40.6650 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 58.3656ms. 
+
+2018-11-19 19:20:40.6650 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 19:20:40.6650 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Init (ESC.WebCore) in 99.8391ms 
+
+2018-11-19 19:20:40.6650 - INFO: Request finished in 104.7055ms 200 application/json 
+
+2018-11-19 19:20:40.7426 - INFO: Request starting HTTP/1.1 GET http://localhost:25226/SNumberRule/Search?page=1&rows=20&_=1542626440391   
+
+2018-11-19 19:20:40.7426 - INFO: Route matched with {action = "Search", controller = "SNumberRule"}. Executing action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) 
+
+2018-11-19 19:20:40.7878 - INFO: Executing action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) - Validation state: Valid 
+
+2018-11-19 19:20:40.8682 - INFO: Executed action method ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 80.3559ms. 
+
+2018-11-19 19:20:40.8682 - INFO: Executing ContentResult with HTTP Response ContentType of application/json 
+
+2018-11-19 19:20:40.8682 - INFO: Executed action ESC.Web.Controllers.SNumberRuleController.Search (ESC.WebCore) in 123.9446ms 
+
+2018-11-19 19:20:40.8682 - INFO: Request finished in 125.8381ms 200 application/json 
+
