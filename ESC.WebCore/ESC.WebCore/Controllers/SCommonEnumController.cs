@@ -7,11 +7,22 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using System.Text;
 
 namespace ESC.Web.Controllers
 {
+    /// <summary>
+    /// 枚举 +
+    /// </summary>
     public class SCommonEnumController : BaseController
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
+
+        public SCommonEnumController(IHostingEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
 
         // GET: SCommonEnum
         public ActionResult Index()
@@ -102,10 +113,9 @@ namespace ESC.Web.Controllers
         [HttpGet]
         public FileResult GetEnumClass()
         {
-            //string filePath = Path.Combine(HttpContext.Server.MapPath("/App_Data"), "EnumConfig.cs");
-            //ceService.CreateEnumClass(filePath);
-            //return File(filePath, "application/text", "EnumConfig.cs");
-            return null;
+            string str = ceService.CreateEnumClass();
+            byte[] arrBytes = Encoding.UTF8.GetBytes(str);
+            return File(arrBytes, "application/text", "EnumConfig.cs");
         }
 
         #endregion

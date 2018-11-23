@@ -39,6 +39,7 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BUn
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BUnit\SearchUnitView.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Login\UpdatePwd.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SBehaviorLog\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SColumn\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SCommonEnum\Index.g.cshtml.cs
@@ -101,3 +102,4 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.Vie
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.csproj.CopyComplete
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutSingle.g.cshtml.cs

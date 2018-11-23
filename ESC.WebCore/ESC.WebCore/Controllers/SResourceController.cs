@@ -24,6 +24,10 @@ namespace ESC.Web.Controllers
 
         #region 初始化
 
+        /// <summary>
+        /// 菜单初始化
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ContentResult Init()
         {
@@ -31,6 +35,10 @@ namespace ESC.Web.Controllers
             return ReturnResult(idata);
         }
 
+        /// <summary>
+        /// 按钮初始化
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ContentResult ForeignInit()
         {

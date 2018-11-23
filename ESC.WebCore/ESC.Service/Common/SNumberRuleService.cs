@@ -10,6 +10,9 @@ using System.Text;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 编码规则  +
+    /// </summary>
     public class SNumberRuleService
     {
 

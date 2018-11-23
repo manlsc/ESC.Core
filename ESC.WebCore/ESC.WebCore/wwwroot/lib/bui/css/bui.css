@@ -199,25 +199,25 @@
     text-align: center;
 }
 
-.sk-three-bounce .sk-child {
-    width: 20px;
-    height: 20px;
-    background-color: #6610f2;
-    border-radius: 100%;
-    display: inline-block;
-    -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
-    animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
-}
+    .sk-three-bounce .sk-child {
+        width: 20px;
+        height: 20px;
+        background-color: #6610f2;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+        animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+    }
 
-.sk-three-bounce .sk-bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-}
+    .sk-three-bounce .sk-bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
 
-.sk-three-bounce .sk-bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-}
+    .sk-three-bounce .sk-bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+    }
 
 @-webkit-keyframes sk-three-bounce {
     0%, 80%, 100% {
@@ -250,36 +250,36 @@
     list-style: none;
 }
 
-.bui-pagingbar > li {
-display: inline-block;
-margin-right: 10px;
-}
+    .bui-pagingbar > li {
+        display: inline-block;
+        margin-right: 10px;
+    }
 
-.bui-pagingbar > li > a {
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    text-decoration: none;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    cursor: default;
-}
+        .bui-pagingbar > li > a {
+            padding: 6px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            cursor: default;
+        }
 
-.bui-pagingbar > li > input {
-    width: 50px;
-    display: inline-block;
-}
+        .bui-pagingbar > li > input {
+            width: 50px;
+            display: inline-block;
+        }
 
-.bui-pagingbar > li > a[disabled] {
-    color: #777777;
-    background-color: #ffffff;
-    border-color: #dddddd;
-    cursor: not-allowed;
-}
+        .bui-pagingbar > li > a[disabled] {
+            color: #777777;
+            background-color: #ffffff;
+            border-color: #dddddd;
+            cursor: not-allowed;
+        }
 
-.bui-pagingbar .bar-item-totalCount {
-float: right;
-margin-top: 5px;
-}
+    .bui-pagingbar .bar-item-totalCount {
+        float: right;
+        margin-top: 5px;
+    }
 
 /********************** Message **********************/
 .bui-messager {
@@ -336,12 +336,12 @@ margin-top: 5px;
         top: -6px;
     }
 
-/*   header   */
-.bui-calendar .bui-calendar-header {
-    padding: 0 4px;
-    position: relative;
-    *zoom: 1;
-}
+    /*   header   */
+    .bui-calendar .bui-calendar-header {
+        padding: 0 4px;
+        position: relative;
+        *zoom: 1;
+    }
 
         .bui-calendar .bui-calendar-header:before,
         .bui-calendar .bui-calendar-header:after {
@@ -352,7 +352,7 @@ margin-top: 5px;
         .bui-calendar .bui-calendar-header:after {
             clear: both;
         }
-      
+
 
         .bui-calendar .bui-calendar-header .bui-datepicker-prev,
         .bui-calendar .bui-calendar-header .bui-datepicker-next {
@@ -457,7 +457,7 @@ margin-top: 5px;
                 background-color: #6cb5f4;
             }
 
-   /*     footer    */
+    /*     footer    */
     .bui-calendar .bui-calendar-footer {
         margin-top: 2px;
         padding: 6px 4px 1px;
@@ -468,7 +468,7 @@ margin-top: 5px;
 .bui-calendar-footer .bui-nav-item {
     margin-right: 5px;
 }
-       
+
 /* month year */
 .bui-calendar .bui-monthpicker {
     position: absolute;
@@ -489,12 +489,12 @@ margin-top: 5px;
 }
 
     .bui-monthpicker .bui-calendar-month-panel,
-    .bui-monthpicker .bui-calendar-year-panel ul{
+    .bui-monthpicker .bui-calendar-year-panel ul {
         *zoom: 1;
         margin: 0;
         padding-left: 0;
         list-style: none;
-        margin-bottom:0px;
+        margin-bottom: 0px;
     }
 
         .bui-monthpicker .bui-calendar-month-panel:before,
@@ -523,29 +523,29 @@ margin-top: 5px;
             clear: both;
         }
 
-    .bui-monthpicker .bui-calendar-month-panel li,
-    .bui-monthpicker .bui-calendar-year-panel li {
-        float: left;
-        margin: 4px 0 0 6px;
-        width: 44px;
-        height: 32px;
-        list-style: none;
-    }
-
-        .bui-monthpicker .bui-calendar-month-panel li a,
-        .bui-monthpicker .bui-calendar-year-panel li a {
-            display: block;
-            text-align: center;
-            color: #333333;
+        .bui-monthpicker .bui-calendar-month-panel li,
+        .bui-monthpicker .bui-calendar-year-panel li {
+            float: left;
+            margin: 4px 0 0 6px;
+            width: 44px;
             height: 32px;
-            line-height: 32px;
+            list-style: none;
         }
 
-            .bui-monthpicker .bui-calendar-month-panel li a:hover,
-            .bui-monthpicker .bui-calendar-year-panel li a:hover {
-                background-color: #eeeeee;
-                text-decoration: none;
+            .bui-monthpicker .bui-calendar-month-panel li a,
+            .bui-monthpicker .bui-calendar-year-panel li a {
+                display: block;
+                text-align: center;
+                color: #333333;
+                height: 32px;
+                line-height: 32px;
             }
+
+                .bui-monthpicker .bui-calendar-month-panel li a:hover,
+                .bui-monthpicker .bui-calendar-year-panel li a:hover {
+                    background-color: #eeeeee;
+                    text-decoration: none;
+                }
 
         .bui-monthpicker .bui-calendar-month-panel .active a,
         .bui-monthpicker .bui-calendar-year-panel .active a {
@@ -566,10 +566,10 @@ margin-top: 5px;
         border-right: 1px solid #ccc;
     }
 
-.bui-monthpicker .bui-calendar-year-panel {
-    margin-left: 118px;
-    *margin-left: 117px;
-}
+    .bui-monthpicker .bui-calendar-year-panel {
+        margin-left: 118px;
+        *margin-left: 117px;
+    }
 
         .bui-monthpicker .bui-calendar-year-panel .bui-monthpicker-yearnav {
             padding: 4px 0 0px 0;
@@ -1291,6 +1291,12 @@ td.bui-grid-rownumber {
     .bui-search-ul li {
         padding-bottom: 5px;
         padding-left: 10px;
+        display:inline-block;
+    }
+
+    .bui-search-ul .form-control {
+        width: 200px;
+        display:inline;
     }
 
 .SearchBtns .btn {
@@ -1298,7 +1304,7 @@ td.bui-grid-rownumber {
 }
 
 
-.bui-inner-grid {
+/*.bui-inner-grid {
     padding: 10px;
     max-height: 300px;
-}
+}*/

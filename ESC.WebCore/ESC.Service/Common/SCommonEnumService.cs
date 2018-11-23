@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 枚举管理
+    /// </summary>
     public class SCommonEnumService
     {
         protected SCommonEnumRepository ceRepository;
@@ -30,11 +33,22 @@ namespace ESC.Service
             return ceRepository.GetCommonEnumByField(field);
         }
 
+        /// <summary>
+        /// 根据字段和枚举类型查询
+        /// </summary>
+        /// <param name="field"></param>
+        /// <param name="enumType"></param>
+        /// <returns></returns>
         public List<SCommonEnum> GetCommonEnum(string field, string enumType)
         {
             return ceRepository.GetCommonEnum(field, enumType);
         }
 
+        /// <summary>
+        /// 根据枚举类型查询
+        /// </summary>
+        /// <param name="enumType"></param>
+        /// <returns></returns>
         public List<SCommonEnum> GetCommonEnumByType(string enumType)
         {
             return ceRepository.GetCommonEnumByType(enumType);
@@ -52,7 +66,7 @@ namespace ESC.Service
         }
 
         /// <summary>
-        /// 添加枚举
+        /// 删除枚举
         /// </summary>
         /// <param name="commonEnum"></param>
         /// <returns></returns>
@@ -62,7 +76,7 @@ namespace ESC.Service
         }
 
         /// <summary>
-        /// 添加枚举
+        /// 更新枚举
         /// </summary>
         /// <param name="commonEnum"></param>
         /// <returns></returns>
@@ -99,19 +113,10 @@ namespace ESC.Service
         /// <summary>
         /// 创建枚举类
         /// </summary>
-        /// <param name="filePath"></param>
         /// <returns></returns>
-        public string CreateEnumClass(string filePath)
+        public string CreateEnumClass()
         {
-            if (ESCFile.IsExistFile(filePath))
-            {
-                ESCFile.DeleteFile(filePath);
-            }
-            else
-            {
-                ESCFile.CreateFile(filePath);
-            }
-
+          
             IEnumerable<IGrouping<string, SCommonEnum>> gruops = ceRepository.QueryAll().GroupBy(t => t.EnumType);
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("using System;");
@@ -142,8 +147,7 @@ namespace ESC.Service
                 sb.AppendLine("");
             }
             sb.AppendLine("}");
-            ESCFile.AppendText(filePath, sb.ToString());
-            return filePath;
+            return sb.ToString();
         }
     }
 }

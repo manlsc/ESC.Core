@@ -15,19 +15,18 @@
     var BuiLayout = Component.Controller.extend({
         renderUI: function () {
             this._initWraper();
-            this.reset();
         },
         bindUI: function () {
             var _self = this,
                 layoutEvents = _self.get("layoutEvents").join(" ");
-            _self.on(layoutEvents,
-                function () {
-                    _self._fitMiddleControl();
-                });
+            //_self.on(layoutEvents,
+            //    function () {
+            //        _self._fitMiddleControl();
+            //    });
             $(window).on("resize", BUI.wrapBehavior(_self, "reset"));
         },
         syncUI: function () {
-            this._setMiddleDimension();
+            this.reset();
         },
         _initWraper: function () {
             var _self = this,
@@ -50,7 +49,6 @@
             BUI.each(children,
                 function (child) {
                     _self.syncFit(child);
-
                 });
         },
         _setMiddleDimension: function () {
@@ -94,6 +92,15 @@
                 });
             return leftWidth;
         },
+        _getMiddleWidth: function () {
+            var _self = this,
+                container = _self.get("contentEl"),
+                totalWidth = container.width(),
+                appendWidth;
+
+            appendWidth = container.outerWidth() - container.width();
+            return totalWidth - appendWidth;
+        },
         reset: function () {
             var _self = this,
                 render = _self.get("render"),
@@ -111,6 +118,7 @@
                 _self.set("width", viewportWidth);
                 _self.set("height", viewportHeight);
             }
+            _self._setMiddleDimension();
             _self.fire("resize");
 
         },
@@ -141,8 +149,7 @@
         },
         _syncControlWidth: function (child, region) {
             var _self = this,
-                container = _self.getItemContainer(region),
-                width = child.get("width") || container.width(),
+                width = _self._getMiddleWidth(),
                 appendWidth = child.getAppendWidth(),
                 leftWidth = _self._getMiddleLeft();
             child.set("width", width - appendWidth - leftWidth);
@@ -155,8 +162,7 @@
         },
         getFitHeight: function (child, region) {
             var _self = this,
-                container = _self.getItemContainer(region),
-                outerHeight = child.get("height") || container.height();
+                outerHeight = _self._getMiddleHeight();
             return outerHeight;
         }
     }, {

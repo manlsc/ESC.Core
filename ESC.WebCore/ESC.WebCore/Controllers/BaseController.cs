@@ -310,7 +310,7 @@ namespace ESC.Web.Controllers
         protected string GetParam(string name)
         {
             StringValues value = StringValues.Empty;
-            if (Request.Method=="POST")
+            if (Request.Method == "POST")
             {
                 value = Request.Form[name];
             }

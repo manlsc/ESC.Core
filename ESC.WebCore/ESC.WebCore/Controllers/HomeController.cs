@@ -137,53 +137,6 @@ namespace ESC.Web.Controllers
         //    }
         //    return ReturnResult(new ResultData<string>());
         //}
-
-        /// <summary>
-        /// 退出
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ContentResult Logout()
-        {
-            //CookieHelper.DeleteCookie(this.HttpContext, "USRID");
-            //将当前用户缓存12小时
-            //if (CurrentUser != null)
-            //{
-            //    new Cache().RemoveCache(this.CurrentUser.UserCode);
-            //}
-
-            ContentResult cr = new ContentResult() { Content = "true" };
-            return cr;
-        }
-
-        /// <summary>
-        /// 更新密码
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public ContentResult UpdatePassword()
-        {
-            ContentResult cr = new ContentResult();
-            string newPwd = GetParam("newPwd");
-            string oldPwd = GetParam("oldPwd");
-            if (oldPwd != CurrentUser.Pwd)
-            {
-                cr.Content = "原密码输入错误.";
-            }
-            else
-            {
-                CurrentUser.Pwd = newPwd;
-                CurrentUser.UpdateDate = DateTime.Now;
-                if (CurrentUser.CreateDate.Year < 1900)
-                {
-                    CurrentUser.CreateDate = DateTime.Now;
-                }
-                new SUserService().UpdateUser(CurrentUser);
-                cr.Content = "ok";
-            }
-
-            return cr;
-        }
         
         /// <summary>
         /// 未找到

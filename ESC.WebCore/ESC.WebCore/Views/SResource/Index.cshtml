@@ -57,135 +57,87 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid", Btns: "#SResourceBtns" });
-    var fcommon = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid", Btns: "#SResourceBtns" });
-    var store = new BUI.Data.TreeStore(), tree, oGrid;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid", Btns: "#SResourceBtns" });
+        var fcommon = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid", Btns: "#SResourceBtns" });
+        var store = new BUI.Data.TreeStore(), tree, oGrid;
 
-    //初始化布局
-    function initLayout() {
-        var layoutControl = new BUI.Layout.BuiLayout({
-            srcNode: "#resource-layout",
-            render: "parent",
-            children: [{
-                srcNode: "#resource-layout-west",
-                xclass: 'controller',
-                region: 'west',
-                width: 200
-            }, {
-                srcNode: "#resource-layout-center",
-                xclass: 'controller',
-                region: 'center'
-            }]
-        });
-        layoutControl.render();
-    }
-
-    //初始化结构树
-    function initTree() {
-        tree = new BUI.Tree.TreeList({
-            render: '#resource-layout-west',
-            store: store
-        });
-        tree.render();
-
-        tree.on('itemclick', function (ev) {
-            var item = ev.item;
-            loadGrid(item.id);
-            loadResource(item.id);
-        });
-
-        common.search();
-    }
-
-    //初始化grid
-    function initGrid(initData) {
-        oGrid = new BUIGrid({
-            render: fcommon.DataGrid,
-            common: fcommon,
-            pager: false
-        });
-        oGrid.init();
-    }
-
-    //查询按钮
-    function loadGrid(resId) {
-        common.SelectDetail("SOperator", resId, 1, 20, function (result) {
-            oGrid.setResult(result);
-        });
-    }
-
-    //查询资源
-    function loadResource(resId) {
-        common.get(common.controller, "SearchSingle", "Id=" + resId, function (data) {
-            $("#SResourceForm .form-control").each(function () {
-                $(this).val(data[this.name]);
+        //初始化布局
+        function initLayout() {
+            var layoutControl = new BUI.Layout.BuiLayout({
+                srcNode: "#resource-layout",
+                render: "parent",
+                children: [{
+                    srcNode: "#resource-layout-west",
+                    xclass: 'controller',
+                    region: 'west',
+                    width: 200
+                }, {
+                    srcNode: "#resource-layout-center",
+                    xclass: 'controller',
+                    region: 'center'
+                }]
             });
-        });
-    }
-
-    //添加
-    common.add = function () {
-        var dialog = new BUI.Overlay.Dialog({
-            title: "添加",
-            width: 800,
-            height: 550,
-            mask: true,
-            closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SResource/AddView" style="width:100%;height:100%;"></iframe>',
-            success: function () {
-                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
-                if (data) {
-                    common.Insert(data, function () {
-                        dialog.close();
-                        common.search();
-                    });
-                }
-            }
-        });
-        dialog.show();
-    }
-
-    //删除
-    common.remove = function () {
-        var deleteRow = tree.getSelected();
-        if (deleteRow) {
-            if (deleteRow.children.length > 0) {
-                CommonBUI.alert("提示", "节点存在子节点,不能删除.");
-                return false;
-            } else {
-                common.Delete(deleteRow.id, function () {
-                    common.search();
-                });
-            }
-        } else {
-            CommonBUI.alert("提示", "请选择删除菜单.");
-            return false;
+            layoutControl.render();
         }
-    }
 
-    //查询
-    common.search = function () {
-        common.get(common.controller, "GetTree", "", function (treedata) {
-            store.setResult(treedata);
-        });
-    }
+        //初始化结构树
+        function initTree() {
+            tree = new BUI.Tree.TreeList({
+                render: '#resource-layout-west',
+                store: store
+            });
+            tree.render();
 
-    //编辑
-    common.edit = function () {
-        var deleteRow = tree.getSelected();
-        if (deleteRow) {
+            tree.on('itemclick', function (ev) {
+                var item = ev.item;
+                loadGrid(item.id);
+                loadResource(item.id);
+            });
+
+            common.search();
+        }
+
+        //初始化grid
+        function initGrid(initData) {
+            oGrid = new BUIGrid({
+                render: fcommon.DataGrid,
+                common: fcommon,
+                pager: false
+            });
+            oGrid.init();
+        }
+
+        //查询按钮
+        function loadGrid(resId) {
+            common.SelectDetail("SOperator", resId, 1, 20, function (result) {
+                oGrid.setResult(result);
+            });
+        }
+
+        //查询资源
+        function loadResource(resId) {
+            common.get(common.controller, "SearchSingle", "Id=" + resId, function (data) {
+                $("#SResourceForm .form-control").each(function () {
+                    $(this).val(data[this.name]);
+                });
+            });
+        }
+
+        //添加
+        common.add = function () {
             var dialog = new BUI.Overlay.Dialog({
                 title: "添加",
                 width: 800,
                 height: 550,
                 mask: true,
                 closeAction: "destroy",
-                bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SResource/UpdateView?id=' + deleteRow.id + '" style="width:100%;height:100%;"></iframe>',
+                bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SResource/AddView" style="width:100%;height:100%;"></iframe>',
                 success: function () {
                     var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
                     if (data) {
-                        common.Update(data, function () {
+                        common.Insert(data, function () {
                             dialog.close();
                             common.search();
                         });
@@ -193,28 +145,78 @@
                 }
             });
             dialog.show();
-        } else {
-            CommonBUI.alert("提示", "请选择编辑菜单.");
         }
-    }
 
-    $(document).ready(function () {
-        //初始化布局
-        initLayout();
+        //删除
+        common.remove = function () {
+            var deleteRow = tree.getSelected();
+            if (deleteRow) {
+                if (deleteRow.children.length > 0) {
+                    CommonBUI.alert("提示", "节点存在子节点,不能删除.");
+                    return false;
+                } else {
+                    common.Delete(deleteRow.id, function () {
+                        common.search();
+                    });
+                }
+            } else {
+                CommonBUI.alert("提示", "请选择删除菜单.");
+                return false;
+            }
+        }
 
-        //初始化
-        common.Init(function (iData) {
-            //按钮初始化
-            common.InitCommonds(common, $(common.Btns), iData.Commands);
+        //查询
+        common.search = function () {
+            common.get(common.controller, "GetTree", "", function (treedata) {
+                store.setResult(treedata);
+            });
+        }
+
+        //编辑
+        common.edit = function () {
+            var deleteRow = tree.getSelected();
+            if (deleteRow) {
+                var dialog = new BUI.Overlay.Dialog({
+                    title: "添加",
+                    width: 800,
+                    height: 550,
+                    mask: true,
+                    closeAction: "destroy",
+                    bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SResource/UpdateView?id=' + deleteRow.id + '" style="width:100%;height:100%;"></iframe>',
+                    success: function () {
+                        var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                        if (data) {
+                            common.Update(data, function () {
+                                dialog.close();
+                                common.search();
+                            });
+                        }
+                    }
+                });
+                dialog.show();
+            } else {
+                CommonBUI.alert("提示", "请选择编辑菜单.");
+            }
+        }
+
+        $(document).ready(function () {
+            //初始化布局
+            initLayout();
+
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                common.InitCommonds(common, $(common.Btns), iData.Commands);
+            });
+
+            //外键初始化
+            common.ForeignInit("OPerator", function (fdata) {
+                fcommon.initData = fdata;
+                initGrid();
+            });
+
+            //初始化组织结构树
+            initTree();
         });
-
-        //外键初始化
-        common.ForeignInit("OPerator", function (fdata) {
-            fcommon.initData = fdata;
-            initGrid();
-        });
-
-        //初始化组织结构树
-        initTree();
-    });
-</script>
+    </script>
+}

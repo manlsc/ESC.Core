@@ -11,7 +11,7 @@ using System.Text;
 namespace ESC.Service
 {
     /// <summary>
-    /// 列操作
+    /// 列操作 +
     /// </summary>
     public class SColumnService
     {
@@ -67,7 +67,6 @@ namespace ESC.Service
         /// <returns></returns>
         public bool RemoveColumn(SColumn scolumn)
         {
-            //删除列
             return cRepository.Delete(scolumn);
         }
 

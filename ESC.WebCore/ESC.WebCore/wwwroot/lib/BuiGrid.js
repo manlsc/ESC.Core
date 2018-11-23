@@ -39,26 +39,22 @@
         //添加、删除
         if (bGrid.editable) {
             dftGrid.tbar = {
-                children: [{
-                    xclass: "bar-item-button",
-                    text: '添加行',
-                    listeners: {
-                        click: function () {
+                items: [
+                    { text: '添加行', value: 'add' },
+                    { text: '删除行', value: 'delete' }],
+                listeners: {
+                    itemclick: function (e) {
+                        if (e.item.value == "add") {
                             bGrid.add({});
-                        }
-                    }
-                },
-                {
-                    xclass: "bar-item-button",
-                    text: '删除行',
-                    listeners: {
-                        click: function () {
+                        } else {
                             var selections = bGrid.getSelected();
                             bGrid.remove(selections);
                         }
                     }
-                }]
+                }
             };
+
+
 
             //添加编辑器
             var rediting = new BUI.Grid.Plugins.RowEditing({
@@ -336,7 +332,7 @@
             for (var i = 0; i < cols.length; i++) {
                 if (f == cols[i].get("dataIndex")) {
                     var disabled = cols[i].get("disabled"),
-                         visible = cols[i].get("visible");
+                        visible = cols[i].get("visible");
                     if (visible) { //如果显示
                         if (disabled) {  //如果禁用
                             var cell = self.grid.findCell(cols[i].get("id"), row);

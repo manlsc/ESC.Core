@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace ESC.Web.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         protected SUserService uService = new SUserService();
 
@@ -56,5 +56,58 @@ namespace ESC.Web.Controllers
             return cr;
         }
 
+        /// <summary>
+        /// 更新密码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdatePwd()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 退出
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            HttpContext.Response.Cookies.Append(CookieConst.ESC_USR_UID, CurrentUser.UserCode, new CookieOptions()
+            {
+                Expires = DateTimeOffset.Now.AddMinutes(-1)
+            });
+
+            return View("Index");
+        }
+
+        /// <summary>
+        /// 更新密码
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ContentResult UpdatePassword()
+        {
+            ContentResult cr = new ContentResult();
+            string newPwd = GetParam("newPwd");
+            string oldPwd = GetParam("oldPwd");
+            if (oldPwd != CurrentUser.Pwd)
+            {
+                cr.Content = "原密码输入错误.";
+            }
+            else
+            {
+                CurrentUser.Pwd = newPwd;
+                CurrentUser.UpdateDate = DateTime.Now;
+                if (CurrentUser.CreateDate.Year < 1900)
+                {
+                    CurrentUser.CreateDate = DateTime.Now;
+                }
+                new SUserService().UpdateUser(CurrentUser);
+                cr.Content = "ok";
+            }
+
+            return cr;
+        }
+       
     }
 }

@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutSingle.cshtml";
 }
-@model  List<ESC.Infrastructure.DomainObjects.SResource>
+@model List<ESC.Infrastructure.DomainObjects.SResource>
 
 <div id="resource-layout" class="bui-view-port bui-border-layout">
     <div class="bui-layout-border">
@@ -64,80 +64,81 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid" });
+        var oGrid;
 
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "SResource", DataGrid: "#OperatorGrid" });
-    var oGrid;
-
-    //初始化布局
-    function initLayout() {
-        var layoutControl = new BUI.Layout.BuiLayout({
-            srcNode: "#resource-layout",
-            children: [{
-                srcNode: "#resource-layout-north",
-                xclass: 'controller',
-                region: 'north',
-                height: 90
-            }, {
-                srcNode: "#resource-layout-center",
-                xclass: 'controller',
-                region: 'center'
-            }]
-        });
-        layoutControl.render();
-    }
-
-    //初始化grid
-    function initGrid(initData) {
-        oGrid = new BUIGrid({
-            render: common.DataGrid,
-            common: common,
-            pager: false,
-            editable: true
-        });
-        oGrid.init();
-    }
-
-    function getData() {
-        var obj = BuiForm.GetFormControl("#ResourceForm");
-        if (BUI.isNullOrEmpty(obj.ResourceName)) {
-            CommonBUI.alert("提示", "请输入名称.");
-            return false;
-        }
-        if (BUI.isNullOrEmpty(obj.ResourceURL)) {
-            CommonBUI.alert("提示", "请输入资源路径.");
-            return false;
-        }
-        if (BUI.isNullOrEmpty(obj.ResourceDesc)) {
-            CommonBUI.alert("提示", "请输入描述.");
-            return false;
-        }
-        if (BUI.isNullOrEmpty(obj.OrderIndex)) {
-            CommonBUI.alert("提示", "请输入排序.");
-            return false;
-        }
-        if (!BUI.isNumeric(obj.OrderIndex)) {
-            CommonBUI.alert("提示", "请输入正确的排序.");
-            return false;
-        }
-        var oprs = oGrid.getResult();
-        if (oprs) {
-            obj.Operators = oprs;
-        } else {
-            return false;
-        }
-        return obj;
-    }
-
-    $(document).ready(function () {
         //初始化布局
-        initLayout();
+        function initLayout() {
+            var layoutControl = new BUI.Layout.BuiLayout({
+                srcNode: "#resource-layout",
+                children: [{
+                    srcNode: "#resource-layout-north",
+                    xclass: 'controller',
+                    region: 'north',
+                    height: 90
+                }, {
+                    srcNode: "#resource-layout-center",
+                    xclass: 'controller',
+                    region: 'center'
+                }]
+            });
+            layoutControl.render();
+        }
 
-        //外键初始化
-        common.ForeignInit("OPerator", function (fdata) {
-            common.initData = fdata;
-            initGrid();
+        //初始化grid
+        function initGrid(initData) {
+            oGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common,
+                pager: false,
+                editable: true
+            });
+            oGrid.init();
+        }
+
+        function getData() {
+            var obj = BuiForm.GetFormControl("#ResourceForm");
+            if (BUI.isNullOrEmpty(obj.ResourceName)) {
+                CommonBUI.alert("提示", "请输入名称.");
+                return false;
+            }
+            if (BUI.isNullOrEmpty(obj.ResourceURL)) {
+                CommonBUI.alert("提示", "请输入资源路径.");
+                return false;
+            }
+            if (BUI.isNullOrEmpty(obj.ResourceDesc)) {
+                CommonBUI.alert("提示", "请输入描述.");
+                return false;
+            }
+            if (BUI.isNullOrEmpty(obj.OrderIndex)) {
+                CommonBUI.alert("提示", "请输入排序.");
+                return false;
+            }
+            if (!BUI.isNumeric(obj.OrderIndex)) {
+                CommonBUI.alert("提示", "请输入正确的排序.");
+                return false;
+            }
+            var oprs = oGrid.getResult();
+            if (oprs) {
+                obj.Operators = oprs;
+            } else {
+                return false;
+            }
+            return obj;
+        }
+
+        $(document).ready(function () {
+            //初始化布局
+            initLayout();
+
+            //外键初始化
+            common.ForeignInit("OPerator", function (fdata) {
+                common.initData = fdata;
+                initGrid();
+            });
         });
-    });
 
-</script>
+    </script>
+    }
