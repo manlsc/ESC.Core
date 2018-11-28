@@ -10,6 +10,7 @@ using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using Dapper;
 using System.Data;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace ESC.Web.Controllers
 {
@@ -17,54 +18,6 @@ namespace ESC.Web.Controllers
     {
         public ActionResult Index()
         {
-
-            //DatabaseContext db = new DatabaseContext("ConnectionString");
-            //List<ShortName> list = db.Connection.Query<ShortName>("  SELECT T2.CityId,T1.[ShortName]+T2.FirstAlphabet AS FirstAlphabet  FROM[CarServiceDev].[dbo].[CarNumberProvince] T1  LEFT JOIN[CarServiceDev].[dbo].[CarNumberCity] T2 ON T2.DicId = T1.DicID").ToList();
-
-            //string str = SerializeObject(list);
-            //string str = "{\"error_code\":0,\"resultcode\":\"200\",	\"reason\":\"查询成功\",\"result\":{\"province\":\"HB\",\"city\":\"HB_HD\",	\"hphm\":\"冀DHL327\",\"hpzl\":\"02\",\"lists\":[{\"date\":\"2013-12-2911:57:29\",\"area\":\"316省道53KM+200M\",\"act\":\"16362:驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的其他机动车在高速公路以外的道路上行驶超过规定时速20%以上未达50%的\",\"code\":\"\",\"fen\":\"6\",\"money\":\"100\",\"handled\":\"0\",\"archiveno\":\"320294Y000276124\",\"wzcity\":\"广东深圳\"}]	}}";
-            //JObject jobj = JObject.Parse(str);
-            //foreach (JProperty jpr in jobj.Properties())
-            //{
-            //    switch (jpr.Name)
-            //    {
-            //        case "error_code":
-            //            int errCode = jobj["error_code"].Value<int>();  //0代表成功
-
-            //            break;
-            //        case "reason":
-
-            //            break;
-            //        case "result":
-            //            if (jobj["result"].Type == JTokenType.Null)
-            //            {
-            //                continue;
-            //            }
-            //            else if (jobj["result"].HasValues)
-            //            {
-            //                JToken token = jobj["result"]["lists"];
-            //                if (token.Type == JTokenType.Array)
-            //                {
-            //                    JArray array = token as JArray;
-            //                    if (array.Count > 0)
-            //                    {
-            //                        for (int i = 0; i < array.Count; i++)
-            //                        {
-            //                            JToken jt = array[i];
-            //                            int fen = jt.Value<int>("fen");
-            //                            int money = jt.Value<int>("money");
-            //                            string date = jt.Value<string>("date");
-            //                            string act = jt.Value<string>("act");
-            //                            string area = jt.Value<string>("area");
-            //                            string wzcity = jt.Value<string>("wzcity");
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //            break;
-            //    }
-            //}
-            ViewBag.CurrentUser = this.CurrentUser;
             return View();
         }
 
@@ -137,7 +90,7 @@ namespace ESC.Web.Controllers
         //    }
         //    return ReturnResult(new ResultData<string>());
         //}
-        
+
         /// <summary>
         /// 未找到
         /// </summary>
@@ -151,7 +104,7 @@ namespace ESC.Web.Controllers
         /// 内部错误
         /// </summary>
         /// <returns></returns>
-        public ActionResult InnerError()
+        public ActionResult Error()
         {
             return View();
         }

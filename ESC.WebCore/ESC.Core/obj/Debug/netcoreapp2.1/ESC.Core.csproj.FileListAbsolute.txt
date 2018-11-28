@@ -1,7 +1,6 @@
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.1\ESC.Core.deps.json
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.1\ESC.Core.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\bin\Debug\netcoreapp2.1\ESC.Core.pdb
-E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.csprojAssemblyReference.cache
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.csproj.CoreCompileInputs.cache
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.AssemblyInfoInputs.cache
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.AssemblyInfo.cs

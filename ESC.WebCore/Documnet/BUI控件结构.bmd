@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map name="FieldSelect" document_type="Blumind" editor_version="1.3.16.0">
+  <!--Create by Blumind, you can download it free from http://www.blumind.org/download-->
+  <info />
+  <layout>MIND_MAP</layout>
+  <description><![CDATA[控件的结构]]></description>
+  <attributes>
+    <item name="editor_show_sidebar">True</item>
+  </attributes>
+  <style>
+    <back_color>White</back_color>
+    <fore_color>Black</fore_color>
+    <line_color>LightSlateGray</line_color>
+    <border_color>SlateGray</border_color>
+    <node_back_color>LightGray</node_back_color>
+    <node_fore_color>Black</node_fore_color>
+    <select_color>RoyalBlue</select_color>
+    <hover_color>MediumSlateBlue</hover_color>
+    <link_line_color>Green</link_line_color>
+  </style>
+  <nodes>
+    <node text="控件结构">
+      <style>
+        <back_color>Silver</back_color>
+        <fore_color>Black</fore_color>
+        <border_color>Black</border_color>
+        <padding>12</padding>
+      </style>
+      <nodes>
+        <node text="Field.Select">
+          <nodes>
+            <node text="Select">
+              <nodes>
+                <node text="ListPicker" />
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node text="ChildList">
+          <nodes>
+            <node text="ListItem" />
+          </nodes>
+        </node>
+        <node text="Bar">
+          <nodes>
+            <node text="BarItem" />
+          </nodes>
+        </node>
+        <node text="DatePicker">
+          <nodes>
+            <node text="Calendar">
+              <nodes>
+                <node text="MonthPicker" />
+                <node text="Header" />
+                <node text="Panel" />
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node text="TabPanel">
+          <nodes>
+            <node text="TabPanelItem" />
+          </nodes>
+        </node>
+        <node text="NavTab">
+          <nodes>
+            <node text="NavTabItem" />
+          </nodes>
+        </node>
+        <node text="Grid">
+          <nodes>
+            <node text="Header">
+              <nodes>
+                <node text="Column" />
+              </nodes>
+            </node>
+            <node text="Toolbar" />
+          </nodes>
+        </node>
+        <node text="CellEditing">
+          <nodes>
+            <node text="Field.Base" />
+          </nodes>
+        </node>
+        <node text="Form">
+          <nodes>
+            <node text="Field.Base" />
+          </nodes>
+        </node>
+        <node text="RowEditing">
+          <nodes>
+            <node text="Field.Base" />
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+</map>

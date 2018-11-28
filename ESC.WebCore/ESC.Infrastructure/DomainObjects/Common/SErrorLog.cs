@@ -50,5 +50,15 @@ namespace ESC.Infrastructure.DomainObjects
 		/// 错误信息
 		/// </summary>
         public string ErrMeg { set; get; }
+
+        /// <summary>
+        /// 错误追踪
+        /// </summary>
+        public string ErrTrace { set; get; }
+
+        /// <summary>
+        /// 错误来源
+        /// </summary>
+        public string ErrSource { set; get; }
     }
 }

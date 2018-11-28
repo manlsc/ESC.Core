@@ -1,5 +1,4 @@
 ﻿using ESC.Core;
-using ESC.Core.Helper;
 using ESC.Infrastructure;
 using ESC.Infrastructure.DomainObjects;
 using ESC.Infrastructure.Repository;

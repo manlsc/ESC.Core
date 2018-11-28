@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ESC.Core.Helper
+namespace ESC.Core
 {
     /// <summary>
     /// 一般正则表达式帮助类

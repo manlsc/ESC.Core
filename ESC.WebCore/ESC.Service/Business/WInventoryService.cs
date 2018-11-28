@@ -1,5 +1,4 @@
 ﻿using ESC.Core;
-using ESC.Core.Helper;
 using ESC.Infrastructure;
 using ESC.Infrastructure.DomainObjects;
 using ESC.Infrastructure.Enums;
@@ -43,11 +42,13 @@ namespace ESC.Service
             WInventory Inv = iRepository.GetInventoryByCode(code);
             if (Inv == null)
             {
-                Inv = new WInventory();
-                Inv.CreateBy = createBy;
-                Inv.CreateDate = DateTime.Now;
-                Inv.InventoryCode = code;
-                Inv.InventoryStatus = 1;
+                Inv = new WInventory
+                {
+                    CreateBy = createBy,
+                    CreateDate = DateTime.Now,
+                    InventoryCode = code,
+                    InventoryStatus = 1
+                };
                 iRepository.Insert(Inv);
             }
             List<WInventoryLine> stockLines = ilRepository.GetInventoryLinesByParent(Inv.ID);
@@ -127,12 +128,14 @@ namespace ESC.Service
             {
                 dbContext.BeginTransaction();
 
-                WOtherOut otherOut = new WOtherOut();
-                otherOut.CreateBy = inv.CreateBy;
-                otherOut.CreateDate = DateTime.Now;
-                otherOut.OtherOutCode = nuRepository.GetNextNumber("QTCK");
-                otherOut.StockOutType = StockOutEnum.InvShortages;
-                otherOut.StockStatus = StockStatusEnum.New;
+                WOtherOut otherOut = new WOtherOut
+                {
+                    CreateBy = inv.CreateBy,
+                    CreateDate = DateTime.Now,
+                    OtherOutCode = nuRepository.GetNextNumber("QTCK"),
+                    StockOutType = StockOutEnum.InvShortages,
+                    StockStatus = StockStatusEnum.New
+                };
 
                 //添加主表
                 ooRepository.Insert(otherOut);
@@ -211,12 +214,14 @@ namespace ESC.Service
             {
                 dbContext.BeginTransaction();
 
-                WOtherIn otherIn = new WOtherIn();
-                otherIn.CreateBy = inv.CreateBy;
-                otherIn.CreateDate = DateTime.Now;
-                otherIn.OtherInCode = nuRepository.GetNextNumber("QTRK");
-                otherIn.StockInType = StockInEnum.InvProfit;
-                otherIn.StockStatus = StockStatusEnum.New;
+                WOtherIn otherIn = new WOtherIn
+                {
+                    CreateBy = inv.CreateBy,
+                    CreateDate = DateTime.Now,
+                    OtherInCode = nuRepository.GetNextNumber("QTRK"),
+                    StockInType = StockInEnum.InvProfit,
+                    StockStatus = StockStatusEnum.New
+                };
 
                 //添加主表
                 oiRepositroy.Insert(otherIn);

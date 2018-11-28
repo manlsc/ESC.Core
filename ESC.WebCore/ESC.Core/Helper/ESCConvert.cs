@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ESC.Core.Helper
+namespace ESC.Core
 {
     /// <summary>
     /// 转换帮助类
@@ -19,8 +19,7 @@ namespace ESC.Core.Helper
         /// <returns></returns>
         public static int ConvertToInt(string str)
         {
-            int result = 0;
-            int.TryParse(str, out result);
+            int.TryParse(str, out int result);
             return result;
         }
 
@@ -31,8 +30,7 @@ namespace ESC.Core.Helper
         /// <returns></returns>
         public static decimal ConvertToDecimal(string str)
         {
-            decimal result = 0;
-            decimal.TryParse(str, out result);
+            decimal.TryParse(str, out decimal result);
             return result;
         }
 
@@ -43,8 +41,7 @@ namespace ESC.Core.Helper
         /// <returns></returns>
         public static float ConvertToFloat(string str)
         {
-            float result = 0;
-            float.TryParse(str, out result);
+            float.TryParse(str, out float result);
             return result;
         }
 
@@ -128,14 +125,13 @@ namespace ESC.Core.Helper
         /// <param name="data"></param>
         public static decimal ConvertToDecimal(object data)
         {
-            decimal result = 0;
             if (data == null || data == DBNull.Value)
                 return 0;
 
             if (data is decimal)
                 return (decimal)data;
 
-            decimal.TryParse(data.ToString(), out result);
+            decimal.TryParse(data.ToString(), out decimal result);
             return result;
         }
 
@@ -146,14 +142,13 @@ namespace ESC.Core.Helper
         /// <returns></returns>
         public static float ConvertToFloat(object data)
         {
-            float result = 0;
             if (data == null || data == DBNull.Value)
                 return 0;
 
             if (data is float)
                 return (float)data;
 
-            float.TryParse(data.ToString(), out result);
+            float.TryParse(data.ToString(), out float result);
             return result;
         }
 
@@ -164,14 +159,13 @@ namespace ESC.Core.Helper
         /// <returns></returns>
         public static long ConvertToLong(object data)
         {
-            long result = 0;
             if (data == null || data == DBNull.Value)
                 return 0;
 
             if (data is long)
                 return (long)data;
 
-            long.TryParse(data.ToString(), out result);
+            long.TryParse(data.ToString(), out long result);
             return result;
         }
 

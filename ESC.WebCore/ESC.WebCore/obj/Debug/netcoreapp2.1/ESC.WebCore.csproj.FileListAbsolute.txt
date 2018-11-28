@@ -23,6 +23,8 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.Ass
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.TagHelpers.input.cache
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.TagHelpers.output.cache
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.RazorCoreGenerate.cache
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Account\Index.g.cshtml.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Account\UpdatePwd.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BBusinessPartner\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BBusinessPartner\SearchBusinessPartnerView.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BLocation\Index.g.cshtml.cs
@@ -38,14 +40,13 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BMa
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BUnit\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\BUnit\SearchUnitView.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
-E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Login\UpdatePwd.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SBehaviorLog\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SColumn\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SCommonEnum\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\SideMenu.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutSingle.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SNumberRule\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SOrganization\Index.g.cshtml.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\SOrganization\SearchOrgView.g.cshtml.cs
@@ -102,4 +103,3 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.Vie
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.csproj.CopyComplete
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.pdb
-E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutSingle.g.cshtml.cs

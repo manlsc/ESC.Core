@@ -1,10 +1,10 @@
-﻿using ESC.Core.Helper;
-using ESC.Infrastructure;
+﻿using ESC.Infrastructure;
 using ESC.Infrastructure.DomainObjects;
 using ESC.Infrastructure.Repository;
 using Dapper.Extensions;
 using System;
 using System.Collections.Generic;
+using ESC.Core;
 
 namespace ESC.Service
 {

@@ -80,7 +80,7 @@ using ESC.Infrastructure.DomainObjects;
                     ");
             EndContext();
             BeginContext(575, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa8cbec5f0e2425a8ee9b49e93bdb39e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec500da6474d4fc18d3c480f0bac06b1", async() => {
                 BeginContext(612, 2, true);
                 WriteLiteral("全部");
                 EndContext();
@@ -112,7 +112,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(738, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6350223976024125b8fd26cc1ba9c3ef", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0dcc13333c246cfa9dc8fb1332dede7", async() => {
                 BeginContext(777, 19, false);
 #line 22 "E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\Views\WPurchaseNotice\Index.cshtml"
                                                          Write(Model.items[i].text);

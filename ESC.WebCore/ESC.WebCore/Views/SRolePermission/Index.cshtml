@@ -25,7 +25,7 @@
         width: auto;
         margin-bottom: 0;
         margin-left: 202px;
-        margin-right: 400px;
+        margin-right: 300px;
         margin-bottom: 0;
     }
 
@@ -33,16 +33,13 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 400px;
+        width: 300px;
         border-left: 2px solid #ddd;
     }
     /*End*/
 </style>
 <div id="p-container">
-    <div id="p-left">
-        <div id="TreeBtns" class="SearchBtns" style="padding:5px;">
-            <div style="height:22px;padding:5px;">角色列表</div>
-        </div>
+    <div id="p-left">       
         <div id="role-list"></div>
     </div>
     <div id="p-center">
@@ -64,254 +61,256 @@
         <div id="ResourceTree"></div>
     </div>
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "SRolePermission", DataTree: "#ResourceTree" });
-    var userCommon = new CommonBUI({ controller: "SUser", DataGrid: "#UserGrid" });
-    var userGrid = null, tStroe = new BUI.Data.TreeStore(), tTree, rList, selRoleId = 0;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "SRolePermission", DataTree: "#ResourceTree" });
+        var userCommon = new CommonBUI({ controller: "SUser", DataGrid: "#UserGrid" });
+        var userGrid = null, tStroe = new BUI.Data.TreeStore(), tTree, rList, selRoleId = 0;
 
-    //自动高度
-    function autoHeight() {
-        var ph = $("#p-container").parent().height();
-        $("#p-left").height(ph);
-        $("#p-center").height(ph);
-        $("#p-right").height(ph);
-    }
-
-    //绑定状体resize
-    $(window).resize(function () {
-        setTimeout(autoHeight, 100);
-    });
-
-    //初始化用户
-    function initUsers() {
-        //初始化
-        userCommon.Init(function (iData) {
-            initUserColumns(iData);
-
-            userGrid = new BUIGrid({
-                render: userCommon.DataGrid,
-                common: userCommon,
-                pager: false,
-                checkbox: true
-            });
-            userGrid.init();
-        });
-    }
-
-    //初始化列显示隐藏
-    function initUserColumns(iData) {
-        for (var i = 0; i < iData.Columns.length; i++) {
-            switch (iData.Columns[i].dataIndex) {
-                case "UserCode":
-                case "UserName":
-                case "SuperUser":
-                case "OrgID":
-                    iData.Columns[i].visible = true;
-                    break;
-                default:
-                    iData.Columns[i].visible = false;
-            }
+        //自动高度
+        function autoHeight() {
+            var ph = $("#p-container").parent().height();
+            $("#p-left").height(ph);
+            $("#p-center").height(ph);
+            $("#p-right").height(ph);
         }
-    }
 
-    //查询用户
-    common.search = function (roleId) {
-        selRoleId = roleId;
-        common.ForeignSelect(selRoleId, 0, 1000, function (result) {
-            userGrid.setResult(result);
+        //绑定状体resize
+        $(window).resize(function () {
+            setTimeout(autoHeight, 100);
         });
-        GetPermissionTree();
-    }
 
-    //保存权限
-    function savePermission() {
-        if (selRoleId < 1) {
-            CommonBUI.alert("提示", "请选择角色.");
-            return false;
-        }
-        var chkNodes = tTree.getCheckedNodes();
-        var ps = bulidPermissions(chkNodes);
-        common.Insert(ps);
-    }
+        //初始化用户
+        function initUsers() {
+            //初始化
+            userCommon.Init(function (iData) {
+                initUserColumns(iData);
 
-    //加工角色权限
-    function bulidPermissions(nodes) {
-        var ns = [];
-        for (var i = 0; i < nodes.length; i++) {
-            if (nodes[i].name == "res") {
-                ns.push({ RoleID: selRoleId, ResourceID: nodes[i].id, OperatorID: -1 });
-            } else {
-                ns.push({ RoleID: selRoleId, ResourceID: nodes[i].parent.id, OperatorID: nodes[i].id.substring(3) });
-            }
-        }
-        return ns;
-    }
-
-    function GetPermissionTree() {
-        //首先清空选择
-        var chkNodes = tTree.getCheckedNodes();
-        BUI.each(chkNodes,
-           function (chkNode) {
-               tTree.setNodeChecked(chkNode, false, false);
-           });
-
-        //查询权限设置选中
-        common.get(common.controller, "GetPermissionTree", "roleId=" + selRoleId, function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var node = tStroe.findNode(data[i]);
-                tTree.setNodeChecked(node, true, false);
-            }
-        });
-    }
-
-    //查询所有角色
-    function initRoles() {
-        common.get(common.controller, "GetRoles", "", function (result) {
-            var items = [];
-            for (var i = 0; i < result.length; i++) {
-                items.push({
-                    text: result[i].RoleName,
-                    value: result[i].ID
+                userGrid = new BUIGrid({
+                    render: userCommon.DataGrid,
+                    common: userCommon,
+                    pager: false,
+                    checkbox: true
                 });
+                userGrid.init();
+            });
+        }
+
+        //初始化列显示隐藏
+        function initUserColumns(iData) {
+            for (var i = 0; i < iData.Columns.length; i++) {
+                switch (iData.Columns[i].dataIndex) {
+                    case "UserCode":
+                    case "UserName":
+                    case "SuperUser":
+                    case "OrgID":
+                        iData.Columns[i].visible = true;
+                        break;
+                    default:
+                        iData.Columns[i].visible = false;
+                }
             }
-            rList = new BUI.List.SimpleList({
-                elCls: 'bui-select-list',
-                width: 200,
-                render: '#role-list',
-                items: items
-            });
-            rList.on('itemclick', function (ev) {
-                common.search(ev.item.value);
-            });
-            rList.render();
-        });
-    }
+        }
 
-    //初始化菜单
-    function initResources() {
-        tTree = new BUI.Tree.TreeList({
-            render: common.DataTree,
-            checkType: 'all',
-            cascadeCheckd: false, //不级联勾选
-            store: tStroe
-        });
-        tTree.render();
+        //查询用户
+        common.search = function (roleId) {
+            selRoleId = roleId;
+            common.ForeignSelect(selRoleId, 0, 100, function (result) {
+                userGrid.setResult(result);
+            });
+            GetPermissionTree();
+        }
 
-        //重写选中事件
-        tTree.on("checkedchangeonce", function (ev) {
-            var checked = ev.checked, node = ev.node;
+        //保存权限
+        function savePermission() {
+            if (selRoleId < 1) {
+                CommonBUI.alert("提示", "请选择角色.");
+                return false;
+            }
+            var chkNodes = tTree.getCheckedNodes();
+            var ps = bulidPermissions(chkNodes);
+            common.Insert(ps);
+        }
+
+        //加工角色权限
+        function bulidPermissions(nodes) {
+            var ns = [];
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].name == "res") {
+                    ns.push({ RoleID: selRoleId, ResourceID: nodes[i].id, OperatorID: -1 });
+                } else {
+                    ns.push({ RoleID: selRoleId, ResourceID: nodes[i].parent.id, OperatorID: nodes[i].id.substring(3) });
+                }
+            }
+            return ns;
+        }
+
+        //获取当前角色权限树
+        function GetPermissionTree() {
+            //首先清空选择
+            var chkNodes = tTree.getCheckedNodes();
+            BUI.each(chkNodes,
+                function (chkNode) {
+                    tTree.setNodeChecked(chkNode, false, false);
+                });
+
+            //查询权限设置选中
+            common.get(common.controller, "GetPermissionTree", "roleId=" + selRoleId, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var node = tStroe.findNode(data[i]);
+                    tTree.setNodeChecked(node, true, false);
+                }
+            });
+        }
+
+        //查询所有角色
+        function initRoles() {
+            common.get(common.controller, "GetRoles", "", function (result) {
+                var items = [];
+                for (var i = 0; i < result.length; i++) {
+                    items.push({
+                        text: result[i].RoleName,
+                        value: result[i].ID
+                    });
+                }
+                rList = new BUI.List.ListGroup({
+                    //width: 200,
+                    render: '#role-list',
+                    items: items
+                });
+                rList.on('itemclick', function (ev) {
+                    common.search(ev.item.value);
+                });
+                rList.render();
+            });
+        }
+
+        //初始化菜单
+        function initResources() {
+            tTree = new BUI.Tree.TreeList({
+                render: common.DataTree,
+                checkType: 'all',
+                cascadeCheckd: false, //不级联勾选
+                store: tStroe
+            });
+            tTree.render();
+
+            //重写选中事件
+            tTree.on("checkedchangeonce", function (ev) {
+                var checked = ev.checked, node = ev.node;
+                BUI.each(node.children,
+                    function (subNode, index) {
+                        setChildCheckNode(subNode, checked);
+                    });
+                if (checked) {
+                    setParentChecked(node);
+                } else {
+                    setParentUnChecked(node);
+                }
+            });
+
+            //获取资源
+            common.get(common.controller, "GetResourceAndOper", "", function (treedata) {
+                tStroe.setResult(treedata);
+            });
+        }
+
+        //取消选择父节点
+        function setParentUnChecked(node) {
+            var parent = node.parent;
+            if (parent) {
+                var nodes = parent.children,
+                    unchecked = true;
+                BUI.each(nodes,
+                    function (slibNode) {
+                        if (slibNode !== node && tTree.isChecked(slibNode)) {
+                            unchecked = false;
+                            return false;
+                        }
+                    });
+
+                if (unchecked) {
+                    tTree.setNodeChecked(parent, false, false);
+                    setParentUnChecked(parent);
+                }
+            }
+        }
+
+        //选择父节点
+        function setParentChecked(node) {
+            var p = node.parent;
+            if (p) {
+                tTree.setNodeChecked(p, true, false);
+                setParentChecked(p);
+            }
+        }
+
+        //选择子节点
+        function setChildCheckNode(node, checked) {
+            tTree.setNodeChecked(node, checked, false);
             BUI.each(node.children,
                 function (subNode, index) {
                     setChildCheckNode(subNode, checked);
                 });
-            if (checked) {
-                setParentChecked(node);
-            } else {
-                setParentUnChecked(node);
+        }
+
+        //选择用户
+        function searchUser() {
+            if (selRoleId < 1) {
+                CommonBUI.alert("提示", "请选择角色.");
+                return false;
             }
-        });
-
-        //获取资源
-        common.get(common.controller, "GetResourceAndOper", "", function (treedata) {
-            tStroe.setResult(treedata);
-        });
-    }
-
-    //取消选择父节点
-    function setParentUnChecked(node) {
-        var parent = node.parent;
-        if (parent) {
-            var nodes = parent.children,
-             unchecked = true;
-            BUI.each(nodes,
-            function (slibNode) {
-                if (slibNode !== node && tTree.isChecked(slibNode)) {
-                    unchecked = false;
-                    return false;
+            var dialog = new BUI.Overlay.Dialog({
+                title: "选择用户",
+                width: 850,
+                height: 600,
+                mask: true,
+                closeAction: "destroy",
+                bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SUser/SearchUsersView" style="width:100%;height:100%;"></iframe>',
+                success: function () {
+                    var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                    var userIds = [];
+                    for (var i = 0; i < data.length; i++) {
+                        userIds.push(data[i].ID);
+                    }
+                    var addItems = "add=" + BUI.JSON.stringify(userIds) + "&roleId=" + selRoleId;
+                    common.post(common.controller, "AddUser", addItems, function () {
+                        common.search(selRoleId);
+                        dialog.close();
+                    });
                 }
             });
+            dialog.show();
+        }
 
-            if (unchecked) {
-                tTree.setNodeChecked(parent, false, false);
-                setParentUnChecked(parent);
+        //删除用户
+        function removeUser() {
+            var data = userGrid.getSelected();
+            if (data.length < 1) {
+                CommonBUI.alert("提示", "请选择要删除的用户");
+                return false;
             }
-        }
-    }
-
-    //选择父节点
-    function setParentChecked(node) {
-        var p = node.parent;
-        if (p) {
-            tTree.setNodeChecked(p, true, false);
-            setParentChecked(p);
-        }
-    }
-
-    //选择子节点
-    function setChildCheckNode(node, checked) {
-        tTree.setNodeChecked(node, checked, false);
-        BUI.each(node.children,
-              function (subNode, index) {
-                  setChildCheckNode(subNode, checked);
-              });
-    }
-
-    //选择用户
-    function searchUser() {
-        if (selRoleId < 1) {
-            CommonBUI.alert("提示", "请选择角色.");
-            return false;
-        }
-        var dialog = new BUI.Overlay.Dialog({
-            title: "选择用户",
-            width: 850,
-            height: 600,
-            mask: true,
-            closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SUser/SearchUsersView" style="width:100%;height:100%;"></iframe>',
-            success: function () {
-                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
-                var userIds = [];
-                for (var i = 0; i < data.length; i++) {
-                    userIds.push(data[i].ID);
-                }
-                var addItems = "add=" + BUI.JSON.stringify(userIds) + "&roleId=" + selRoleId;
-                common.post(common.controller, "AddUser", addItems, function () {
-                    common.search(selRoleId);
-                    dialog.close();
-                });
+            if (selRoleId < 1) {
+                CommonBUI.alert("提示", "请选择角色.");
+                return false;
             }
+
+            var userIds = [];
+            for (var i = 0; i < data.length; i++) {
+                userIds.push(data[i].ID);
+            }
+            var deleteItems = "delete=" + BUI.JSON.stringify(userIds) + "&roleId=" + selRoleId;
+            common.post(common.controller, "RmoveUser", deleteItems, function () {
+                CommonBUI.alert("提示", "删除成功.");
+                common.search(selRoleId);
+            });
+        }
+
+        $(document).ready(function () {
+            autoHeight();
+            initRoles();
+            initResources();
+            initUsers();
         });
-        dialog.show();
+    </script>
     }
-
-    //删除用户
-    function removeUser() {
-        var data = userGrid.getSelected();
-        if (data.length < 1) {
-            CommonBUI.alert("提示", "请选择要删除的用户");
-            return false;
-        }
-        if (selRoleId < 1) {
-            CommonBUI.alert("提示", "请选择角色.");
-            return false;
-        }
-
-        var userIds = [];
-        for (var i = 0; i < data.length; i++) {
-            userIds.push(data[i].ID);
-        }
-        var deleteItems = "delete=" + BUI.JSON.stringify(userIds) + "&roleId=" + selRoleId;
-        common.post(common.controller, "RmoveUser", deleteItems, function () {
-            CommonBUI.alert("提示", "删除成功.");
-            common.search(selRoleId);
-        });
-    }
-
-    $(document).ready(function () {
-        autoHeight();
-        initRoles();
-        initResources();
-        initUsers();
-    });
-</script>

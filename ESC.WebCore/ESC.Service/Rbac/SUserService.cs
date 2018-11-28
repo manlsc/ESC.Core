@@ -1,5 +1,4 @@
 ﻿using ESC.Core;
-using ESC.Core.Helper;
 using ESC.Infrastructure;
 using ESC.Infrastructure.DomainObjects;
 using ESC.Infrastructure.Enums;
@@ -136,6 +135,16 @@ namespace ESC.Service
         public List<SUser> GetUserByCode(string userCode)
         {
             return uRepository.GetUserByCode(userCode);
+        }
+
+        /// <summary>
+        /// 根据用户编码获取用户
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public SUser GetUserById(int userId)
+        {
+            return uRepository.Single(userId);
         }
 
         /// <summary>

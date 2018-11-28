@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ESC.Core.Helper
+namespace ESC.Core
 {
     /// <summary>
     /// 随机数操作

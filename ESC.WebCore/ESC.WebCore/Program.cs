@@ -52,7 +52,7 @@ namespace ESC.WebCore
             .ConfigureLogging(logging =>
             {
                 logging.ClearProviders();  //清空默认日志提供器
-                logging.SetMinimumLevel(LogLevel.Information);  //设置日志最小级别
+                logging.SetMinimumLevel(LogLevel.Warning);  //设置日志最小级别
             }) 
             .UseStartup<Startup>()
             .UseNLog()  //启用NLOG

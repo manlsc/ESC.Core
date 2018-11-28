@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map name="BUI继承结构" document_type="Blumind" editor_version="1.3.16.0">
+  <!--Create by Blumind, you can download it free from http://www.blumind.org/download-->
+  <info />
+  <layout>MIND_MAP</layout>
+  <attributes>
+    <item name="editor_show_sidebar">True</item>
+  </attributes>
+  <style>
+    <back_color>White</back_color>
+    <fore_color>Black</fore_color>
+    <line_color>LightSlateGray</line_color>
+    <border_color>SlateGray</border_color>
+    <node_back_color>LightGray</node_back_color>
+    <node_fore_color>Black</node_fore_color>
+    <select_color>RoyalBlue</select_color>
+    <hover_color>MediumSlateBlue</hover_color>
+    <link_line_color>Green</link_line_color>
+  </style>
+  <nodes>
+    <node text="Observable">
+      <style>
+        <back_color>Silver</back_color>
+        <fore_color>Black</fore_color>
+        <border_color>Black</border_color>
+        <padding>12</padding>
+      </style>
+      <nodes>
+        <node text="Base">
+          <widgets>
+            <widget type="NOTES" align="Right" hyperlink="">
+              <description>属性</description>
+            </widget>
+          </widgets>
+          <nodes>
+            <node text="UIBase">
+              <widgets>
+                <widget type="NOTES" align="Right" hyperlink="">
+                  <description>控件基类(生命周期)</description>
+                </widget>
+              </widgets>
+              <nodes>
+                <node text="Controller" folded="True">
+                  <widgets>
+                    <widget type="NOTES" align="Right" hyperlink="">
+                      <description>控件(事件、属性操作)</description>
+                    </widget>
+                  </widgets>
+                  <nodes>
+                    <node text="ChildList">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>控件列表</description>
+                        </widget>
+                      </widgets>
+                      <nodes>
+                        <node text="List" />
+                        <node text="Bar">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>工具栏</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                        <node text="PagingBar">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>分页</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                        <node text="TabPanel">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>tab页</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node text="DomList">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>dom列表</description>
+                        </widget>
+                      </widgets>
+                      <nodes>
+                        <node text="SimpleList" folded="True">
+                          <nodes>
+                            <node text="Listbox">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>多选列表</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                            <node text="TreeList">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>树</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                            <node text="SimpleGrid">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>简单表格</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                            <node text="Grid">
+                              <widgets>
+                                <widget type="NOTES" align="Right" hyperlink="">
+                                  <description>复杂表格</description>
+                                </widget>
+                              </widgets>
+                            </node>
+                          </nodes>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node text="Overlay">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>位置</description>
+                        </widget>
+                      </widgets>
+                      <nodes>
+                        <node text="Dialog" folded="True">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>弹层</description>
+                            </widget>
+                          </widgets>
+                          <nodes>
+                            <node text="Message" />
+                          </nodes>
+                        </node>
+                        <node text="Picker">
+                          <nodes>
+                            <node text="ListPicker" />
+                            <node text="MonthPicker" />
+                            <node text="DatePicker" />
+                          </nodes>
+                        </node>
+                        <node text="Tip">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>提示</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node text="Select">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>下拉列表</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="Search">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>选择</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="Calendar">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>日历</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="Calendar.Panel" />
+                    <node text="Layout.Abstract">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>布局基类</description>
+                        </widget>
+                      </widgets>
+                      <nodes>
+                        <node text="Layout.Border">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>页面布局</description>
+                            </widget>
+                          </widgets>
+                          <nodes>
+                            <node text="Layout.Viewport" />
+                          </nodes>
+                        </node>
+                        <node text="Layout.Accordion">
+                          <widgets>
+                            <widget type="NOTES" align="Right" hyperlink="">
+                              <description>抽屉布局</description>
+                            </widget>
+                          </widgets>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node text="Layout.BuiLayout">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>自定义布局</description>
+                        </widget>
+                      </widgets>
+                    </node>
+                    <node text="NavTab" />
+                    <node text="Field.Base">
+                      <widgets>
+                        <widget type="NOTES" align="Right" hyperlink="">
+                          <description>Form字段基类</description>
+                        </widget>
+                      </widgets>
+                      <nodes>
+                        <node text="Field.Text" />
+                        <node text="Field.Hidden" />
+                        <node text="Field.Number" />
+                        <node text="Field.Plain" />
+                        <node text="Field.TextArea" />
+                        <node text="Field.Date" />
+                        <node text="Field.Select" />
+                        <node text="Field.Search" />
+                      </nodes>
+                    </node>
+                    <node text="Form" />
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+            <node text="Store">
+              <widgets>
+                <widget type="NOTES" align="Right" hyperlink="">
+                  <description>grid数据库</description>
+                </widget>
+              </widgets>
+            </node>
+            <node text="TreeStore">
+              <widgets>
+                <widget type="NOTES" align="Right" hyperlink="">
+                  <description>树形数据库</description>
+                </widget>
+              </widgets>
+            </node>
+            <node text="SideMenu">
+              <widgets>
+                <widget type="NOTES" align="Right" hyperlink="">
+                  <description>自定义左侧菜单</description>
+                </widget>
+              </widgets>
+            </node>
+            <node text="Editing">
+              <nodes>
+                <node text="CellEditing" />
+                <node text="RowEditing" />
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+</map>

@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.IO;
 using ESC.Core;
 using ESC.Infrastructure.DomainObjects;
 using ESC.Infrastructure;
 using Newtonsoft.Json;
 using ESC.Service;
-using System.Threading;
 using System.Data;
 using Newtonsoft.Json.Converters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Primitives;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace ESC.Web.Controllers
 {
@@ -26,15 +25,26 @@ namespace ESC.Web.Controllers
         protected SCommonEnumService ceService = new SCommonEnumService();
 
         #region 重写基类方法
+
         /// <summary>
         /// 方法执行完毕,添加用户行为
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnActionExecuting(ActionExecutingContext context)
-        {
-            base.OnActionExecuting(context);
-            CurrentUser = new SUserService().GetUserByCode("admin").FirstOrDefault();
-            ViewBag.CurrentUser = CurrentUser;
+        {          
+            if (User.Claims.Count() > 0)
+            {
+                string userId = User.Claims.Where(t => t.Type == "ID").FirstOrDefault().Value;
+                CurrentUser = new SUserService().GetUserById(ESCConvert.ConvertToInt(userId));
+                ViewBag.CurrentUser = CurrentUser;
+            }
+            else
+            {                
+                context.Result = RedirectToAction("Index", "Account");
+                return;
+            }
+
+
 
             //记录行为日志  增删改
             if (context.HttpContext.Request.Method.Equals("POST", StringComparison.OrdinalIgnoreCase))
@@ -51,6 +61,8 @@ namespace ESC.Web.Controllers
                 };
                 logService.AddBehaviorLog(log);
             }
+
+            base.OnActionExecuting(context);
         }
         #endregion
 
@@ -81,15 +93,17 @@ namespace ESC.Web.Controllers
             List<SCPermission> itemumns = pService.GetCPermissionByUserAndResource(this.CurrentUser, tableName, this.ToString());
             foreach (SCPermission item in itemumns)
             {
-                BUIColumn col = new BUIColumn();
-                col.visible = item.Visible > 0;
-                col.required = item.Required > 0;
-                col.title = item.Title;
-                col.datatype = item.ColumnType;
-                col.dataIndex = item.ColumnName;
-                col.disabled = item.Disabled > 0;
-                col.displayfield = item.DisplayColumn;
-                col.width = item.Width;
+                BUIColumn col = new BUIColumn
+                {
+                    visible = item.Visible > 0,
+                    required = item.Required > 0,
+                    title = item.Title,
+                    datatype = item.ColumnType,
+                    dataIndex = item.ColumnName,
+                    disabled = item.Disabled > 0,
+                    displayfield = item.DisplayColumn,
+                    width = item.Width
+                };
                 idata.Columns.Add(col);
             }
 
@@ -217,8 +231,10 @@ namespace ESC.Web.Controllers
                     contentType = "text/plain";
                     break;
             }
-            FileContentResult fcr = new FileContentResult(fileContents, contentType);
-            fcr.FileDownloadName = fileName;
+            FileContentResult fcr = new FileContentResult(fileContents, contentType)
+            {
+                FileDownloadName = fileName
+            };
             return fcr;
         }
 
@@ -247,8 +263,10 @@ namespace ESC.Web.Controllers
         /// <returns></returns>
         protected string SerializeObject(object value)
         {
-            IsoDateTimeConverter timeFormat = new IsoDateTimeConverter();
-            timeFormat.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+            IsoDateTimeConverter timeFormat = new IsoDateTimeConverter
+            {
+                DateTimeFormat = "yyyy-MM-dd HH:mm:ss"
+            };
             return JsonConvert.SerializeObject(value, Formatting.Indented, timeFormat);
         }
 
@@ -276,9 +294,11 @@ namespace ESC.Web.Controllers
         /// <returns></returns>
         protected ContentResult ReturnResult(object result)
         {
-            ContentResult cr = new ContentResult();
-            cr.ContentType = "application/json";
-            cr.Content = SerializeObject(result);
+            ContentResult cr = new ContentResult
+            {
+                ContentType = "application/json",
+                Content = SerializeObject(result)
+            };
             return cr;
         }
 
@@ -407,8 +427,7 @@ namespace ESC.Web.Controllers
         protected long GetPageIndex()
         {
             string page = GetParam("page");
-            long p = 1;
-            if (!long.TryParse(page, out p))
+            if (!long.TryParse(page, out long p))
             {
                 p = 1;
             }
@@ -422,8 +441,7 @@ namespace ESC.Web.Controllers
         protected long GetPageSize()
         {
             string page = GetParam("rows");
-            long p = 20;
-            if (!long.TryParse(page, out p))
+            if (!long.TryParse(page, out long p))
             {
                 p = 20;
             }

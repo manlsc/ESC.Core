@@ -178,15 +178,21 @@
         var addItems = "add=" + JSON.stringify(data);
         bui.post(bui.controller, "Add", addItems, function (result) {
             if (result.status == 0) {
-                CommonBUI.alert("成功", "添加成功.", "success");
+                setTimeout(function () {
+                    CommonBUI.alert("成功", "添加成功.", "success");
+                });
                 if (success) {
                     success.call(bui, result);
                 }
+
             } else {
-                CommonBUI.alert("错误", result.message, "error");
+                setTimeout(function () {
+                    CommonBUI.alert("错误", result.message, "error");
+                });
                 if (errf) {
                     errf.call(bui, result);
                 }
+
             }
         });
     }
@@ -203,15 +209,21 @@
         var updateItems = "update=" + JSON.stringify(data);
         bui.post(bui.controller, "Update", updateItems, function (result) {
             if (result.status == 0) {
-                CommonBUI.alert("成功", "更新成功.", "success");
+                setTimeout(function () {
+                    CommonBUI.alert("成功", "更新成功.", "success");
+                });
                 if (success) {
                     success.call(bui, result);
                 }
+
             } else {
-                CommonBUI.alert("错误", result.message, "error");
+                setTimeout(function () {
+                    CommonBUI.alert("错误", result.message, "error");
+                });
                 if (errf) {
                     errf.call(bui, result);
                 }
+
             }
         });
     }

@@ -154,9 +154,11 @@ namespace ESC.Core
         {
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
-                Dictionary<string, string> dic = new Dictionary<string, string>();
-                dic.Add("private", rsa.ToXmlString(true));
-                dic.Add("public", rsa.ToXmlString(false));
+                Dictionary<string, string> dic = new Dictionary<string, string>
+                {
+                    { "private", rsa.ToXmlString(true) },
+                    { "public", rsa.ToXmlString(false) }
+                };
                 return dic;
             }
         }
