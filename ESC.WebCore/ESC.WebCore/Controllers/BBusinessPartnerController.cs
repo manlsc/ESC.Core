@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ESC.Web.Controllers
 {
     /// <summary>
-    /// 业务合作伙伴
+    /// 业务合作伙伴 +
     /// </summary>
     public class BBusinessPartnerController : BaseController
     {

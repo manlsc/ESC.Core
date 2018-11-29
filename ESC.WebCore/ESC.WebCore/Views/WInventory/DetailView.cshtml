@@ -10,7 +10,8 @@
 <div style="text-align:center;" class="SearchBtns fa-border">
     <button id="btnCancel" type="button" class="btn btn-default">取消</button>
 </div>
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     var common = new CommonBUI({ controller: "WInventory", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var fcommon = new CommonBUI({ controller: "WInventory", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var bGrid = null, bForm = null;
@@ -18,7 +19,7 @@
 
     //初始化表单
     function initForm(iData) {
-        bForm = new BuiForm({ common: common, colCount: 4, data: {}, type: "detail" });       
+        bForm = new BuiForm({ common: common, colCount: 4, data: {}, type: "detail" });
         bForm.render(fcommon.GridForm);
         searchParent();
     }
@@ -35,7 +36,7 @@
         bGrid.OnPageSearch = function (pageIndex, pageSize) {
             searchDetail(pageIndex,pageSize);
         }
-        
+
         bGrid.init();
 
         searchDetail(1,20);
@@ -66,10 +67,11 @@
             fcommon.initData = fData;
             initGrid(fData);
         });
-       
+
         $("#btnCancel").click(function () {
             window.location.href = "../WInventory/Index";
         });
     });
 
-</script>
+    </script>
+    }

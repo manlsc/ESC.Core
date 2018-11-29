@@ -184,7 +184,7 @@ namespace ESC.Web.Controllers
             else
             {
                 rt.status = -1;
-                rt.message = "用户编码已经存在.";
+                rt.message = "物料编码已经存在.";
             }
             return ReturnResult(rt);
         }

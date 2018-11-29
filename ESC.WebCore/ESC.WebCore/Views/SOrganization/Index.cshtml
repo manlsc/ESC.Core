@@ -54,157 +54,107 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "SOrganization", Btns: "#SOrganizationBtns", DataGrid: "#UserGrid" });
-    var fcommon = new CommonBUI({ controller: "SOrganization", Btns: "#SOrganizationBtns", DataGrid: "#UserGrid" });
-    var store = new BUI.Data.TreeStore(), tree, oGrid, orgData;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "SOrganization", Btns: "#SOrganizationBtns", DataGrid: "#UserGrid" });
+        var fcommon = new CommonBUI({ controller: "SOrganization", Btns: "#SOrganizationBtns", DataGrid: "#UserGrid" });
+        var store = new BUI.Data.TreeStore(), tree, oGrid, orgData;
 
-    //初始化布局
-    function initLayout() {
-        var layoutControl = new BUI.Layout.BuiLayout({
-            srcNode: "#org-layout",
-            render: "parent",
-            children: [{
-                srcNode: "#org-layout-west",
-                xclass: 'controller',
-                region: 'west',
-                width: 200
-            }, {
-                srcNode: "#org-layout-center",
-                xclass: 'controller',
-                region: 'center'
-            }]
-        });
-        layoutControl.render();
-    }
-
-    //初始化结构树
-    function initTree() {
-        tree = new BUI.Tree.TreeList({
-            render: '#org-layout-west',
-            store: store
-        });
-        tree.render();
-
-        tree.on('itemclick', function (ev) {
-            var item = ev.item;
-            loadOrganization(item.id);
-            loadGrid(item.id);
-        });
-
-        common.search();
-    }
-
-    //初始化grid
-    function initGrid(initData) {
-        oGrid = new BUIGrid({
-            render: fcommon.DataGrid,
-            common: fcommon,
-            pager: false
-        });
-        oGrid.init();
-    }
-    
-    //查询组织机构
-    function loadOrganization(resId) {
-        common.get(common.controller, "SearchSingle", "Id=" + resId, function (data) {
-            orgData = data;
-            $("#SOrganizationForm .form-control").each(function () {
-                $(this).val(data[this.name]);
+        //初始化布局
+        function initLayout() {
+            var layoutControl = new BUI.Layout.BuiLayout({
+                srcNode: "#org-layout",
+                render: "parent",
+                children: [{
+                    srcNode: "#org-layout-west",
+                    xclass: 'controller',
+                    region: 'west',
+                    width: 200
+                }, {
+                    srcNode: "#org-layout-center",
+                    xclass: 'controller',
+                    region: 'center'
+                }]
             });
-        });
-    }
+            layoutControl.render();
+        }
 
-    //查询用户
-    function loadGrid(resId) {
-        common.SelectDetail("SUser", resId, 1, 20, function (result) {
-            oGrid.setResult(result);
-        });
-    }
+        //初始化结构树
+        function initTree() {
+            tree = new BUI.Tree.TreeList({
+                render: '#org-layout-west',
+                store: store
+            });
+            tree.render();
 
-    //初始化列显示隐藏
-    function initUserColumns(iData) {
-        for (var i = 0; i < iData.Columns.length; i++) {
-            switch (iData.Columns[i].dataIndex) {
-                case "UserCode":
-                case "UserName":
-                case "SuperUser":
-                case "OrgID":
-                    iData.Columns[i].visible = true;
-                    break;
-                default:
-                    iData.Columns[i].visible = false;
+            tree.on('itemclick', function (ev) {
+                var item = ev.item;
+                loadOrganization(item.id);
+                loadGrid(item.id);
+            });
+
+            common.search();
+        }
+
+        //初始化grid
+        function initGrid(initData) {
+            oGrid = new BUIGrid({
+                render: fcommon.DataGrid,
+                common: fcommon,
+                pager: false
+            });
+            oGrid.init();
+        }
+
+        //查询组织机构
+        function loadOrganization(resId) {
+            common.get(common.controller, "SearchSingle", "Id=" + resId, function (data) {
+                orgData = data;
+                $("#SOrganizationForm .form-control").each(function () {
+                    $(this).val(data[this.name]);
+                });
+            });
+        }
+
+        //查询用户
+        function loadGrid(resId) {
+            common.SelectDetail("SUser", resId, 1, 20, function (result) {
+                oGrid.setResult(result);
+            });
+        }
+
+        //初始化列显示隐藏
+        function initUserColumns(iData) {
+            for (var i = 0; i < iData.Columns.length; i++) {
+                switch (iData.Columns[i].dataIndex) {
+                    case "UserCode":
+                    case "UserName":
+                    case "SuperUser":
+                    case "OrgID":
+                        iData.Columns[i].visible = true;
+                        break;
+                    default:
+                        iData.Columns[i].visible = false;
+                }
             }
         }
-    }
 
-    //添加
-    common.add = function () {
-        var data = {};
-        if (orgData) {
-            data.ParentID = orgData.ID;
-            data.ParentName = orgData.OrgName;
-        }
+        //添加
+        common.add = function () {
+            var data = {};
+            if (orgData) {
+                data.ParentID = orgData.ID;
+                data.ParentName = orgData.OrgName;
+            }
 
-        var form = new BuiForm({ common: common, data: data, type: "add" });
+            var form = new BuiForm({ common: common, data: data, type: "add" });
 
-        form.save = function (data) {
-            common.Insert(data, function () {
-                common.search();
-                form.close();
-            });
-        }
-
-        //外键查询
-        form.fSearch = function (opts) {
-            if (BUI.isNullOrEmpty(opts.text) || opts.evttype == "click") {
-                searchOrg(form, opts);
-            } else {
-                //查询业务伙伴
-                fcommon.get("SOrganization", "GetOrganizationCodeName", "words=" + CommonBUI.UrlEncode(opts.text), function (rdata) {
-                    if (rdata.result.length == 1) {
-                        var data = rdata.result[0];
-                        var target = opts.target;
-                        target.setSearchValue(data.ID || 0);
-                        target.setSearchText(data.OrgName || "");
-                    } else {
-                        searchOrg(form, opts);
-                    }
+            form.save = function (data) {
+                common.Insert(data, function () {
+                    common.search();
+                    form.close();
                 });
             }
-        }
-
-        form.show(800, 200);
-    }
-
-    //删除
-    common.remove = function () {
-        var deleteRow = tree.getSelected();
-        if (deleteRow == null) {
-            CommonBUI.alert("提示", "请选择编辑的组织机构.");
-            return false;
-        }
-        if (deleteRow.children.length > 0) {
-            CommonBUI.alert("提示", "当前节点存在子组织,不能删除.");
-            return false;
-        }
-        common.Delete(deleteRow.id, function () {
-            common.search();           
-        });
-    }
-
-    //查询
-    common.search = function () {
-        common.get(common.controller, "GetTree", "", function (treedata) {
-            store.setResult(treedata);
-        });
-    }
-
-    //编辑
-    common.edit = function () {
-        var deleteRow = tree.getSelected();
-        if (deleteRow) {
-            var form = new BuiForm({ data: orgData, common: common, type: "edit" });
 
             //外键查询
             form.fSearch = function (opts) {
@@ -222,73 +172,124 @@
                             searchOrg(form, opts);
                         }
                     });
-                } 
-            }
-
-            form.save = function (data) {
-                common.Update(data, function () {
-                    common.search();
-                    form.close();
-                });
-            }
-            form.show(800, 200);
-        } else {
-            CommonBUI.alert("提示", "请选择编辑的组织机构.");
-        }
-    }
-
-    //选择组织机构
-    function searchOrg(frm, opts) {
-        var dialog = new BUI.Overlay.Dialog({
-            title: "选择组织",
-            width: 300,
-            height: 500,
-            mask: true,
-            closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SOrganization/SearchOrgView" style="width:100%;height:100%;"></iframe>',
-            success: function () {
-                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
-                if (data) {
-                    frm.setReturnValue(opts, data);
-                    dialog.close();                   
-                } else {
-                    frm.setReturnValue(opts, {});
-                    dialog.close();
                 }
             }
+
+            form.show(900, 200);
+        }
+
+        //删除
+        common.remove = function () {
+            var deleteRow = tree.getSelected();
+            if (deleteRow == null) {
+                CommonBUI.alert("提示", "请选择编辑的组织机构.");
+                return false;
+            }
+            if (deleteRow.children.length > 0) {
+                CommonBUI.alert("提示", "当前节点存在子组织,不能删除.");
+                return false;
+            }
+            common.Delete(deleteRow.id, function () {
+                common.search();
+            });
+        }
+
+        //查询
+        common.search = function () {
+            common.get(common.controller, "GetTree", "", function (treedata) {
+                store.setResult(treedata);
+            });
+        }
+
+        //编辑
+        common.edit = function () {
+            var deleteRow = tree.getSelected();
+            if (deleteRow) {
+                var form = new BuiForm({ data: orgData, common: common, type: "edit" });
+
+                //外键查询
+                form.fSearch = function (opts) {
+                    if (BUI.isNullOrEmpty(opts.text) || opts.evttype == "click") {
+                        searchOrg(form, opts);
+                    } else {
+                        //查询业务伙伴
+                        fcommon.get("SOrganization", "GetOrganizationCodeName", "words=" + CommonBUI.UrlEncode(opts.text), function (rdata) {
+                            if (rdata.result.length == 1) {
+                                var data = rdata.result[0];
+                                var target = opts.target;
+                                target.setSearchValue(data.ID || 0);
+                                target.setSearchText(data.OrgName || "");
+                            } else {
+                                searchOrg(form, opts);
+                            }
+                        });
+                    }
+                }
+
+                form.save = function (data) {
+                    common.Update(data, function () {
+                        common.search();
+                        form.close();
+                    });
+                }
+                form.show(900, 200);
+            } else {
+                CommonBUI.alert("提示", "请选择编辑的组织机构.");
+            }
+        }
+
+        //选择组织机构
+        function searchOrg(frm, opts) {
+            var dialog = new BUI.Overlay.Dialog({
+                title: "选择组织",
+                width: 300,
+                height: 500,
+                mask: true,
+                closeAction: "destroy",
+                bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../SOrganization/SearchOrgView" style="width:100%;height:100%;"></iframe>',
+                success: function () {
+                    var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                    if (data) {
+                        frm.setReturnValue(opts, data);
+                        dialog.close();
+                    } else {
+                        frm.setReturnValue(opts, {});
+                        dialog.close();
+                    }
+                }
+            });
+            dialog.show();
+        }
+
+        //初始化列
+        function initColumns(columns) {
+            $.each(columns,
+                function (index, item) {
+                    columns[index] = new BUI.Grid.Column(item);
+                });
+        }
+
+        $(document).ready(function () {
+            //初始化布局
+            initLayout();
+
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                common.InitCommonds(common, $(common.Btns), iData.Commands);
+                initColumns(common.initData.Columns);
+            });
+
+            //外键初始化
+            common.ForeignInit("SUser", function (fdata) {
+                initUserColumns(fdata);
+                fcommon.initData = fdata;
+                initGrid();
+            });
+
+            //初始化组织结构树
+            initTree();
         });
-        dialog.show();
+
+    </script>
     }
-
-    //初始化列
-    function initColumns(columns) {
-        $.each(columns,
-          function (index, item) {
-              columns[index] = new BUI.Grid.Column(item);
-          });
-    }
-
-    $(document).ready(function () {
-        //初始化布局
-        initLayout();
-
-        //初始化
-        common.Init(function (iData) {
-            //按钮初始化
-            common.InitCommonds(common, $(common.Btns), iData.Commands);
-            initColumns(common.initData.Columns);
-        });
-
-        //外键初始化
-        common.ForeignInit("SUser", function (fdata) {            
-            initUserColumns(fdata);
-            fcommon.initData = fdata;
-            initGrid();
-        });
-
-        //初始化组织结构树
-        initTree();
-    });
-
-</script>
-

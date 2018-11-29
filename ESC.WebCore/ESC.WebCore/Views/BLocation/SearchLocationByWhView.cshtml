@@ -27,32 +27,13 @@
 </div>
 <div id="LocationGrid">
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "BLocation", SearchForm: "#LocationForm", DataGrid: "#LocationGrid" });
-    var bGrid = null;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "BLocation", SearchForm: "#LocationForm", DataGrid: "#LocationGrid" });
+        var bGrid = null;
 
-    //查询
-    common.search = function () {
-        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-        whereItems.push({
-            field: "LocationType",
-            condition: ">",
-            value: 1,
-            datatype: "int"
-        });
-        common.Select(whereItems, 0, 0, function (result) {
-            bGrid.setResult(result);
-        });
-    }
-
-    //初始化grid
-    function initGrid(iData) {
-        bGrid = new BUIGrid({
-            render: common.DataGrid,
-            common: common
-        });
-        //分页查询
-        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+        //查询
+        common.search = function () {
             var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
             whereItems.push({
                 field: "LocationType",
@@ -60,39 +41,60 @@
                 value: 1,
                 datatype: "int"
             });
-            common.Select(whereItems, pageIndex, pageSize, function (result) {
+            common.Select(whereItems, 0, 0, function (result) {
                 bGrid.setResult(result);
             });
         }
-        bGrid.init();
-        common.search();
-    }
 
-    //获取返回值
-    function getData() {
-        return bGrid.getSelected();
-    }
-
-    $(document).ready(function () {
-        //初始化
-        common.Init(function (iData) {
-            //初始化grid
-            initGrid(iData);
-        });
-
-        //查询
-        $("#btnSearch").click(function () {
-            common.search();
-        });
-
-        //绑定回车查询
-        $(common.SearchForm).find("input:text").keyup(function (e) {
-            if (e.which == BUI.KeyCode.ENTER) {
-                common.search();
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common
+            });
+            //分页查询
+            bGrid.OnPageSearch = function (pageIndex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                whereItems.push({
+                    field: "LocationType",
+                    condition: ">",
+                    value: 1,
+                    datatype: "int"
+                });
+                common.Select(whereItems, pageIndex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
             }
-        });
-    });
+            bGrid.init();
+            common.search();
+        }
 
-</script>
+        //获取返回值
+        function getData() {
+            return bGrid.getSelected();
+        }
+
+        $(document).ready(function () {
+            //初始化
+            common.Init(function (iData) {
+                //初始化grid
+                initGrid(iData);
+            });
+
+            //查询
+            $("#btnSearch").click(function () {
+                common.search();
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
+        });
+
+    </script>
+    }
 
 

@@ -41,7 +41,8 @@
 </div>
 <div id="InventoryGrid">
 </div>
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     var common = new CommonBUI({ controller: "WInventory", SearchForm: "#InventoryForm", DataGrid: "#InventoryGrid" });
     var fcommon = new CommonBUI({ controller: "WStock" });
     var bGrid = null;
@@ -135,4 +136,5 @@
         });
     });
 
-</script>
+    </script>
+    }

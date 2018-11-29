@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ESC.Web.Controllers
 {
+    /// <summary>
+    /// 仓库管理+
+    /// </summary>
     public class BLocationController : BaseController
     {
         BLocationService lService = new BLocationService();
