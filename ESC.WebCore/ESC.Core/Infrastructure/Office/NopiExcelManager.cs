@@ -92,26 +92,41 @@ namespace ESC.Core
             HSSFWorkbook hssfworkbook = new HSSFWorkbook();
             ISheet sheet = hssfworkbook.CreateSheet("sheet1");
 
-            //表头
-            IRow row = sheet.CreateRow(0);
+            //加工 只导出Caption不为空的数据
+            List<DataColumn> cols = new List<DataColumn>();
             for (int i = 0; i < dt.Columns.Count; i++)
             {
+                if (!string.IsNullOrEmpty(dt.Columns[i].Caption))
+                {
+                    cols.Add(dt.Columns[i]);
+                }
+            }
+
+            //表头
+            IRow row = sheet.CreateRow(0);
+            for (int i = 0; i < cols.Count; i++)
+            {
                 ICell cell = row.CreateCell(i);
-                cell.SetCellValue(dt.Columns[i].ColumnName);
-                var font = hssfworkbook.CreateFont();
-                font.IsBold = true;
-                font.Color = HSSFColor.DarkBlue.Index2;
-                cell.CellStyle.SetFont(font);
+                cell.SetCellValue(cols[i].Caption);
+                ICellStyle style = hssfworkbook.CreateCellStyle();//创建样式对象
+                IFont font = hssfworkbook.CreateFont(); //创建一个字体样式对象
+                font.Color = new HSSFColor.White().Indexed;
+                font.FontHeightInPoints = 13;//字体大小
+                style.FillBackgroundColor = HSSFColor.RoyalBlue.Index;
+                style.FillForegroundColor =HSSFColor.RoyalBlue.Index;
+                style.FillPattern = FillPattern.SolidForeground;
+                style.SetFont(font); //将字体样式赋给样式对象
+                cell.CellStyle = style; //把样式赋给单元格格
             }
 
             //数据
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 IRow row1 = sheet.CreateRow(i + 1);
-                for (int j = 0; j < dt.Columns.Count; j++)
+                for (int j = 0; j < cols.Count; j++)
                 {
                     ICell cell = row1.CreateCell(j);
-                    cell.SetCellValue(dt.Rows[i][j].ToString());
+                    cell.SetCellValue(dt.Rows[i][cols[j]].ToString());
                 }
             }
 
@@ -199,7 +214,7 @@ namespace ESC.Core
                     else
                     {
                         dt.Columns.Add(new DataColumn(obj.ToString()));
-                    }                        
+                    }
                     columns.Add(i);
                 }
                 //数据
@@ -234,26 +249,41 @@ namespace ESC.Core
             XSSFWorkbook xssfworkbook = new XSSFWorkbook();
             ISheet sheet = xssfworkbook.CreateSheet("sheet1");
 
-            //表头
-            IRow row = sheet.CreateRow(0);
+            //加工 只导出Caption不为空的数据
+            List<DataColumn> cols = new List<DataColumn>();
             for (int i = 0; i < dt.Columns.Count; i++)
             {
+                if (!string.IsNullOrEmpty(dt.Columns[i].Caption))
+                {
+                    cols.Add(dt.Columns[i]);
+                }
+            }
+
+            //表头
+            IRow row = sheet.CreateRow(0);
+            for (int i = 0; i < cols.Count; i++)
+            {
                 ICell cell = row.CreateCell(i);
-                cell.SetCellValue(dt.Columns[i].ColumnName);
-                var font = xssfworkbook.CreateFont();
-                font.IsBold = true;
-                font.Color = HSSFColor.DarkBlue.Index2;
-                cell.CellStyle.SetFont(font);
+                cell.SetCellValue(cols[i].Caption);
+                ICellStyle style = xssfworkbook.CreateCellStyle();//创建样式对象
+                IFont font = xssfworkbook.CreateFont(); //创建一个字体样式对象
+                font.Color = new HSSFColor.White().Indexed;              
+                font.FontHeightInPoints = 13;//字体大小
+                style.FillBackgroundColor = HSSFColor.RoyalBlue.Index;
+                style.FillForegroundColor = HSSFColor.RoyalBlue.Index;
+                style.FillPattern = FillPattern.SolidForeground;
+                style.SetFont(font); //将字体样式赋给样式对象
+                cell.CellStyle = style; //把样式赋给单元格
             }
 
             //数据
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 IRow row1 = sheet.CreateRow(i + 1);
-                for (int j = 0; j < dt.Columns.Count; j++)
+                for (int j = 0; j < cols.Count; j++)
                 {
                     ICell cell = row1.CreateCell(j);
-                    cell.SetCellValue(dt.Rows[i][j].ToString());
+                    cell.SetCellValue(dt.Rows[i][cols[j]].ToString());
                 }
             }
 

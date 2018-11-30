@@ -6,3 +6,4 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.AssemblyI
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.AssemblyInfo.cs
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.Core\obj\Debug\netcoreapp2.1\ESC.Core.csprojAssemblyReference.cache

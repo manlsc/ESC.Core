@@ -48,66 +48,66 @@
 </div>
 <div id="StockGrid">
 </div>
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "WStock", SearchForm: "#StockForm", DataGrid: "#StockGrid" });
+        var bGrid = null;
 
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "WStock", SearchForm: "#StockForm", DataGrid: "#StockGrid" });
-    var bGrid = null;
-
-    //查询
-    common.search = function () {
-        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-        common.Select(whereItems, 0, 0, function (result) {
-            bGrid.setResult(result);
-        });
-    }
-
-    //下载
-    common.download = function () {
-        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-        var downurl = "../" + common.controller + "/DownLoad";
-        var downpara="?whereItems=" + CommonBUI.UrlEncode(JSON.stringify(whereItems));
-        window.location.href = downurl + downpara;      
-    }
-
-    //初始化grid
-    function initGrid(iData) {
-        bGrid = new BUIGrid({
-            render: common.DataGrid,
-            common: common
-        });
-
-        //分页查询
-        bGrid.OnPageSearch = function (pageIndex, pageSize) {
+        //查询
+        common.search = function () {
             var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-            common.Select(whereItems, pageIndex, pageSize, function (result) {
+            common.Select(whereItems, 0, 0, function (result) {
                 bGrid.setResult(result);
             });
         }
-        bGrid.init();
-        common.search();
-    }
 
-    $(document).ready(function () {
-        //初始化
-        common.Init(function (iData) {
-            //按钮初始化
-            common.InitCommonds(common, $("#StockBtns"), iData.Commands);
-            //初始化grid
-            initGrid(iData);
-        });
+        //下载
+        common.download = function () {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            var downurl = "../" + common.controller + "/DownLoad";
+            var downpara = "?whereItems=" + CommonBUI.UrlEncode(JSON.stringify(whereItems));
+            window.location.href = downurl + downpara;
+        }
 
-        var datepicker = new BUI.Calendar.DatePicker({
-            trigger: '.calendar',
-            autoRender: true
-        });
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common
+            });
 
-        //绑定回车查询
-        $(common.SearchForm).find("input:text").keyup(function (e) {
-            if (e.which == BUI.KeyCode.ENTER) {
-                common.search();
+            //分页查询
+            bGrid.OnPageSearch = function (pageIndex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                common.Select(whereItems, pageIndex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
             }
+            bGrid.init();
+            common.search();
+        }
+
+        $(document).ready(function () {
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                common.InitCommonds(common, $("#StockBtns"), iData.Commands);
+                //初始化grid
+                initGrid(iData);
+            });
+
+            var datepicker = new BUI.Calendar.DatePicker({
+                trigger: '.calendar',
+                autoRender: true
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
         });
-    });
 
-</script>
-
+    </script>
+    }

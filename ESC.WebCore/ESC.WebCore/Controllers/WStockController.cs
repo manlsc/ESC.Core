@@ -86,13 +86,17 @@ namespace ESC.Web.Controllers
             List<WhereItem> whereItems = GetWhereItems();
             DataTable dt = sService.GetStocks(whereItems);
             ResetColumnName(dt);
-            return BaseDownloadFile(string.Format("库存{0}.xlsx",DateTime.Now.ToString("yyyyMMddhhmmss")), dt);
+            return BaseDownloadFile(string.Format("库存{0}.xlsx", DateTime.Now.ToString("yyyyMMddhhmmss")), dt);
         }
 
+        /// <summary>
+        /// 重置data名称
+        /// </summary>
+        /// <param name="dt"></param>
         protected void ResetColumnName(DataTable dt)
         {
             SColumnService sService = new SColumnService();
-            List<SColumn> cols=   sService.GetVisibleColumnsByTable("WStock");
+            List<SColumn> cols = sService.GetVisibleColumnsByTable("WStock");
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 dt.Columns[i].Caption = string.Empty;
@@ -113,7 +117,7 @@ namespace ESC.Web.Controllers
                             dt.Columns[i].Caption = col.Title;
                             break;
                         }
-                    }                  
+                    }
                 }
             }
         }

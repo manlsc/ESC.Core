@@ -86,7 +86,7 @@ using ESC.Infrastructure.DomainObjects;
                     ");
             EndContext();
             BeginContext(767, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a12ee215a0d434b85101bdfb52024a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "534a1fd938014f55b88168046da332b1", async() => {
                 BeginContext(804, 2, true);
                 WriteLiteral("全部");
                 EndContext();
@@ -118,7 +118,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(914, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0cb9f57972f54064a5ad6f2a0202c6c0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79dc230b53f7410d9810fa9877d84a2e", async() => {
                 BeginContext(943, 9, false);
 #line 28 "E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\Views\BUnit\Index.cshtml"
                                                Write(item.text);
