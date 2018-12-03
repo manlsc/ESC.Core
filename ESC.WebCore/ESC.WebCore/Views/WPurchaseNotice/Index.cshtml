@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model  ESC.Infrastructure.ComboxData
+@model ESC.Infrastructure.ComboxData
 
 <div id="PurchaseNoticeForm">
     <ul class="bui-search-ul">
@@ -42,109 +42,111 @@
 </div>
 <div id="PurchaseNoticeGrid">
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "WPurchaseNotice", SearchForm: "#PurchaseNoticeForm", DataGrid: "#PurchaseNoticeGrid" });
-    var bGrid = null;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "WPurchaseNotice", SearchForm: "#PurchaseNoticeForm", DataGrid: "#PurchaseNoticeGrid" });
+        var bGrid = null;
 
-    //查询
-    common.search = function () {
-        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-        common.Select(whereItems, 0, 0, function (result) {
-            bGrid.setResult(result);
-        });
-    }
-
-    //删除
-    common.remove = function () {
-        var deleteRow = bGrid.getSelected();
-        if (deleteRow) {
-            common.Delete(deleteRow, function () {
-                common.search();
-            });
-        }
-    }
-
-    //添加
-    common.add = function () {
-        window.location.href = "../WPurchaseNotice/AddView";
-    }
-
-    //编辑
-    common.edit = function () {
-        var deleteRow = bGrid.getSelected();
-        if (deleteRow) {
-            window.location.href = "../WPurchaseNotice/UpdateView?ID=" + deleteRow.ID + "&NoticeStatus=" + deleteRow.NoticeStatus;
-        }
-    }
-
-    //下推
-    common.pushdown = function () {
-        var editRow = bGrid.getSelected();
-        if (editRow == null) {
-            CommonBUI.alert("提示", "请选择通知单.", "warning");
-            return false;
-        }
-        var data="app="+CommonBUI.UrlEncode(JSON.stringify(editRow));
-        common.post(common.controller, "PushDown", data, function (rdata) {
-            if (rdata.status == 0) {
-                window.location.href = "../WPurchase/UpdateView?ID=" + rdata.result;
-            } else {
-                CommonBUI.alert("提示", rdata.message);
-            }
-        });
-    }
-
-    //初始化grid
-    function initGrid(iData) {
-        bGrid = new BUIGrid({
-            render: common.DataGrid,
-            common: common
-        });
-
-        //分页查询
-        bGrid.OnPageSearch = function (pageOutdex, pageSize) {
+        //查询
+        common.search = function () {
             var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-            common.Select(whereItems, pageOutdex, pageSize, function (result) {
+            common.Select(whereItems, 0, 0, function (result) {
                 bGrid.setResult(result);
             });
         }
 
-        //初始化
-        bGrid.onInit = function (dftGrid) {
-            for (var i = 0; i < dftGrid.columns.length; i++) {
-                var col = dftGrid.columns[i];
-                if (col.dataIndex == "InNoticeCode") {
-                    col.renderer = function (value, record, index) {
-                        return '<a href="../WPurchaseNotice/UpdateView?ID=' + record.ID + "&NoticeStatus=" + record.NoticeStatus + '">' + value + '<a>';
-                    }
-                }
+        //删除
+        common.remove = function () {
+            var deleteRow = bGrid.getSelected();
+            if (deleteRow) {
+                common.Delete(deleteRow, function () {
+                    common.search();
+                });
             }
         }
 
-        bGrid.init();
-        common.search();
-    }
+        //添加
+        common.add = function () {
+            window.location.href = "../WPurchaseNotice/AddView";
+        }
 
-    $(document).ready(function () {
-        //初始化
-        common.Init(function (iData) {
-            //按钮初始化
-            common.InitCommonds(common, $("#PurchaseNoticeBtns"), iData.Commands);
-            //初始化grid
-            initGrid(iData);
-        });
-
-        var datepicker = new BUI.Calendar.DatePicker({
-            trigger: '.calendar',
-            autoRender: true
-        });
-
-        //绑定回车查询
-        $(common.SearchForm).find("input:text").keyup(function (e) {
-            if (e.which == BUI.KeyCode.ENTER) {
-                common.search();
+        //编辑
+        common.edit = function () {
+            var deleteRow = bGrid.getSelected();
+            if (deleteRow) {
+                window.location.href = "../WPurchaseNotice/UpdateView?ID=" + deleteRow.ID + "&NoticeStatus=" + deleteRow.NoticeStatus;
             }
-        });
-    });
+        }
 
-</script>
+        //下推
+        common.pushdown = function () {
+            var editRow = bGrid.getSelected();
+            if (editRow == null) {
+                CommonBUI.alert("提示", "请选择通知单.", "warning");
+                return false;
+            }
+            var data = "app=" + CommonBUI.UrlEncode(JSON.stringify(editRow));
+            common.post(common.controller, "PushDown", data, function (rdata) {
+                if (rdata.status == 0) {
+                    window.location.href = "../WPurchase/UpdateView?ID=" + rdata.result;
+                } else {
+                    CommonBUI.alert("提示", rdata.message);
+                }
+            });
+        }
+
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common
+            });
+
+            //分页查询
+            bGrid.OnPageSearch = function (pageOutdex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                common.Select(whereItems, pageOutdex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
+            }
+
+            //初始化
+            bGrid.onInit = function (dftGrid) {
+                for (var i = 0; i < dftGrid.columns.length; i++) {
+                    var col = dftGrid.columns[i];
+                    if (col.dataIndex == "InNoticeCode") {
+                        col.renderer = function (value, record, index) {
+                            return '<a href="../WPurchaseNotice/UpdateView?ID=' + record.ID + "&NoticeStatus=" + record.NoticeStatus + '">' + value + '<a>';
+                        }
+                    }
+                }
+            }
+
+            bGrid.init();
+            common.search();
+        }
+
+        $(document).ready(function () {
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                common.InitCommonds(common, $("#PurchaseNoticeBtns"), iData.Commands);
+                //初始化grid
+                initGrid(iData);
+            });
+
+            var datepicker = new BUI.Calendar.DatePicker({
+                trigger: '.calendar',
+                autoRender: true
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
+        });
+
+    </script>
+    }

@@ -36,74 +36,76 @@
 </div>
 <div id="TransferInNoticeGrid">
 </div>
-<script type="text/javascript">
-    var common = new CommonBUI({ controller: "WTransferInNotice", SearchForm: "#TransferInNoticeForm", DataGrid: "#TransferInNoticeGrid" });
-    var bGrid = null;
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "WTransferInNotice", SearchForm: "#TransferInNoticeForm", DataGrid: "#TransferInNoticeGrid" });
+        var bGrid = null;
 
-    //查询
-    common.search = function () {
-        var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-        common.Select(whereItems, 0, 0, function (result) {
-            bGrid.setResult(result);
-        });
-    }
-
-    //初始化grid
-    function initGrid(iData) {
-        bGrid = new BUIGrid({
-            render: common.DataGrid,
-            common: common
-        });
-
-        //分页查询
-        bGrid.OnPageSearch = function (pageOutdex, pageSize) {
+        //查询
+        common.search = function () {
             var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-            common.Select(whereItems, pageOutdex, pageSize, function (result) {
+            common.Select(whereItems, 0, 0, function (result) {
                 bGrid.setResult(result);
             });
         }
 
-        //初始化
-        bGrid.onInit = function (dftGrid) {
-            for (var i = 0; i < dftGrid.columns.length; i++) {
-                var col = dftGrid.columns[i];
-                if (col.dataIndex == "InNoticeCode") {
-                    col.renderer = function (value, record, index) {
-                        return '<a href="../WTransferInNotice/Detail?ID=' + record.ID + '">' + value + '<a>';
-                    }
-                } else if (col.dataIndex == "SourceCode") {
-                    col.renderer = function (value, record, index) {
-                        return '<a href="../WTransferOut/UpdateView?ID=' + record.SourceID + '">' + value + '<a>';
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common
+            });
+
+            //分页查询
+            bGrid.OnPageSearch = function (pageOutdex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                common.Select(whereItems, pageOutdex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
+            }
+
+            //初始化
+            bGrid.onInit = function (dftGrid) {
+                for (var i = 0; i < dftGrid.columns.length; i++) {
+                    var col = dftGrid.columns[i];
+                    if (col.dataIndex == "InNoticeCode") {
+                        col.renderer = function (value, record, index) {
+                            return '<a href="../WTransferInNotice/Detail?ID=' + record.ID + '">' + value + '<a>';
+                        }
+                    } else if (col.dataIndex == "SourceCode") {
+                        col.renderer = function (value, record, index) {
+                            return '<a href="../WTransferOut/UpdateView?ID=' + record.SourceID + '">' + value + '<a>';
+                        }
                     }
                 }
             }
+
+            bGrid.init();
+            common.search();
         }
 
-        bGrid.init();
-        common.search();
-    }
+        $(document).ready(function () {
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                common.InitCommonds(common, $("#TransferInNoticeBtns"), iData.Commands);
+                //初始化grid
+                initGrid(iData);
+            });
 
-    $(document).ready(function () {
-        //初始化
-        common.Init(function (iData) {
-            //按钮初始化
-            common.InitCommonds(common, $("#TransferInNoticeBtns"), iData.Commands);
-            //初始化grid
-            initGrid(iData);
+            var datepicker = new BUI.Calendar.DatePicker({
+                trigger: '.calendar',
+                autoRender: true
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
         });
 
-        var datepicker = new BUI.Calendar.DatePicker({
-            trigger: '.calendar',
-            autoRender: true
-        });
-
-        //绑定回车查询
-        $(common.SearchForm).find("input:text").keyup(function (e) {
-            if (e.which == BUI.KeyCode.ENTER) {
-                common.search();
-            }
-        });
-    });
-
-</script>
+    </script>
+}
 

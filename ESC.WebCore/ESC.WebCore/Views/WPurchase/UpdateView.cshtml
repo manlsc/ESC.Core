@@ -14,8 +14,8 @@
         <button id="btnCancel" type="button" class="btn btn-default">取消</button>
     </div>
 }
-
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     var common = new CommonBUI({ controller: "WPurchase", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var fcommon = new CommonBUI({ controller: "WPurchase", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var bGrid = null, bForm = null;
@@ -74,7 +74,7 @@
                     }
                     searchMaterial(bGrid, opts);
                 }
-            } else {               
+            } else {
                 //如果回车查询
                 if (opts.param.table == "BLocation") {
                     //查询存储单元
@@ -255,6 +255,6 @@
         });
     });
 
-</script>
-
+    </script>
+}
 

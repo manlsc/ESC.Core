@@ -85,7 +85,7 @@ using ESC.Infrastructure.DomainObjects;
                     ");
             EndContext();
             BeginContext(567, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ce38f6d517e4f0bb7a1a0cb2fd90d3c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e95f3d45ddbd43a5925e2fa2c6424b34", async() => {
                 BeginContext(604, 2, true);
                 WriteLiteral("全部");
                 EndContext();
@@ -117,7 +117,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(730, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "586b13e967034f87a5d45f527bb19559", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5644da572da446f397036a5831483fca", async() => {
                 BeginContext(769, 19, false);
 #line 23 "E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\Views\WOtherIn\Index.cshtml"
                                                          Write(Model.items[i].text);
@@ -158,7 +158,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("                </select>\r\n            </span>\r\n        </li>\r\n        <li class=\"bui-inline-block\">\r\n            <label>入库类型：</label>\r\n            <span>\r\n                <select class=\"form-control\" name=\"StockInType\">\r\n                    ");
             EndContext();
             BeginContext(1064, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b99f5c79c04451bae4bf66595702619", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b61ef138e45044e080564b96983c045c", async() => {
                 BeginContext(1101, 2, true);
                 WriteLiteral("全部");
                 EndContext();
@@ -181,7 +181,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1134, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "930ff870a50c4a62a21875369e8ad951", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d3cd7bc78de4edc826c053856c379ac", async() => {
                 BeginContext(1152, 4, true);
                 WriteLiteral("其他入库");
                 EndContext();
@@ -203,7 +203,7 @@ using ESC.Infrastructure.DomainObjects;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1187, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b2b9132d9e1414392954c1f9c79f49f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "277082616aeb489580908898edccccb8", async() => {
                 BeginContext(1205, 4, true);
                 WriteLiteral("盘盈入库");
                 EndContext();

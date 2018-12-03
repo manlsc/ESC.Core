@@ -5,6 +5,8 @@
 --TRUNCATE TABLE WOtherOutLine;  --其他出库行
 --TRUNCATE TABLE WStockOut; --出库明细
 --TRUNCATE TABLE WStockIn;  --入库明细
+TRUNCATE TABLE WInventory;  --盘点
+TRUNCATE TABLE WInventoryLine;  --盘点明细
 
 
 SELECT * FROM WStock;  --库存
@@ -14,3 +16,6 @@ SELECT * FROM WStockIn;  --入库明细
 
 SELECT * FROM WOtherOut; --其他出库
 SELECT * FROM WOtherOutLine; --其他出库行
+
+SELECT * FROM WInventory;  --盘点
+SELECT * FROM WInventoryLine;  --盘点明细

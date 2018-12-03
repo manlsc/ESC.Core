@@ -11,7 +11,8 @@
     <button id="btnSure" type="button" class="btn btn-primary">确定</button>
     <button id="btnCancel" type="button" class="btn btn-default">取消</button>
 </div>
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     var common = new CommonBUI({ controller: "WTransferInNotice", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var fcommon = new CommonBUI({ controller: "WTransferInNotice", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var bGrid = null, bForm = null;
@@ -20,7 +21,7 @@
     //初始化表单
     function initForm(iData) {
         bForm = new BuiForm({ common: common, colCount: 4, data: {}, type: "add" });
-       
+
         bForm.render(fcommon.GridForm);
         searchParent();
     }
@@ -37,7 +38,7 @@
         bGrid.OnPageSearch = function (pageIndex, pageSize) {
             searchDetail(pageIndex,pageSize);
         }
-         
+
         //外键选择
         bGrid.fSearch = function (opts) {
             if (BUI.isNullOrEmpty(opts.text) || opts.evttype == "click") {
@@ -150,5 +151,5 @@
         });
     });
 
-</script>
-
+    </script>
+}

@@ -15,7 +15,8 @@
         <button id="btnCancel" type="button" class="btn btn-default">取消</button>
     </div>
 }
-<script type="text/javascript">
+@section Scripts{
+    <script type="text/javascript">
     var common = new CommonBUI({ controller: "WTransferIn", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var fcommon = new CommonBUI({ controller: "WTransferIn", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
     var bGrid = null, bForm = null;
@@ -155,5 +156,6 @@
         });
     });
 
-</script>
+    </script>
+}
 

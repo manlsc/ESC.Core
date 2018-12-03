@@ -3,14 +3,15 @@
     ViewBag.Title = "AddView";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div id="headerForm" class="fa-border">
-    </div>
-    <div id="bodyGrid">
-    </div>
-    <div style="text-align:center;" class="SearchBtns fa-border">
-        <button id="btnSure" type="button" class="btn btn-primary">确定</button>
-        <button id="btnCancel" type="button" class="btn btn-default">取消</button>
-    </div>
+<div id="headerForm" class="fa-border">
+</div>
+<div id="bodyGrid">
+</div>
+<div style="text-align:center;" class="SearchBtns fa-border">
+    <button id="btnSure" type="button" class="btn btn-primary">确定</button>
+    <button id="btnCancel" type="button" class="btn btn-default">取消</button>
+</div>
+@section Scripts{
     <script type="text/javascript">
         var common = new CommonBUI({ controller: "WSell", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
         var fcommon = new CommonBUI({ controller: "WSell", GridForm: "#headerForm", DataGrid: "#bodyGrid" });
@@ -194,4 +195,4 @@
         });
 
     </script>
-
+    }
