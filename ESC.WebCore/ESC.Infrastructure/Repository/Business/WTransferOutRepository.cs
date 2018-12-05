@@ -7,6 +7,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 转移出库 +
+    /// </summary>
     public class WTransferOutRepository : BaseRepository<WTransferOut>
     {
 

@@ -7,6 +7,9 @@ using System.Data;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 库存操作 +
+    /// </summary>
     public class WStockRepository : BaseRepository<WStock>
     {
         #region 构造

@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 采购通知单 +
+    /// </summary>
     public class WPurchaseNoticeRepository : BaseRepository<WPurchaseNotice>
     {
 

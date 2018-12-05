@@ -8,6 +8,9 @@ using ESC.Core;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 业务伙伴 +
+    /// </summary>
     public class BBusinessPartnerService
     {
         protected BBusinessPartnerRepository bpRepository;

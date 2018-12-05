@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 其他入库行 +
+    /// </summary>
     public class WOtherInLineRepository : BaseRepository<WOtherInLine>
     {
 

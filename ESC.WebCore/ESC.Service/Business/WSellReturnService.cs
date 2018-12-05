@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 销售退库 +
+    /// </summary>
     public class WSellReturnService
     {
         WSellReturnRepository srRepository;
@@ -112,6 +115,89 @@ namespace ESC.Service
         }
 
         #endregion
+
+        /// <summary>
+        /// 根据入库通知添加入库
+        /// </summary>
+        /// <param name="sell"></param>
+        /// <returns></returns>
+        public ResultData<string> AddSellReturn(WSell sell, int createBy)
+        {
+            ResultData<string> rData = new ResultData<string>();
+            if (sell.StockStatus != StockStatusEnum.Approve)
+            {
+                rData.status = -1;
+                rData.message = "单据未审核不能退库.";
+                return rData;
+            }
+
+            //查询明细
+            if (sell.Lines.Count < 1)
+            {
+                sell.Lines = slRepository.GetLinesByParentId(sell.ID);
+            }
+
+            //克隆主表
+            WSellReturn sellReturn = CloneInNotice(sell);
+            sellReturn.CreateBy = createBy;
+
+            foreach (var item in sell.Lines)
+            {
+                WSellReturnLine line = CloneInNoticeLine(item);
+                if (line != null)
+                {
+                    sellReturn.Lines.Add(line);
+                }
+            }
+
+            if (sellReturn.Lines.Count < 1)
+            {
+                rData.status = -1;
+                rData.message = "单据已经全部退库.";
+                return rData;
+            }
+
+            DatabaseContext dbContext = srRepository.DbCondext;
+            try
+            {
+                dbContext.BeginTransaction();
+
+                //添加入库单
+                sellReturn.CreateDate = DateTime.Now;
+                sellReturn.StockStatus = StockStatusEnum.New;
+                sellReturn.SellReturnCode = nuRepository.GetNextNumber("XSTK");
+                srRepository.Insert(sellReturn);
+                foreach (var line in sellReturn.Lines)
+                {
+                    line.ParentID = sellReturn.ID;
+                    line.CreateBy = sellReturn.CreateBy;
+                    line.CreateDate = DateTime.Now;
+                    srlRepository.Insert(line);
+
+                    //更新入库单 添加退库
+                    decimal rt = slRepository.AddReturnCount(line.InCount, line.SourceLineID);
+                    if (rt < 0)
+                    {
+                        dbContext.AbortTransaction();
+                        rData.status = -1;
+                        rData.message = BuilderNoticeLessMessage(line);
+                        return rData;
+                    }
+                }
+
+                //将插入主键赋值给返回值
+                rData.result = sellReturn.ID.ToString();
+
+                dbContext.CompleteTransaction();
+            }
+            catch (Exception ex)
+            {
+                dbContext.AbortTransaction();
+                throw ex;
+            }
+
+            return rData;
+        }
 
         /// <summary>
         /// 插入新采购入库
@@ -268,89 +354,6 @@ namespace ESC.Service
                 srlRepository.RemoveLinesByParentId(sell.ID);
             }
             return result;
-        }
-
-        /// <summary>
-        /// 根据入库通知添加入库
-        /// </summary>
-        /// <param name="sell"></param>
-        /// <returns></returns>
-        public ResultData<string> AddSellReturn(WSell sell, int createBy)
-        {
-            ResultData<string> rData = new ResultData<string>();
-            if (sell.StockStatus != StockStatusEnum.Approve)
-            {
-                rData.status = -1;
-                rData.message = "单据未审核不能退库.";
-                return rData;
-            }
-
-            //查询明细
-            if (sell.Lines.Count < 1)
-            {
-                sell.Lines = slRepository.GetLinesByParentId(sell.ID);
-            }
-
-            //克隆主表
-            WSellReturn sellReturn = CloneInNotice(sell);
-            sellReturn.CreateBy = createBy;
-
-            foreach (var item in sell.Lines)
-            {
-                WSellReturnLine line = CloneInNoticeLine(item);
-                if (line != null)
-                {
-                    sellReturn.Lines.Add(line);
-                }
-            }
-
-            if (sellReturn.Lines.Count < 1)
-            {
-                rData.status = -1;
-                rData.message = "单据已经全部退库.";
-                return rData;
-            }
-
-            DatabaseContext dbContext = srRepository.DbCondext;
-            try
-            {
-                dbContext.BeginTransaction();
-
-                //添加入库单
-                sellReturn.CreateDate = DateTime.Now;
-                sellReturn.StockStatus = StockStatusEnum.New;
-                sellReturn.SellReturnCode = nuRepository.GetNextNumber("XSTK");
-                srRepository.Insert(sellReturn);
-                foreach (var line in sellReturn.Lines)
-                {
-                    line.ParentID = sellReturn.ID;
-                    line.CreateBy = sellReturn.CreateBy;
-                    line.CreateDate = DateTime.Now;
-                    srlRepository.Insert(line);
-
-                    //更新入库单 添加退库
-                    decimal rt = slRepository.AddReturnCount(line.InCount, line.SourceLineID);
-                    if (rt < 0)
-                    {
-                        dbContext.AbortTransaction();
-                        rData.status = -1;
-                        rData.message = BuilderNoticeLessMessage(line);
-                        return rData;
-                    }
-                }
-
-                //将插入主键赋值给返回值
-                rData.result = sellReturn.ID.ToString();
-
-                dbContext.CompleteTransaction();
-            }
-            catch (Exception ex)
-            {
-                dbContext.AbortTransaction();
-                throw ex;
-            }
-
-            return rData;
         }
 
         /// <summary>

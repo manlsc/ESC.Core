@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 销售出库 +
+    /// </summary>
     public class WSellService
     {
         WSellRepository sRepository;
@@ -27,6 +30,8 @@ namespace ESC.Service
             snlRepository = new WSellNoticeLineRepository(slRepository.DbCondext);
             snRepository = new WSellNoticeRepository(slRepository.DbCondext);
         }
+
+        #region 查询
 
         /// <summary>
         /// 根据主键查询
@@ -108,6 +113,10 @@ namespace ESC.Service
         {
             return slRepository.Pages(pageIndex, pageSize, sql, args);
         }
+
+        #endregion
+
+        #region 增删改
 
         /// <summary>
         /// 插入新采购出库
@@ -201,6 +210,7 @@ namespace ESC.Service
                 sell.StockStatus = StockStatusEnum.New;
                 sell.SellCode = nuRepository.GetNextNumber("XSCK");
                 sRepository.Insert(sell);
+
                 foreach (var line in sell.Lines)
                 {
                     //插入出库明细
@@ -337,23 +347,35 @@ namespace ESC.Service
             if (sell.Lines.Count < 1)
             {
                 sell.Lines = slRepository.GetLinesByParentId(sell.ID);
-            }           
-
-            //删除其他出库
-            int result = sRepository.RemoveSellByStatus(sell.ID, StockStatusEnum.New);
-            if (result > 0)
-            {
-                foreach (WSellLine line in sell.Lines)
-                {
-                    if (line.SourceLineID > 0)
-                    {
-                        //删除下推
-                        snlRepository.RemoveDownCount(line.OutCount, line.SourceLineID);
-                    }
-                }
-                slRepository.RemoveLinesByParentId(sell.ID);
             }
-            return result;
+
+            DatabaseContext db = snRepository.DbCondext;
+            try
+            {
+                db.BeginTransaction();
+                //删除其他出库
+                int result = sRepository.RemoveSellByStatus(sell.ID, StockStatusEnum.New);
+                if (result > 0)
+                {
+                    foreach (WSellLine line in sell.Lines)
+                    {
+                        if (line.SourceLineID > 0)
+                        {
+                            //删除下推
+                            snlRepository.RemoveDownCount(line.OutCount, line.SourceLineID);
+                        }
+                    }
+                    slRepository.RemoveLinesByParentId(sell.ID);
+                }
+                db.CompleteTransaction();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                db.AbortTransaction();
+                throw ex;
+            }
+
         }
 
         /// <summary>
@@ -421,6 +443,10 @@ namespace ESC.Service
             return rData;
         }
 
+        #endregion
+
+        #region 辅助
+
         /// <summary>
         /// 出库通知单转换出库单
         /// </summary>
@@ -459,7 +485,7 @@ namespace ESC.Service
                 CreateDate = DateTime.Now,
                 Factory = outNoticeLine.Factory,
                 OutCount = outCount,
-                OutPutCount=outCount,
+                OutPutCount = outCount,
                 MaterialCode = outNoticeLine.MaterialCode,
                 MaterialID = outNoticeLine.MaterialID,
                 OwnerCode = outNoticeLine.OwnerCode,
@@ -578,5 +604,7 @@ namespace ESC.Service
             }
             return sb.ToString();
         }
+
+        #endregion
     }
 }

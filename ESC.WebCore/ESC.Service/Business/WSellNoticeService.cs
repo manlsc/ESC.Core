@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 销售出库通知单 +
+    /// </summary>
     public class WSellNoticeService
     {
         protected WSellNoticeRepository pnRepository;
@@ -43,6 +46,8 @@ namespace ESC.Service
         {
             return pnRepository.GetWSellNoticeById(Id);
         }
+
+        #region 查询
 
         /// <summary>
         /// 分页查询
@@ -114,6 +119,8 @@ namespace ESC.Service
         {
             return pnlRepository.Pages(pageIndex, pageSize, sql, args);
         }
+
+        #endregion
 
         /// <summary>
         /// 插入新其他出库

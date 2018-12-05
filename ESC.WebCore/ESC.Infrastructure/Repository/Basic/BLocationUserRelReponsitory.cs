@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 存储单元用户关系+
+    /// </summary>
     public class BLocationUserRelRepository : BaseRepository<BLocationUserRel>
     {
 

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 枚举 +
+    /// </summary>
     public class SCommonEnumRepository : BaseRepository<SCommonEnum>
     {
 

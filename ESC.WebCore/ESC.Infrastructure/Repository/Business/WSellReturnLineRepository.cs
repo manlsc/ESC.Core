@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 销售退
+    /// </summary>
     public class WSellReturnLineRepository : BaseRepository<WSellReturnLine>
     {
 

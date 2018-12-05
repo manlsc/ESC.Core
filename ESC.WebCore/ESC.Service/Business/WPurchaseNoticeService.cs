@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 采购入库通知单 +
+    /// </summary>
     public class WPurchaseNoticeService
     {
         protected WPurchaseNoticeRepository pnRepository;
@@ -120,7 +123,7 @@ namespace ESC.Service
         #endregion
 
         /// <summary>
-        /// 插入新其他出库
+        /// 添加采购通知单
         /// </summary>
         /// <param name="inNotice"></param>
         /// <returns></returns>

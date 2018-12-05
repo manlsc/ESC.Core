@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 入库明细 +
+    /// </summary>
     public class WStockInRepository : BaseRepository<WStockIn>
     {
 

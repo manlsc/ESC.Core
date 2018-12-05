@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 采购退库 +
+    /// </summary>
     public class WPurchaseReturnService
     {
         WPurchaseReturnRepository prRepository;

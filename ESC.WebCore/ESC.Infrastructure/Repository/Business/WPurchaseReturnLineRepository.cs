@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 采购退
+    /// </summary>
     public class WPurchaseReturnLineRepository : BaseRepository<WPurchaseReturnLine>
     {
 

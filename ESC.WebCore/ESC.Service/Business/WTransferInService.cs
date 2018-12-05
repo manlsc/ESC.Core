@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 调拨入库
+    /// </summary>
     public class WTransferInService
     {
         WTransferInRepository tiRepository;
@@ -110,7 +113,7 @@ namespace ESC.Service
         }
 
         /// <summary>
-        /// 插入新其他出库
+        /// 添加调拨入库
         /// </summary>
         /// <param name="transferIn"></param>
         /// <returns></returns>

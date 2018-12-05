@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 行为日志 +
+    /// </summary>
     public class SBehaviorLogRepository : BaseRepository<SBehaviorLog>
     {
         #region 构造

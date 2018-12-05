@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 转移入库通知
+    /// </summary>
     public class WTransferInNoticeRepository : BaseRepository<WTransferInNotice>
     {
 

@@ -6,7 +6,7 @@ using ESC.Infrastructure.DomainObjects;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 业务伙伴
+    /// 业务伙伴 +
     /// </summary>
     public class BBusinessPartnerRepository : BaseRepository<BBusinessPartner>
     {
@@ -103,7 +103,7 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public List<BBusinessPartner> GetBusinessPartnerByCodeName(string codeOrName)
         {
-            string sql = string.Format("SELECT TOP 2 T.* FROM BBusinessPartner T WITH(NOLOCK) WHERE t.BusinessPartnerCode LIKE '%{0}%' OR T.BusinessPartnerName  LIKE '%{0}%'", codeOrName);
+            string sql = string.Format("SELECT TOP 2 T.* FROM BBusinessPartner T WITH(NOLOCK) WHERE t.BusinessPartnerCode LIKE '%{0}%' OR T.BusinessPartnerName LIKE '%{0}%'", codeOrName);
             return Query(sql);
         }
         #endregion

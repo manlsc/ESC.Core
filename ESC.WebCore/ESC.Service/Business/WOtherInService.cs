@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace ESC.Service
 {
     /// <summary>
-    /// 其他入库
+    /// 其他入库 +
     /// </summary>
     public class WOtherInService
     {

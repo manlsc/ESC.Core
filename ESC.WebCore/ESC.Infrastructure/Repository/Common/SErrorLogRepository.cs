@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 错误日志
+    /// </summary>
     public class SErrorLogRepository : BaseRepository<SErrorLog>
     {
         #region 构造

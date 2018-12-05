@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 其他出库 +
+    /// </summary>
     public class WOtherOutRepository : BaseRepository<WOtherOut>
     {
 

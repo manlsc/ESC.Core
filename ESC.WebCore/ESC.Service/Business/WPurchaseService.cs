@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 采购入库 +
+    /// </summary>
     public class WPurchaseService
     {
         WPurchaseRepository pRepository;
@@ -157,6 +160,97 @@ namespace ESC.Service
         }
 
         /// <summary>
+        /// 根据入库通知添加入库
+        /// </summary>
+        /// <param name="inNotice"></param>
+        /// <returns></returns>
+        public ResultData<string> AddPurchase(WPurchaseNotice inNotice, int createBy)
+        {
+            ResultData<string> rData = new ResultData<string>();
+            if (inNotice.NoticeStatus == NoticeStatusEnum.Complete)
+            {
+                rData.status = -1;
+                rData.message = "单据已完成不能下推.";
+                return rData;
+            }
+
+            //查询明细
+            if (inNotice.Lines.Count < 1)
+            {
+                inNotice.Lines = pnlRepository.GetLinesByParentId(inNotice.ID);
+            }
+
+            //克隆主表
+            WPurchase Purchase = CloneInNotice(inNotice);
+            Purchase.CreateBy = createBy;
+            //克隆子表
+            foreach (var item in inNotice.Lines)
+            {
+                WPurchaseLine line = CloneInNoticeLine(item);
+                if (line != null)
+                {
+                    Purchase.Lines.Add(line);
+                }
+            }
+
+            if (Purchase.Lines.Count < 1)
+            {
+                rData.status = -1;
+                rData.message = "单据已经全部下推.";
+                return rData;
+            }
+
+            DatabaseContext dbContext = pRepository.DbCondext;
+            try
+            {
+                dbContext.BeginTransaction();
+
+                //添加入库单
+                Purchase.CreateDate = DateTime.Now;
+                Purchase.StockStatus = StockStatusEnum.New;
+                Purchase.PurchaseCode = nuRepository.GetNextNumber("CGRK");
+                pRepository.Insert(Purchase);
+
+                foreach (var line in Purchase.Lines)
+                {
+                    //插入入库明细
+                    line.ParentID = Purchase.ID;
+                    line.CreateBy = Purchase.CreateBy;
+                    line.CreateDate = DateTime.Now;
+                    plRepository.Insert(line);
+
+                    //更新通知单 添加下推
+                    decimal rt = pnlRepository.AddDownCount(line.InCount, line.SourceLineID);
+                    if (rt < 0)
+                    {
+                        dbContext.AbortTransaction();
+                        rData.status = -1;
+                        rData.message = BuilderNoticeLessMessage(line);
+                        return rData;
+                    }
+                }
+
+                //将插入主键赋值给返回值
+                rData.result = Purchase.ID.ToString();
+
+                //更新通知单状态
+                if (Purchase.SourceID > 0)
+                {
+                    pnRepository.UpdateNoticeStatus(NoticeStatusEnum.Executing, Purchase.SourceID);
+                }
+
+                dbContext.CompleteTransaction();
+            }
+            catch (Exception ex)
+            {
+                dbContext.AbortTransaction();
+                throw ex;
+            }
+
+            return rData;
+        }
+
+        /// <summary>
         /// 更新
         /// </summary>
         /// <param name="purchase"></param>
@@ -253,115 +347,36 @@ namespace ESC.Service
             if (purchase.Lines.Count < 1)
             {
                 purchase.Lines = plRepository.GetLinesByParentId(purchase.ID);
-            }            
-
-            //删除其他出库
-            int result = pRepository.RemovePurchaseByStatus(purchase.ID, StockStatusEnum.New);
-            if (result > 0)
-            {
-                foreach (WPurchaseLine line in purchase.Lines)
-                {
-                    if (line.SourceLineID > 0)
-                    {
-                        //删除下推
-                        pnlRepository.RemoveDownCount(line.InCount, line.SourceLineID);
-                    }
-                }
-                plRepository.RemoveLinesByParentId(purchase.ID);
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// 根据入库通知添加入库
-        /// </summary>
-        /// <param name="inNotice"></param>
-        /// <returns></returns>
-        public ResultData<string> AddPurchase(WPurchaseNotice inNotice, int createBy)
-        {
-            ResultData<string> rData = new ResultData<string>();
-            if (inNotice.NoticeStatus == NoticeStatusEnum.Complete)
-            {
-                rData.status = -1;
-                rData.message = "单据已完成不能下推.";
-                return rData;
             }
 
-            //查询明细
-            if (inNotice.Lines.Count < 1)
-            {
-                inNotice.Lines = pnlRepository.GetLinesByParentId(inNotice.ID);
-            }
-
-            //克隆主表
-            WPurchase Purchase = CloneInNotice(inNotice);
-            Purchase.CreateBy = createBy;
-            //克隆子表
-            foreach (var item in inNotice.Lines)
-            {
-                WPurchaseLine line = CloneInNoticeLine(item);
-                if (line != null)
-                {
-                    Purchase.Lines.Add(line);
-                }
-            }
-
-            if (Purchase.Lines.Count < 1)
-            {
-                rData.status = -1;
-                rData.message = "单据已经全部下推.";
-                return rData;
-            }
-
-            DatabaseContext dbContext = pRepository.DbCondext;
+            DatabaseContext db = pRepository.DbCondext;
             try
             {
-                dbContext.BeginTransaction();
-
-                //添加入库单
-                Purchase.CreateDate = DateTime.Now;
-                Purchase.StockStatus = StockStatusEnum.New;
-                Purchase.PurchaseCode = nuRepository.GetNextNumber("CGRK");
-                pRepository.Insert(Purchase);
-
-                foreach (var line in Purchase.Lines)
+                db.BeginTransaction();
+                //删除其他出库
+                int result = pRepository.RemovePurchaseByStatus(purchase.ID, StockStatusEnum.New);
+                if (result > 0)
                 {
-                    //插入入库明细
-                    line.ParentID = Purchase.ID;
-                    line.CreateBy = Purchase.CreateBy;
-                    line.CreateDate = DateTime.Now;
-                    plRepository.Insert(line);
-
-                    //更新通知单 添加下推
-                    decimal rt = pnlRepository.AddDownCount(line.InCount, line.SourceLineID);
-                    if (rt < 0)
+                    foreach (WPurchaseLine line in purchase.Lines)
                     {
-                        dbContext.AbortTransaction();
-                        rData.status = -1;
-                        rData.message = BuilderNoticeLessMessage(line);
-                        return rData;
+                        if (line.SourceLineID > 0)
+                        {
+                            //删除下推
+                            pnlRepository.RemoveDownCount(line.InCount, line.SourceLineID);
+                        }
                     }
+                    plRepository.RemoveLinesByParentId(purchase.ID);
                 }
-
-                //将插入主键赋值给返回值
-                rData.result = Purchase.ID.ToString();
-
-                //更新通知单状态
-                if (Purchase.SourceID > 0)
-                {
-                    pnRepository.UpdateNoticeStatus(NoticeStatusEnum.Executing, Purchase.SourceID);
-                }
-
-                dbContext.CompleteTransaction();
+                db.CompleteTransaction();
+                return result;
             }
             catch (Exception ex)
             {
-                dbContext.AbortTransaction();
+                db.AbortTransaction();
                 throw ex;
             }
-
-            return rData;
         }
+
 
         /// <summary>
         /// 审核
@@ -380,7 +395,7 @@ namespace ESC.Service
             {
                 return rData;
             }
-          
+
             DatabaseContext dbContext = pRepository.DbCondext;
             try
             {
@@ -437,6 +452,8 @@ namespace ESC.Service
         }
 
         #endregion
+
+        #region 辅助
 
         /// <summary>
         /// 入库通知单转换入库单
@@ -595,5 +612,7 @@ namespace ESC.Service
             }
             return sb.ToString();
         }
+
+        #endregion
     }
 }

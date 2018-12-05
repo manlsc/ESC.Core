@@ -7,6 +7,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 盘点 +
+    /// </summary>
     public class WInventoryRepository : BaseRepository<WInventory>
     {
 
@@ -75,12 +78,12 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 更新状态
+        /// 更新状态-根据盘亏单
         /// </summary>
-        /// <param name="Id"></param>
-        /// <param name="outId"></param>
-        /// <param name="outCode"></param>
-        /// <param name="invStatus"></param>
+        /// <param name="Id">盘点id</param>
+        /// <param name="outId">盘亏单ID</param>
+        /// <param name="outCode">盘亏单Code</param>
+        /// <param name="invStatus">状态</param>
         /// <returns></returns>
         public int UpdateLossStatus(int Id, int outId, string outCode, int invStatus)
         {
@@ -91,14 +94,14 @@ namespace ESC.Infrastructure.Repository
         /// <summary>
         /// 更新状态
         /// </summary>
-        /// <param name="Id"></param>
-        /// <param name="outId"></param>
-        /// <param name="outCode"></param>
-        /// <param name="invStatus"></param>
+        /// <param name="Id">盘点id</param>
+        /// <param name="inId">盘盈单ID</param>
+        /// <param name="inCode">盘盈单Code</param>
+        /// <param name="invStatus">状态</param>
         /// <returns></returns>
-        public int UpdateProfitStatus(int Id, int outId, string outCode, int invStatus)
+        public int UpdateProfitStatus(int Id, int inId, string inCode, int invStatus)
         {
-            string sql = string.Format("UPDATE WInventory SET OtherInID={0},OtherInCode='{1}',InventoryStatus={2} WHERE ID={3} AND InventoryStatus<{4}", outId, outCode, invStatus, Id, InventoryStatusEnum.Complete);
+            string sql = string.Format("UPDATE WInventory SET OtherInID={0},OtherInCode='{1}',InventoryStatus={2} WHERE ID={3} AND InventoryStatus<{4}", inId, inCode, invStatus, Id, InventoryStatusEnum.Complete);
             return Execute(sql);
         }
     }

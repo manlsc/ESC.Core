@@ -6,6 +6,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 调拨入库 +
+    /// </summary>
     public class WTransferInLineRepository : BaseRepository<WTransferInLine>
     {
 

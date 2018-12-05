@@ -10,6 +10,9 @@ using System.Text;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 盘点 +
+    /// </summary>
     public class WInventoryService
     {
         protected WInventoryRepository iRepository;

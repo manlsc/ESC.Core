@@ -6,7 +6,7 @@ using ESC.Infrastructure.DomainObjects;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 物料组
+    /// 物料组 +
     /// </summary>
     public class BMaterialGroupRepository : BaseRepository<BMaterialGroup>
     {
@@ -29,12 +29,12 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public string GetSearchSql()
         {
-            string searchSql = "SELECT MG.*,CE.EnumDesc AS InUseName,O.OrgName,CU.UserName CreateByUserName,UU.UserName UpdateByUserName,PT.GroupName AS ParentName FROM BMaterialGroup MG";
-            searchSql += " LEFT JOIN SCommonEnum CE ON MG.InUse=CE.EnumField AND CE.EnumType='InUse'";
-            searchSql += " LEFT JOIN SOrganization O ON MG.OrgID=O.ID";
-            searchSql += " LEFT JOIN BMaterialGroup PT ON MG.ParentID=PT.ID";
-            searchSql += " LEFT JOIN SUser CU ON MG.CreateBy=CU.ID";
-            searchSql += " LEFT JOIN SUser UU ON MG.UpdateBy=UU.ID";
+            string searchSql = @"SELECT MG.*,CE.EnumDesc AS InUseName,O.OrgName,CU.UserName CreateByUserName,UU.UserName UpdateByUserName,PT.GroupName AS ParentName FROM BMaterialGroup MG
+                                 LEFT JOIN SCommonEnum CE ON MG.InUse=CE.EnumField AND CE.EnumType='InUse'
+                                 LEFT JOIN SOrganization O ON MG.OrgID=O.ID
+                                 LEFT JOIN BMaterialGroup PT ON MG.ParentID=PT.ID
+                                 LEFT JOIN SUser CU ON MG.CreateBy=CU.ID
+                                 LEFT JOIN SUser UU ON MG.UpdateBy=UU.ID";
             return searchSql;
         }
 

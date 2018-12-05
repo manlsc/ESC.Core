@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 调拨入库通知单 +
+    /// </summary>
    public class WTransferInNoticeService
     {
         WTransferInNoticeRepository tinRepository;
@@ -106,7 +109,7 @@ namespace ESC.Service
         }
 
         /// <summary>
-        /// 插入新其他出库
+        /// 添加调拨入库单
         /// </summary>
         /// <param name="inNotice"></param>
         /// <returns></returns>

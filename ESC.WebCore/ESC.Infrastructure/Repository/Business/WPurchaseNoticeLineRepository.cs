@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 采购通知行 +
+    /// </summary>
     public class WPurchaseNoticeLineRepository : BaseRepository<WPurchaseNoticeLine>
     {
 
@@ -89,12 +92,13 @@ namespace ESC.Infrastructure.Repository
                 string sql = "UPDATE WPurchaseNoticeLine SET DownCount=DownCount-" + count + " OUTPUT Inserted.DownCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
-            else
+            else if (inputCount < inCount)
             {
                 decimal count = inCount - inputCount;
                 string sql = "UPDATE WPurchaseNoticeLine SET DownCount=DownCount+" + count + " OUTPUT Inserted.InCount-Inserted.DownCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
+            return 0;
         }
 
         /// <summary>

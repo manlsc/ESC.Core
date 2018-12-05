@@ -7,7 +7,7 @@ using ESC.Infrastructure.DomainObjects;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 物料
+    /// 物料 +
     /// </summary>
     public class BMaterialRepository : BaseRepository<BMaterial>
     {
@@ -30,14 +30,14 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public string GetSearchSql()
         {
-            string searchSql = "SELECT M.*,CE.EnumDesc AS InUseName,O.OrgName,BU.UnitName,CU.UserName CreateByUserName,UU.UserName UpdateByUserName,L.LocationDesc,MG.GroupName AS MaterialGroupName FROM BMaterial M WITH (NOLOCK)";
-            searchSql += " LEFT JOIN SCommonEnum CE WITH (NOLOCK) ON M.InUse=CE.EnumField AND CE.EnumType='InUse'";
-            searchSql += " LEFT JOIN SOrganization O WITH (NOLOCK) ON M.OrgID=O.ID";
-            searchSql += " LEFT JOIN BUnit BU WITH (NOLOCK) ON M.UnitID=BU.ID";
-            searchSql += " LEFT JOIN BMaterialGroup MG WITH (NOLOCK) ON M.MaterialGroupID=MG.ID";
-            searchSql += " LEFT JOIN BLocation L WITH (NOLOCK) ON M.LoctionID=L.ID";
-            searchSql += " LEFT JOIN SUser CU WITH (NOLOCK) ON M.CreateBy=CU.ID";
-            searchSql += " LEFT JOIN SUser UU WITH (NOLOCK) ON M.UpdateBy=UU.ID";
+            string searchSql = @"SELECT M.*,CE.EnumDesc AS InUseName,O.OrgName,BU.UnitName,CU.UserName CreateByUserName,UU.UserName UpdateByUserName,L.LocationDesc,MG.GroupName AS MaterialGroupName FROM BMaterial M WITH (NOLOCK)
+                                 LEFT JOIN SCommonEnum CE WITH (NOLOCK) ON M.InUse=CE.EnumField AND CE.EnumType='InUse'
+                                 LEFT JOIN SOrganization O WITH (NOLOCK) ON M.OrgID=O.ID
+                                 LEFT JOIN BUnit BU WITH (NOLOCK) ON M.UnitID=BU.ID
+                                 LEFT JOIN BMaterialGroup MG WITH (NOLOCK) ON M.MaterialGroupID=MG.ID
+                                 LEFT JOIN BLocation L WITH (NOLOCK) ON M.LoctionID=L.ID
+                                 LEFT JOIN SUser CU WITH (NOLOCK) ON M.CreateBy=CU.ID
+                                 LEFT JOIN SUser UU WITH (NOLOCK) ON M.UpdateBy=UU.ID";
             return searchSql;
         }
 

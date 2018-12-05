@@ -6,6 +6,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 销售出库 +
+    /// </summary>
     public class WSellRepository : BaseRepository<WSell>
     {
 

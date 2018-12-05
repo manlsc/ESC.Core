@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 其他出库 +
+    /// </summary>
     public class WOtherOutService
     {
         WOtherOutRepository ooRepository;
@@ -170,6 +173,7 @@ namespace ESC.Service
             {
                 db.BeginTransaction();
 
+                otherOut.UpdateDate = DateTime.Now;
                 ooRepository.Update(otherOut);
                 foreach (var line in otherOut.Lines)
                 {

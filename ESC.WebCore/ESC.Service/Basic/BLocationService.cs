@@ -10,6 +10,9 @@ using System.Linq;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 存储单元 +
+    /// </summary>
     public class BLocationService
     {
         protected BLocationRepository lRepository;

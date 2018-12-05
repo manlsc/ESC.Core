@@ -6,6 +6,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 采购入库 +
+    /// </summary>
     public class WPurchaseRepository : BaseRepository<WPurchase>
     {
 

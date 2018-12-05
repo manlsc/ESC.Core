@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 销售出库行 +
+    /// </summary>
     public class WSellLineRepository : BaseRepository<WSellLine>
     {
 
@@ -77,7 +80,7 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 添加完成
+        /// 添加退库
         /// </summary>
         /// <param name="line"></param>
         /// <returns></returns>
@@ -116,12 +119,13 @@ namespace ESC.Infrastructure.Repository
                 string sql = "UPDATE WSellLine SET ReturnCount=ReturnCount-" + count + " OUTPUT Inserted.ReturnCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
-            else
+            else if (inputCount < outCount)
             {
                 decimal count = outCount - inputCount;
                 string sql = "UPDATE WSellLine SET ReturnCount=ReturnCount+" + count + " OUTPUT Inserted.OutCount-Inserted.ReturnCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
+            return 0;
         }
     }
 }

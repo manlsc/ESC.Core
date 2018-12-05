@@ -7,6 +7,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 其他入库 +
+    /// </summary>
     public class WOtherInRepository : BaseRepository<WOtherIn>
     {
 

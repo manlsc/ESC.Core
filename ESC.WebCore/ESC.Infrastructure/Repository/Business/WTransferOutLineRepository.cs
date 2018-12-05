@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 转移出库行+
+    /// </summary>
     public class WTransferOutLineRepository : BaseRepository<WTransferOutLine>
     {
 

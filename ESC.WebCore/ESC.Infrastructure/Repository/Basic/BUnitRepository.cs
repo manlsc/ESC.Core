@@ -10,7 +10,7 @@ using ESC.Core;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 基本计量单位
+    /// 基本计量单位 +
     /// </summary>
     public class BUnitRepository : BaseRepository<BUnit>
     {

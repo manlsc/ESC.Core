@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 采购入库行+
+    /// </summary>
     public class WPurchaseLineRepository : BaseRepository<WPurchaseLine>
     {
 
@@ -22,18 +25,18 @@ namespace ESC.Infrastructure.Repository
 
         public string GetSearchSql()
         {
-            string searchSql = @"SELECT  T1.* ,
-                                            T2.LocationDesc AS PositionName ,
-                                            T3.MaterialName ,
-                                            T4.UnitName ,
-                                            T5.UserName AS CreateByUserName ,
-                                            T6.UserName AS UpdateByUserName
-                                    FROM    WPurchaseLine T1 WITH ( NOLOCK )
-                                            LEFT JOIN BLocation T2 WITH ( NOLOCK ) ON T1.PositionID = T2.ID
-                                            LEFT JOIN BMaterial T3 WITH ( NOLOCK ) ON T1.MaterialID = T3.ID
-                                            LEFT JOIN BUnit T4 WITH ( NOLOCK ) ON T1.UnitID = T4.ID
-                                            LEFT JOIN SUser T5 WITH ( NOLOCK ) ON T1.CreateBy = T5.ID
-                                            LEFT JOIN SUser T6 WITH ( NOLOCK ) ON T1.UpdateBy = T6.ID";
+            string searchSql = @"SELECT T1.* ,
+                                        T2.LocationDesc AS PositionName ,
+                                        T3.MaterialName ,
+                                        T4.UnitName ,
+                                        T5.UserName AS CreateByUserName ,
+                                        T6.UserName AS UpdateByUserName
+                                FROM    WPurchaseLine T1 WITH ( NOLOCK )
+                                        LEFT JOIN BLocation T2 WITH ( NOLOCK ) ON T1.PositionID = T2.ID
+                                        LEFT JOIN BMaterial T3 WITH ( NOLOCK ) ON T1.MaterialID = T3.ID
+                                        LEFT JOIN BUnit T4 WITH ( NOLOCK ) ON T1.UnitID = T4.ID
+                                        LEFT JOIN SUser T5 WITH ( NOLOCK ) ON T1.CreateBy = T5.ID
+                                        LEFT JOIN SUser T6 WITH ( NOLOCK ) ON T1.UpdateBy = T6.ID";
             return searchSql;
         }
 
@@ -77,7 +80,7 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 添加完成
+        /// 添加退库
         /// </summary>
         /// <param name="line"></param>
         /// <returns></returns>
@@ -101,10 +104,10 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 更新下推数量
+        /// 更新退款梳理
         /// </summary>
-        /// <param name="lineId"></param>
-        /// <param name="outCount"></param>
+        /// <param name="lineId">更新行</param>
+        /// <param name="outCount">原理退款梳理</param>
         /// <param name="inputCount">更新数量</param>
         /// <returns></returns>
         public decimal UpdateReturnCount(int lineId, decimal outCount, decimal inputCount)
@@ -116,12 +119,13 @@ namespace ESC.Infrastructure.Repository
                 string sql = "UPDATE WPurchaseLine SET ReturnCount=ReturnCount-" + count + " OUTPUT Inserted.ReturnCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
-            else
+            else if (inputCount < outCount)
             {
                 decimal count = outCount - inputCount;
                 string sql = "UPDATE WPurchaseLine SET ReturnCount=ReturnCount+" + count + " OUTPUT Inserted.InCount-Inserted.ReturnCount WHERE ID=" + lineId;
                 return ExecuteScalar<decimal>(sql);
             }
+            return 0;
         }
 
     }

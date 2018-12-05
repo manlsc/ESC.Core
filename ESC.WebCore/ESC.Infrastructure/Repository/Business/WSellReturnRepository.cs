@@ -6,6 +6,9 @@ using ESC.Infrastructure.Enums;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 销售退库 +
+    /// </summary>
     public class WSellReturnRepository : BaseRepository<WSellReturn>
     {
         #region 构造

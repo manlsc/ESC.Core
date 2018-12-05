@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 其他出库行 +
+    /// </summary>
     public class WOtherOutLineRepository : BaseRepository<WOtherOutLine>
     {
 
@@ -26,7 +29,7 @@ namespace ESC.Infrastructure.Repository
         /// <returns></returns>
         public string GetSearchSql()
         {
-            string searchSql = @"SELECT  SI.* ,
+            string searchSql = @"SELECT SI.* ,
                                         WH.LocationDesc AS WarehouseName ,
                                         P.LocationDesc AS PositionName ,
                                         M.MaterialName AS MaterialName ,

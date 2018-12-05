@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 调拨出库 +
+    /// </summary>
     public class WTransferOutService
     {
         WTransferOutRepository toRepository;
@@ -51,9 +54,7 @@ namespace ESC.Service
             try
             {
                 dbContext.BeginTransaction();
-                //出库记录
-                List<WStockOut> stockOuts = new List<WStockOut>(transferOut.Lines.Count);
-
+              
                 //添加其他出库
                 transferOut.CreateDate = DateTime.Now;
                 transferOut.StockStatus = StockStatusEnum.New;
@@ -223,7 +224,7 @@ namespace ESC.Service
                 //出库记录
                 List<WStockOut> stockOuts = new List<WStockOut>(transferOut.Lines.Count);
 
-                //添加其他出库
+                //审核
                 int result = toRepository.ApproveTransferOut(transferOut);
                 if (result < 1)
                 {

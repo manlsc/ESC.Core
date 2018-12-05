@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace ESC.Service
 {
+    /// <summary>
+    /// 库存操作 +
+    /// </summary>
     public class WStockService
     {
         protected WStockRepository sRepository;  //库存

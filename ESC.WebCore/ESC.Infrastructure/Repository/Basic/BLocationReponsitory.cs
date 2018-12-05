@@ -8,7 +8,7 @@ using System.Data;
 namespace ESC.Infrastructure.Repository
 {
     /// <summary>
-    /// 存储单元
+    /// 存储单元 +
     /// </summary>
     public class BLocationRepository : BaseRepository<BLocation>
     {
@@ -174,7 +174,7 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 根据id
+        /// 根据id获取子存储单元
         /// </summary>
         /// <param name="locationId"></param>
         /// <returns></returns>

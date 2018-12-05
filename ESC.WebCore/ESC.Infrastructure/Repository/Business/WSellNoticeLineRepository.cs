@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 销售通知行 +
+    /// </summary>
     public class WSellNoticeLineRepository : BaseRepository<WSellNoticeLine>
     {
 
@@ -89,12 +92,13 @@ namespace ESC.Infrastructure.Repository
                 string sql = "UPDATE WSellNoticeLine SET DownCount=DownCount-" + count + " OUTPUT Inserted.DownCount WHERE ID=" + lineId;
                 return Execute(sql);
             }
-            else
+            else if (inputCount < outCount)
             {
                 decimal count = outCount - inputCount;
                 string sql = "UPDATE WSellNoticeLine SET DownCount=DownCount+" + count + " OUTPUT Inserted.OutCount-Inserted.DownCount WHERE ID=" + lineId;
                 return Execute(sql);
             }
+            return 0;
         }
 
         /// <summary>

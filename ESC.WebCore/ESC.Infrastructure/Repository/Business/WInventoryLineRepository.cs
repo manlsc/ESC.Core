@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 盘点明细行 +
+    /// </summary>
     public class WInventoryLineRepository : BaseRepository<WInventoryLine>
     {
 

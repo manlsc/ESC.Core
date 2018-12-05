@@ -5,6 +5,9 @@ using ESC.Infrastructure.DomainObjects;
 
 namespace ESC.Infrastructure.Repository
 {
+    /// <summary>
+    /// 物料租-存储单元关系
+    /// </summary>
     public class BMaterialGroupLocationRelRepository : BaseRepository<BMaterialGroupLocationRel>
     {
 
