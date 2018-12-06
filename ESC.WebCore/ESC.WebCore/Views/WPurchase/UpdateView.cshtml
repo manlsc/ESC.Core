@@ -69,10 +69,10 @@
                     searchStock(bGrid, opts);
                 } else {
                     if (!BUI.isNullOrEmpty(bForm.data.SourceCode)) {
-                        CommonBUI.alert("信息", "此单据为下推单据,不能修改物料", "error");
-                        return;
+                        searchNoticeLine(bGrid, opts);
+                    } else {
+                        searchMaterial(bGrid, opts);
                     }
-                    searchMaterial(bGrid, opts);
                 }
             } else {
                 //如果回车查询
@@ -88,18 +88,19 @@
                     });
                 } else {
                     if (!BUI.isNullOrEmpty(bForm.data.SourceCode)) {
-                        CommonBUI.alert("信息", "此单据为下推单据,不能修改物料", "error");
-                        return;
+                        searchNoticeLine(bGrid, opts);
+                    } else {
+                        //查询物料
+                        fcommon.get("BMaterial", "GetMagerialCodeName", "words=" + CommonBUI.UrlEncode(opts.text), function (rdata) {
+                            if (rdata.result.length == 1) {
+                                var data = rdata.result[0];
+                                bGrid.setReturnValue(opts, data);
+                            } else {
+                                searchMaterial(bGrid, opts);
+                            }
+                        });
                     }
-                    //查询物料
-                    fcommon.get("BMaterial", "GetMagerialCodeName", "words=" + CommonBUI.UrlEncode(opts.text), function (rdata) {
-                        if (rdata.result.length == 1) {
-                            var data = rdata.result[0];
-                            bGrid.setReturnValue(opts, data);
-                        } else {
-                            searchMaterial(bGrid, opts);
-                        }
-                    });
+
                 }
             }
         };
@@ -166,6 +167,7 @@
         dialog.show();
     }
 
+
     //选择物料
     function searchMaterial(bGrid, opts) {
         var dialog = new BUI.Overlay.Dialog({
@@ -178,6 +180,35 @@
             success: function () {
                 var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
                 if (data) {
+                    bGrid.setReturnValue(opts, data);
+                    dialog.close();
+                } else {
+                    CommonBUI.alert("提示", "请选择物料.");
+                }
+            }
+        });
+        dialog.show();
+        }
+
+    //选择通知单行
+    function searchNoticeLine(bGrid, opts) {
+        var dialog = new BUI.Overlay.Dialog({
+            title: "选择物料",
+            width: 800,
+            height: 600,
+            mask: true,
+            closeAction: "destroy",
+            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../WPurchaseNotice/SearchDeataiView?ParentID=' + bForm.data.SourceID + '" style="width:100%;height:100%;"></iframe>',
+            success: function () {
+                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                if (data) {
+                    opts.param.foreignKey = "MaterialID";
+                    opts.param.returnDic = {
+                        MaterialCode:"MaterialCode",
+                        UnitID: "UnitID",
+                        UnitName: "UnitName",
+                        SourceLineID: "ID"
+                    };
                     bGrid.setReturnValue(opts, data);
                     dialog.close();
                 } else {

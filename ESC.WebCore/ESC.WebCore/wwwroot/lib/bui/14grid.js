@@ -709,7 +709,7 @@
                     dataIndex = column.get("dataIndex"),
                     renderer = column.get("renderer"),
                     text = renderer ? renderer(record[dataIndex], record, index) : record[dataIndex];
-                return text;
+                return text || "";
             } catch (ex) {
                 throw "column:" + column.get("title") + " fomat error!";
             }

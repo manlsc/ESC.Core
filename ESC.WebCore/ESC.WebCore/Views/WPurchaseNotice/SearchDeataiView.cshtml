@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "SearchDeataiView";
+    Layout = "~/Views/Shared/_LayoutSingle.cshtml";
+}
+<div id="PurchaseNoticeLineForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>物料编码：</label>
+            <span>
+                <input type="text" class="form-control" name="MaterialCode" />
+                <input type="hidden" value="@ViewBag.ParentID" class="form-control" name="ParentID" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>批次：</label>
+            <span>
+                <input type="text" class="form-control" name="Batch" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="PurchaseNoticeBtns" class="SearchBtns">
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="PurchaseNoticeLineGrid">
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "WPurchaseNotice", SearchForm: "#PurchaseNoticeLineForm", DataGrid: "#PurchaseNoticeLineGrid" });
+        var bGrid = null;
+
+        //查询
+        common.search = function () {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+            common.CustomSelect("SearchDetailSc",whereItems, 0, 0, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common
+            });
+
+            //分页查询
+            bGrid.OnPageSearch = function (pageOutdex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                common.CustomSelect("SearchDetailSc",whereItems, pageOutdex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
+            }
+
+            bGrid.init();
+            common.search();
+        }
+
+        //获取返回值
+        function getData() {
+            return bGrid.getSelected();
+        }
+
+        $(document).ready(function () {
+            //外键初始化
+            common.ForeignInit("WPurchaseNoticeLine", function (fData) {
+                common.initData = fData;
+                initGrid(fData);
+            });
+
+            var datepicker = new BUI.Calendar.DatePicker({
+                trigger: '.calendar',
+                autoRender: true
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
+        });
+    </script>
+}
+

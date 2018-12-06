@@ -103,3 +103,4 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.Vie
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.csproj.CopyComplete
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.pdb
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\WPurchaseNotice\SearchDeataiView.g.cshtml.cs

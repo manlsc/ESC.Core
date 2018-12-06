@@ -25,6 +25,35 @@ namespace ESC.Web.Controllers
             return View(cData);
         }
 
+        #region 弹层选择
+
+        /// <summary>
+        /// 根据仓库获取货位
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult SearchDeataiView()
+        {
+            ViewBag.ParentID = GetParam("ParentID");
+            return View();
+        }
+
+        /// <summary>
+        /// 查询明细
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ContentResult SearchDetailSc()
+        {
+            List<WhereItem> whereItems = GetWhereItems();
+            long pageIndex = GetPageIndex();
+            long pageSize = GetPageSize();
+            var page = pnService.LinePageSearch(pageIndex, pageSize, whereItems);
+            return ReturnResult(page);
+        }
+
+        #endregion
+
         #region 初始化
 
         /// <summary>
@@ -251,6 +280,8 @@ namespace ESC.Web.Controllers
             var page = pnService.LinePageSearch(pageIndex, pageSize, parentId);
             return ReturnResult(page);
         }
+
+
         #endregion
     }
 }

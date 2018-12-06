@@ -455,7 +455,7 @@ namespace ESC.Web.Controllers
         /// <returns></returns>
         protected int GetParentID()
         {
-            string parentID = GetParam("parentID");
+            string parentID = GetParam("parentId");
             return string.IsNullOrEmpty(parentID) ? 0 : int.Parse(parentID);
         }
 
