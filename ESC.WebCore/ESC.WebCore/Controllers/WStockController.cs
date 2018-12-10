@@ -42,6 +42,31 @@ namespace ESC.Web.Controllers
             ViewBag.WarehouseID = GetParam("WarehouseID");
             return View();
         }
+
+        /// <summary>
+        /// 查询库存根据销售通知单
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult SearchStockSellNoticeView()
+        {
+            ViewBag.WarehouseID = GetParam("WarehouseID");
+            ViewBag.ParentID = GetParam("ParentID");
+            return View();
+        }
+
+        /// <summary>
+        /// 查询库存根据采购单
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult SearchStockPurchaseView()
+        {
+            ViewBag.WarehouseID = GetParam("WarehouseID");
+            ViewBag.ParentID = GetParam("ParentID");
+            return View();
+        }
+      
         #endregion
 
         #region 初始化
@@ -54,7 +79,6 @@ namespace ESC.Web.Controllers
         public ActionResult Init()
         {
             InitData idata = BaseInit(typeof(WStock), true);
-
             return ReturnResult(idata);
         }
 
@@ -73,6 +97,34 @@ namespace ESC.Web.Controllers
             long pageIndex = GetPageIndex();
             long pageSize = GetPageSize();
             var page = sService.PageSearch(pageIndex, pageSize, whereItems);
+            return ReturnResult(page);
+        }
+
+        /// <summary>
+        /// 销售通知单查询
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ContentResult SellSellNoticeSearch()
+        {
+            List<WhereItem> whereItems = GetWhereItems();
+            long pageIndex = GetPageIndex();
+            long pageSize = GetPageSize();
+            var page = sService.PageSellNoticeSearch(pageIndex, pageSize, whereItems);
+            return ReturnResult(page);
+        }
+
+        /// <summary>
+        /// 根据采购入库单条件查询
+        /// </summary>
+        /// <param name="whereItems"></param>
+        /// <returns></returns>
+        public ContentResult PageSearchPurchase()
+        {
+            List<WhereItem> whereItems = GetWhereItems();
+            long pageIndex = GetPageIndex();
+            long pageSize = GetPageSize();
+            var page = sService.PageSearchPurchase(pageIndex, pageSize, whereItems);
             return ReturnResult(page);
         }
 

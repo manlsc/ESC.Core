@@ -145,5 +145,12 @@ namespace ESC.Infrastructure.DomainObjects
         /// </summary>
         [ResultColumn]
         public string UnitName { get; set; }
+
+
+        /// <summary>
+        /// 出入库单、通知单的行ID
+        /// </summary>
+        [ResultColumn]
+        public string SourceLineID { get; set; }
     }
 }

@@ -144,30 +144,7 @@
         });
         dialog.show();
     }
-
-    //选择存储单元
-    function searchLocation(frm, opts) {
-        var dialog = new BUI.Overlay.Dialog({
-            title: "选择存储单元",
-            width: 800,
-            height: 600,
-            mask: true,
-            closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../BLocation/SearchLocationWhView" style="width:100%;height:100%;"></iframe>',
-            success: function () {
-                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
-                if (data) {
-                    frm.setReturnValue(opts, data);
-                    dialog.close();
-                } else {
-                    CommonBUI.alert("提示", "选择存储单元.");
-                }
-            }
-        });
-        dialog.show();
-    }
-
-
+  
     //选择物料
     function searchMaterial(bGrid, opts) {
         var dialog = new BUI.Overlay.Dialog({

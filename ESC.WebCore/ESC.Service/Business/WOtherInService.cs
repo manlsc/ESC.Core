@@ -68,6 +68,7 @@ namespace ESC.Service
                     line.ParentID = otherIn.ID;
                     line.CreateBy = otherIn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     oilRepository.Insert(line);
                 }
 
@@ -183,6 +184,7 @@ namespace ESC.Service
                             line.ParentID = otherIn.ID;
                             line.CreateBy = otherIn.CreateBy;
                             line.CreateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             oilRepository.Insert(line);
                             break;
                         case CurdEnum.Delete:
@@ -191,6 +193,7 @@ namespace ESC.Service
                         case CurdEnum.Update:
                             line.UpdateBy = otherIn.UpdateBy;
                             line.UpdateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             oilRepository.Update(line);
                             break;
                     }

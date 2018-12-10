@@ -146,6 +146,7 @@ namespace ESC.Service
                     line.ParentID = purchase.ID;
                     line.CreateBy = purchase.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     plRepository.Insert(line);
                 }
 
@@ -295,6 +296,7 @@ namespace ESC.Service
                             line.CreateBy = purchase.CreateBy;
                             line.CreateDate = DateTime.Now;
                             line.InPutCount = line.InCount;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             plRepository.Insert(line);
 
                             break;
@@ -321,6 +323,7 @@ namespace ESC.Service
                             line.UpdateBy = purchase.UpdateBy;
                             line.InPutCount = line.InCount;
                             line.UpdateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             plRepository.Update(line);
                             break;
                     }

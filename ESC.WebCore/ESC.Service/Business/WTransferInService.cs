@@ -140,6 +140,7 @@ namespace ESC.Service
                     line.ParentID = transferIn.ID;
                     line.CreateBy = transferIn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     tilRepository.Insert(line);
                 }
 
@@ -218,6 +219,7 @@ namespace ESC.Service
                     line.ParentID = transferIn.ID;
                     line.CreateBy = transferIn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     tilRepository.Insert(line);
                 }
 

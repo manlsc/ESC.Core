@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "SearchStockPurchaseView";
+    Layout = "~/Views/Shared/_LayoutSingle.cshtml";
+}
+
+<div id="StockForm">
+    <ul class="bui-search-ul">
+        <li class="bui-inline-block">
+            <label>仓库编码：</label>
+            <span>
+                <input type="text" class="form-control" name="WarehouseCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>货位编码：</label>
+            <span>
+                <input type="text" class="form-control" name="PositionCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>物料编码：</label>
+            <span>
+                <input type="text" class="form-control" name="MaterialCode" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>批次：</label>
+            <span>
+                <input type="text" class="form-control" name="Batch" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <label>入库时间：</label>
+            <span>
+                <input class="form-control calendar" type="text" name="StockInDate_begin" />
+            </span>
+            <span>-</span>
+            <span>
+                <input class="form-control calendar" type="text" name="StockInDate_end" />
+            </span>
+        </li>
+        <li class="bui-inline-block">
+            <span id="StockBtns" class="SearchBtns">
+                <input type="hidden" class="form-control" name="WarehouseID" value="@ViewBag.WarehouseID" />
+                <button id="btnSearch" class="btn btn-default" style="padding-right:5px;"><i class="fa fa-search"></i>查询</button>
+            </span>
+        </li>
+    </ul>
+</div>
+<div id="StockGrid">
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        var common = new CommonBUI({ controller: "WStock", SearchForm: "#StockForm", DataGrid: "#StockGrid" });
+        var bGrid = null;
+        var ParentID =@ViewBag.ParentID;
+
+        //查询
+        common.search = function () {
+            var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);           
+            whereItems.push({ datatype: 'int', field: 'ParentID', condition: "=", value: ParentID });
+            common.CustomSelect("PageSearchPurchase",whereItems, 0, 0, function (result) {
+                bGrid.setResult(result);
+            });
+        }
+
+        //初始化grid
+        function initGrid(iData) {
+            bGrid = new BUIGrid({
+                render: common.DataGrid,
+                common: common,
+                editable: false
+            });
+
+            //分页查询
+            bGrid.OnPageSearch = function (pageIndex, pageSize) {
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
+                whereItems.push({ datatype: 'int', field: 'ParentID', condition: "=", value: ParentID });
+                common.CustomSelect("PageSearchPurchase",whereItems, pageIndex, pageSize, function (result) {
+                    bGrid.setResult(result);
+                });
+            }
+            bGrid.init();
+            common.search();
+        }
+
+        //初始化列显示隐藏
+        function initStockColumns(iData) {
+            for (var i = 0; i < iData.Columns.length; i++) {
+                switch (iData.Columns[i].dataIndex) {
+                    case "TransitCount":
+                    case "FrozenCount":
+                    case "TakeCount":
+                    case "StockCount":
+                    case "StockInDate":
+                        iData.Columns[i].visible = false;
+                        break;
+                    case "OutCount":
+                        iData.Columns[i].visible = true;
+                        break;
+                }
+            }
+        }
+
+        //获取返回值
+        function getData() {
+            return bGrid.getSelected();
+        }
+
+        $(document).ready(function () {
+            //初始化
+            common.Init(function (iData) {
+                //按钮初始化
+                initStockColumns(iData);
+                //初始化grid
+                initGrid(iData);
+            });
+
+            //查询
+            $("#btnSearch").click(function () {
+                common.search();
+            });
+
+            var datepicker = new BUI.Calendar.DatePicker({
+                trigger: '.calendar',
+                autoRender: true
+            });
+
+            //绑定回车查询
+            $(common.SearchForm).find("input:text").keyup(function (e) {
+                if (e.which == BUI.KeyCode.ENTER) {
+                    common.search();
+                }
+            });
+        });
+
+    </script>
+}
+
+

@@ -173,6 +173,7 @@ namespace ESC.Service
                     line.ParentID = purReturn.ID;
                     line.CreateBy = purReturn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     prlRepository.Insert(line);
 
                     //更新入库单 添加退库
@@ -228,6 +229,7 @@ namespace ESC.Service
                     line.ParentID = purReturn.ID;
                     line.CreateBy = purReturn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     prlRepository.Insert(line);
                 }
 
@@ -286,6 +288,7 @@ namespace ESC.Service
                             line.CreateBy = purReturn.CreateBy;
                             line.CreateDate = DateTime.Now;
                             line.OutPutCount = line.OutCount;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             prlRepository.Insert(line);
 
                             break;
@@ -312,6 +315,7 @@ namespace ESC.Service
                             line.UpdateBy = purReturn.UpdateBy;
                             line.OutPutCount = line.OutCount;
                             line.UpdateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             prlRepository.Update(line);
                             break;
                     }

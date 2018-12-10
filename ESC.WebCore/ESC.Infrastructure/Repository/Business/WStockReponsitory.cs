@@ -70,6 +70,88 @@ namespace ESC.Infrastructure.Repository
         }
 
         /// <summary>
+        /// 根据销售通知单条件查询
+        /// </summary>
+        /// <param name="whereItems"></param>
+        /// <returns></returns>
+        public string GetSearchSellNoticeSql(List<WhereItem> whereItems)
+        {
+            string sql = @" SELECT  S.* ,
+                                    M.MaterialName ,
+                                    WH.LocationDesc AS WarehouseName ,
+                                    L.LocationDesc AS PositionName ,
+                                    BU.UnitName,
+                                    T1.ID AS SourceLineID
+                            FROM    WStock S WITH(NOLOCK)
+                                    INNER JOIN WSellNoticeLine T1 WITH(NOLOCK) ON S.MaterialID=T1.MaterialID
+                                    LEFT JOIN BMaterial M WITH(NOLOCK) ON S.MaterialID = M.ID
+                                    LEFT JOIN BLocation WH WITH(NOLOCK) ON S.WarehouseID = WH.ID
+                                    LEFT JOIN BLocation L WITH(NOLOCK) ON S.PositionID = L.ID
+                                    LEFT JOIN BUnit BU WITH(NOLOCK) ON S.UnitID = BU.ID";
+            foreach (WhereItem item in whereItems)
+            {
+                switch (item.field)
+                {
+                    case "MaterialName":
+                        item.field = "M." + item.field;
+                        break;
+                    case "WarehouseName":
+                        item.field = "WH.WarehouseName";
+                        break;
+                    case "ParentID":
+                        item.field = "T1.ParentID";
+                        break;
+                    default:
+                        item.field = "S." + item.field;
+                        break;
+
+                }
+            }
+            return sql + BulidWhereSql(whereItems) + GetOrderBy();
+        }
+
+        /// <summary>
+        /// 根据采购入库单条件查询
+        /// </summary>
+        /// <param name="whereItems"></param>
+        /// <returns></returns>
+        public string GetSearchPurchaseSql(List<WhereItem> whereItems)
+        {
+            string sql = @" SELECT  S.* ,
+                                    M.MaterialName ,
+                                    WH.LocationDesc AS WarehouseName ,
+                                    L.LocationDesc AS PositionName ,
+                                    BU.UnitName,
+                                    T1.ID AS SourceLineID
+                            FROM    WStock S WITH(NOLOCK)                                   
+                            INNER JOIN WPurchaseLine T1 ON T1.Batch = S.Batch AND T1.MaterialID = S.MaterialID
+                            LEFT JOIN BMaterial M WITH(NOLOCK) ON S.MaterialID = M.ID
+                            LEFT JOIN BLocation WH WITH(NOLOCK) ON S.WarehouseID = WH.ID
+                            LEFT JOIN BLocation L WITH(NOLOCK) ON S.PositionID = L.ID
+                            LEFT JOIN BUnit BU WITH(NOLOCK) ON S.UnitID = BU.ID";
+            foreach (WhereItem item in whereItems)
+            {
+                switch (item.field)
+                {
+                    case "MaterialName":
+                        item.field = "M." + item.field;
+                        break;
+                    case "WarehouseName":
+                        item.field = "WH.WarehouseName";
+                        break;
+                    case "ParentID":
+                        item.field = "T1.ParentID";
+                        break;
+                    default:
+                        item.field = "S." + item.field;
+                        break;
+                }
+            }
+            return sql + BulidWhereSql(whereItems) + GetOrderBy();
+        }
+
+
+        /// <summary>
         /// 排序
         /// </summary>
         /// <returns></returns>

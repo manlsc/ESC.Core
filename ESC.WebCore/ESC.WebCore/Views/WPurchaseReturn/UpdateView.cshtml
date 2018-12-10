@@ -64,7 +64,11 @@
 
         //外键选择
         bGrid.fSearch = function (opts) {
-            searchStock(bGrid, opts);
+            if (!BUI.isNullOrEmpty(bForm.data.SourceCode)) {
+                searchPurchaseStock(bGrid, opts);
+            } else {
+                searchStock(bGrid, opts);
+            }
         };
         bGrid.init();
 
@@ -132,6 +136,29 @@
             }
         });
         dialog.show();
+        }
+
+    //选择通知单行
+        function searchPurchaseStock(bGrid, opts) {
+        var dialog = new BUI.Overlay.Dialog({
+            title: "选择物料",
+            width: 800,
+            height: 600,
+            mask: true,
+            closeAction: "destroy",
+            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../WStock/SearchStockPurchaseView?WarehouseID=' + bForm.data.WarehouseID+'&ParentID=' + bForm.data.SourceID + '" style="width:100%;height:100%;"></iframe>',
+            success: function () {
+                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
+                if (data) {
+                    opts.param.returnDic.SourceLineID = "SourceLineID";
+                    bGrid.setReturnValue(opts, data);
+                    dialog.close();
+                } else {
+                    CommonBUI.alert("提示", "请选择物料.");
+                }
+            }
+        });
+        dialog.show();
     }
 
     //查询主表
@@ -166,10 +193,10 @@
             if (data) {
                 var lines = bGrid.getDirtyData();
                 if (lines) {
-                        data.Lines = lines;
-                        common.Update(data, function () {
-                            window.location.href = "../WPurchaseReturn/Index";
-                        });
+                    data.Lines = lines;
+                    common.Update(data, function () {
+                        window.location.href = "../WPurchaseReturn/Index";
+                    });
                 }
             }
         });
@@ -180,6 +207,6 @@
     });
 
     </script>
-    }
+}
 
 

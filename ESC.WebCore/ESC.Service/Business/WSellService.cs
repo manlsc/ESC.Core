@@ -146,6 +146,7 @@ namespace ESC.Service
                     line.ParentID = sell.ID;
                     line.CreateBy = sell.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     slRepository.Insert(line);
                 }
 
@@ -217,6 +218,7 @@ namespace ESC.Service
                     line.ParentID = sell.ID;
                     line.CreateBy = sell.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     slRepository.Insert(line);
 
                     //更新通知单 添加下推
@@ -295,6 +297,7 @@ namespace ESC.Service
                             line.CreateBy = sell.CreateBy;
                             line.CreateDate = DateTime.Now;
                             line.OutPutCount = line.OutCount;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             slRepository.Insert(line);
 
                             break;
@@ -321,6 +324,7 @@ namespace ESC.Service
                             line.UpdateBy = sell.UpdateBy;
                             line.OutPutCount = line.OutCount;
                             line.UpdateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             slRepository.Update(line);
                             break;
                     }

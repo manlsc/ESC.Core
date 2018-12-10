@@ -104,3 +104,5 @@ E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.csp
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.dll
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\ESC.WebCore.pdb
 E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\WPurchaseNotice\SearchDeataiView.g.cshtml.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\WStock\SearchStockSellNoticeView.g.cshtml.cs
+E:\demo\ESC.Core\ESC.WebCore\ESC.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\WStock\SearchStockPurchaseView.g.cshtml.cs

@@ -183,20 +183,22 @@
             result = _self.store.getDirtyData();
         }
         var rest = [];
-        for (var i = 0; i < result.add.length; i++) {
-            if (!$.isEmptyObject(result.add[i])) {
-                result.add[i].CURD = "add";
-                rest.push(result.add[i]);
+       
+       //顺序不能变: 删除-更新-添加
+        for (var i = 0; i < result.remove.length; i++) {
+            if (result.remove[i]) {
+                result.remove[i].CURD = "delete";
+                rest.push(result.remove[i]);
             }
         }
         for (var i = 0; i < result.update.length; i++) {
             result.update[i].CURD = "update";
             rest.push(result.update[i]);
         }
-        for (var i = 0; i < result.remove.length; i++) {
-            if (result.remove[i]) {
-                result.remove[i].CURD = "delete";
-                rest.push(result.remove[i]);
+        for (var i = 0; i < result.add.length; i++) {
+            if (!$.isEmptyObject(result.add[i])) {
+                result.add[i].CURD = "add";
+                rest.push(result.add[i]);
             }
         }
         return rest;

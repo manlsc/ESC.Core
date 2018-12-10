@@ -172,6 +172,7 @@ namespace ESC.Service
                     line.ParentID = sellReturn.ID;
                     line.CreateBy = sellReturn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     srlRepository.Insert(line);
 
                     //更新入库单 添加退库
@@ -227,6 +228,7 @@ namespace ESC.Service
                     line.ParentID = sellReturn.ID;
                     line.CreateBy = sellReturn.CreateBy;
                     line.CreateDate = DateTime.Now;
+                    line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                     srlRepository.Insert(line);
                 }
 
@@ -285,6 +287,7 @@ namespace ESC.Service
                             line.CreateBy = sellReturn.CreateBy;
                             line.CreateDate = DateTime.Now;
                             line.InPutCount = line.InCount;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             srlRepository.Insert(line);
                             break;
                         case CurdEnum.Delete:
@@ -310,6 +313,7 @@ namespace ESC.Service
                             line.UpdateBy = sellReturn.UpdateBy;
                             line.InPutCount = line.InCount;
                             line.UpdateDate = DateTime.Now;
+                            line.Batch = string.IsNullOrEmpty(line.Batch) ? "" : line.Batch;
                             srlRepository.Update(line);
                             break;
                     }

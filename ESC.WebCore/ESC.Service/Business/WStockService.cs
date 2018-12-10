@@ -49,6 +49,30 @@ namespace ESC.Service
         }
 
         /// <summary>
+        /// 根据销售通知单条件查询
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="whereItems"></param>
+        /// <returns></returns>
+        public Page<WStock> PageSellNoticeSearch(long pageIndex, long pageSize, List<WhereItem> whereItems)
+        {
+            string strSql = sRepository.GetSearchSellNoticeSql(whereItems);
+            return PageSearch(pageIndex, pageSize, strSql);
+        }
+
+        /// <summary>
+        /// 根据采购入库单条件查询
+        /// </summary>
+        /// <param name="whereItems"></param>
+        /// <returns></returns>
+        public Page<WStock> PageSearchPurchase(long pageIndex, long pageSize, List<WhereItem> whereItems)
+        {
+            string strSql = sRepository.GetSearchPurchaseSql(whereItems);
+            return PageSearch(pageIndex, pageSize, strSql);
+        }
+
+        /// <summary>
         /// 分页查询
         /// </summary>
         /// <param name="pageIndex"></param>
