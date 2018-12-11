@@ -63,15 +63,10 @@
 
         //外键选择
         bGrid.fSearch = function (opts) {
-            var record=bGrid.rediting.get("record");
-            if(record.SourceLineID>0){  //如果下推的行更新，只能选择货位
-                searchLoc(bGrid, opts);
+            if (!BUI.isNullOrEmpty(bForm.data.SourceCode)) {  //如果下推单，添加行，查询通知单
+                searchNoticeLine(bGrid, opts);
             } else {
-                if (!BUI.isNullOrEmpty(bForm.data.SourceCode)) {  //如果下推单，添加行，查询通知单
-                    searchNoticeLine(bGrid, opts);
-                } else {
-                    searchStock(bGrid, opts);  //查询库存
-                }
+                searchStock(bGrid, opts);  //查询库存
             }
         };
         bGrid.init();
@@ -145,17 +140,11 @@
             height: 600,
             mask: true,
             closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../WStock/SearchStockSellNoticeView?NoticeID=' + bForm.data.SourceID + '&WarehouseID=' + bForm.data.WarehouseID+'" style="width:100%;height:100%;"></iframe>',
+            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../WStock/SearchStockSellNoticeView?ParentID=' + bForm.data.SourceID + '&WarehouseID=' + bForm.data.WarehouseID+'" style="width:100%;height:100%;"></iframe>',
             success: function () {
                 var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
                 if (data) {
-                    opts.param.foreignKey = "MaterialID";
-                    opts.param.returnDic = {
-                        MaterialCode: "MaterialCode",
-                        UnitID: "UnitID",
-                        UnitName: "UnitName",
-                        SourceLineID: "ID"
-                    };
+                    opts.param.returnDic.SourceLineID = "SourceLineID";
                     bGrid.setReturnValue(opts, data);
                     dialog.close();
                 } else {
@@ -187,44 +176,6 @@
                     dialog.close();
                 } else {
                     CommonBUI.alert("提示", "请选择库存.");
-                }
-            }
-        });
-        dialog.show();
-    }
-
-    //选择货位
-    function searchLoc(bGrid, opts) {
-        var data = bForm.getData();
-        if (!data) {
-            return false;
-        }
-        var dialog = new BUI.Overlay.Dialog({
-            title: "选择存储单元",
-            width: 800,
-            height: 600,
-            mask: true,
-            closeAction: "destroy",
-            bodyContent: '<iframe id="ifrmSearch" scrolling="auto" frameborder="0"  src="../BLocation/SearchLocationByWhView?TopLocationID=' + data.WarehouseID + '" style="width:100%;height:100%;"></iframe>',
-            success: function () {
-                var data = CommonBUI.ExcuteIFrameMethod("ifrmSearch", "getData");
-                if (data) {
-                    //构建返回值类型
-                    var optss={
-                        param:{
-                            foreignKey:"ID",
-                            foreignValue:"LocationDesc",
-                            returnDic:{
-                                PositionCode: "LocationCode",
-                                PositionName:'LocationDesc'
-                            }
-                        },
-                        target:opts.target
-                    };
-                    bGrid.setReturnValue(optss, data);
-                    dialog.close();
-                } else {
-                    CommonBUI.alert("提示", "请选择存储单元.");
                 }
             }
         });
@@ -277,6 +228,6 @@
     });
 
     </script>
-    }
+}
 
 

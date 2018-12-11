@@ -105,7 +105,7 @@ namespace ESC.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ContentResult SellSellNoticeSearch()
+        public ContentResult SellNoticeSearch()
         {
             List<WhereItem> whereItems = GetWhereItems();
             long pageIndex = GetPageIndex();

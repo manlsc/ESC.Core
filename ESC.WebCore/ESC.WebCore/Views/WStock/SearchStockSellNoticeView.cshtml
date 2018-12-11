@@ -39,11 +39,11 @@
     <script type="text/javascript">
         var common = new CommonBUI({ controller: "WStock", SearchForm: "#StockForm", DataGrid: "#StockGrid" });
         var bGrid = null;
+        var ParentID =@ViewBag.ParentID;
 
         //查询
         common.search = function () {
             var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-            var ParentID =@ViewBag.ParentID;
             whereItems.push({ datatype: 'int', field: 'ParentID', condition: "=", value: ParentID });
             common.CustomSelect("SellNoticeSearch",whereItems, 0, 0, function (result) {
                 bGrid.setResult(result);
@@ -60,9 +60,8 @@
 
             //分页查询
             bGrid.OnPageSearch = function (pageIndex, pageSize) {
-                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);
-                var noticeId =@ViewBag.NoticeID;
-                whereItems.push({ datatype: 'int', field: 'NoticeID', condition: "=", value: noticeId });
+                var whereItems = BuiForm.GetWhereItems(common.SearchForm, common);            
+                whereItems.push({ datatype: 'int', field: 'ParentID', condition: "=", value: ParentID });
                 common.CustomSelect("SellNoticeSearch",whereItems, 0, 0, function (result) {
                     bGrid.setResult(result);
                 });             
